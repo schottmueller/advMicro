@@ -1,0 +1,109 @@
+#+TITLE: Advanced Microeconomics II (research track)
+#+AUTHOR: Christoph Schottmüller
+#+Options: toc:nil
+
+* Prerequisites
+I assume that you have some introductory knowledge of game theory on the level of cite:gibbons1992primer. In particular, you should master the material in chapters 1 and 2 in Gibbons' book (strategic form games, dominance, mixed strategies, mixed and pure Nash equilibrium, extensive form games, game trees, backwards induction, subgame perfect Nash equilibrium). From Advanced Microeconomics I, you need to know the part about /decision making under uncertainty/. In terms of mathematics, it is helpful if you master the material of the course /Advanced Mathematics for Economists/. At the minimum you have to know differentiation, integration and optimization of functions, Bayes' rule and basic statistics (discrete and continuous probability distributions and their expected values). You should also have some idea of what a mathematical proof is.
+
+* Plan
+We have 15*2=30 meetings. The idea is to have 20 lectures and 10 exercise classes, i.e. every third class we talk about exercises dealing with the material of the two previous lectures. /You are expected to have tried to solve the exercises beforehand/ (and hopefully you succeeded with some of them), i.e. in the exercise classes we deal with your questions and problems and we are /not/ solving the exercises there from scratch.
+
+* Books
+
+Most material is covered in cite:mas1995microeconomic which is abbreviated MWG in the following. Roughly speaking, we will cover chapters 8, 9, 13 and 23 from this book and -- as time permits -- add a few papers on topics not covered in MWG towards the end of the course.
+
+Some other interesting books on game theory covering the course material partially are
+- cite:fudenberg1991game (FT): Covers an impressive amount of material in considerable depth at PhD level. Some of the proofs are, however, not fully worked out.
+- cite:maschler2013game (MSZ): Impresses with very clear proofs and fully worked out examples. Do, however, not expect to find much economics in this book.
+- cite:osborne1994course (OR). A very nice book that is freely available for download from the authors' websites. 
+
+For the mechanism design part, cite:boergers2015 is an excellent source.
+
+* Schedule
+** Static games of complete information I
+- mixed strategy Nash equilibrium (MWG 8.D)
+- Brouwer's fixed point theorem and existence of Nash equilibrium (MSZ 5.3; MWG 8.Appendix gives a proof using Kakutani's fixed point theorem)
+- iterative elimination of strictly dominated strategies (MWG 8.B)
+
+** Static games of complete information II
+- rationalizability (MWG 8.C)
+- correlated equilibrium (MSZ 8)
+
+** Static games of incomplete information I
+- Bayesian Nash equilibrium (MWG 8.E)
+- simple examples of BNE
+# - purification 
+
+** Static games of incomplete information II: Auctions
+- first price auction (Gibbons 3.2B or MWG Example 23.B.5)
+- second price auction (MWG Example 23.B.6)
+# - double auction (Gibbons 3.2C or FT Example 6.4 p. 219)
+
+# ** Common knowledge I
+# - common knowledge
+# - Rubinstein's email game
+
+# ** Common knowledge II: Global games
+# - stag hunt
+# - global games
+
+** Dynamic games I
+- backwards induction and subgame perfect equilibrium (MWG 9.A and 9.B)
+# - one deviation principle 
+
+** Dynamic games II
+- beliefs and sequential rationality (MWG 9.C)
+- perfect Bayesian equilibrium (MWG 9.C)
+- sequential equilibrium (MWG 9.C)
+
+** Signaling and refinements
+- Spence signaling model (MWG 13.C)
+
+** Adverse selection
+- Akerlof's lemons market (MWG 13.B)
+# - Rothschild-Stiglitz insurance market (cite:rothschild1976equilibrium)
+
+** Cheap talk
+- Crawford and Sobel (cite:crawford1982cheap)
+
+** Mechanism design I: revelation principle
+- mechanism design problem (MWG 23.B)
+- revelation principle (MWG 23.B)
+
+** Mechanism design II: dominant strategy implementation
+- Gibbard Satterthwaite theorem (MWG 23.C)
+- Groves Clarke mechanism (MWG 23.C)
+
+** Mechanism design III: AGV
+- Bayesian implementation (MWG 23.D)
+- expected externality mechanism (MWG 23.D up to p. 887)
+
+** Mechanism design IV: Myerson- Satterthwaite
+- envelope theorem (MWG 23.D p. 887-889)
+- Myerson-Satterthwaite theorem (MWG 23.E)
+
+** Mechanism design V: screening
+- non-linear pricing by a monopolist (cite:maskin1984monopoly)
+
+** Mechanism design VI: optimal auctions
+- revenue equivalence (MWG 23.D p.889-)
+- optimal independent, private value auctions (MWG Example 23.F.2)
+
+** Mechanism design VII: correlated information
+- Cremer-McLean mechanism (cite:cre88)
+
+** Information design I
+- Bayes correlated equilibrium (cite:bergemann16_infor_desig_bayes_persuas_bayes_correl_equil)
+- Bayesian persuasion (cite:bergemann17_infor_desig, cite:kamenica11_bayes_persuas)
+
+** Information design II: interlude
+- value of information in experimentation
+- stochastic dominance orderings
+- Blackwell's theorem (cite:blackwell53)
+
+** Information design III
+- recent paper, e.g. cite:roe17
+
+
+bibliographystyle:chicago
+bibliography:/home/christoph/github/stuff/bibliography/references.bib
