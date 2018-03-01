@@ -3,7 +3,7 @@
 #+Options: toc:nil
 
 * Prerequisites
-I assume that you have some introductory knowledge of game theory on the level of cite:gibbons1992primer. In particular, you should master the material in chapters 1 and 2 in Gibbons' book (strategic form games, dominance, mixed strategies, mixed and pure Nash equilibrium, extensive form games, game trees, backwards induction, subgame perfect Nash equilibrium). From Advanced Microeconomics I, you need to know the part about /decision making under uncertainty/. In terms of mathematics, it is helpful if you master the material of the course /Advanced Mathematics for Economists/. At the minimum you have to know differentiation, integration and optimization of functions, Bayes' rule and basic statistics (discrete and continuous probability distributions and their expected values). You should also have some idea of what a mathematical proof is.
+I assume that you have some introductory knowledge of game theory on the level of cite:gibbons1992primer. In particular, you should know the material in chapters 1 and 2 in Gibbons' book (strategic form games, dominance, mixed strategies, mixed and pure Nash equilibrium, extensive form games, game trees, backwards induction, subgame perfect Nash equilibrium) and be able to apply it in simple games. From Advanced Microeconomics I, we built upon the part about /decision making under uncertainty/ (expected utility theorem). In terms of mathematics, it is helpful if you master the material of the course /Advanced Mathematics for Economists/. Having said that, most of the used math tools will not be far beyond high school maths. At the minimum you have to know (partial) differentiation, integration and optimization of functions and basic statistics (discrete and continuous probability distributions, expected values as well as Bayes' rule and conditional probabilities). Ideally, you should also have some idea of what a mathematical proof is.
 
 * Plan
 We have 15*2=30 meetings. The idea is to have 20 lectures and 10 exercise classes, i.e. every third class we talk about exercises dealing with the material of the two previous lectures. /You are expected to have tried to solve the exercises beforehand/ (and hopefully you succeeded with some of them), i.e. in the exercise classes we deal with your questions and problems and we are /not/ solving the exercises there from scratch.
@@ -17,18 +17,22 @@ Some other interesting books on game theory covering the course material partial
 - cite:maschler2013game (MSZ): Impresses with very clear proofs and fully worked out examples. Do, however, not expect to find much economics in this book.
 - cite:osborne1994course (OR). A very nice book that is freely available for download from the authors' websites. 
 
-For the mechanism design part, cite:boergers2015 is an excellent source.
+For the mechanism design part, cite:boergers2015 is an excellent source which naturally covers much more than we do in the course.
 
 * Schedule
+
+The following plan is...well a plan...and as such it might be adapted to unforseen circumstances if necessary.
+
 ** Static games of complete information I
 - mixed strategy Nash equilibrium (MWG 8.D)
 - Brouwer's fixed point theorem and existence of Nash equilibrium (MSZ 5.3; MWG 8.Appendix gives a proof using Kakutani's fixed point theorem)
-- iterative elimination of strictly dominated strategies (MWG 8.B)
 
 ** Static games of complete information II
+- iterative elimination of strictly dominated strategies (MWG 8.B)
 - rationalizability (MWG 8.C)
-- correlated equilibrium (MSZ 8)
 
+** Static games of complete information III
+- correlated equilibrium (MSZ 8)
 ** Static games of incomplete information I
 - Bayesian Nash equilibrium (MWG 8.E)
 - simple examples of BNE
@@ -54,13 +58,15 @@ For the mechanism design part, cite:boergers2015 is an excellent source.
 ** Dynamic games II
 - beliefs and sequential rationality (MWG 9.C)
 - perfect Bayesian equilibrium (MWG 9.C)
+** Dynamic games III
 - sequential equilibrium (MWG 9.C)
+- bargaining (MWG 9.Appendix A)
 
 ** Signaling and refinements
 - Spence signaling model (MWG 13.C)
 
-** Adverse selection
-- Akerlof's lemons market (MWG 13.B)
+# ** Adverse selection
+# - Akerlof's lemons market (MWG 13.B)
 # - Rothschild-Stiglitz insurance market (cite:rothschild1976equilibrium)
 
 ** Cheap talk
@@ -71,37 +77,39 @@ For the mechanism design part, cite:boergers2015 is an excellent source.
 - revelation principle (MWG 23.B)
 
 ** Mechanism design II: dominant strategy implementation
-- Gibbard Satterthwaite theorem (MWG 23.C)
-- Groves Clarke mechanism (MWG 23.C)
+# - Gibbard Satterthwaite theorem (MWG 23.C)
+- Vickrey-Clarke-Groves mechanism (MWG 23.C)
 
-** Mechanism design III: AGV
+# ** Mechanism design III: AGV
+# - Bayesian implementation (MWG 23.D)
+# - expected externality mechanism (MWG 23.D up to p. 887)
+
+** Mechanism design III: Myerson- Satterthwaite
 - Bayesian implementation (MWG 23.D)
-- expected externality mechanism (MWG 23.D up to p. 887)
-
-** Mechanism design IV: Myerson- Satterthwaite
 - envelope theorem (MWG 23.D p. 887-889)
 - Myerson-Satterthwaite theorem (MWG 23.E)
 
-** Mechanism design V: screening
+** Mechanism design IV: screening
 - non-linear pricing by a monopolist (cite:maskin1984monopoly)
 
-** Mechanism design VI: optimal auctions
+** Mechanism design V: optimal auctions
 - revenue equivalence (MWG 23.D p.889-)
 - optimal independent, private value auctions (MWG Example 23.F.2)
 
-** Mechanism design VII: correlated information
-- Cremer-McLean mechanism (cite:cre88)
+** Mechanism design VI: correlated information
+ - belief extraction
+ - Cremer-McLean mechanism (cite:cre88)
 
-** Information design I
+** Information design I: Bayesian persuasion
 - Bayes correlated equilibrium (cite:bergemann16_infor_desig_bayes_persuas_bayes_correl_equil)
 - Bayesian persuasion (cite:bergemann17_infor_desig, cite:kamenica11_bayes_persuas)
 
 ** Information design II: interlude
-- value of information in experimentation
-- stochastic dominance orderings
-- Blackwell's theorem (cite:blackwell53)
+ - value of information in experimentation
+ - stochastic dominance orderings
+ # - Blackwell's theorem (cite:blackwell53)
 
-** Information design III
+** Information design III: combined information and mechanism design
 - recent paper, e.g. cite:roe17
 
 
