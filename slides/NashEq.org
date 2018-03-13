@@ -1,0 +1,265 @@
+#+Title: Nash Equilibrium
+#+AUTHOR:    Christoph Schottmüller
+#+Date: 
+
+#+LANGUAGE:  en
+#+OPTIONS:   H:2 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+
+
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: 
+#+BEAMER_FRAME_LEVEL: 2
+#+latex_header: \mode<beamer>{\useinnertheme{rounded}\usecolortheme{rose}\usecolortheme{dolphin}\setbeamertemplate{navigation symbols}{}\setbeamertemplate{footline}[frame number]{}}
+#+latex_header: \mode<beamer>{\usepackage{amsmath}\usepackage{ae,aecompl}\usepackage{sgame}}
+#+LATEX_HEADER:\let\oldframe\frame\renewcommand\frame[1][allowframebreaks]{\oldframe[#1]}
+#+LATEX_HEADER: \setbeamertemplate{frametitle continuation}[from second]
+
+* Nash equilibrium
+
+** Nash equilibrium (NE)
+
+*** Nash equilibrium                                           :B_definition:
+    :PROPERTIES:
+    :BEAMER_env: definition
+    :END:
+A strategy profile $(s_1,\dots,s_I)$ is a /Nash equilibrium/ of game $\Gamma=[I,\{S_i\},\{u_i\}]$ if for every $i=1,\dots,I$
+$$u_i(s_i,s_{-i})\geq u_i(s_i',s_{-i})$$
+for all $s_i'\in S_i$.
+
+***                                                         :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+
+
+- mutual best response: let $b_i(s_{-i})$ be $\{s_i\inS_i:\;u_i(s_i,s_{-i})\geq u_i(s_i',s_{-i})\text{ for all }s_i'\in S_i\}$; then NE is an action profile $(s_1,\dots,S_I)$ such that $s_i\in b_i(s_{-i})$ for all $i$
+
+** Nash equilibrium: interpretations
+- non-paternalistic prediction
+- self enforcing agreement
+- stable steady state (convention)
+
+** mixed strategy Nash equilibrium
+*** mixed strategy Nash equilibrium                            :B_definition:
+    :PROPERTIES:
+    :BEAMER_env: definition
+    :END:
+A mixed strategy Nash equilibrium of the game $\Gamma=[I,\{S_i\},\{u_i\}]$ is a Nash equilibrium $(\sigma_1,\dots,\sigma_I)$ in the game $\Gamma=[I,{\Delta S_i},{u_i}]$, i.e. for every $i=1,\dots,I$
+$$u_i(\sigma_i,\sigma_{-i})\geq u_i(\sigma_i',\sigma_{-i})$$
+for all $\sigma_i'\in \Delta S_i$.
+
+***                                                         :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+
+- by linearity of expected utility, $(\sigma_1,\dots,\sigma_I)$ is a mixed Nash equilibrium if and only if every action in the support of $\sigma_i$ is a best response to $\sigma_{-i}$
+
+
+** Existence of Nash equilibrium
+
+  \begin{itemize}
+  \item not all games have a Nash equilibrium
+  \end{itemize}
+
+***   non-existence of NE                                         :B_example:
+    :PROPERTIES:
+    :BEAMER_env: example
+    :END:
+    \begin{itemize}
+    \item 2 players ($N=\{P1,P2\}$)
+    \item each player says a number ($A_i=\Re$)
+    \item player that says the higher number wins \\(e.g. winner has payoff 1 while loser has payoff 0, if both say the same number each has payoff 1/2)
+    \end{itemize}
+
+
+
+** Existence
+
+Why are we interested in existence of NE?
+\begin{itemize}
+\item worthwhile to search for an equilibrium
+\item steady state interpretation of equilibrium, existence of NE says that the process might become stable
+\item  sometimes possible to do comparative statics without computing the NE (only sensible if NE exists)
+\end{itemize}
+
+
+* Fixed point theorems
+
+
+** Fixed point theory I
+*** Fixed point                                                :B_definition:
+    :PROPERTIES:
+    :BEAMER_env: definition
+    :END:
+    Let $f$ be a real function, i.e. $f:\,S\rightarrow\Re$ where $S\subseteq \Re$. A point $a\in A$ is a \emph{fixed point} of $f$ if $f(a)=a$.
+
+***                                                         :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+ \begin{itemize}
+  \item Does $f(x)=1$ have a fixed point? What about $f(x)=x+1$? What about $f(x)=x^2$?
+  \item fixed point theory gives general conditions under which functions have fixed points
+  \item fixed points for functions from $f:\;S\rightarrow \Re^n$ where $S\subseteq \Re^n$ are defined analogously
+  \end{itemize}
+
+** Fixed point theory II
+
+*** Brouwer's fixed point theorem (1-dimensional)                 :B_theorem:
+    :PROPERTIES:
+    :BEAMER_env: theorem
+    :END:
+    Let $f:[0,1]\rightarrow[0,1]$ be a continuous function. Then $f$ has a fixed point.
+
+
+
+
+** Fixed point theory III
+*** Cournot                                                       :B_example:
+    :PROPERTIES:
+    :BEAMER_env: example
+    :END:
+  \begin{itemize}
+  \item two firms each choose a quantity $q_i$ 
+  \item both firms have costs $c(q_i)=c q_i$ for some $c>0$
+  \item inverse demand is $P(q_1+q_2)$ where we assume that $P$ is two times continuously differentiable with $P'<0$ and $P''\leq 0$
+  \item assume that $P(1)<c$\\ $\Rightarrow$ a firm will never offer a quantity greater than 1
+  \item  firm 1 chooses a quantity from $[0,1]$ to maximize profits
+   $$\max_{q_1} (P(q_1+q_2)-c)q_1$$
+ we get the first order condition
+  $$P'(q_1+q_2)q_1+P(q_1+q_2)-c=0$$
+  \end{itemize}
+
+** Fixed point theory IV
+
+*** Cournot (continued)                                           :B_example:
+    :PROPERTIES:
+    :BEAMER_env: example
+    :END:
+  \begin{itemize}
+  \item the second order condition holds by assumption
+$$P''(q_1+q_2)q_1+2P'(q_1+q_2)<0$$
+\item the first order condition defines a best response function
+  $q_1(q_2)$
+\item the best response function is continuous because $P$ and $P'$
+  are continuous by assumption
+\item Brouwer: best response function has a fixed point!
+\item game is symmetric $\Rightarrow$ fixed point is an
+  equilibrium $\Rightarrow$ equilibrium exists
+\item We showed this without being able to actually calculate the equilibrium!!!
+\end{itemize}
+
+** Fixed point theory V
+
+*** Brouwer fixed point theorem                                   :B_theorem:
+    :PROPERTIES:
+    :BEAMER_env: theorem
+    :END:
+  Let $S$ be a convex and compact set in $\Re^n$ and let $f:S\rightarrow S$ be a continuous function. Then there exists an $s^*\in S$ such that $f(s^*)=s^*$.
+
+
+
+
+* Nash existence theorem
+** Nash theorem
+*** Nash theorem                                                 :B_theorem:
+    :PROPERTIES:
+    :BEAMER_env: theorem
+    :END:
+  A strategic game $[I, \{S_i\},\{u_i\}]$ with
+  \begin{itemize}
+  \item a finite number of players 
+   \item a finite number of actions for each player
+  \end{itemize}
+has a Nash equilibrium in mixed strategies.
+***                                                         :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+
+- proof uses Brouwer's fixed point theorem
+- to simplify notation, we prove the theorem for $2\times 2$ games
+
+
+** Proof of Nash theorem for $2\times2$ games I
+
+- $2\times 2$ game:
+|   | L    | R    |
+|---+-------+-------|
+| / | <     |       |
+| U | a,b | c,d  |
+| D | e,f | g,h	 |
+- mixed strategy of P1: probability $\alpha\in[0,1]$  of playing U 
+- mixed strategy of P2: probability $\beta\in[0,1]$  of playing L  
+- idea of proof:
+   \begin{itemize}
+   \item define a function $f(\alpha,\beta)$ such that
+     \begin{itemize}
+     \item $f$ is continuous
+     % \item if $(\alpha^*,\beta^*)$ is a Nash equilibrium, then $f(\alpha^*,\beta^*)=(\alpha^*,\beta^*)$
+     \item if $f(\alpha^*,\beta^*)=(\alpha^*,\beta^*)$, then $(\alpha^*,\beta^*)$ is a Nash equilibrium of the game
+     \end{itemize}
+   \item use Brouwer's theorem to establish that $f$ has a fixed point
+   \end{itemize}
+ 
+
+** Proof of Nash theorem for $2\times2$ games II
+\begin{itemize}
+\item $u_1(U,\beta)=\beta a+(1-\beta) c$ is the expected utility of P1 when playing U and P2 uses the mixed strategy $\beta$
+\item $u_1(U,\beta)$ is linear and therefore continuous in $\beta$
+\item define 
+$$g(\alpha,\beta)=max\left\{0,\frac{\alpha+u_1(U,\beta)-u_1(D,\beta)}{1+\left|u_1(U,\beta)-u_1(D,\beta)\right|}\right\} $$
+
+\begin{itemize}
+\item $g(\alpha,\beta)$ is higher than $\alpha$ if U is the best response to $\beta$ and
+  lower than $\alpha$ if D is best response 
+\item $g$ is continuous because $u_1$ is continuous in $\beta$
+\end{itemize}
+
+\item define
+$$h(\alpha,\beta)=max\left\{0,\frac{\beta+u_2(L,\alpha)-u_2(R,\alpha)}{1+\left|u_2(L,\alpha)-u_2(R,\alpha)\right|}\right\} $$
+\begin{itemize}
+\item $h(\alpha,\beta)$ is higher than $\beta$ if L is best response  to $\alpha$
+  and lower than $\beta$ if R is best response
+\item $h$ is
+  continuous because $u_2$ is continuous in $\alpha$
+\end{itemize}
+\end{itemize}
+
+** Proof of Nash theorem for $2\times2$ games III
+
+let $f$ be defined by $$f(\alpha,\beta)=(g(\alpha,\beta),h(\alpha,\beta))$$
+
+
+
+
+\begin{itemize}
+\item if $f(\alpha^*,\beta^*)=(\alpha^*,\beta^*)$ then
+  \begin{itemize}
+  \item $g(\alpha^*,\beta^*)=\alpha^*$ $\Rightarrow$ $\alpha^*$ is best response to $\beta^*$
+  \item $h(\alpha^*,\beta^*)=\beta^*$ $\Rightarrow$ $\beta^*$ is best response to $\alpha^*$
+  \item $(\alpha^*,\beta^*)$ is Nash equilibrium
+  \end{itemize}
+every fixed point of $f$ is Nash equilibrium
+\item  $f$ is continuous because $g$ and $h$ are continuous
+\item Brouwer: $f$ has a fixed point
+\end{itemize}
+
+** Generalization of Nash's theorem
+*** Nash theorem                                                 :B_theorem:
+    :PROPERTIES:
+    :BEAMER_env: theorem
+    :END:
+  A strategic game $[I, \{S_i\},\{u_i\}]$ with
+  \begin{itemize}
+  \item a finite number of players 
+   \item a convex and compact action set $S_i$ (for all $i$)
+  \item continuous utility functions $u_i$
+  \end{itemize}
+has a Nash equilibrium in mixed strategies (and in pure strategies if all $u_i$ are quasi-concave in $s_i$).

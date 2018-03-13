@@ -1,0 +1,177 @@
+#+Title: Correlated Equilibrium
+#+AUTHOR:    Christoph Schottmüller
+#+Date: 
+
+#+LANGUAGE:  en
+#+OPTIONS:   H:2 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+
+
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: 
+#+BEAMER_FRAME_LEVEL: 2
+#+latex_header: \mode<beamer>{\useinnertheme{rounded}\usecolortheme{rose}\usecolortheme{dolphin}\setbeamertemplate{navigation symbols}{}\setbeamertemplate{footline}[frame number]{}}
+#+latex_header: \mode<beamer>{\usepackage{amsmath}\usepackage{ae,aecompl}\usepackage{sgame}}
+#+LATEX_HEADER:\let\oldframe\frame\renewcommand\frame[1][allowframebreaks]{\oldframe[#1]}
+#+LATEX_HEADER: \setbeamertemplate{frametitle continuation}[from second]
+
+* Nash equilibrium
+** Example I
+*** Motivating example game                                       :B_example:
+    :PROPERTIES:
+    :BEAMER_env: example
+    :END:
+|   | L   | R   |
+|---+-----+-----|
+| / | <   |     |
+| U | 5,1 | 0,0 |
+| D | 4,4 | 1,5 |
+
+Find the three Nash equilibria!
+***                                                         :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+\begin{itemize}
+\item pure strategy NE give high aggregate but very unequal payoff
+\item mixed strategy equilibrium gives equal but low payoff 
+\end{itemize}
+
+** Example II
+
+\begin{itemize}
+\item Can players get equal and high payoffs?
+\item flip a coin: if tails $(U,L)$, if head $(D,R)$
+\item with ``unfair coins'' any payoff in the convex hull of the NE payoffs is attainable
+\item can players do even better?
+\pause \item Yes:
+  \begin{itemize}
+  \item randomization device with three equally likely states A=(U,L),B=(D,L) and C=(D,R)
+  \item  P1 gets a message iff state is A
+  \item P2 gets a message iff state is C
+  \end{itemize}
+Then the following is an equilibrium
+\begin{itemize}
+\item P1 plays U when he gets a message and D otherwise
+\item P2 plays R when he gets a message and L otherwise
+\end{itemize}
+Check that no deviation is profitable!
+\begin{itemize}
+\item expected payoff $1/3 (5,1)+1/3(4,4)+1/3(1,5)=(3.33,3.33)$ is outside of the convex hull of the Nash payoffs
+\item correlated equilibrium can lead to higher payoffs than NE
+\end{itemize}
+\end{itemize}
+
+** Interpretation of correlated equilibrium
+
+
+  \begin{itemize}
+\item  both players first communicate and  \emph{construct a correlation machine together}\\
+each player sees output of the machine before taking action  
+  \item \emph{ impartial mediator} gives (private!) recommendations $s_i$ to each player according to some probability distribution \\Recommendations are self-enforcing 
+  \end{itemize}
+
+** Formal definition I
+\begin{itemize}
+\item take a strategic form game $\Gamma=[I,\{S_i\},\{u_i\}]$
+\item a probability distribution $p$ over $S$ leads to the game $\Gamma^*(p)$:
+  \begin{enumerate}
+  \item mediator draws an action profile $s=(s_1,\dots,s_n)$ from $S$ according to probability distribution $p$
+  \item mediator reveals $s_i$ to each player $i$ (but does not reveal $s_{-i}$)
+  \item each player chooses an action $s_i'\in S_i$
+  \item payoff for each player $i$ is $u_i(s_1',\dots,s_n')$
+  \end{enumerate}
+\item pure strategy for player $i$ in $\Gamma^*(p)$ is function $t_i: S_i\rightarrow S_i$ (action as function of recommendation)
+\item belief of player $i$ when getting recommendation $s_i$:
+  \begin{equation*}
+    \label{eq:1}
+    p(s_{-i}|s_i)=\frac{p(s_i,s_{-i})}{\sum_{b_{-i}\in S_{-i}}p(s_i,b_{-i})}
+  \end{equation*}
+  
+\end{itemize}
+
+** Formal definition II
+
+\begin{lemma}[MSZ Thm 8.5]
+  All players following the recommendation, i.e. $t_i(s_i)=s_i$ for
+  all players $i$, is an equilibrium of $\Gamma^*(p)$ if and only if
+  \begin{equation}\label{eq:2}
+    \sum_{s_{-i}\in S_{-i}}p(s_i,s_{-i})u_i(s_i,s_{-i})\geq \sum_{s_{-i}\in S_{-i}}p(s_i,s_{-i})u_i(s_i',s_{-i})
+  \end{equation}
+  for all players $i$ and all actions $s_i,s_i'\in S_i$.
+\end{lemma}
+
+** Formal definition III
+
+\textbf{Proof. }Expected utility of player $i$ when playing $s_i'$ after receiving recommendation $s_i$ is 
+\begin{equation*}
+  EU_i(s_i)= \sum_{s_{-i}\in S_{-i}}\frac{p(s_i,s_{-i})}{\sum_{b_{-i}\in S_{-i}}p(s_i,b_{-i})}u_i(s_i,s_{-i}).
+\end{equation*}
+Expected utility of playing $s_i'$ after receiving recommendation $s_i$ is
+\begin{equation*}
+  EU_i(s_i')= \sum_{s_{-i}\in S_{-i}}\frac{p(s_i,s_{-i})}{\sum_{b_{-i}\in S_{-i}}p(s_i,b_{-i})}u_i(s_i',s_{-i}).
+\end{equation*}
+$EU_i(s_i)\geq EU_i(s_i')$ if and only if (\ref{eq:2}) holds.\qed
+
+\vspace*{1cm}
+\begin{tiny}
+  For this proof, we use the convention
+  $\frac{p(s_i,s_{-i})}{\sum_{b_{-i}\in S_{-i}}p(s_i,b_{-i})}=0$ if
+  $p(s_i,b_{-i})=0$ for all $b_{-i}\in S_{-i}$.
+\end{tiny}
+
+
+** Formal definition IV
+
+\begin{definition}[correlated equilibrium]
+  A probability distribution $p$ over $S$ is a correlated equilibrium in the strategic form game $\Gamma=[I,\{S_i\},\{u_i\}]$ if $t_i(s_i)=s_i$ for all players $i$ is an equilibrium of $\Gamma^*(p)$. 
+\end{definition}
+
+- set of correlated equilibria is defined by a set of linear inequalities 
+   - all the inequalities (1)
+   - $p(s)\geq 0$ for all $s\in S$
+   - $\sum_{s\in S}p(s)=1$
+
+** Example 
+probabilities $p_{UL}$, $p_{UR}$, $p_{DL}$, $p_{DR}$
+- obedience U: $p_{UL}*5+p_{UR}*0\geq p_{UL}*4+p_{UR}*1$
+- obedience D: $p_{DL}*4+p_{DR}*1 \geq p_{DL}*5+p_{DR}*0$
+- obedience L: $p_{UL}*1+p_{DL}*4\geq p_{UL}*0+p_{DL}*5$
+- obediecne R: $p_{UR}*0+p_{DR}*5\geq p_{UR}*1+p_{DR}*4$
+- nonnegativity:  $p_{UL}\geq 0$, $p_{UR}\geq 0$, $p_{DL}\geq 0$, $p_{DR}\geq 0$
+- probs sum to 1: $p_{UL}+p_{UR}+p_{DL}+p_{DR}=1$
+
+set of $(p_{UL},p_{UR},p_{DL},p_{DR})$ satisfying all these linear inequalities is set of correlated equilibria
+
+** Existence
+
+*** Lemma (Mixed NE as correlated equilibria)                       :B_block:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+  Let $\sigma^*$ be a mixed strategy equilibrium. Then the distribution $p_{\sigma^*}$ defined by
+  \begin{equation*}
+    p_{\sigma^*}(s_1,\dots,s_n)=\Pi_{i=1}^n\sigma_i^*(s_i)
+  \end{equation*}
+is a correlated equilibrium.
+
+
+***                                                         :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+
+\begin{corollary}
+ A correlated equilibrium exists in all finite games.
+\end{corollary}
+
+** Convexity
+*** Convexity (MSZ Thm 8.9)                                       :B_theorem:
+    :PROPERTIES:
+    :BEAMER_env: theorem
+    :END:
+  Let $\Gamma=[I,\{S_i\},\{u_i\}]$ be a strategic form game. The set of correlated equilibria of $\Gamma$ is convex. \linebreak That is, if $p'\in \Delta S$ and $p''\in \Delta S$ are correlated equilibria, then $p=\alpha p'+(1-\alpha) p''$ is a correlated equilibrium for any $\alpha\in[0,1]$.
