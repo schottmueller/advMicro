@@ -1,0 +1,211 @@
+#+Title: Dominance and Rationalizability
+#+AUTHOR:    Christoph Schottmüller
+#+Date: 
+
+#+LANGUAGE:  en
+#+OPTIONS:   H:2 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+
+
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: 
+#+BEAMER_FRAME_LEVEL: 2
+#+latex_header: \mode<beamer>{\useinnertheme{rounded}\usecolortheme{rose}\usecolortheme{dolphin}\setbeamertemplate{navigation symbols}{}\setbeamertemplate{footline}[frame number]{}}
+#+latex_header: \mode<beamer>{\usepackage{amsmath}\usepackage{ae,aecompl}\usepackage{sgame}}
+#+LATEX_HEADER:\let\oldframe\frame\renewcommand\frame[1][allowframebreaks]{\oldframe[#1]}
+#+LATEX_HEADER: \setbeamertemplate{frametitle continuation}[from second]
+
+* Strategic form games
+
+** Notation
+
+a strategic form (or "normal form") game \Gamma consists of
+- set of players $I$
+- an action set for each player $\{S_i\}_{i\in I}$ (usually written $\{S_i\}$)
+- Bernoulli utility functions $\{u_i\}_{i\in I}$ (usually written $\{u_i\}$) where $u_i:S_1\times\dots\times S_I\rightarrow\Re$
+
+we write $\Gamma=[I,\{S_i\},\{u_i\}]$
+*** Example: Prisoner's dilemma
+
+|   | C    | D    |
+|---+-------+-------|
+| / | <     |       |
+| C | -2,-2 | 0,-3  |
+| D | -3,-0 | -1,-1 |
+
+- $I$ is $\{P_1,P_2\}$
+- $S_i$ is $\{C,D\}$
+- $u_1$ is defined by: $u_1(D,D)=-2$, $u_1(D,C)=-3$, $u_1(C,D)=-3$, $u_1(C,C)=-1$
+
+** Interpretation of a strategic form game
+
+1. one shot game
+  - one time event
+  - each player knows game 
+  - rationality is common knowledge
+  - actions are chosen simultaneously and independently
+  -  a player can base his expectation of other player's play only on primitives of the game  
+2. repeated play without strategic link
+  - game is played repeatedly but with different opponents
+  -  no intertemporal strategic link between games
+  - players can have expectations how rational players play based on past plays
+
+** Assumptions maintained throughout the course
+- game itself is common knowledge among the players
+- players are rational
+   - clearly defined objective/preferences
+   - unlimited analytical capabilities
+- players are strategic
+   - take into account that other players are similarly rational (rationality is common knowledge)
+- players maximize expected utility (i.e. their preferences satisfy assumptions of von Neumann and Morgenstern's expected utility theorem)
+
+** Language and notation
+  
+- /action/: an element of $S_i$ (a pure strategy)
+- /action profile/: a vector $(s_1,\dots,s_I)$ with one action for every player 
+- /mixed strategy/: $\sigma_i$ is a probability distribution over $S_i$, i.e. $\sigma_i\in\Delta(S_i)$
+- /(mixed) strategy profile/: a vector $(\sigma_1,\dots,\sigma_I)$ with one strategy for every player 
+- /support of a mixed strategy $\sigma_i$/: set of all actions on which $\sigma_i$ puts strictly positive probability
+
+- $s_{-i}$: like an action profile but not including an action for player $i$, e.g. $(s_1,\dots,s_{i-1},s_{i+1},\dots,s_I)$
+- $S_{-i}$: set of all possible $s_{-i}$
+- $\sigma_{-i}$: as $s_{-i}$ but with mixed strategies instead of actions
+
+* Dominance
+** Dominant action
+*** Strictly dominant action                                   :B_definition:
+    :PROPERTIES:
+    :BEAMER_env: definition
+    :END:
+An action $s_i\in S_i$ is /strictly dominant/ for player i in game $[I,\{S_i\},\{u_i\}]$ if for all $s_i'\neq s_i$, we have
+$$u_i(s_i,s_{-i})>u_i(s_i',s_{-i})$$
+for all $s_{-i}\in S_{-i}$.
+
+*** Example: Prisoner's dilemma
+
+|   | D     | C     |
+|---+-------+-------|
+| / | <     |       |
+| D | -2,-2 | 0,-3  |
+| C | -3,-0 | -1,-1 |
+
+** Strictly dominated action
+*** Strictly dominated action                                  :B_definition:
+    :PROPERTIES:
+    :BEAMER_env: definition
+    :END:
+An action $s_i\in S_i$ is /strictly dominant/ for player i in game $[I,\{S_i\},\{u_i\}]$ if there exists a $\sigma_i'\in\Delta(S_i)$, such that
+$$u_i(\sigma_i',s_{-i})>u_i(s_i,s_{-i})$$
+for all $s_{-i}\in S_{-i}$.
+
+***                                                         :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+
+- note: due to expected utility assumption, there is no difference between the definition above and using $u_i(\sigma_i',\sigma_{-i})>u_i(s_i,\sigma_{-i})$ for all $\sigma_{-i}\in\prod_{j\neq i}\Delta(S_j)$ (check!)
+
+*** Example
+|   | L   | R   |
+|---+-----+-----|
+| / | <   |     |
+| T | 3,0 | 0,1 |
+| M | 1,2 | 1,0 |
+| B | 0,0 | 3,1 |
+
+** Relevance
+what will a rational player do if 
+  - he has a strictly dominant action?
+  - he has a strictly dominated action?
+
+*  Iterative elimination of strictly dominated strategies
+** Iterative elimination of strictly dominated strategies (IESDS) I
+*** Example
+Which action will a rational (and strategic) player 1 play?
+|   | L   | R   |
+|---+-----+-----|
+| / | <   |     |
+| T | 3,0 | 0,1 |
+| M | 1,2 | 1,0 |
+| B | 0,0 | 3,1 |
+
+** Iterative elimination of strictly dominated strategies (IESDS) II
+Procedure:
+- eliminate all strictly dominated actions
+- eliminate all actions that are strictly dominated in the remaining game
+- continue until no strictly dominated action left
+
+note:
+- order of elimination does not matter for outcome of the procedure (check!)
+- if rationality is common knowledge, players will not use actions eliminated in the process above
+
+* Rationalizability
+** (Never) best response
+*** (Never) Best response                                      :B_definition:
+    :PROPERTIES:
+    :BEAMER_env: definition
+    :END:
+
+In game $[I,\{S_i\},\{u_i\}]$, strategy $\sigma_i$ is a /best response/ for player $i$ to the other players' strategies $\sigma_{-i}$ if
+$$u_i(\sigma_i,\sigma_{-i})\geq u_i(\sigma_i',\sigma_{-i})$$
+for all $\sigma_i'\in\Delta(S_i)$. Strategy $\sigma_i$ is a /never best response/ if there is no $\sigma_{-i}$ to which $\sigma_i$ is a best response.
+
+***                                                         :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+
+- a mixed strategy is only a best response if every pure strategy in its support is a best response (by the expected utility assumption) (check!)
+- a strictly dominated action is a never best response
+
+** Rationalizability
+a rational player has
+ - a belief about other players' strategies
+ - plays best response given his belief
+
+if rationality is common knowledge, a rational player's belief can only put positive probability on actions that are themselve best response to a belief (of the other players) that puts only positive probability on best responses to a belief...
+
+*** Rationalizable actions                                     :B_definition:
+    :PROPERTIES:
+    :BEAMER_env: definition
+    :END:
+   
+In game $[I,\{S_i\},\{u_i\}]$, the strategies surviving iterative elimination of never best responses are called /rationalizable strategies/. 
+
+***                                                         :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+
+*Common knowledge of rationality implies that players play rationalizable strategies!*
+- remark: "rationalizable actions" of player $i$ are those that are in the support of $i$'s rationalizable strategies \linebreak (these actions are also the pure strategies that are rationalizable)
+
+** Rationalizability: examples
+
+*** Example: finite game
+|   | L   | R   |
+|---+-----+-----|
+| / | <   |     |
+| T | 3,0 | 0,1 |
+| M | 1,2 | 1,0 |
+| B | 0,0 | 3,1 |
+*** Example:  homogenous good Bertrand competition
+- 2 firms with marginal costs $c\geq 0$ (zero fixed costs) compete in prices
+- one consumer with unit demand and willingness to pay $v>c$
+
+*** Example: Cournot competition
+- 2 firms with marginal costs $c\in(0,1)$ (zero fixed costs) compete in quantities
+- inverse demand $P(q_1+q_2)=1-q_1-q_2$
+- firm $i$ profit: $u_i(q_1,q_2)=(1-q_1-q_2-c)q_i$
+
+** Rationalizability and IESDS
+- strictly dominated actions are never best responses
+- only actions surviving IESDS can be rationalizable
+- in game with more than 2 players, some actions surviving IESDS might not be rationalizable (in the way we defined it)
+- for 2 player games: set of rationalizable actions and set of actions surviving IESDS are identical
+
+
