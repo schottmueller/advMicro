@@ -1,6 +1,5 @@
-#+Title: Nash Equilibrium
-#+AUTHOR:    Christoph Schottmüller
-#+Date: 
+#+Title: Nash theorem
+#+Author: Christoph Schottmüller
 
 #+LANGUAGE:  en
 #+OPTIONS:   H:2 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t

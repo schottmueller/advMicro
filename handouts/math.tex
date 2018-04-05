@@ -1,0 +1,46 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{amsmath,amsthm,amsfonts,dsfont,ae,aecompl}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{natbib}
+\usepackage{tikz,sgame}
+
+\newtheorem{theorem}{Theorem}
+
+\title{Math for Advanced Microeconomics II}
+\author{Christoph Schottm\"uller}
+
+\begin{document}
+\maketitle
+
+\section{Implicit function theorem}
+\label{sec:impl-funct-theor}
+
+Often a best response function is defined as the solution to a first order condition. In a 2-player Cournot model with constant marginal costs $c$ and inverse demand $P$, for example, the first order condition fo firm 1 is
+\begin{equation*}
+  P'(q_1+q_2)q_1+P(q_1+q_2)-c=0.
+\end{equation*}
+Firm 1's best response to a quantity $q_2$ is the $q_1$ that solves this equation, i.e. firm 1's best response is ``implicitly defined'' by this equation. (It would be explicit if we could solve the equation for $q_1$ but with a general function $P$ we cannot do so.) We make assumptions that guarantee that the equation has only one solution, e.g. $P'<0$ and $P''\leq 0$, which ensures that the implicitly defined best response $q_1(q_2)$ is a well defined function. The implicit function theorem allows us to calculate the slope of this best response function.
+
+\begin{theorem}[1-dimensional Implicit Function Theorem]
+  Let $(f_0,x_0)$ be a point such that $g(f_0,x_0)=0$ where $g:\Re^2\rightarrow\Re$ is a continuously differentiable function and $\partial g(f_0,x_0)/\partial f\neq 0$. Then there exists a function $f:(x_0-\varepsilon ,x_0+\varepsilon )\rightarrow\Re$ for some $\varepsilon >0$ such that $f(x)$ is the unique solution to $g(f,x)=0$ for $x\in(x_0-\varepsilon ,x_0+\varepsilon )$ and
+  \begin{equation*}
+    f'(x)=-\frac{\partial g(f(x),x)/\partial x}{\partial g(f(x),x)\partial f}.
+  \end{equation*}
+\end{theorem}
+
+Intuitively, we define $f$ as the solution to the equation $g(f,x)=0$. To get the slope of $f$ we totally differentiate this equation
+\begin{equation*}
+  \frac{\partial g}{\partial f}df+\frac{\partial g}{\partial x}dx=0
+\end{equation*}
+and rearrange to get $df/dx$. The restriction of the domain to $(x_0-\varepsilon, x_0+\varepsilon )$ and the assumption $\partial g(f_0,x_0)/\partial f\neq 0$ ensure that the equation $g(f,x)$ has a unique solution (on this restricted domain) and therefore the solution to the equation $g(f,x)=0$ is  actually  a function (and not a correspondence). If we knew that $g(f,x)=0$ has a unique solution $f(x)$ for all $x$, then we could leave out the domain restriction.
+
+In the Cournot example, $q_1$ has the role of $f$, $q_2$ the role of $x$ and $g(q_1,q_2)= P'(q_1+q_2)q_1+P(q_1+q_2)-c$. Because of the assumptions $P'<0$ and $P''\leq 0$, we know that $\partial g/\partial q_1<0$ and therefore $g(q_1,q_2)=0$ can have only one solution $q_1$ for a given $q_2$.\footnote{I ignore corner solutions here, i.e. solutions where the first order condition does not hold as an equality. These are relevant for very high $q_2$ where $q_1=0$ can be a best response but ignored here as this has little to do with the implicit function theorem itself.} The theorem then tells us that
+
+\begin{equation*}
+   q_1'(q_2)=-\frac{\partial g(q_1(q_2),q_2)/\partial q_2}{\partial g(q_1(q_2),q_2)\partial q_1}=-\frac{P''(q_1(q_2)+q_2)q_1+P'(q_1(q_2)+q_2)}{P''(q_1(q_2)+q_2)+2P'(q_1(q_2)+q_2)}.
+\end{equation*}
+
+This is a useful expression because, by our assumptions $P'<0$ and $P''\leq0$, it tells us that $q_1'(q_2)<0$, i.e. firm 1's best response to an increase in firm 2's quantity is a decrease in quantity. (We call this property ``strategic substitutability''.)
+
+\end{document}
