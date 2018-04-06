@@ -1,7 +1,14 @@
 #+TITLE: Advanced Microeconomics II (research track)
 #+AUTHOR: Christoph Schottmüller
 #+Options: toc:nil
-
+#+Latex_Header: \usepackage{natbib}
+* News
+- First lecture on Monday, April 9. /Beforehand/, please, check the preliminary course plan (below or as [[https://github.com/schottmueller/advMicro/files/1883169/home.pdf][pdf]]) and make sure you remember the implicit function theorem (see the [[https://github.com/schottmueller/advMicro/files/1883187/math.pdf][math handout]] if you do not).
+* Material
+- Slides:
+  - Nash Theorem: tba
+- Handouts etc.:
+  - [[https://github.com/schottmueller/advMicro/files/1883187/math.pdf][math handout]]
 * Prerequisites
 I assume that you have some introductory knowledge of game theory on the level of cite:gibbons1992primer. In particular, you should know the material in chapters 1 and 2 in Gibbons' book (strategic form games, dominance, mixed strategies, mixed and pure Nash equilibrium, extensive form games, game trees, backwards induction, subgame perfect Nash equilibrium) and be able to apply it in simple games. From Advanced Microeconomics I, we built upon the part about /decision making under uncertainty/ (expected utility theorem). In terms of mathematics, it is helpful if you master the material of the course /Advanced Mathematics for Economists/. Having said that, most of the used math tools will not be far beyond high school maths. At the minimum you have to know (partial) differentiation, integration and optimization of functions and basic statistics (discrete and continuous probability distributions, expected values as well as Bayes' rule and conditional probabilities). Ideally, you should also have some idea of what a mathematical proof is.
 
@@ -17,7 +24,7 @@ Some other interesting books on game theory covering the course material partial
 - cite:maschler2013game (MSZ): Impresses with very clear proofs and fully worked out examples. Do, however, not expect to find much economics in this book.
 - cite:osborne1994course (OR). A very nice book that is freely available for download from the authors' websites. 
 
-For the mechanism design part, cite:boergers2015 is an excellent source which naturally covers much more than we do in the course.
+For mechanism design, cite:boergers2015 is an excellent source which naturally covers much more than we do in the course.
 
 * Schedule
 
@@ -112,6 +119,5 @@ The following plan is...well a plan...and as such it might be adapted to unforse
 ** Information design III: combined information and mechanism design
 - recent paper, e.g. cite:roe17
 
-
 bibliographystyle:chicago
-bibliography:/home/christoph/github/stuff/bibliography/references.bib
+bibliography:/home/christoph/stuff/bibliography/references.bib
