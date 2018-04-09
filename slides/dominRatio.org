@@ -26,7 +26,7 @@
 a strategic form (or "normal form") game \Gamma consists of
 - set of players $I$
 - an action set for each player $\{S_i\}_{i\in I}$ (usually written $\{S_i\}$)
-- Bernoulli utility functions $\{u_i\}_{i\in I}$ (usually written $\{u_i\}$) where $u_i:S_1\times\dots\times S_I\rightarrow\Re$
+- Bernoulli utility functions $\{u_i\}_{i\in I}$ (usually written $\{u_i\}$) where $u_i:S_1\times\dots\times S_I\rightarrow\Re$)
 
 we write $\Gamma=[I,\{S_i\},\{u_i\}]$
 *** Example: Prisoner's dilemma
@@ -39,7 +39,7 @@ we write $\Gamma=[I,\{S_i\},\{u_i\}]$
 
 - $I$ is $\{P_1,P_2\}$
 - $S_i$ is $\{C,D\}$
-- $u_1$ is defined by: $u_1(D,D)=-2$, $u_1(D,C)=-3$, $u_1(C,D)=-3$, $u_1(C,C)=-1$
+- $u_1$ is defined by: $u_1(D,D)=-1$, $u_1(D,C)=-3$, $u_1(C,D)=0$, $u_1(C,C)=-2$
 
 ** Interpretation of a strategic form game
 

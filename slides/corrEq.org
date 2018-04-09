@@ -19,7 +19,7 @@
 #+LATEX_HEADER:\let\oldframe\frame\renewcommand\frame[1][allowframebreaks]{\oldframe[#1]}
 #+LATEX_HEADER: \setbeamertemplate{frametitle continuation}[from second]
 
-* Nash equilibrium
+* Correlated equilibrium
 ** Example I
 *** Motivating example game                                       :B_example:
     :PROPERTIES:
@@ -73,6 +73,7 @@ Check that no deviation is profitable!
 \item  both players first communicate and  \emph{construct a correlation machine together}\\
 each player sees output of the machine before taking action  
   \item \emph{ impartial mediator} gives (private!) recommendations $s_i$ to each player according to some probability distribution \\Recommendations are self-enforcing 
+\item observer does not know on what information players base their decision (what they observe etc.) $\rightarrow$ set of possible (Bayesian) equilibria for all possible information structures
   \end{itemize}
 
 ** Formal definition I

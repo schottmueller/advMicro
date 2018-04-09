@@ -5,10 +5,11 @@
 * News
 - First lecture on Monday, April 9. /Beforehand/, please, check the preliminary course plan (below or as [[https://github.com/schottmueller/advMicro/files/1888740/home.pdf][pdf]]) and make sure you remember the implicit function theorem before Wednesday (see the [[https://github.com/schottmueller/advMicro/files/1883187/math.pdf][math handout]] if you do not).
 * Material
-- Exercises: [[./exercises.tex][tex]]
+- Exercises: [[./exercises.tex][tex]] [[https://github.com/schottmueller/advMicro/files/1890679/exercises.pdf][pdf]]
 - Slides:
-  - [[https://github.com/schottmueller/advMicro/files/1888930/dominRatio.pdf][Dominance and rationalizability]]
+  - [[https://github.com/schottmueller/advMicro/files/1890670/dominRatio.pdf][Dominance and rationalizability]]
   - [[https://github.com/schottmueller/advMicro/files/1888753/NashEq.pdf][Nash Theorem]]
+  - [[https://github.com/schottmueller/advMicro/files/1890677/corrEq.pdf][correlated eq.]]
 - Handouts etc.:
   - [[https://github.com/schottmueller/advMicro/files/1883187/math.pdf][math handout]]
 * Prerequisites
