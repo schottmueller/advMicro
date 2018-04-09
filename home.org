@@ -3,10 +3,11 @@
 #+Options: toc:nil
 #+Latex_Header: \usepackage{natbib}
 * News
-- First lecture on Monday, April 9. /Beforehand/, please, check the preliminary course plan (below or as [[https://github.com/schottmueller/advMicro/files/1883169/home.pdf][pdf]]) and make sure you remember the implicit function theorem (see the [[https://github.com/schottmueller/advMicro/files/1883187/math.pdf][math handout]] if you do not).
+- First lecture on Monday, April 9. /Beforehand/, please, check the preliminary course plan (below or as [[https://github.com/schottmueller/advMicro/files/1888740/home.pdf][pdf]]) and make sure you remember the implicit function theorem before Wednesday (see the [[https://github.com/schottmueller/advMicro/files/1883187/math.pdf][math handout]] if you do not).
 * Material
 - Slides:
-  - Nash Theorem: tba
+  - [[https://github.com/schottmueller/advMicro/files/1888748/dominRatio.pdf][Dominance and rationalizability]]
+  - [[https://github.com/schottmueller/advMicro/files/1888753/NashEq.pdf][Nash Theorem]]
 - Handouts etc.:
   - [[https://github.com/schottmueller/advMicro/files/1883187/math.pdf][math handout]]
 * Prerequisites
@@ -31,12 +32,12 @@ For mechanism design, cite:boergers2015 is an excellent source which naturally c
 The following plan is...well a plan...and as such it might be adapted to unforseen circumstances if necessary.
 
 ** Static games of complete information I
-- mixed strategy Nash equilibrium (MWG 8.D)
-- Brouwer's fixed point theorem and existence of Nash equilibrium (MSZ 5.3; MWG 8.Appendix gives a proof using Kakutani's fixed point theorem)
-
-** Static games of complete information II
 - iterative elimination of strictly dominated strategies (MWG 8.B)
 - rationalizability (MWG 8.C)
+
+** Static games of complete information II
+- mixed strategy Nash equilibrium (MWG 8.D)
+- Brouwer's fixed point theorem and existence of Nash equilibrium (MSZ 5.3; MWG 8.Appendix gives a proof using Kakutani's fixed point theorem)
 
 ** Static games of complete information III
 - correlated equilibrium (MSZ 8)
