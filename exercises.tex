@@ -1,0 +1,62 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{amsmath,amsthm,ae,aecompl,sgame,natbib}
+\usepackage[margin=2.5cm]{geometry}
+
+\title{Exercises Adv. Micro II}
+\author{Christoph Schottm\"uller}
+
+\begin{document}
+
+\maketitle
+
+\section{Rationalizability}
+\begin{enumerate}
+\item %Come up with a three player game in which each player has two actions and the actions surviving iterative elimination of strictly dominated strategies is not the same as the set of rationalizable actions.
+  Show that in the following three player game (only payoffs of player 1 are given), $M$ is a never best response although $M$ is not strictly dominated.
+\begin{table}[h]
+    \centering
+    \begin{tabular}{l|c|c}
+      & L &R\\ \hline
+      U& 10,  &10, \\
+      M&6,  &0, \\
+      D& 0, & 10,
+    \end{tabular}
+    $\qquad$
+    \begin{tabular}{l|c|c}
+      & L &R\\ \hline
+      U& 10,  &0,  \\
+      M&0,&6, \\
+      D& 10, & 10,
+    \end{tabular}
+    \caption{P1 chooses row, P2 column, P3 table}
+    \label{tab:domVsRatio}
+  \end{table}
+  
+\item Show that the order of elimination does not matter for the outcome of iterative elimination of strictly dominated strategies. \\(Hint: Consider two orders, say A and B, and suppose they lead to different outcomes. Consider then the first action to be deleted in one procedure, say A, while surviving the other, i.e. B. Show that this action is strictly dominated at the end of procedure B which yields the desired contradiction.)
+\item (Numerical) Consider two players participating in a lab experiments. The monetary payoffs the two players get from the experimenter when choosing their strategies are given in table \ref{tab:monRatio}. (note: this time the numbers in the table are not utilities but amounts of money!)
+  \begin{table}[h]
+    \centering
+    \begin{tabular}{l|c|c}
+      & L &R\\ \hline
+      U& 3,1  &0,0  \\
+      M1&1,0&1,1 \\
+      M&2.6,0  &0.5,0 \\
+      D& 0,1 & 3,0
+    \end{tabular}
+    \caption{Monetary payoff}
+    \label{tab:monRatio}
+  \end{table}
+  \begin{enumerate}
+  \item Suppose players value money linearly $u_i(x)=x$ for any monetary amount $x$. Which actions are rationalizable?
+  \item Suppose players value money  $u_i(x)=-e^{-r x}$ for any monetary amount $x$. Which actions are rationalizable if the parameter $r$ is very high? (you can choose a high number like $1000$ and check)
+     \item Suppose players value money $u_i(x)=e^{r x}$ for any monetary amount $x$. Which actions are rationalizable if the parameter $r$ is very high?
+     \end{enumerate}
+     What is the interpretation in terms of risk preferences? (see \cite{weinstein2016effect} for more on this topic)
+\end{enumerate}
+
+
+\bibliographystyle{chicago}
+\bibliography{/home/christoph/stuff/bibliography/references.bib}
+
+\end{document}
