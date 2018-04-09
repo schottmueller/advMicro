@@ -19,6 +19,7 @@
 #+LATEX_HEADER:\let\oldframe\frame\renewcommand\frame[1][allowframebreaks]{\oldframe[#1]}
 #+LATEX_HEADER: \setbeamertemplate{frametitle continuation}[from second]
 
+
 * Nash equilibrium
 
 ** Nash equilibrium (NE)
@@ -37,7 +38,7 @@ for all $s_i'\in S_i$.
     :END:
 
 
-- mutual best response: let $b_i(s_{-i})$ be $\{s_i\inS_i:\;u_i(s_i,s_{-i})\geq u_i(s_i',s_{-i})\text{ for all }s_i'\in S_i\}$; then NE is an action profile $(s_1,\dots,S_I)$ such that $s_i\in b_i(s_{-i})$ for all $i$
+- mutual best response: let $b_i(s_{-i})$ be $\{s_i\in S_i:\;u_i(s_i,s_{-i})\geq u_i(s_i',s_{-i})\text{ for all }s_i'\in S_i\}$; then NE is an action profile $(s_1,\dots,S_I)$ such that $s_i\in b_i(s_{-i})$ for all $i$
 
 ** Nash equilibrium: interpretations
 - non-paternalistic prediction
@@ -152,7 +153,7 @@ $$P''(q_1+q_2)q_1+2P'(q_1+q_2)<0$$
 \item Brouwer: best response function has a fixed point!
 \item game is symmetric $\Rightarrow$ fixed point is an
   equilibrium $\Rightarrow$ equilibrium exists
-\item We showed this without being able to actually calculate the equilibrium!!!
+\item We showed this without being able to actually calculate the equilibrium!
 \end{itemize}
 
 ** Fixed point theory V

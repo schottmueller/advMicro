@@ -98,7 +98,7 @@ for all $s_{-i}\in S_{-i}$.
     :PROPERTIES:
     :BEAMER_env: definition
     :END:
-An action $s_i\in S_i$ is /strictly dominant/ for player i in game $[I,\{S_i\},\{u_i\}]$ if there exists a $\sigma_i'\in\Delta(S_i)$, such that
+An action $s_i\in S_i$ is /strictly dominated/ for player i in game $[I,\{S_i\},\{u_i\}]$ if there exists a $\sigma_i'\in\Delta(S_i)$, such that
 $$u_i(\sigma_i',s_{-i})>u_i(s_i,s_{-i})$$
 for all $s_{-i}\in S_{-i}$.
 
@@ -138,6 +138,7 @@ Procedure:
 - eliminate all strictly dominated actions
 - eliminate all actions that are strictly dominated in the remaining game
 - continue until no strictly dominated action left
+- (eliminate all mixed strategies that are dominated)
 
 note:
 - order of elimination does not matter for outcome of the procedure (check!)
