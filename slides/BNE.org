@@ -1,0 +1,161 @@
+#+Title: Bayesian Nash equilibrium
+#+AUTHOR:    Christoph Schottmüller
+#+Date: 
+
+#+LANGUAGE:  en
+#+OPTIONS:   H:2 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+
+
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: 
+#+BEAMER_FRAME_LEVEL: 2
+#+latex_header: \mode<beamer>{\useinnertheme{rounded}\usecolortheme{rose}\usecolortheme{dolphin}\setbeamertemplate{navigation symbols}{}\setbeamertemplate{footline}[frame number]{}}
+#+latex_header: \mode<beamer>{\usepackage{amsmath}\usepackage{ae,aecompl}\usepackage{sgame}}
+#+LATEX_HEADER:\let\oldframe\frame\renewcommand\frame[1][allowframebreaks]{\oldframe[#1]}
+#+LATEX_HEADER: \setbeamertemplate{frametitle continuation}[from second]
+
+* Games of incomplete information
+** A first example I
+- an incumbent decides whether to extent capacity (I for invest)  at cost $c_I$
+- entrant simulataneously decides whether to enter (E)
+- entrant does not know whether $c$ is "low" (/l/) or "high" (/h/)
+
+#+Caption: Payoffs with high c
+|    | E    | NE  |
+|----+------+-----|
+| /  | <    |     |
+| I  | 0,-1 | 2,0 |
+| NI | 2,1  | 3,0 |
+#+Caption: Payoffs with low c
+|    | E      | NE    |
+|----+--------+-------|
+| /  | <      |       |
+| I  | 1.5,-1 | 3.5,0 |
+| NI | 2,1    | 3,0   |
+
+- $p$: prior probability entrant assigns to /h/
+
+** A first example II 
+
+- what will the incumbent do if $c=h$?
+# dominant to play NI
+- what should the incumbent do if $c=l$?
+# depends on belief y that P2 plays E: I if 1.5y+3.5(1-y)>2y+3(1-y), i.e. if y<1/2
+- what should entrant do?
+# tricky: depends on what he believes about incumbetn type and about what incumbent believes about him entering etc.
+
+** Harsanyi's trick
+- suppose "nature" chooses the incumbent's *type* in a first step: $h$ with prob $p$ and $l$ with prob $1-p$
+- then players play simultaneous move game but only incumbent observes nature's move
+- strategy: complete plan of action, i.e. action choice for every type
+  - incumbent: prob of investment when /h/ and prob of entry when /l/
+- solve for Nash equilibrium in new game in which players' strategy sets are complete plans of actions for each and every type (they could have had)
+
+\vspace*{1cm}
+- Harsanyi's trick transforms incomplete information (not knowing $c$) into imperfect information (not knowing nature's move)
+
+** A first example III
+- optimal not to invest if /h/ \rightarrow only prob of investment when /l/ relevant, called $x$ 
+- entrant optimally enters if $p+(1-p)(-1x+(1-x)1)>0$ \Leftrightarrow $x<1/(2(1-p))$
+- low cost incumbent optimally invests if $y<1/2$
+
+- equilibria: 
+# x=1, y=0 is eq if p<1/2; x=0 and y=1 is eq.; if p<1/2 also mixed eq.: y=1/2 and x=1/(2(1-p)) 
+
+
+* Bayesian Nash equilibrium
+** Bayesian game/ Static game of incomplete information
+
+-  Bayesian game is denoted by $[I,\{S_i\},\{u_i\},\Theta,F]$ where
+  - $\Theta =\Theta_1\times\dots\times\Theta_I$ and $\Theta_i$ is player $i$'s set of possible types
+  - $F$ is a probability distribution over $\Theta$
+  - $u_i:S\times\Theta_i\rightarrow\Re$
+- let $\mathcal{S}_i=\{s:\Theta_i\rightarrow S_i\}$ be the set of functions assigning to each type of player $i$ a strategy in $S_i$
+- let $\tilde u_i(s_1(\cdot),\dots,s_I(\cdot))=\mathbb{E}_{\theta}[u_i(s_1(\theta_1),\dots,s_I(\theta_I)),\theta_i]$ be the expected utility of $i$ if players use strategies $\{s_i\}$
+
+*** Bayesian Nash equilibrium (BNE) :B_definition:
+    :PROPERTIES:
+    :BEAMER_env: definition
+    :END:
+A (pure) Bayesian Nash equilibrium in $[I,\{S_i\},\{u_i\},\Theta,F]$ is a profile of decision rules $(s_1(\cdot),\dots,s_I(\cdot))$ that constitutes a Nash equilibrium in the game $[I,\{\mathcal{S}_i\},\{\tilde u_i\}]$, i.e. 
+$$\tilde{u}_i(s_i(\cdot),\dots,s_{-i}(\cdot))\geq \tilde{u}_i (s_i'(\cdot),\dots,s_{-i}(\cdot))$$
+for all $s_i'\in\mathcal{S}_i$.
+
+** Another characterization of BNE
+
+- $(s_1(\cdot),\dots,s_I(\cdot))$ is BNE if no type (of any player) can increase his expected payoff by deviating
+
+*** Lemma (BNE in finite games)
+A decision profile $(s_1(\cdot),\dots,s_I(\cdot))$ is a BNE if and only if for all $i$ and all $\bar \theta_i\in\Theta_i$ occurring with positive probability
+$$\mathbb{E}_{\theta_{-i}}[u_i(s_i(\bar\theta_i),s_{-i}(\theta_{-i}),\theta_i)|\bar\theta_i)]\geq \mathbb{E}_{\theta_{-i}}[u_i(s_i',s_{-i}(\theta_{-i}),\theta_i)|\bar\theta_i)]$$
+for all $s_i'\in S_i$.
+
+*** :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+
+# \textbf{Proof.}
+# - say $(s_1(\cdot),\dots,s_I(\cdot))$ is BNE. If $\bar\theta_i$ could profitably deviate then a strategy that chooses the profitbale deviation whenever $i$ has type $\bar \theta_i$ (and otherwise playing according to $s_i$) is a profitable deviation in the extended game which contradicts BNE.
+# - Say not profitable deviation exists for any $\bar\theta_i$. Then no profitable deviation $s_i\in\mathcal{S}_i$ can exist as $i$'s expected utility $\tilde u_i$ is additively separable in his own type.
+
+* Examples
+
+** Public good game I
+- two neighboring cities have to decide whether to build an airport
+- airport can be used by citizens of both cities and this gives each city a payoff normalized to 1
+- cost of city $i$ of building airport is $c_i$ and is $i$'s private information
+- prior: $c_i\sim u[0,1]$ (drawn independently)
+- payoffs 
+|    | B           | NB      |
+|----+-------------+---------|
+| /  | <           |         |
+| B  | 1-c_1,1-c_2 | 1-c_1,1 |
+| NB | 1,1-c_2     | 0,0     |
+
+- strategy: $s_i:[0,1]\rightarrow \{B,NB\}$
+
+** Public good game II
+- $B$ is optimal for $P_i$ if $1-c_i>x$ $\Leftrightarrow$ $c_i<1-x$ where $x$ is the belief that $-i$ builds 
+   - optimal strategy is a cutoff rule
+# as $x$ does not depend on $c_i$
+   - at cutoff: indifference
+   - prob of /B/ is prob of $c_i$ below cutoff
+- what is equilibrium cutoff?
+# 1/2
+
+** Generalized public good game
+- $I$ players decide to contribute ($C$) or not ($N$)
+- payoff 1 if at least one player contributes 
+- costs $c_i$ if contributing distributed on $[0,1]$ with continuous cdf $\Phi$
+   - full support assumption: density $\phi>0$ on $[0,1]$
+- $C$ is optimal if $1-c_i>x\quad\Leftrightarrow\quad c_i<1-x$
+   - cutoff strategy is optimal
+- what is probability that no other player contributes in a symmetric equilibrium with cutoff $c^*$?
+# (1-\Phi(c^*))^{I-1}
+- which condition has to be satisfied in symmetric equilibrium?
+# 1-c^*=1-(1-\Phi(c^*))^{I-1} or equivalently c^*-(1-\Phi(c^*))^{I-1}=0
+- if the number of players increases, will the equilibrium cutoff be higher or lower?
+# IFT: d c^*/d I = -(-ln(1-\Phi(c^*))*((1-\Phi(c^*))^{I-1}))/(1+(I-1)*(1-\Phi(c^*))^{I-2}\phi(c^*))<0
+
+
+** 2 player all pay auction with exponential type distribution
+- 2 players choose effort $s_i$
+- payoff: $\theta_i-s_i$ if $s_i>s_j$ and $-s_i$ else
+- $\theta_i$ are private info and distributed independently on $[0,\infty)$ with cdf $\Phi(\theta_i)=1-e^{-\theta_i}$ (pdf $e^{-\theta_i}$)
+- we derive symmetric equilibrium $s(\theta_i)$
+- it can be shown that equilibrium strategy $s$ has to be strictly increasing in $\theta _i$
+   - strictly increasing inverse of $s$ exists and is denoted by $t$
+   - what is probability that other player bids less than $b$ (in equilibrium)?
+   # $\Phi(t(b))=1-e^{-t(b)}$
+
+- what is expected payoff of $i$ when bidding $b$ (given other player uses equilibrium strategy)?
+   # $(1-e^{-t(b)})\theta_i-b$
+- which condition characterizes $i$'s best response to equilibrium strategy $s$?
+   # foc: $\theta _ie^{-t(b)}t'(b)-1=0$
+   # in eq: $t(b) e^{-t(b)}t'(b)=1$, differential equation can be solved numerically with initial value $t(0)=0$; analytical solution is $t(b)=-W((b-1)/e)-1$ where W is Lambertz W function which can be inverted to get $s(\theta_i)=1-(1+\theta_i)e^{-\theta_i}$

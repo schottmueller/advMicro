@@ -1,6 +1,6 @@
 \documentclass[a4paper,12pt]{article}
 
-\usepackage{amsmath,amsthm,ae,aecompl,sgame,natbib}
+\usepackage{amsmath,amsthm,ae,aecompl,sgame,natbib,sgamevar}
 \usepackage[margin=2.5cm]{geometry}
 
 \title{Exercises Adv. Micro II}
@@ -34,7 +34,7 @@
   \end{table}
   
 \item Show that the order of elimination does not matter for the outcome of iterative elimination of strictly dominated strategies. \\(Hint: Consider two orders, say A and B, and suppose they lead to different outcomes. Consider then the first action to be deleted in one procedure, say A, while surviving the other, i.e. B. Show that this action is strictly dominated at the end of procedure B which yields the desired contradiction.)
-\item (Numerical) Consider two players participating in a lab experiments. The monetary payoffs the two players get from the experimenter when choosing their strategies are given in table \ref{tab:monRatio}. (note: this time the numbers in the table are not utilities but amounts of money!)
+\item (Numerical) Consider two players participating in a lab experiments. The monetary payoffs the two players get from the experimenter when choosing their strategies are given in table \ref{tab:monRatio}. (note: this time the numbers in the table are not utilities but amounts of money!) Assume that players are only interested in their own monetary payoffs and not in the monetary payoffs for the other players.
   \begin{table}[h]
     \centering
     \begin{tabular}{l|c|c}
@@ -49,7 +49,7 @@
   \end{table}
   \begin{enumerate}
   \item Suppose players value money linearly $u_i(x)=x$ for any monetary amount $x$. Which actions are rationalizable?
-  \item Suppose players value money  $u_i(x)=-e^{-r x}$ for any monetary amount $x$. Which actions are rationalizable if the parameter $r$ is very high? (you can choose a high number like $1000$ and check)
+  \item Suppose players value money  $u_i(x)=-e^{-r x}$ for any monetary amount $x$. Which actions are rationalizable if the parameter $r$ is very high? (you can choose a high number like $3$ and check)
      \item Suppose players value money $u_i(x)=e^{r x}$ for any monetary amount $x$. Which actions are rationalizable if the parameter $r$ is very high?
      \end{enumerate}
      What is the interpretation in terms of risk preferences? (see \cite{weinstein2016effect} for more on this topic)
@@ -63,6 +63,47 @@
 \item Show that a pure strategy Nash equilibrium exists in the following two player game: $I=\{P1,P2\}$, $S_1=S_2=[0,1]$, $u_i(s_i,s_{-i})$ is differentiable and strictly (quasi-)concave in $s_i$ and $\partial u_i/\partial s_i$ is continuous in both variables.\\
   (Hint: Show that the first order condition leads to a continuous best response function. Then, verify that the two best response functions must intersect.)
 \end{enumerate}
+
+\section{Correlated equilibrium}
+\label{sec:corr-equil}
+\begin{enumerate}
+\item Find a correlated equilibrium that yields a higher payoff to every player than the unique Nash equilibrium (game in table \ref{tab:corEq}).
+   \begin{table}[h]
+\centering
+ \begin{game}{3}{3}
+       \> L \> C \>R\\ %\hline
+U   \>1,1   \> 2,4 \> 4,2   \\
+M   \>4,2   \> 1,1 \> 2,4 \\
+D  \> 2,4    \>4,2  \>1,1
+\end{game}  
+\caption{correlated equilibrium}
+\label{tab:corEq}
+\end{table}
+\item In the example from the lecture (using in particular the inequalities on slide 9), show that the set of correlated equilibria is the set of all probability distributions $(p_{UL},p_{UR},p_{DL},p_{DR})$ for which the the probability on each pure Nash equilibrium is at least as high as the probability on any other strategy profile. (Note: This is \emph{not} a general result!) Given this, derive the correlated equilibrium with the lowest and the highest sum of payoffs. 
+\end{enumerate}
+
+\section{Bayesian Nash equilibrium}
+\label{sec:Bayes-nash-eq}
+\begin{enumerate}
+\item Two player Cournot with uncertain costs: Payoffs of player $i$ are $(\theta _i-q_1-q_2)q_i$ where $\theta _i$ is the difference between the intercept of a linear demand function and costs. It is commonly known that $\theta _1=1$. However, $\theta _2$ is private information of firm 2. Firm 1's (commonly known) belief is that $\theta _2$ is $3/4$ with probability $1/2$ and $5/4$ with probability $1/2$.
+  \begin{enumerate}
+  \item If firm 1's equilibrium quantity is $q_1^*$, what is firm 2's best response?
+  \item If type $j\in\{l,h\}$ of firm 2 produces quantity $q_2^j$, what is firm 1's best response quantity? (i.e. maximizing expected payoff)
+    \item What is the BNE of this game?
+  \end{enumerate}
+\item Purification: Consider the game in table \ref{tab:purify}. Let $\theta _i$ be private information and be distributed uniformly on $[0 ,\varepsilon ]$. Assuming $\varepsilon >0$ sufficiently small, derive a BNE in cutoff strategies; i.e. P1 (P2) plays U (L) if $\theta _1>\bar{\theta }_1$ ($\theta _2>\bar{\theta }_2$) and D (R) otherwise for some $\bar \theta_i\in(0,\bar{\varepsilon })$. Compare the equilibrium in the limit as $\varepsilon \rightarrow 0$ to the mixed strategy equilibrium in the game without private information (i.e. the game where $\theta _i=0$ is commonly known). 
+     \begin{table}[h]
+\centering
+ \begin{game}{2}{2}
+       \> L  \>R\\ %\hline
+U   \>5$+\theta_1$,1$+\theta _2$    \> $\theta_1$,0   \\
+D  \> 4,4$+\theta _2$    \>1,5
+\end{game}  
+\caption{purification}
+\label{tab:purify}
+\end{table}
+\end{enumerate}
+
 
 \bibliographystyle{chicago}
 \bibliography{/home/christoph/stuff/bibliography/references.bib}
