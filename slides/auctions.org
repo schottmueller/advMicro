@@ -1,0 +1,130 @@
+#+Title: Auctions
+#+AUTHOR:    Christoph Schottmüller
+#+Date: 
+
+#+LANGUAGE:  en
+#+OPTIONS:   H:2 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+
+
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: 
+#+BEAMER_FRAME_LEVEL: 2
+#+latex_header: \mode<beamer>{\useinnertheme{rounded}\usecolortheme{rose}\usecolortheme{dolphin}\setbeamertemplate{navigation symbols}{}\setbeamertemplate{footline}[frame number]{}}
+#+latex_header: \mode<beamer>{\usepackage{amsmath}\usepackage{ae,aecompl}\usepackage{sgame}}
+#+LATEX_HEADER:\let\oldframe\frame\renewcommand\frame[1][allowframebreaks]{\oldframe[#1]}
+#+LATEX_HEADER: \setbeamertemplate{frametitle continuation}[from second]
+
+* Independent private value auction
+
+** Setup: Independent private value (IPV) auction
+- one indivisible object is allocated through an auction
+- $n$ bidders
+- bidder $i$ draws valuation $v_i$ from distribution $\Phi$ with continuous desnity \phi and support $[0,1]$
+- $v_i$ is $i$'s private information
+- valuations of bidders are drawn independently
+- payoff: $v_i x_i-t_i$
+   - $x_i$: probability of getting the good
+   - $t_i$: transfer that $i$ pays to auctioneer
+
+** Second price sealed bid auction (IPV)
+- allocation: highest bidder gets object
+- transfer: highest bidder pays /second highest bid/, others pay zero
+
+- how much should a bidder with valuation $v_i$ bid?
+
+** First price sealed bid (IPV)
+- allocation: highest bidder gets object
+- transfer: highest bidder pays /his own bid/, others pay zero
+
+\hspace*{1cm}
+
+- solve for symmetric BNE in strictly increasing and continuous strategies
+  - bidder with valuation $v_i$ bids $s(v_i)$ which is strictly increasing and continuous
+  - let $t$ be the inverse of $s$, $t(b)$ is type bidding $b$
+  - given $s()$, what is the probability that bidder $i$ wins the auction when bidding $b$?
+  - what is bider $i$'s expected payoff when bidding $b$? 
+# $(\Phi(t(b))^{n-1}(v_i-b)$
+   - what is bidder $i$'s first order condition for optimal bidding?
+# $(n-1)\Phi(t(b))^{n-2} phi(t(b))t'(b)(v_i-b)-(\Phi(t(b))^{n-1}=0$
+# in sym eq.: b=s(v_i) and t(b)=v_i and t'(b)=1/(s'(v_i)), hence $(n-1)(v_i-s(v_i))\Phi(v_i)^{n-2}\phi(v_i)/s'(v_i)-(\Phi(v_i)^{n-1}=0$ which is equivalent to $(n-1)(v_i-s(v_i))\Phi(v_i)^{n-2}\phi(v_i)-(\Phi(v_i)^{n-1}s'(v_i)=0$ or to 
+# $(n-1)v_i\Phi(v_i)^{n-2}\phi(v_i)=d[s(v_i))\Phi(v_i)^{n-1}]/dv_i$ which means that -- using $s(0)=0$ --
+# $s(v_i))\Phi(v_i)^{n-1}=\int_0^v_i (n-1)x\Phi(x)^{n-2}\phi(x) \;dx$ or 
+# $s(v_i)=\int_0^v_i (n-1)x\Phi(x)^{n-2}\phi(x) \;dx/\Phi(v_i)$ for $v_i>0$ 
+ 
+
+
+** First price sealed bid (IPV) II
+
+*** Equilibrium :B_theorem:
+    :PROPERTIES:
+    :BEAMER_env: theorem
+    :END:
+There exists a symmetric BNE in which all bidders use the bidding strategy
+$$s(v_i)=\int_0^{v_i} (n-1)x\Phi(x)^{n-2}\phi(x) \;dx/\Phi(v_i) \quad\text{for}\quad v_i>0$$
+and $s(0)=0$.
+
+*** :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+
+# * Double auction (IPV) Exercise!
+
+$s$ is strictly increasing:\linebreak
+$s'(v_i)=(n-1)\frac{v_i\Phi^{n-1}(v_i)\phi(v_i)-\phi(v_i)\int_0^{v_i} x\Phi(x)^{n-2}\phi(x) \;dx}{\Phi^2(v_i)}$
+   - numerator is positive if $v_i\Phi^{n-1}(v_i)-\int_0^{v_i} x\Phi(x)^{n-2}\phi(x) \;dx>0$
+   - integration by parts: $\int_0^{v_i} x\Phi(x)^{n-2}\phi(x) \;dx=\left[x\frac{\Phi^{n-1}(x)}{n-1}\right]_{0}^{v_i}-\int_0^{v_i}\frac{\Phi^{n-1}(x)}{n-1}\,dx=v_i\frac{\Phi^{n-1}(v_i)}{n-1}-\int_0^{v_i}\frac{\Phi^{n-1}(x)}{n-1}$
+   - hence, $v_i\Phi^{n-1}(v_i)-\int_0^{v_i} x\Phi(x)^{n-2}\phi(x) \;dx=v_i\Phi^{n-1}(v_i)(1-1/(n-1))+\int_0^{v_i} \Phi(x)^{n-1}/(n-1) \;dx>0$
+
+
+* Common value auction
+** Common value auction: setup
+- one indivisible object is allocated through an auction
+- $2$ bidders
+- value $v$ of the object is either 1 /for all bidders/ or 0 /for all bidders/ (both probability 1/2)
+- bidder $i$ draws signal $v_i$ from distribution $\Phi(v_i|v)$ with density $\phi(v_i|v)$ (independent draws conditional on $v$)
+   - $\phi(v_i|0)=2-2v_i$ for $v_i\in[0,1]$
+   - $\phi(v_i|1)=2v_i$ for $v_i\in[0,1]$
+- $v_i$ is $i$'s private information
+- valuations of bidders are drawn independently
+- payoff: $v x_i-t_i$
+   - $x_i$: probability of getting the good
+   - $t_i$: transfer that $i$ pays to auctioneer
+
+** Common value auction: second price sealed bid
+$\mathbb{E}[v|v_i]=\frac{\phi(v_i|0)}{\phi(v_i|0)+\phi(v_i|1)}0+\frac{\phi(v_i|1)}{\phi(v_i|0)+\phi(v_i|1)}1=(1-v_i)0+v_i1=v_i$
+
+\vspace*{0.3cm}
+ $\phi(v_j|v_i)=\frac{\phi(v_i|0)}{\phi(v_i|0)+\phi(v_i|1)}\phi(v_j|0)+\frac{\phi(v_i|1)}{\phi(v_i|0)+\phi(v_i|1)}\phi(v_j|1)=(1-v_i)(2-2v_j)+v_i(2v_j)=2-2v_i-2v_j+4v_iv_j$
+
+\vspace*{0.3cm}
+ $\mathbb{E}[v|v_i,v_j]=\frac{\phi(v_i|0)\phi(v_j|0)}{\phi(v_i|0)\phi(v_j|0)+\phi(v_i|1)\phi(v_j|1)}0+\frac{\phi(v_i|1)\phi(v_j|1)}{\phi(v_i|0)\phi(v_j|0)+\phi(v_i|1)\phi(v_j|1)}1=\frac{v_iv_j}{1-v_i-v_j+2v_iv_j}$
+
+\vspace*{.3cm}
+- aside: $\mathbb{E}[v|v_i,v_j]\leq\mathbb{E}[v|v_i]$ if and only if $v_j\leq 1/2$ (check!)
+
+\vspace*{.3cm}
+$\mathbb{E}[v|v_i,v_j\leq v_i]=\int_0^{v_i}\mathbb{E}[v|v_i,v_j]\frac{\phi(v_j|v_i)}{\int_0^{v_i}\phi(\tilde v_j|v_i)\,d\tilde v_j}\,dv_j=\int_0^{v_i}\frac{2v_iv_j}{\int_0^{v_i}2-2v_i-2\tilde{v}_j+4v_i\tilde{v}_j\,d\tilde{v}_j}\,dv_j=\frac{v_i^2}{2-3v_i+2v_i^2}$
+
+\vspace*{0.3cm}
+- aside: $\mathbb{E}[v|v_i,v_j\leq v_i]\leq \mathbb{E}[v|v_i]$ (check!)
+- what should a bidder bid in a second price sealed bid auction?
+# $\mathbb{E}[v|v_i, v_j\leq v_i]
+
+** Common value auction: first price sealed bid
+- we search for a symmetric equilibrium in strictly increasing and continuous strategies $s(v_i)$
+- let $t$ be the inverse of the equilibrium strategy $s$
+- $prob(v_j\leq x|v_i)=\int_0^{x} \phi(v_j|v_i)\,dv_j=2x-2v_i x-x^2+2v_i x^2$
+- $\mathbb{E}[v|v_i,v_j\leq x]=\int_0^{x}\mathbb{E}[v|v_i,v_j]\frac{\phi(v_j|v_i)}{\int_0^{x}\phi(\tilde v_j|v_i)\,d\tilde v_j}\,dv_j=\int_0^{x}\frac{2v_iv_j}{\int_0^{x}2-2v_i-2\tilde{v}_j+4v_i\tilde{v}_j\,d\tilde{v}_j}\,dv_j=\frac{v_i x}{2-2v_i-x+2v_i x}$
+- what is $i$'s expected payoff when bidding $b$ (given that $j$ uses equilibrium strategy $s$)?
+# $prob(v_j\leq t(b))*(\mathbb{E}[v|v_i,v_j\leq t(b)]-b)=(2t(b)-2v_i t(b)-t(b)^2+2 v_it(b)^2)*\left(\frac{v_i t(b)}{2-2v_i-t(b)+2v_i t(b)}-b\right)=v_i t(b)^2-b$
+- what is $i$'s first order condition for an optimal bid (given that $j$ uses the equilibrium strategy $s$)?
+# $2v_i t(b)t'(b)=1$ 
+- what is the equilibrium bidding strategy?
+# in sym eq $t(b)=v_i$ and $t'(b)=1/s'(v_i)$ and therefore $s'(v_i)=2v_i^2$ or -- using s(0)=0-- $s(v_i)=\int_0^{v_i}2x^2\,dx=2v_i^3/3$
+- compare this to the equilibrium strategy of a 2-bidder IPV first price auction where $v_i\sim u[0,1]$
