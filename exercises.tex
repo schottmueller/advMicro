@@ -34,7 +34,7 @@
   \end{table}
   
 \item Show that the order of elimination does not matter for the outcome of iterative elimination of strictly dominated strategies. \\(Hint: Consider two orders, say A and B, and suppose they lead to different outcomes. Consider then the first action to be deleted in one procedure, say A, while surviving the other, i.e. B. Show that this action is strictly dominated at the end of procedure B which yields the desired contradiction.)
-\item (Numerical) Consider two players participating in a lab experiments. The monetary payoffs the two players get from the experimenter when choosing their strategies are given in table \ref{tab:monRatio}. (note: this time the numbers in the table are not utilities but amounts of money!) Assume that players are only interested in their own monetary payoffs and not in the monetary payoffs for the other players.
+\item (Numerical) Consider two players participating in a lab experiment. The monetary payoffs the two players get from the experimenter when choosing their strategies are given in table \ref{tab:monRatio}. (note: this time the numbers in the table are not utilities but amounts of money!) Assume that players are only interested in their own monetary payoffs and not in the monetary payoffs for the other players.
   \begin{table}[h]
     \centering
     \begin{tabular}{l|c|c}
@@ -104,6 +104,56 @@ D  \> 4,4$+\theta _2$    \>1,5
 \end{table}
 \end{enumerate}
 
+\section{Auctions}
+\label{sec:auctions}
+
+\begin{enumerate}
+
+\item Take the first price sealed bid auction in the independnet private value framework. The purpose of this exercise is to show that in every BNE, the bidding strategy of an arbitrary bidder $i$ is weakly increasing in his valuation. Take two values $v_i^h$ and $v_i^l$ with $v_i^h>v_i^l$ and let $s_i()$ be an equilbrium strategy of player $i$.
+  \begin{enumerate}
+  \item In equilibrium type $v_i^l$ must prefer bidding $s_i(v_i^l)$ to bidding $s_i(v_i^h)$. Write down the corresponding inequality.
+    % (v_i^l-s_i(v_i^l))*prob(win,s_i(v_i^l))\geq (v_i^l-s_i(v_i^h))*prob(win,s_i(v_i^h))
+  \item In equilibrium type $v_i^h$ must prefer bidding $s_i(v_i^h)$ to bidding $s_i(v_i^l)$. Write down the corresponding inequality.
+    % (v_i^h-s_i(v_i^h))*prob(win,s_i(v_i^h))\geq (v_i^h-s_i(v_i^l))*prob(win,s_i(v_i^l))
+  \item Use the two inequality to show that $s_i(v_i^h)\geq s_i(v_i^l)$. (Hint: Note that bidding higher increases the probability of getting the object in a first price auction!)
+    % adding inequalities gives: $(v_i^h-v_i^l) (prob(win,s_i(v_i^h))-prob(win,s_i(v_i^l))\geq 0$ which is only true if $s_i(v_i^h)\geq s_i(v_i^l)$
+  \end{enumerate}
+  
+% \item Two people have to decide who gets an indivisible item. Their valuations of the item are private information and we regard the two $v_i$ as drawn independently from a uniform distribution on $[0,1]$. The two people have come up with the following auction mechanism: They simultaneously state a bid $b_i$ and the one stating the higher bid gets the item but has to pay half of his bid to the other player.
+%   \\
+%   Assume that there is a symmetric equilibrium of this game in which players bid according to a strictly increasing strategy $s(v)$. (If you find this hard, assume that $s(v)=\alpha v$ for some $\alpha>0$ and determine below the $\alpha$ for which this is an equilibrium.)
+%   \begin{enumerate}
+%   \item Write down the expected payoff of a player bidding $b$ (given that the other player bids according to $s$). (Hint: Do not forget that he might receive a payment from the other player!)
+%     % $\int_0^{t(b)}v_i-b/2 \,dv_j+\int_{t(b)}^1 s(v_j)/2\,dv_j$
+%   \item Derive the first order condition of an optimal bid.
+%     % $t'(b)(v_i-b/2)-t(b)/2-t'(b) b/2=0$
+%   \item What is the equilibrium bidding strategy? Why is it not optimal to bid your true valuation?
+%     % use $t(b)=v_i$, $b=s(v_i)$ and $t'(b)=1/s'(v_i)$ in foc to get $(v_i-s(v_i))/(s'(v_i))-v/2=0$ which is solved by $s(v_i)=v_i*2/3$
+%   \end{enumerate}
+\item A buyer's valuation is uniformly distributed on $[0,1]$ and the buyer's private information. A seller's cost is also uniformly distributed on $[0,1]$ and the seller's private information. The buyer states an ask price $b_b$ and the seller simultaneously states an offer price $b_s$. If $b_s<b_b$, trade takes place at price $(b_s+b_b)/2$ while otherwise trade does not take place.
+  \begin{enumerate}
+  \item Why is $b_s(c)=c$ and $b_b(v)=v$ not an equilibrium although it would maximize welfare? 
+  \item Show that the following is an equilibrium for any given $p\in[0,1]$:
+    \begin{equation*}
+      b_b(v)=
+      \begin{cases}
+        p & \text{ if }v\geq p\\
+        0 & \text{ else }
+      \end{cases}
+    \qquad
+      b_s(c)=
+      \begin{cases}
+        p & \text{ if }c\leq p\\
+        1 & \text{ else }.
+      \end{cases}
+    \end{equation*}
+    \item Suppose that players use linear strategies $b_b(v)=\alpha+\beta v$ and $b_s(c)=\gamma+\delta c$. Taking the strategy of the other player derive the best response of a seller/buyer with valuation $v$ / cost $c$. For which values of $\alpha,\beta,\gamma,\delta$ form the linear strategies an equilibrium?
+    \end{enumerate}
+  \item Two players participate in a contest: Each player chooses an effort level $e_i$. Effort is costly and reduces player $i$'s payoff by  $\theta _ie_i$. The player who choose the highest effort wins a prize of value 1. That is, the winner has payoff $1-\theta _i e_i$ while the loser has payoff $-\theta _i e_i$. The $\theta _i$ are private information and each player views the other player's type as being uniformly distributed on $[0.1,1.1]$. \\
+    Write player $i$'s maximization problem given that the other player uses a strictly decreasing strategy $s$ (with inverse $t$). Derive the first order condition for optimal effort choice. Solve for a symmetric equilibrium in strictly decreasing strategies.
+    % $\max_{e}(1.1-t(e))-\theta _i e$ where $t$ is the inverse of the other player's strategy $s$. Foc: $-t'(e)-\theta _i=0$, in equilibrium $t'(e(\theta _i))=1/s'(\theta _i)$ and we get $s'(\theta _i)=-1/\theta _i$. Using $s(1.1)=0$, we get $s(\theta _i)=\int_{\theta _i}^{1.1}1/x \,dx=log(1.1)-log(\theta _i)$
+    (More on such contests can be found in \cite{moldovanu2001optimal}.)
+\end{enumerate}
 
 \bibliographystyle{chicago}
 \bibliography{/home/christoph/stuff/bibliography/references.bib}
