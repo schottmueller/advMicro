@@ -3,6 +3,7 @@
 #+Options: toc:nil
 #+Latex_Header: \usepackage{natbib}
 * News
+- Registration for the exam is now possible in KLIPS.
 -  Before the next lecture on Monday April 27 please check section 2 of the math handout if you do not remember integration by parts.
 * Material
 - Exercises: [[./exercises.tex][tex]] [[https://github.com/schottmueller/advMicro/files/1927718/exercises.pdf][pdf]]
