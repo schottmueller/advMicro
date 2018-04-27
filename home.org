@@ -3,7 +3,7 @@
 #+Options: toc:nil
 #+Latex_Header: \usepackage{natbib}
 * News
-- First lecture on Monday, April 9. /Beforehand/, please, check the preliminary course plan (below or as [[https://github.com/schottmueller/advMicro/files/1888740/home.pdf][pdf]]) and make sure you remember the implicit function theorem before Wednesday (see the [[https://github.com/schottmueller/advMicro/files/1883187/math.pdf][math handout]] if you do not).
+-  Before the next lecture on Monday April 27 please check section 2 of the math handout if you do not remember integration by parts.
 * Material
 - Exercises: [[./exercises.tex][tex]] [[https://github.com/schottmueller/advMicro/files/1927718/exercises.pdf][pdf]]
 - Slides:
@@ -11,8 +11,9 @@
   - [[https://github.com/schottmueller/advMicro/files/1888753/NashEq.pdf][Nash Theorem]]
   - [[https://github.com/schottmueller/advMicro/files/1890677/corrEq.pdf][correlated eq.]]
   - [[https://github.com/schottmueller/advMicro/files/1927713/BNE.pdf][BNE]]
+  - [[https://github.com/schottmueller/advMicro/files/1954157/auctions.pdf][auctions]]
 - Handouts etc.:
-  - [[https://github.com/schottmueller/advMicro/files/1883187/math.pdf][math handout]]
+  - [[https://github.com/schottmueller/advMicro/files/1954228/math.pdf][math handout]]
 * Prerequisites
 I assume that you have some introductory knowledge of game theory on the level of cite:gibbons1992primer. In particular, you should know the material in chapters 1 and 2 in Gibbons' book (strategic form games, dominance, mixed strategies, mixed and pure Nash equilibrium, extensive form games, game trees, backwards induction, subgame perfect Nash equilibrium) and be able to apply it in simple games. From Advanced Microeconomics I, we built upon the part about /decision making under uncertainty/ (expected utility theorem). In terms of mathematics, it is helpful if you master the material of the course /Advanced Mathematics for Economists/. Having said that, most of the used math tools will not be far beyond high school maths. At the minimum you have to know (partial) differentiation, integration and optimization of functions and basic statistics (discrete and continuous probability distributions, expected values as well as Bayes' rule and conditional probabilities). Ideally, you should also have some idea of what a mathematical proof is.
 
