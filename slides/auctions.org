@@ -102,29 +102,38 @@ $\mathbb{E}[v|v_i]=\frac{\phi(v_i|0)}{\phi(v_i|0)+\phi(v_i|1)}0+\frac{\phi(v_i|1
 \vspace*{0.3cm}
  $\phi(v_j|v_i)=\frac{\phi(v_i|0)}{\phi(v_i|0)+\phi(v_i|1)}\phi(v_j|0)+\frac{\phi(v_i|1)}{\phi(v_i|0)+\phi(v_i|1)}\phi(v_j|1)=(1-v_i)(2-2v_j)+v_i(2v_j)=2-2v_i-2v_j+4v_iv_j$
 
-\vspace*{0.3cm}
+ \vspace*{0.3cm}
  $\mathbb{E}[v|v_i,v_j]=\frac{\phi(v_i|0)\phi(v_j|0)}{\phi(v_i|0)\phi(v_j|0)+\phi(v_i|1)\phi(v_j|1)}0+\frac{\phi(v_i|1)\phi(v_j|1)}{\phi(v_i|0)\phi(v_j|0)+\phi(v_i|1)\phi(v_j|1)}1=\frac{v_iv_j}{1-v_i-v_j+2v_iv_j}$
 
-\vspace*{.3cm}
-- aside: $\mathbb{E}[v|v_i,v_j]\leq\mathbb{E}[v|v_i]$ if and only if $v_j\leq 1/2$ (check!)
+ \vspace*{.3cm}
+ - aside: $\mathbb{E}[v|v_i,v_j]\leq\mathbb{E}[v|v_i]$ if and only if $v_j\leq 1/2$ (check!)
 
-\vspace*{.3cm}
-$\mathbb{E}[v|v_i,v_j\leq v_i]=\int_0^{v_i}\mathbb{E}[v|v_i,v_j]\frac{\phi(v_j|v_i)}{\int_0^{v_i}\phi(\tilde v_j|v_i)\,d\tilde v_j}\,dv_j=\int_0^{v_i}\frac{2v_iv_j}{\int_0^{v_i}2-2v_i-2\tilde{v}_j+4v_i\tilde{v}_j\,d\tilde{v}_j}\,dv_j=\frac{v_i^2}{2-3v_i+2v_i^2}$
+# \vspace*{.3cm}
+# $\mathbb{E}[v|v_i,v_j\leq v_i]=\int_0^{v_i}\mathbb{E}[v|v_i,v_j]\frac{\phi(v_j|v_i)}{\int_0^{v_i}\phi(\tilde v_j|v_i)\,d\tilde v_j}\,dv_j=\int_0^{v_i}\frac{2v_iv_j}{\int_0^{v_i}2-2v_i-2\tilde{v}_j+4v_i\tilde{v}_j\,d\tilde{v}_j}\,dv_j=\frac{v_i^2}{2-3v_i+2v_i^2}$
 
-\vspace*{0.3cm}
-- aside: $\mathbb{E}[v|v_i,v_j\leq v_i]\leq \mathbb{E}[v|v_i]$ and  $\mathbb{E}[v|v_i,v_j\leq v_i]$ increasing in $v_i$ (check!)
+# \vspace*{0.3cm}
+# - aside: $\mathbb{E}[v|v_i,v_j\leq v_i]\leq \mathbb{E}[v|v_i]$ and  $\mathbb{E}[v|v_i,v_j\leq v_i]$ increasing in $v_i$ (check!)
 - what should a bidder bid in a second price sealed bid auction?
-# $\mathbb{E}[v|v_i, v_j\leq v_i]
+# $\mathbb{E}[v|v_i, v_j= v_i]
+
+** Common value auction: English auction
+- auctioneer continuously increases price starting from zero
+- bidders have hands raised at start and drop their hand if they are no longer interested in the item (i.e. if the price is too high)
+- the last bidder with his hand raised gets the object at a price equal to the auctioneer price at the time he lowers his hand
+#
+- what should you do when you are the only bidder with yor hand raised?
+- we look for a symmetric equilibrium in strictly increasing strategies
+#
+- at what price should $i$ drop his hand given that $j$ still has his hand up?
+# $\mathbb{E}[v|v_i, v_j=v_i]
 
 ** Common value auction: first price sealed bid
 - we search for a symmetric equilibrium in strictly increasing and continuous strategies $s(v_i)$
 - let $t$ be the inverse of the equilibrium strategy $s$
 - $prob(v_j\leq x|v_i)=\int_0^{x} \phi(v_j|v_i)\,dv_j=2x-2v_i x-x^2+2v_i x^2$
 - $\mathbb{E}[v|v_i,v_j\leq x]=\int_0^{x}\mathbb{E}[v|v_i,v_j]\frac{\phi(v_j|v_i)}{\int_0^{x}\phi(\tilde v_j|v_i)\,d\tilde v_j}\,dv_j=\int_0^{x}\frac{2v_iv_j}{\int_0^{x}2-2v_i-2\tilde{v}_j+4v_i\tilde{v}_j\,d\tilde{v}_j}\,dv_j=\frac{v_i x}{2-2v_i-x+2v_i x}$
-- what is $i$'s expected payoff when bidding $b$ (given that $j$ uses equilibrium strategy $s$)?
-# $prob(v_j\leq t(b))*(\mathbb{E}[v|v_i,v_j\leq t(b)]-b)=(2t(b)-2v_i t(b)-t(b)^2+2 v_it(b)^2)*\left(\frac{v_i t(b)}{2-2v_i-t(b)+2v_i t(b)}-b\right)=v_i t(b)^2-b$
-- what is $i$'s first order condition for an optimal bid (given that $j$ uses the equilibrium strategy $s$)?
-# $2v_i t(b)t'(b)=1$ 
-- what is the equilibrium bidding strategy?
-# in sym eq $t(b)=v_i$ and $t'(b)=1/s'(v_i)$ and therefore $s'(v_i)=2v_i^2$ or -- using s(0)=0-- $s(v_i)=\int_0^{v_i}2x^2\,dx=2v_i^3/3$
-- compare this to the equilibrium strategy of a 2-bidder IPV first price auction where $v_i\sim u[0,1]$
+- $i$'s expected payoff when bidding $b$ (given that $j$ uses equilibrium strategy $s$):
+$prob(v_j\leq t(b))*(\mathbb{E}[v|v_i,v_j\leq t(b)]-b)=(2t(b)-2v_i t(b)-t(b)^2+2 v_it(b)^2)*\left(\frac{v_i t(b)}{2-2v_i-t(b)+2v_i t(b)}-b\right)=v_i t(b)^2-(2t(b)-2v_i t(b)-t(b)^2+2 v_it(b)^2)b$
+- $i$'s first order condition for an optimal bid:
+$2v_i t(b)t'(b)-(2t(b)-2v_i t(b)-t(b)^2+2 v_it(b)^2)-b*t'(b)(2-2v_i-2t(b)+4v_it(b))=0$ 
+-  in symmetric equilibrium: $t(b)=v_i$, $t'(b)=1/s'(v_i)$, $s(0)=0$
