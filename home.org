@@ -6,7 +6,7 @@
 - Registration for the exam is now possible in KLIPS.
 -  Before the next lecture on Monday April 27 please check section 2 of the math handout if you do not remember integration by parts.
 * Material
-- Exercises: [[./exercises.tex][tex]] [[https://github.com/schottmueller/advMicro/files/1927718/exercises.pdf][pdf]]
+- Exercises: [[./exercises.tex][tex]] [[https://github.com/schottmueller/advMicro/files/1960409/exercises.pdf][pdf]]
 - Slides:
   - [[https://github.com/schottmueller/advMicro/files/1890670/dominRatio.pdf][Dominance and rationalizability]]
   - [[https://github.com/schottmueller/advMicro/files/1888753/NashEq.pdf][Nash Theorem]]

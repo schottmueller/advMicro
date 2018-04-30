@@ -132,7 +132,7 @@ D  \> 4,4$+\theta _2$    \>1,5
 %   \end{enumerate}
 \item A buyer's valuation is uniformly distributed on $[0,1]$ and the buyer's private information. A seller's cost is also uniformly distributed on $[0,1]$ and the seller's private information. The buyer states an ask price $b_b$ and the seller simultaneously states an offer price $b_s$. If $b_s<b_b$, trade takes place at price $(b_s+b_b)/2$ while otherwise trade does not take place.
   \begin{enumerate}
-  \item Why is $b_s(c)=c$ and $b_b(v)=v$ not an equilibrium although it would maximize welfare? 
+  \item Explain/show why $b_s(c)=c$ and $b_b(v)=v$ is not an equilibrium although it would maximize welfare. 
   \item Show that the following is an equilibrium for any given $p\in[0,1]$:
     \begin{equation*}
       b_b(v)=
@@ -154,6 +154,15 @@ D  \> 4,4$+\theta _2$    \>1,5
     % $\max_{e}(1.1-t(e))-\theta _i e$ where $t$ is the inverse of the other player's strategy $s$. Foc: $-t'(e)-\theta _i=0$, in equilibrium $t'(e(\theta _i))=1/s'(\theta _i)$ and we get $s'(\theta _i)=-1/\theta _i$. Using $s(1.1)=0$, we get $s(\theta _i)=\int_{\theta _i}^{1.1}1/x \,dx=log(1.1)-log(\theta _i)$
     (More on such contests can be found in \cite{moldovanu2001optimal}.)
 \end{enumerate}
+
+\section{Subgame perfect Nash equilibrium}
+\label{sec:subgame-perfect-nash}
+
+\begin{enumerate}
+\item $I$ Players play the same strategic form game $\Gamma=[I,\{S_i\},\{u_i\}]$ $T$ times. Players observe immediately after each round $t=1,\dots, T$ which actions were chosen by the other players. Assume that $\Gamma$ has a unique Nash equilibrium $\sigma$. Show that the extensive form game $\Gamma_E$ formed by the $T$ time repetition of $\Gamma$ has a unique subgame perfect Nash equilibrium. (extra exercise: find an example $\Gamma$ with a unique NE in which $\Gamma_E$ has several NE that are not subgame perfect.)
+  % add a "total destruction" action yielding for both players -1000 to a normal prisoner's dilemma and let $T=2$; the strategy cooperate in 1; defect in 2 if cooperation in 1 and total destruction otherwise is a NE but not subgame perfect
+\end{enumerate}
+
 
 \bibliographystyle{chicago}
 \bibliography{/home/christoph/stuff/bibliography/references.bib}
