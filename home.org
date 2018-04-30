@@ -13,6 +13,7 @@
   - [[https://github.com/schottmueller/advMicro/files/1890677/corrEq.pdf][correlated eq.]]
   - [[https://github.com/schottmueller/advMicro/files/1927713/BNE.pdf][BNE]]
   - [[https://github.com/schottmueller/advMicro/files/1954518/auctions.pdf][auctions]]
+  - [[https://github.com/schottmueller/advMicro/files/1960181/spne.pdf][SPNE]]
 - Handouts etc.:
   - [[https://github.com/schottmueller/advMicro/files/1954228/math.pdf][math handout]]
 * Prerequisites

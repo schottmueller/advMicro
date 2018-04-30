@@ -1,0 +1,419 @@
+#+Title: Subgame perfect Nash equilibrium
+#+AUTHOR:    Christoph Schottmüller
+#+Date: 
+
+#+LANGUAGE:  en
+#+OPTIONS:   H:2 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+
+
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: 
+#+BEAMER_FRAME_LEVEL: 2
+#+latex_header: \mode<beamer>{\useinnertheme{rounded}\usecolortheme{rose}\usecolortheme{dolphin}\setbeamertemplate{navigation symbols}{}\setbeamertemplate{footline}[frame number]{}}
+#+latex_header: \mode<beamer>{\usepackage{amsmath}\usepackage{ae,aecompl}\usepackage{sgame,tikz}\usetikzlibrary{trees}}
+#+LATEX_HEADER:\let\oldframe\frame\renewcommand\frame[1][allowframebreaks]{\oldframe[#1]}
+#+LATEX_HEADER: \setbeamertemplate{frametitle continuation}[from second]
+
+* credibility of threats, backwards induction
+** Nash equilibrium ignores credibility
+
+\begin{figure}[h]
+\centering
+% First, set the overall layout of the tree
+% You might need to play with these sizes to ensure nothing overlaps.
+\tikzstyle{level 1}=[level distance=1.5cm, sibling distance=2.5cm]
+\tikzstyle{level 2}=[level distance=1.5cm, sibling distance=2.5cm]
+\tikzstyle{level 3}=[level distance=1.5cm, sibling distance=1cm]
+\begin{tikzpicture}
+%Start with the parent node, and slowly build out the tree
+% with each "child" representing a new level of the diagram
+% each "node" represents a labelled (or unlabeled if you 
+% want) node in the diagram.
+\node {1}
+    child{
+        child{
+            node{1,2}
+                  %Invisible branch to make things align properly.
+        } child{edge from parent[draw=none] } 
+    edge from parent
+    node[left]{L}
+    }
+    child{
+        node{2}
+        child{
+            node{0,0}
+        edge from parent
+        node[left]{A}
+        }
+        child{
+            node{2,1}
+        edge from parent
+        node[right]{B}
+        }
+    edge from parent
+    node[right]{R}
+    };
+\end{tikzpicture}
+\end{figure}
+
+       |     | A  | B  |
+       |-----+-----+-----|
+       | /   |<    |     |
+       | L   | 1,2 | 1,2 |
+       | R   | 0,0 | 2,1 |
+
+# (L,A) is NE but not credible; problem: threats off path are not "checked" out and therefore NE cannot avoid incredible threats
+
+** Backwards induction in finite games of complete information
+- start from decsion nodes furthest down the game tree
+- what is optimal choice at this node? pick one optimal decision in case of indifference (decision problem)
+- substitute node by payoffs resulting from optimal choice
+- repeat until you reach starting node
+
+** Zermelo's theorem
+
+*** Zermelo's Theorem						  :B_theorem:
+    :PROPERTIES:
+    :BEAMER_env: theorem
+    :END:
+Every finite game of  perfect information has a pure strategy Nash equilibrium that can be derived through backwards induction. If no player has the same payoff at any two terminal nodes, then there is a unique Nash equilibrium that can be derived through backwards induction.
+
+*** 							    :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+
+- Outcome of backwards induction, $\sigma$, is NE. 
+  - backwards induction: deviating in one node only is not profitable 
+  - suppose profitable deviation exists for player $i$: among $i$'s profitable deviations let $\hat \sigma_i$ be one that deviates from backwards induction in the fewest nodes \pause
+      - let $x$ be node with deviation furthest down game tree under $\hat\sigma_i$ (i.e. no deviation in $\hat\sigma_i$ at succeeding nodes)
+      - deviation at $x$ cannot be profitable by backwards induction
+      - deviation that $\sigma_i'$ defined by $\sigma'_i(x')=\hat\sigma_i(x')$ if $x'\neq x$ and $\sigma'_i(x)=\sigma_i(x)$ must be at least as profitable as $\hat\sigma_i$
+      - contradicts definition of $\hat \sigma_i$ \qed
+
+
+* SPNE
+** Game with imperfect information
+  \begin{figure}[h]
+\centering
+% First, set the overall layout of the tree
+% You might need to play with these sizes to ensure nothing overlaps.
+\tikzstyle{level 1}=[level distance=1.25cm, sibling distance=3.5cm]
+\tikzstyle{level 2}=[level distance=1.25cm, sibling distance=4.25cm]
+\tikzstyle{level 3}=[level distance=1.5cm, sibling distance=1.5cm]
+\tikzstyle{level 4}=[level distance=1.5cm, sibling distance=1.5cm]
+\begin{tikzpicture}
+%Start with the parent node, and slowly build out the tree
+% with each "child" representing a new level of the diagram
+% each "node" represents a labelled (or unlabeled if you 
+% want) node in the diagram.
+\node{E}
+    child{
+             node{E}
+             child{
+               node(a){I}
+                  child{
+               node{-3,-1}
+               edge from parent
+               node[left]{fight}
+               }
+             child{
+               node{1,-2}
+               edge from parent
+               node[right]{accommodate}
+               }
+               edge from parent
+               node[left]{fight}
+               }
+             child{
+               node(b){I}
+                  child{
+               node{-2,1}
+               edge from parent
+               node[left]{fight}
+               }
+             child{
+               node{3,1}
+               edge from parent
+               node[right]{accomodate}
+               }
+               edge from parent
+               node[right]{accomodate}
+               }
+           edge from parent
+           node[left]{in}
+           }
+    child{
+         node{0,2}
+         edge from parent
+         node[right]{out}
+         };
+\draw [dashed](a)--(b);
+\end{tikzpicture}
+%\caption{extensive form game with imperfect information}
+%\label{fig:ext_game_imperf_info}
+\end{figure}
+
+subgame after "in":
+|            | Accomodate | Fight |
+|------------+------------+-------|
+| /          | <          |       |
+| Accomodate | 3,1        | -2,-1 |
+| Fight      | 1,-2       | -3,-1 |
+
+- what are the Nash equilibria of the game?
+- which outcome should we predict?
+
+** Definition: Subgame 
+- starts at an information set containing a single decision node
+- contains all successors of this node and their successors and so on
+- no broken information sets: for any node $x$ of the subgame all $x'$ in the same information set as $x$ must also be in the subgame
+
+\vspace*{1cm}
+note: game itself is a subgame
+
+** Subgame perfect NE
+*** Subgame perfect Nash equilibrium			       :B_definition:
+    :PROPERTIES:
+    :BEAMER_env: definition
+    :END:
+A profile of strategies $(\sigma_1,\dots,\sigma_I)$ is a subgame perfect Nash equilibrium (SPNE) of an extensive form game $\Gamma_E$ if it induces a Nash equilibrium in every subgame of $\Gamma_E$.
+
+*** 							    :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+
+** Backwards induction procedure in finite games with imperfect information
+- start from subgames furthest down the game tree
+- what is Nash equilibrium in this subgame? pick one if multiple NE 
+- substitute node where subgame started by payoffs resulting from NE
+- repeat until you reach starting node
+\vspace*{1cm}
+
+- procedure returns SPNE (Proof similar to Zermelo's theorem)
+- to find all SPNE, run the algorithm in case of multiple NE in a subgame for each NE separately
+
+
+
+* Problems of SPNE
+
+** Problems: What to believe off path?
+\begin{figure}[h]
+\centering
+% First, set the overall layout of the tree
+% You might need to play with these sizes to ensure nothing overlaps.
+\tikzstyle{level 1}=[level distance=1.5cm, sibling distance=2.5cm]
+\tikzstyle{level 2}=[level distance=1.5cm, sibling distance=2.5cm]
+\tikzstyle{level 3}=[level distance=1.5cm, sibling distance=2.5cm]
+\tikzstyle{level 4}=[level distance=1.5cm, sibling distance=1cm]
+\begin{tikzpicture}
+%Start with the parent node, and slowly build out the tree
+% with each "child" representing a new level of the diagram
+% each "node" represents a labelled (or unlabeled if you 
+% want) node in the diagram.
+\node {1}
+    child{
+      node{2}
+       child{
+             node{1}
+             child{
+             node{0,0}
+             edge from parent
+             node[left]{C}
+              }
+              child{
+             node{1,2}
+             edge from parent
+             node[right]{D}
+              }
+           edge from parent
+           node[left]{A}
+           }
+       child{
+         node{0,1}
+         edge from parent
+         node[right]{B}
+         }
+      edge from parent
+      node[left]{L}
+     }
+  child{
+    node{2,1}
+    edge from parent
+    node[right]{R}
+    };
+\end{tikzpicture}
+\end{figure}   
+
+- suppose P2 is asked to act, i.e. P1 must have chosen L
+- what should P2 believe will P1's play after A?
+# P1 chose strictly dominated action! mistake/tremble? irrational? got the payoffs wrong?
+
+** Problem: Coordinated beliefs
+- in SPNE players hold the same belief with regards which equilibrium will be played in each subgame:
+
+\begin{figure}[h]
+\centering
+% First, set the overall layout of the tree
+% You might need to play with these sizes to ensure nothing overlaps.
+\tikzstyle{level 1}=[level distance=1.5cm, sibling distance=2.5cm]
+\tikzstyle{level 2}=[level distance=1.5cm, sibling distance=2.5cm]
+\tikzstyle{level 3}=[level distance=1.5cm, sibling distance=4cm]
+\tikzstyle{level 4}=[level distance=1.5cm, sibling distance=1.5cm]
+\begin{tikzpicture}
+%Start with the parent node, and slowly build out the tree
+% with each "child" representing a new level of the diagram
+% each "node" represents a labelled (or unlabeled if you 
+% want) node in the diagram.
+\node {1}
+    child{
+      node{2}
+       child{
+             node{3}
+             child{
+               node(a){1}
+                  child{
+               node{7,10,7}
+               edge from parent
+               node[left]{C}
+               }
+             child{
+               node{0,0,0}
+               edge from parent
+               node[right]{D}
+               }
+               edge from parent
+               node[left]{C}
+               }
+             child{
+               node(b){1}
+                  child{
+               node{0,0,0}
+               edge from parent
+               node[left]{C}
+               }
+             child{
+               node{7,10,7}
+               edge from parent
+               node[right]{D}
+               }
+               edge from parent
+               node[right]{D}
+               }
+           edge from parent
+           node[left]{A}
+           }
+       child{
+         node{8,6,8}
+         edge from parent
+         node[right]{B}
+         }
+      edge from parent
+      node[left]{L}
+     }
+  child{
+    node{6,0,6}
+    edge from parent
+    node[right]{R}
+    };
+\draw [dashed](a)--(b);
+\end{tikzpicture}
+\end{figure}
+
+# SPNE: (LC, A,C), (LD,A,D), 50-50mix in simul game L,B before
+# how should P2 know whether P1 and P3 can coordinate?
+# how should P1 know that P2 knows that he and P3 cannot coordinate? maybe play R although it is not a Nash action
+
+* Forward induction
+** Forward induction: Battle of the sexes with a twist I
+  \begin{figure}[h]
+\centering
+% First, set the overall layout of the tree
+% You might need to play with these sizes to ensure nothing overlaps.
+\tikzstyle{level 1}=[level distance=1.25cm, sibling distance=3.5cm]
+\tikzstyle{level 2}=[level distance=1.25cm, sibling distance=4.25cm]
+\tikzstyle{level 3}=[level distance=1.5cm, sibling distance=1.5cm]
+\tikzstyle{level 4}=[level distance=1.5cm, sibling distance=1.5cm]
+\begin{tikzpicture}
+%Start with the parent node, and slowly build out the tree
+% with each "child" representing a new level of the diagram
+% each "node" represents a labelled (or unlabeled if you 
+% want) node in the diagram.
+\node{Alice}
+    child{
+             node{Alice}
+             child{
+               node(a){Bob}
+                  child{
+               node{3,1}
+               edge from parent
+               node[left]{ballet}
+               }
+             child{
+               node{0,0}
+               edge from parent
+               node[right]{soccer}
+               }
+               edge from parent
+               node[left]{ballet}
+               }
+             child{
+               node(b){Bob}
+                  child{
+               node{0,0}
+               edge from parent
+               node[left]{ballet}
+               }
+             child{
+               node{1,3}
+               edge from parent
+               node[right]{soccer}
+               }
+               edge from parent
+               node[right]{soccer}
+               }
+           edge from parent
+           node[left]{go out}
+           }
+    child{
+         node{2,2}
+         edge from parent
+         node[right]{book}
+         };
+\draw [dashed](a)--(b);
+\end{tikzpicture}
+\end{figure}
+
+|               | ballet | soccer |
+|---------------+--------+--------|
+| /             | <      |        |
+| book, $\cdot$ | 2,2    | 2,2    |
+| out,ballet    | 3,1    | 0,0    |
+| out, soccer   | 0,0    | 1,3    |
+
+- if Bob realizes that Alice went out, where should he expect her to be?
+
+** Forward induction: Battle of the sexes with a twist II
+
+- before playing BoS, Alice can choose whether she wants to publically burn 1.1 utils
+- payoffs without burning:
+|        | ballet | soccer |
+|--------+--------+--------|
+| /      | <      |        |
+| ballet | 3,1    | 0,0    |
+| soccer | 0,0    | 1,3    | 
+- payoffs with burning:
+
+|        | ballet | soccer |
+|--------+--------+--------|
+| /      | <      |        |
+| ballet | 1.9,1  | -1.1,0 |
+| soccer | -1.1,0 | -0.1,3 |  
+
+- after observing that Alice burned 1.1 utils, where should Bob expect Alice to be?
