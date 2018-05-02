@@ -96,6 +96,26 @@ Every finite game of  perfect information has a pure strategy Nash equilibrium t
       - deviation that $\sigma_i'$ defined by $\sigma'_i(x')=\hat\sigma_i(x')$ if $x'\neq x$ and $\sigma'_i(x)=\sigma_i(x)$ must be at least as profitable as $\hat\sigma_i$
       - contradicts definition of $\hat \sigma_i$ \qed
 
+** A bargaining application
+- 2 players maximizing their monetary payoff have to split 1$
+- at most $T$ rounds
+   - in odd (even) rounds P1 (P2) proposes how to split
+   - other player can accept or reject
+   - rejection means
+      - going to next round if $t<T$
+      - splitting $(s,1-s)$ if $t=T$
+- players have discount rate $\delta<1$ (1$ next round is worth \delta $ today)
+
+- say $T$ is even
+   - what will P2 propose in round $T$? (what is the worst offer P1 will accept?)
+   - what will P1 propose in round $T-1$?
+   - etc.
+
+# round T: $(s,1-s)$
+# round T-1: P1 proposes $(1-\delta(1-s) ,\delta (1-s))$
+# round T-2: P2 proposes $(\delta-\delta^2(1-s),1-\delta+\delta^2(1-s)$
+# each round: new offer is \delta*(1-old offer)
+# round T-k: Pi proposes \sum_{t=1}^{k-1}\{\delta^{t} (-1)^{t-1}\}+ (-1)^{k-1} \delta^{k}(1-s)$ to other player, this player accepts 
 
 * SPNE
 ** Game with imperfect information
@@ -200,10 +220,28 @@ A profile of strategies $(\sigma_1,\dots,\sigma_I)$ is a subgame perfect Nash eq
 - to find all SPNE, run the algorithm in case of multiple NE in a subgame for each NE separately
 
 
+** Infinite games example: A bargaining application II
+- 2 players maximizing their monetary payoff have to split 1$
+- in odd (even) rounds P1 (P2) proposes how to split
+- other player can accept or reject
+   - rejection means going to next round
+- discount factor $\delta<1$
+- no final round!
+
+\pause
+- perpetual diagreement cannot be equilibrium
+- if agreement happens in any period, it should happen in period 1 (discounting)
+- suppose equilibrium in round 3: split $(s,1-s)$
+- offer in round 2: $(\delta s,1-\delta s)\rightarrow$ accept
+- offer in round 1: $(1-\delta+\delta^2 s, \delta-\delta^2 s)\rightarrow$ accept 
+\pause
+- situation in period 1 and 3 is the same! (stationary equilibrium)
+- $s=1-\delta+\delta^2 s\quad\Leftrightarrow\quad s=(1-\delta)/(1-\delta^2)=1/(1+\delta)$ while $1-s=\delta/(1+\delta)$
+
 
 * Problems of SPNE
 
-** Problems: What to believe off path?
+** Problems of SPNE: What to believe off path?
 \begin{figure}[h]
 \centering
 % First, set the overall layout of the tree
@@ -255,7 +293,7 @@ A profile of strategies $(\sigma_1,\dots,\sigma_I)$ is a subgame perfect Nash eq
 - what should P2 believe will P1's play after A?
 # P1 chose strictly dominated action! mistake/tremble? irrational? got the payoffs wrong?
 
-** Problem: Coordinated beliefs
+** Problems of SPNE: Coordinated beliefs
 - in SPNE players hold the same belief with regards which equilibrium will be played in each subgame:
 
 \begin{figure}[h]
@@ -329,6 +367,7 @@ A profile of strategies $(\sigma_1,\dots,\sigma_I)$ is a subgame perfect Nash eq
 # SPNE: (LC, A,C), (LD,A,D), 50-50mix in simul game L,B before
 # how should P2 know whether P1 and P3 can coordinate?
 # how should P1 know that P2 knows that he and P3 cannot coordinate? maybe play R although it is not a Nash action
+
 
 * Forward induction
 ** Forward induction: Battle of the sexes with a twist I
