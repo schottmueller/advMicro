@@ -3,8 +3,10 @@
 #+Options: toc:nil
 #+Latex_Header: \usepackage{natbib}
 * News
+- I would be interested in feedback. In particular, about overlap with other courses, the level of the course, (mis-)match with expectations etc.
+- The lecture on May 21 (Monday) has to be cancelled because I have to attend a PhD defense in Sweden where I am in the committee.
 - Registration for the exam is now possible in KLIPS.
--  Before the next lecture on Monday April 27 please check section 2 of the math handout if you do not remember integration by parts.
+- Exam date: July 18, 10:00-11:00 
 * Material
 - Exercises: [[./exercises.tex][tex]] [[https://github.com/schottmueller/advMicro/files/1960409/exercises.pdf][pdf]]
 - Slides:
@@ -14,6 +16,7 @@
   - [[https://github.com/schottmueller/advMicro/files/1927713/BNE.pdf][BNE]]
   - [[https://github.com/schottmueller/advMicro/files/1960716/auctions.pdf][auctions]]
   - [[https://github.com/schottmueller/advMicro/files/1966289/spne.pdf][SPNE]]
+  - [[https://github.com/schottmueller/advMicro/files/1974189/pbe.pdf][PBE]]
 - Handouts etc.:
   - [[https://github.com/schottmueller/advMicro/files/1954228/math.pdf][math handout]]
 * Prerequisites
@@ -55,6 +58,8 @@ The following plan is...well a plan...and as such it might be adapted to unforse
 ** Static games of incomplete information II: Auctions
 - first price auction (Gibbons 3.2B or MWG Example 23.B.5)
 - second price auction (MWG Example 23.B.6)
+- common value auction 
+- futher not required reading: if you are interested in experiments: Ngangoue and Weizsäcker "Learning from unrealized versus realized prices", [[https://www.wiwi.hu-berlin.de/de/professuren/vwl/microeconomics/people/gweizsaecker/paper_gweizsaecker_learningprice.pdf][working paper]], 2018); a detailled source for what we did is Krishna's book "Auction Theory" (academic Press 2010), chapter 2 and 6.
 # - double auction (Gibbons 3.2C or FT Example 6.4 p. 219)
 
 # ** Common knowledge I
@@ -67,14 +72,15 @@ The following plan is...well a plan...and as such it might be adapted to unforse
 
 ** Dynamic games I
 - backwards induction and subgame perfect equilibrium (MWG 9.A and 9.B)
-# - one deviation principle 
+- one deviation principle (MWG 9.B)
+- Rubinstein bargaining  (MWG 9.Appendix A)
+- forward induction (MWG 9.D)
 
 ** Dynamic games II
 - beliefs and sequential rationality (MWG 9.C)
 - perfect Bayesian equilibrium (MWG 9.C)
 ** Dynamic games III
 - sequential equilibrium (MWG 9.C)
-- bargaining (MWG 9.Appendix A)
 
 ** Signaling and refinements
 - Spence signaling model (MWG 13.C)
