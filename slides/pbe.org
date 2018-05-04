@@ -1,0 +1,342 @@
+#+Title: Perfect Bayesian equilibrium
+#+AUTHOR:    Christoph Schottmüller
+#+Date: 
+
+#+LANGUAGE:  en
+#+OPTIONS:   H:2 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+
+
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: 
+#+BEAMER_FRAME_LEVEL: 2
+#+latex_header: \mode<beamer>{\useinnertheme{rounded}\usecolortheme{rose}\usecolortheme{dolphin}\setbeamertemplate{navigation symbols}{}\setbeamertemplate{footline}[frame number]{}}
+#+latex_header: \mode<beamer>{\usepackage{amsmath}\usepackage{ae,aecompl}\usepackage{sgame,tikz}\usetikzlibrary{trees}}
+#+LATEX_HEADER:\let\oldframe\frame\renewcommand\frame[1][allowframebreaks]{\oldframe[#1]}
+#+LATEX_HEADER: \setbeamertemplate{frametitle continuation}[from second]
+
+* Weak PBE
+
+** When SPNE is too weak
+
+
+\begin{figure}[h]
+\centering
+% First, set the overall layout of the tree
+% You might need to play with these sizes to ensure nothing overlaps.
+\tikzstyle{level 1}=[level distance=1.5cm, sibling distance=3.0cm]
+\tikzstyle{level 2}=[level distance=2.0cm, sibling distance=1.5cm]
+\tikzstyle{level 3}=[level distance=1.5cm, sibling distance=1.5cm]
+\tikzstyle{level 4}=[level distance=1.5cm, sibling distance=1.5cm]
+\begin{tikzpicture}
+%Start with the parent node, and slowly build out the tree
+% with each "child" representing a new level of the diagram
+% each "node" represents a labelled (or unlabeled if you 
+% want) node in the diagram.
+     \node{E}
+             child{
+               node(a){I}
+                  child{
+               node{-1,-1}
+               edge from parent
+               node[left]{fight}
+               }
+             child{
+               node{3,0}
+               edge from parent
+               node[right]{acc.}
+               }
+               edge from parent
+               node[left]{in1}
+               }
+             child{
+               node(b){I}
+                  child{
+               node{-1,-1}
+               edge from parent
+               node[left]{fight}
+               }
+             child{
+               node{2,1}
+               edge from parent
+               node[right]{acc.}
+               }
+               edge from parent
+               node[right]{in2}
+               }
+	     child{
+	     node{0,2}
+	     edge from parent
+               node[right]{out}
+	     };
+\draw [dashed](a)--(b);
+\end{tikzpicture}
+\end{figure}
+
+- entrant can enter with two technologies (in1 and in2)
+- what are the (SP)NE? 
+# (in1, acc), (out,fight)
+- which SPNE is a (not so) reasonable prediction?
+# acc. is a better response than fight for any belief, i.e. I does better with acc. when reaching his info set; sequential rationality suggests I should play acc. but only subgame of game is game itself; hence SPNE has no bite
+
+** Beliefs 
+- at every information set $H$ the acting player has to have a belief over the nodes in $H$
+*** System of beliefs
+ A system of beliefs $\mu$ assigns to every node $x$ in an extensive form game $\Gamma_E$ a probability $\mu(x)\in[0,1]$ such that $\sum_{y\in H(x)}\mu(y)=1$ (where $H(x)$  is the information set in which $x$ lies).
+
+** Sequential rationality
+
+- sequential rational: no player wants to change his behavior in some information set given his beliefs and strategies of the other players
+
+*** Sequential rationality
+A strategy profile $\sigma$ is sequentially rational given system of beliefs $\mu$ if for every information set $H$, the player acting at $H$ cannot increase his expected utility by deviating from $\sigma_i$ at $H$:
+$$\mathbb{E}[u_i(\sigma_i,\sigma_{-i})|H,\mu]\geq \mathbb{E}[u_i(\tilde\sigma_i,\sigma_{-i})|H,\mu]$$
+for all $\tilde\sigma_i$ differing from $\sigma_i$ only at $H$.
+
+*** 							    :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+- which strategy profile is sequentially rational in the previous example game (for which system of beliefs)?
+
+* PBE
+
+** Why sequential rationality may not be enough
+
+\begin{figure}[h]
+\centering
+% First, set the overall layout of the tree
+% You might need to play with these sizes to ensure nothing overlaps.
+\tikzstyle{level 1}=[level distance=1.5cm, sibling distance=3.0cm]
+\tikzstyle{level 2}=[level distance=2.0cm, sibling distance=1.5cm]
+\tikzstyle{level 3}=[level distance=1.5cm, sibling distance=1.5cm]
+\tikzstyle{level 4}=[level distance=1.5cm, sibling distance=1.5cm]
+\begin{tikzpicture}
+%Start with the parent node, and slowly build out the tree
+% with each "child" representing a new level of the diagram
+% each "node" represents a labelled (or unlabeled if you 
+% want) node in the diagram.
+     \node{P1}
+             child{
+               node(a){P2}
+                  child{
+               node{-1,1}
+               edge from parent
+               node[left]{l}
+               }
+             child{
+               node{3,0}
+               edge from parent
+               node[right]{r}
+               }
+               edge from parent
+               node[left]{L}
+               }
+             child{
+               node(b){P2}
+                  child{
+               node{1,-1}
+               edge from parent
+               node[left]{l}
+               }
+             child{
+               node{4,1}
+               edge from parent
+               node[right]{r}
+               }
+               edge from parent
+               node[right]{R}
+               	     };
+\draw [dashed](a)--(b);
+\end{tikzpicture}
+\end{figure}
+
+- is there a belief system such that $(R,l)$ is sequentially rational? 
+# yes $\mu=(1,0)$. Problem: not even a Nash equilibrium!
+
+** Weak perfect Bayesian Nash equilibrium
+- beliefs should be consistent with the strategies used
+   - $prob(x|H,\sigma)=\frac{prob(x|\sigma)}{\sum_{x'\in H}prob(x'|\sigma)}$ if $\sum_{x'\in H}prob(x'|\sigma)>0$
+   - arbitrary $\mu_H$ if $\sum_{x'\in H}prob(x'|\sigma)=0$
+
+*** Weak perfect Bayesian Nash equilibrium (weak PBE)
+A profile of strategies $\sigma$ together with a system of beliefs $\mu$ is a weak PBE in an extensive form game $\Gamma_E$ if 
+- $\sigma$ is sequentiall rational given $\mu$,
+- $\mu$ is derived from $\sigma$ using Bayes' rule whenever possible, i.e. at all information sets reached with positive probability under $\sigma$.
+
+*** 							    :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+
+- weak PBE in previous example?
+
+** Why "weak" PBE is (sometimes too) weak: unreasonable beliefs
+   \includegraphics[width=8.25cm]{PBEunreasonableBelief}
+
+- why is P2's belief inconsistent?
+# P2's info set reached if P1 plays y but as P1 doe snot know nature's move this has to be equally probable after each of nature's moves -> reasonable belief is 1/2,1/2
+\pause
+- (add requirement: some strategy profile leading to off path beliefs has to exist)
+
+** Why "weak" PBE is (sometimes too) weak: not subgame perfect
+ \begin{figure}[h]
+\centering
+% First, set the overall layout of the tree
+% You might need to play with these sizes to ensure nothing overlaps.
+\tikzstyle{level 1}=[level distance=1.25cm, sibling distance=3.5cm]
+\tikzstyle{level 2}=[level distance=1.25cm, sibling distance=4.25cm]
+\tikzstyle{level 3}=[level distance=1.5cm, sibling distance=1.5cm]
+\tikzstyle{level 4}=[level distance=1.5cm, sibling distance=1.5cm]
+\begin{tikzpicture}
+%Start with the parent node, and slowly build out the tree
+% with each "child" representing a new level of the diagram
+% each "node" represents a labelled (or unlabeled if you 
+% want) node in the diagram.
+\node{E}
+    child{
+             node{E}
+             child{
+               node(a){I}
+                  child{
+               node{-3,-1}
+               edge from parent
+               node[left]{fight}
+               }
+             child{
+               node{1,-2}
+               edge from parent
+               node[right]{accommodate}
+               }
+               edge from parent
+               node[left]{fight}
+               }
+             child{
+               node(b){I}
+                  child{
+               node{-2,-1}
+               edge from parent
+               node[left]{fight}
+               }
+             child{
+               node{3,1}
+               edge from parent
+               node[right]{accomodate}
+               }
+               edge from parent
+               node[right]{accomodate}
+               }
+           edge from parent
+           node[left]{in}
+           }
+    child{
+         node{0,2}
+         edge from parent
+         node[right]{out}
+         };
+\draw [dashed](a)--(b);
+\end{tikzpicture}
+%\caption{extensive form game with imperfect information}
+%\label{fig:ext_game_imperf_info}
+\end{figure}
+
+- with which belief system would (out+accommodate, fight) be a weak PBE? 
+- is (out+accommodate, fight) subgame perfect NE?
+\pause
+- (add requirement "weak PBE in every subgame")
+
+
+* Sequential equilibrium
+** Sequential equilibrium
+- additional consistency requirements on ("off-path") beliefs
+
+*** Sequential equilibrium				       :B_definition:
+    :PROPERTIES:
+    :BEAMER_env: definition
+    :END:
+A strategy profile $\sigma$ and belief system $\mu$ is a /sequential equilibrium/ of an extensive form game $\Gamma_E$ iff
+- $\sigma$ is sequentially rational given $\mu$
+- there exists a esequnce of completely mixed strategy profiles $\{\sigma^k\}_{k=1}^\infty$ such that
+   - $\sigma^k\rightarrow\sigma$
+   - $\mu^k\rightarrow\mu$ where $\mu^k$ is the belief system derived from Bayes' rule under $\sigma^k$.
+
+*** 							    :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+- beliefs can be justified through some version of vanishingly small mistakes
+- every sequential equilibrium is a weak PBE
+- converse is not true: see previous two examples!
+
+** Results on sequential equilibrium
+
+*** Existence							  :B_theorem:
+    :PROPERTIES:
+    :BEAMER_env: theorem
+    :END:
+A sequential equilibrium exists in every finite game.
+
+*** 								  :B_theorem:
+    :PROPERTIES:
+    :BEAMER_env: theorem
+    :END:
+If $(\sigma,\mu)$ is a sequential equilibrium, then $\sigma$ is a SPNE and $(\sigma,\mu)$ is also a weak PBE.
+
+** Sequential equilibrium forces agreement off path 
+\includegraphics[width=10cm]{fig_ft_85}
+
+- $(\sigma,\mu)$ given is not sequentail equilibrium as P2 and P3 have different beliefs about P1's deviation is P1 deviates from A
+
+* Examples
+** Example: Repeated offers I
+- seller (S) has good he values 0
+- buyer (B) has value $v$ for good where $v$ is private information 
+   - S views $v$ as drawn from $u[0,1]$
+- 2 periods: 
+  - S sets a first period price $p_1$
+  - B accepts or rejects
+  - if rejected S sets second period price $p_2$
+  - B accepts or rejects
+  - if reject: payoff $(0,0)$
+- players discount with discount factor $\delta\in(0,1)$
+  - acceptance in period $t$ leads to payoffs $(\delta^{t-1}p,\delta^{t-1}(v-p))$
+
+** Example: Repeated offers II
+- strategies
+  - seller strategy
+     - price $p_1$
+     - $p_2(p_1)$ in case $p_1$ is rejected
+  - buyer strategy
+     - acceptance decision in first period $a_1(p_1,v)$, 
+     - acceptance decision in second period $a_2(p_1,p_2,v)$
+- system of beliefs
+  - $\mu(v|p_1)$ is S's belief if $p_1$ got rejected
+
+- solve for sequential equilibrium ("equilibrium" in the following)
+
+** Example: Repeated offers III
+- what is sequentially rational $a_2(p_1,p_2,v)$?
+# accept iff $v\geq p_2$
+
+- show: in equilibrium, if type $v$ accepts $p_1$, then all $v'>v$ will also accept $p_1$
+# accept if $v-p_1-\max\{0,\delta(v-p_2(p_1))\}>0$, LHS is increasing in $v$
+
+- what is $\mu(v|p_1)$  if types with $v\geq \bar v$ accepted $p_1$?
+# $u[0,\bar v)$
+- what is optimal $p_2$ if S believes that types  with $v\geq \bar v$ accepted $p_1$?
+# $\max_p (\bar v - p)*p/\bar v$ -> $p=\bar v/2$
+
+- what is B's cutoff type, i.e. the $\bar v(p_1)$ such that B accepts $p_1$ iff  $v\geq \bar v(p_1)$
+# indifference condition $v-p_1=\delta(v-v/2)$ -> $\bar v(p_1)=p_1/(1-\delta/2)$
+
+- what is equilibrium $p_1$?
+# max_{p_1} p_1(1-p_1/(1-\delta/2))+\delta*(p_1/(2-\delta))^2
+# p_1=(1-\delta/2)^2/(2-3\delta/2)
+# p_2(p_1*)=(1/4-\delta/8)/(2-3\delta)
+
+
+# p_2<p_1, 
