@@ -166,7 +166,7 @@ for all $\tilde\sigma_i$ differing from $\sigma_i$ only at $H$.
 *** Weak perfect Bayesian Nash equilibrium (weak PBE)
 A profile of strategies $\sigma$ together with a system of beliefs $\mu$ is a weak PBE in an extensive form game $\Gamma_E$ if 
 - $\sigma$ is sequentiall rational given $\mu$,
-- $\mu$ is derived from $\sigma$ using Bayes' rule whenever possible, i.e. at all information sets reached with positive probability under $\sigma$.
+- $\mu$ is derived from $\sigma$ using Bayes' rule at all information sets reached with positive probability under $\sigma$.
 
 *** 							    :B_ignoreheading:
     :PROPERTIES:
@@ -181,7 +181,7 @@ A profile of strategies $\sigma$ together with a system of beliefs $\mu$ is a we
 - why is P2's belief inconsistent?
 # P2's info set reached if P1 plays y but as P1 doe snot know nature's move this has to be equally probable after each of nature's moves -> reasonable belief is 1/2,1/2
 \pause
-- (add requirement: some strategy profile leading to off path beliefs has to exist)
+- (add requirement: some strategy profile leading to off path beliefs has to exist; "structural consistency")
 
 ** Why "weak" PBE is (sometimes too) weak: not subgame perfect
  \begin{figure}[h]

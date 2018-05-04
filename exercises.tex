@@ -2,6 +2,8 @@
 
 \usepackage{amsmath,amsthm,ae,aecompl,sgame,natbib,sgamevar}
 \usepackage[margin=2.5cm]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{trees}
 
 \title{Exercises Adv. Micro II}
 \author{Christoph Schottm\"uller}
@@ -163,6 +165,191 @@ D  \> 4,4$+\theta _2$    \>1,5
   % add a "total destruction" action yielding for both players -1000 to a normal prisoner's dilemma and let $T=2$; the strategy cooperate in 1; defect in 2 if cooperation in 1 and total destruction otherwise is a NE but not subgame perfect
 \end{enumerate}
 
+\section{Weak PBE and sequential equilibrium}
+\label{sec:weak-pbe-sequential}
+
+\begin{enumerate}
+\item Find a pure strategy NE in the game of figure \ref{fig:selten_ex}. Show that this NE is subgame perfect but not sequentially rational. Find a weak PBE. (Hint: use mixed strategies)
+   \begin{figure}[h]
+\centering
+% First, set the overall layout of the tree
+% You might need to play with these sizes to ensure nothing overlaps.
+\tikzstyle{level 1}=[level distance=1.5cm, sibling distance=6cm]
+\tikzstyle{level 2}=[level distance=1.5cm, sibling distance=2.5cm]
+\tikzstyle{level 3}=[level distance=1.5cm, sibling distance=2cm]
+\tikzstyle{level 4}=[level distance=1.5cm, sibling distance=1.5cm]
+\begin{tikzpicture}
+%Start with the parent node, and slowly build out the tree
+% with each "child" representing a new level of the diagram
+% each "node" represents a labelled (or unlabeled if you 
+% want) node in the diagram.
+\node{1}
+    child{
+             node{2}
+             child{
+               node{0,0,0}
+             edge from parent
+             node[left]{$L_2$}}
+             child{
+               node(b){3}
+                  child{
+               node{4,4,0}
+               edge from parent
+               node[left]{l}
+               }
+             child{
+               node{0,2,1}
+               edge from parent
+               node[right]{r}
+               }
+                edge from parent
+                node[right]{$R_2$}
+               }
+           edge from parent
+           node[left,above]{$L_1$}
+           }
+    child{
+           child{
+               node(c){3}
+                  child{
+               node{1,1,1}
+               edge from parent
+               node[left]{l}
+               }
+             child{
+               node{1,1,0}
+               edge from parent
+               node[right]{r}
+               }
+               }
+         edge from parent
+         node[right,above]{$R_1$}
+         };
+\draw [dashed](c)--(b);
+\end{tikzpicture}
+\caption{Selten's horse}
+\label{fig:selten_ex}
+\end{figure}
+
+\item Consider the two games in figures \ref{fig:seq_eq_coalescing} and \ref{fig:seq_eq_coalescing2}. To what extent are these games different or the same? Show that there is a pure strategy sequential equilibria in figure \ref{fig:seq_eq_coalescing} that does not exist in \ref{fig:seq_eq_coalescing2}. Would this also be true for  weak PBE instead of sequential equilibrium?
+% (R,r) supported by belief (0,1) is seq eq in first game but there is no equivalent in the second as A strictly dominates B and therefore seq rationality requires P1 to play A instead of B in the subgame. For any completely mixed strat converging to ?A P2's belief must be (1,0) and therefore his action in seq eq is l which means (LA,l) is unique seq eq in second game. Note that (RA,r) with belief (0,1) is still a weak PBE as P2's info set in never reached.
+  
+   \begin{figure}[h]
+\centering
+% First, set the overall layout of the tree
+% You might need to play with these sizes to ensure nothing overlaps.
+\tikzstyle{level 1}=[level distance=1.5cm, sibling distance=3.5cm]
+\tikzstyle{level 2}=[level distance=1.5cm, sibling distance=1.5cm]
+\tikzstyle{level 3}=[level distance=1.5cm, sibling distance=2cm]
+\tikzstyle{level 4}=[level distance=1.5cm, sibling distance=1.5cm]
+\begin{tikzpicture}
+%Start with the parent node, and slowly build out the tree
+% with each "child" representing a new level of the diagram
+% each "node" represents a labelled (or unlabeled if you 
+% want) node in the diagram.
+\node{1}
+             child{
+               node(a){2}
+                  child{
+               node{5,1}
+               edge from parent
+               node[left]{l}
+               }
+             child{
+               node{1,0}
+               edge from parent
+               node[right]{r}
+               }
+               edge from parent
+               node[left,above]{A}
+               }
+             child{
+               node(b){2}
+                  child{
+               node{0,0}
+               edge from parent
+               node[left]{l}
+               }
+             child{
+               node{0,1}
+               edge from parent
+               node[right]{r}
+               }
+               edge from parent
+               node[right]{B}
+               }
+    child{
+         node{3,3}
+         edge from parent
+         node[right, above]{R}
+         };
+\draw [dashed](a)--(b);
+\end{tikzpicture}
+\caption{sequential equilibrium and coalescing moves}
+\label{fig:seq_eq_coalescing}
+\end{figure}
+
+ \begin{figure}[h]
+\centering
+% First, set the overall layout of the tree
+% You might need to play with these sizes to ensure nothing overlaps.
+\tikzstyle{level 1}=[level distance=1.5cm, sibling distance=3.5cm]
+\tikzstyle{level 2}=[level distance=1.5cm, sibling distance=3.5cm]
+\tikzstyle{level 3}=[level distance=1.5cm, sibling distance=2cm]
+\tikzstyle{level 4}=[level distance=1.5cm, sibling distance=1.5cm]
+\begin{tikzpicture}
+%Start with the parent node, and slowly build out the tree
+% with each "child" representing a new level of the diagram
+% each "node" represents a labelled (or unlabeled if you 
+% want) node in the diagram.
+\node{1}
+    child{
+             node{1}
+             child{
+               node(a){2}
+                  child{
+               node{5,1}
+               edge from parent
+               node[left]{l}
+               }
+             child{
+               node{1,0}
+               edge from parent
+               node[right]{r}
+               }
+               edge from parent
+               node[left]{A}
+               }
+             child{
+               node(b){2}
+                  child{
+               node{0,0}
+               edge from parent
+               node[left]{l}
+               }
+             child{
+               node{0,1}
+               edge from parent
+               node[right]{r}
+               }
+               edge from parent
+               node[right]{B}
+               }
+           edge from parent
+           node[left]{L}
+           }
+    child{
+         node{3,3}
+         edge from parent
+         node[right]{R}
+         };
+\draw [dashed](a)--(b);
+\end{tikzpicture}
+\caption{game above with additional move}
+\label{fig:seq_eq_coalescing2}
+\end{figure}
+
+\end{enumerate}
 
 \bibliographystyle{chicago}
 \bibliography{/home/christoph/stuff/bibliography/references.bib}
