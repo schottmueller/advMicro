@@ -1,0 +1,67 @@
+#+Title: Signaling
+#+AUTHOR:    Christoph Schottmüller
+#+Date: 
+
+#+LANGUAGE:  en
+#+OPTIONS:   H:2 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+
+
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: 
+#+BEAMER_FRAME_LEVEL: 2
+#+latex_header: \mode<beamer>{\useinnertheme{rounded}\usecolortheme{rose}\usecolortheme{dolphin}\setbeamertemplate{navigation symbols}{}\setbeamertemplate{footline}[frame number]{}}
+#+latex_header: \mode<beamer>{\usepackage{amsmath}\usepackage{ae,aecompl}\usepackage{sgame,tikz}\usetikzlibrary{trees}}
+#+LATEX_HEADER:\let\oldframe\frame\renewcommand\frame[1][allowframebreaks]{\oldframe[#1]}
+#+LATEX_HEADER: \setbeamertemplate{frametitle continuation}[from second]
+
+* Pirates
+
+** Signaling example: Jolly Rodger
+
+    \includegraphics[width=6cm]{jollyroger}
+
+(story based on Leeson, "The invisible hook: the hidden economics of pirates", Princeton University Press, 2011)
+
+** Pirate model
+timing:  
+   1. nature chooses attacker type: Pirate (P) with prob $p$ , commissioned (C) with $1-p$
+   2. attacker chooses between Jolly Rodger (J) and other flag (F)
+   3. defender decides whether to surrender (s) or fight (f)
+
+Payoffs:
+|           | Pirate (J or F) | commissioned (F) | commissioned (J) |
+| /         | <               |                  |                  |
+|-----------+-----------------+------------------+------------------|
+| surrender | -1,3            | -1,3             |  -1,3-X          |
+| fight     | -3,1            | 0,1              | 0,1-X            |
+
+
+** Pirate analysis
+|           | Pirate (J or F) | commissioned (F) | commissioned (J) |
+| /         | <               |                  |                  |
+|-----------+-----------------+------------------+------------------|
+| surrender | -1,3            | -1,3             |  -1,3-X          |
+| fight     | -3,1            | 0,1              | 0,1-X            |
+
+
+
+- if $X\geq 2$, then "separating" equilibrium:
+   - P play J
+   - C play F
+   - defender surrender iff J is played and fights otherwise
+
+- if $X\in[0 ,2]$ and $p\leq 1/3$, then "hybrid" equilibrium:
+   - P play J
+   - C play J with prob $\lambda=2p/(1-p)$
+   - defender surrenders against J with prob $\mu=X/2$ and with prob 0 against F
+
+- if  $p\geq 1/3$, then "pooling" equilibrium
+   - P and C mix between J and F in (roughly) the same proportion, e.g. always F
+   - defender always surrenders
+
+* Spence job market signaling
