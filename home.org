@@ -3,12 +3,12 @@
 #+Options: toc:nil
 #+Latex_Header: \usepackage{natbib}
 * News
-- I would be interested in feedback. In particular, about overlap with other courses, the level of the course, (mis-)match with expectations etc.
+- I would be interested in feedback. In particular concerning overlap with other courses, the level of the course, (mis-)match with expectations etc.
 - The lecture on May 21 (Monday) has to be cancelled because I have to attend a PhD defense in Sweden where I am in the committee.
 - Registration for the exam is now possible in KLIPS.
 - Exam date: July 18, 10:00-11:00 
 * Material
-- Exercises: [[./exercises.tex][tex]] [[https://github.com/schottmueller/advMicro/files/1960409/exercises.pdf][pdf]]
+- Exercises: [[./exercises.tex][tex]] [[https://github.com/schottmueller/advMicro/files/1980956/exercises.pdf][pdf]]
 - Slides:
   - [[https://github.com/schottmueller/advMicro/files/1890670/dominRatio.pdf][Dominance and rationalizability]]
   - [[https://github.com/schottmueller/advMicro/files/1888753/NashEq.pdf][Nash Theorem]]
@@ -17,6 +17,7 @@
   - [[https://github.com/schottmueller/advMicro/files/1960716/auctions.pdf][auctions]]
   - [[https://github.com/schottmueller/advMicro/files/1966289/spne.pdf][SPNE]]
   - [[https://github.com/schottmueller/advMicro/files/1974189/pbe.pdf][PBE]]
+  - [[https://github.com/schottmueller/advMicro/files/1980963/signal.pdf][signaling]]
 - Handouts etc.:
   - [[https://github.com/schottmueller/advMicro/files/1954228/math.pdf][math handout]]
 * Prerequisites
@@ -79,11 +80,10 @@ The following plan is...well a plan...and as such it might be adapted to unforse
 ** Dynamic games II
 - beliefs and sequential rationality (MWG 9.C)
 - perfect Bayesian equilibrium (MWG 9.C)
-** Dynamic games III
 - sequential equilibrium (MWG 9.C)
 
 ** Signaling and refinements
-- Spence signaling model (MWG 13.C)
+- Spence signaling model (MWG 13.C and MWG 13.Appendix)
 
 # ** Adverse selection
 # - Akerlof's lemons market (MWG 13.B)
