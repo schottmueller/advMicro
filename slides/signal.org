@@ -67,7 +67,7 @@ Payoffs:
 * Spence job market signaling
 ** Job market signaling
 - worker has type $\theta\in\{\theta_l,\theta_h\}$ with $\theta_h>\theta_l>0$
-- worker exerts effort $e$ at cost $c(e,\theta )$ with $c_e>0$, $c_{ee}>0$, $c(0,\theta)=0$ and $c_{e\theta }<0$
+- worker chooses education level $e$ at cost $c(e,\theta )$ with $c_e>0$, $c_{ee}>0$, $c(0,\theta)=0$ and $c_{e\theta }<0$
 - 2 firms observe $e$ and simultaneously offer a wage
 - worker takes higher offer (if $>0$)
 - information
@@ -97,7 +97,7 @@ either
 - wage $w(e) \in[\theta_l,\theta_h]$
 
 ** Separating equilibria I
-- separating: two types have different effort choices
+- separating: two types have different education choices
 *** Lemma							    :B_block:
     :PROPERTIES:
     :BEAMER_env: block
@@ -109,7 +109,7 @@ In a separating equilibrium, $w(e(\theta_l))=\theta_l$ and $w(e(\theta_h))=\thet
     :BEAMER_env: ignoreheading
     :END:
 
-- what effort levels are possible for $\theta_h$ in a separating equilibrium?
+- what education levels are possible for $\theta_h$ in a separating equilibrium?
 
 \begin{tikzpicture}[scale=3] 
 \draw [<->](0,1) -- (0,0) -- (1,0) ;
@@ -162,9 +162,9 @@ In a separating equilibrium, $w(e(\theta_l))=\theta_l$ and $w(e(\theta_h))=\thet
 
 ** Pooling equilibria I
 
-- pooling: both types exert same effort level $e^*$
+- pooling: both types exert same education level $e^*$
 - $\mu(e^*)=\lambda$ and $w(e^*)=\mathbb{E}[\theta]=\lambda\theta_h+(1-\lambda)\theta_l$
-- which effort levels can be sustained in a pooling equilibrium?
+- which education levels can be sustained in a pooling equilibrium?
 \begin{tikzpicture}[scale=3] 
 \draw [<->](0,1) -- (0,0) -- (1,0) ;
 \node[left] at (0,1){$w$};
@@ -253,17 +253,17 @@ In a separating equilibrium, $w(e(\theta_l))=\theta_l$ and $w(e(\theta_h))=\thet
      - not strictly dominated for type $\theta''$
   - then belief after observing $a'$ should not assign positive probability to type $\theta'$
 
-- no effort level in job market signaling is strictly dominated
+- no education level in job market signaling is strictly dominated
 
 ** Refinements: equilibrium dominance
 - "equilibrium domination"
    - if the deviation leads to a lower payoff for type $\theta'$ than his equilibrium payoff no matter what belief it induces  (but not necessarily so for $\theta''$) then belief should assign 0 to $\theta'$
-   - effort level between $\tilde e$ and $\bar e$ should lead to $\mu(e)=1$
+   - education level between $\tilde e$ and $\bar e$ should lead to $\mu(e)=1$
    - which separating equilibria satisfy this?
    - what about pooling equilibria?
 # only least cost separating survives!
 
-** Refinements: intuitive criterion
+** Refinements: so called "intuitive criterion"
 
 - $S^*$: set of equilibrium choices (i.e. wage offers) given some arbitrary belief
  # - in our game: $S^*=[\theta_l,\theta_h]$
@@ -272,7 +272,8 @@ $$u^*(\theta)\leq \max_{w\in S^*}u(e,w,\theta)$$
 #   - in our game and separating eq.: $\Theta^{**}(e)=\{\theta_h\}$ for $e>\tilde e$ 
 - $S^{**}(e)$: set of equilibrium choices (i.e. wage offers) given that the firms' common belief puts only positive probability on types in $\Theta^{**}(e)$
 #   - in our game and separating eq.: $S^{**}(e)=\{\theta_h\}$  for $e>\tilde e$ 
-- an equilibrium /fails the intuitive criterion/ if there is a type $\theta$ and an action $a$ such that 
-$$u^*(\theta)<\min_{s\in S^{**}}u(e,w,\theta)$$
+- an equilibrium /fails the intuitive criterion/ if there is a type $\theta$ and an action $e$ such that 
+$$u^*(\theta)<\min_{w\in S^{**}(e)}u(e,w,\theta)$$
 #   - in our game: and separating eq. with $e^*>\tilde e$: fail intuitive criterion as $\theta_h$'s eq. payoff is lower than a deviation to $(e^*+\tilde e)/2$ 
 
+# only least cost separating survives intuitive criterion

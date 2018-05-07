@@ -1,6 +1,6 @@
 \documentclass[a4paper,12pt]{article}
 
-\usepackage{amsmath,amsthm,ae,aecompl,sgame,natbib,sgamevar}
+\usepackage{amsmath,amsthm,amssymb,ae,aecompl,sgame,natbib,sgamevar}
 \usepackage[margin=2.5cm]{geometry}
 \usepackage{tikz}
 \usetikzlibrary{trees}
@@ -149,7 +149,7 @@ D  \> 4,4$+\theta _2$    \>1,5
         1 & \text{ else }.
       \end{cases}
     \end{equation*}
-    \item Suppose that players use linear strategies $b_b(v)=\alpha+\beta v$ and $b_s(c)=\gamma+\delta c$. Taking the strategy of the other player derive the best response of a seller/buyer with valuation $v$ / cost $c$. For which values of $\alpha,\beta,\gamma,\delta$ form the linear strategies an equilibrium?
+    \item Suppose that players use linear strategies $b_b(v)=\alpha+\beta v$ and $b_s(c)=\gamma+\delta c$ with $\beta,\delta>0$. Taking the strategy of the other player derive the best response of a seller/buyer with valuation $v$ / cost $c$. For which values of $\alpha,\beta,\gamma,\delta$ form the linear strategies an equilibrium?
     \end{enumerate}
   \item Two players participate in a contest: Each player chooses an effort level $e_i$. Effort is costly and reduces player $i$'s payoff by  $\theta _ie_i$. The player who choose the highest effort wins a prize of value 1. That is, the winner has payoff $1-\theta _i e_i$ while the loser has payoff $-\theta _i e_i$. The $\theta _i$ are private information and each player views the other player's type as being uniformly distributed on $[0.1,1.1]$. \\
     Write player $i$'s maximization problem given that the other player uses a strictly decreasing strategy $s$ (with inverse $t$). Derive the first order condition for optimal effort choice. Solve for a symmetric equilibrium in strictly decreasing strategies.
@@ -350,6 +350,18 @@ D  \> 4,4$+\theta _2$    \>1,5
 \end{figure}
 
 \end{enumerate}
+
+\section{Signaling}
+\label{sec:signaling}
+
+\begin{enumerate}
+% \item Take the jobmarket model from the slides. Suppose that the worker has an outside option, i.e. if he is offered only wages of less than $r>0$, than he will refuse all offers and take his outside option (of value $r$). The value of the outside option does not depend on type. What are the equilibria if $r\in(\theta_l,\mathbb{E}[\theta]$? What are the equilibria if $r>\mathbb{E}[\theta ]$? How do you evaluate the welfare effect of the possibility to signal?
+\item Consider the least cost separating equilibrium of the jobmarket model on the slides. Suppose the government introduces a tax on high wages (all wages above $\mathbb{E}[\theta ]$) and a subsidy for low wages (all others). The tax is $t$ and the subsidy is $t*\lambda/(1-\lambda)$, i.e. the tax subsidy scheme has a balanced budget. Show that this tax scheme leads to a Pareto improvement if $\lambda$ is sufficiently large (and $t$ is chosen not too large). More precisley, show that $\lambda\geq 1/2$ is sufficient for a Pareto improvement.
+% Firms always get zero profits and $\theta_l$ types clearly are made better off by the subsidy.  A marginal increase in $t$ from $t=0$ improves welfare of high types if their cost of effort is reduced by more than the tax burden. The marginal effect of the tax on payoff is $-1$. The reduction in effort (at $t=0$) is $d\tilde e/dt=-\lambda/((1-\lambda)*c_e(\tilde e,\theta_l))$. Hence, welfare of $\theta_j$ goes up by $\frac{\lambda}{1-\lambda}\frac{c_e(\tilde e,\theta_h)}{c_e(\tilde{e},\theta _l)}$. For $\lambda$ sufficiently close to 1 this is higher than 1. By the single crossing assumption $\frac{c_e(\tilde e,\theta_h)}{c_e(\tilde{e},\theta _l)}>1$ which implies that $\lambda\geq 1/2$ is sufficient for a Pareto improvement. 
+\item Exercise 13.C.6 in MWG.
+\end{enumerate}
+
+
 
 \bibliographystyle{chicago}
 \bibliography{/home/christoph/stuff/bibliography/references.bib}
