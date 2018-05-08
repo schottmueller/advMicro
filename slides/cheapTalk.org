@@ -1,0 +1,179 @@
+#+Title: Cheap Talk
+#+AUTHOR:    Christoph Schottmüller
+#+Date: 
+
+#+LANGUAGE:  en
+#+OPTIONS:   H:2 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+
+
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: 
+#+BEAMER_FRAME_LEVEL: 2
+#+latex_header: \mode<beamer>{\useinnertheme{rounded}\usecolortheme{rose}\usecolortheme{dolphin}\setbeamertemplate{navigation symbols}{}\setbeamertemplate{footline}[frame number]{}}
+#+latex_header: \mode<beamer>{\usepackage{amsmath}\usepackage{ae,aecompl,amsthm,amssymb}\usepackage{sgamevar,tikz}\usetikzlibrary{trees}}
+#+LATEX_HEADER:\let\oldframe\frame\renewcommand\frame[1][allowframebreaks]{\oldframe[#1]}
+#+LATEX_HEADER: \setbeamertemplate{frametitle continuation}[from second]
+
+* Intro
+** Introduction
+- signaling: "message" has payoff consequences
+- cheap talk: "message" has  no payoff consequences
+  - easy: no differences in interest
+    - "be careful there comes the bus"
+  - today: different objectives
+    - expert advice to decision maker but the expert has own agenda --> incentives to manipulate advice
+  #  - central bank inflation forecast influences fiscal policy --> incentives to manipulate forecast?
+
+    - stylized model of cheap talk when the \emph{sender} and the \emph{receiver} of the message have (partially) different objectives
+
+** Setup
+two players: a sender $S$ and a receiver $R$
+- sender observes state of the world $\theta \in \Theta $ (receiver does not)
+- sender sends a message $m\in M$ to the receiver where $M$ is a set of all possible messages
+- receiver takes an action $a\in A$ where $A$ is the set of all possible actions
+- payoffs: $u^R(a,\theta )$ and $u^S(a,\theta)$
+- note that $m$ does not enter the utility functions!
+
+** A (too) simple example I
+- let $\Theta =\{0, 1\}$, $A=\{0,1\}$ and  $M=\{0,1\}$ 
+- payoffs:
+
+\begin{center}
+    \begin{game}{2}{2}[action][state]
+      \> 0 \> 1 \\
+0    \> 1,x   \> 0,y    \\
+1    \> 0,0  \> 1,z
+    \end{game}
+\end{center}
+
+- R wants to match state
+- the message could denote the state of the world, i.e. S sends $m=0$ if $\theta=0$ and $m=1$ if $\theta =1$
+- when should R believe the message?
+
+- say S has same preferences as R ($x=z=1$, $y<1$)
+  - what are weak PBNE? % babbling and truthful communication
+
+- say S always likes the action to be 1, i.e. $x>0$ and $y>z$
+    - weak PBNE?
+- say S prefers a=1 if $\theta =0$ and a=0 if $\theta =1$, i.e. $x<0$ and $y>z$
+    - weak PBNE?
+
+** A (too) simple example II
+ - meaningful communication is only possible if the interests are aligned
+- is this always true or can we get ``partial communication'' in a richer setting?
+
+* Crawford and Sobel
+** Standard setup
+- $\Theta =[0,1]$ and $A=[0,1]$ 
+- R has a prior that $\theta $ is uniformly distributed on $[0,1]$
+- messages are real numbers in $[0,1]$ 
+- $u^R(a,\theta )=-(a-\theta )^2$, i.e. R wants to play an action the equals the state
+- $u^S(a,\theta )=-(a-\theta -b)^2$ for some $b\geq0$, i.e. S wants R to play an action that is $b$ higher than the state
+
+** Negative results
+*** Lemma							    :B_block:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+  If $b\neq0$, there is no BNE where the sender truthfully reports the state, i.e. no BNE where $m(\theta )=\theta $.
+*** 							    :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+*Proof?*
+
+\vspace*{1.5cm}
+*** Lemma							    :B_block:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+  There exists a completely uninformative weak PBE (babbling equilibrium), e.g. $m(\theta)=0$ for any state and $a=1/2$ for any message.
+*** 							    :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+*Proof?*
+
+** Partial communication
+- could there be an equilibrium where S sends a  /low message/ (/l/) if $\theta<\hat\theta$ and a /high message/ (/h/) else?
+  - what would be R's actions after message /l/ and /h/ in such an equilibrium?
+  - (what receiver beliefs could we choose for other -- off path -- messages to deter such deviations?)
+  - for which value of $\hat\theta$ would S actually stick to the strategy?
+  # $\hat\theta$ has to be indifferent between the two messages, i.e. $-(\hat\theta/2-\hat\theta-b)=(1+\hat\theta)/2-\hat\theta-b$, i.e. \hat\theta=-2b+1/2
+ \pause
+
+*** Lemma							    :B_block:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+For $b<1/4$, there exist a partially informative equilibrium in which a high (low) message is sent if $\theta>-2b+1/2$ (else).
+
+** Most informative equilibrium
+
+- equilibrium is partitional
+# if one type of S prefers a high action to a low one than the same is true for all higher types (draw utility functions, i.e. quadratics, to see this)
+
+- partition: $(0,\theta_1,\dots,\theta_{n-1},1)$
+  - induced actions: $a([\theta_k,\theta_{k+1}])=(\theta_k+\theta_{k+1})/2$
+  - each type must prefer the message of his partition element to message of any other partition element
+  - cutoff types must be indifferent
+$$\left(\frac{\theta _{k-1}}{2}+\underbrace{\frac{\theta_{k}}{2}-\theta _k-b}_{x} \right)^2=\left(\frac{\theta _{k+1}}{2}+\underbrace{\frac{\theta_{k}}{2}-\theta _k-b}_{x}\right)^2$$
+$$\Leftrightarrow -(\theta_{k-1}+2x)=\theta _{k+1}+2x$$
+$$\Leftrightarrow\theta _{k+1}=-\theta _{k-1}-4x=\theta_k+(\theta_k-\theta_{k-1})+4b$$
+
+- maximum number of partition elements is bounded
+- bigger differences in interests lead to less meaningful communication
+
+
+** How to get $\theta_1$
+
+$$\theta _{k+1}=\theta_k+(\theta_k-\theta_{k-1})+4b$$
+- for given $\theta_1$ all partition points determined
+- choose $\theta_1$ such that $\theta_n=1$
+
+** Example
+- take $b=1/20$, then the following equilibria exist
+  - babbling equilibrium 
+  - two element partition: $(\theta _0,\theta _1,\theta _2)=(0,0.4,1)$
+  - three element partition: $(\theta _0,\theta _1,\theta _2,\theta _3)=(0,2/15,7/15,1)$
+
+- R's expected utility in three element partition
+
+\begin{multline*}
+  \int_0^{2/15}- (1/15-\theta)^2\,d\theta
+  +\int_{2/15}^{7/15}-(9/30-\theta )^2\,d\theta
+ \\ +\int_{7/15}^{1}-(11/15-\theta)^2\,d\theta \approx -0.0159
+\end{multline*}
+
+
+** Delegation
+- suppose R delegates decision to S
+  - what action will S take?
+  
+\pause
+  - expected utility for R (with $b=1/20$): $\int_0^1 -(\theta +b-\theta )^2\,d\theta =-b^2=-0.0025$
+- whether delegation is optimal or not depends on
+   - b
+   - which equilibrium is played without delegation
+
+** Commitment
+
+- if S could commit to tell the true state, would he do so?
+- for $b=1/20$ and the three element partition S's utility is 
+     - $-((1/60)-\theta )^2$ if $\theta \in [0,2/15)$
+     - $-((1/4)-\theta )^2$ if $\theta \in [2/15,7/15)$
+     - $-((41/60)-\theta )^2$ if $\theta \in [7/15,1)$
+
+- if S commits, the action will be $a=\theta $ and therefore the utility of S is $-b^2=-1/400=-0.0025$
+- commitment makes S better/worse off in some states of the world
+- in expectation utility of S in the three part partition is
+ \begin{multline*}
+     \int_0^{2/15}-(1/60-\theta)^2 d\theta+\int_{2/15}^{7/15}-(1/4-\theta)^2 d\theta\\+\int_{7/15}^1-(41/60-\theta)^2 d\theta\approx-0.01058
+\end{multline*}
+- commitment is of value in expectation
+
