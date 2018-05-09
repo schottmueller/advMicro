@@ -81,6 +81,7 @@ The following plan is...well a plan...and as such it might be adapted to unforse
 - beliefs and sequential rationality (MWG 9.C)
 - perfect Bayesian equilibrium (MWG 9.C)
 - sequential equilibrium (MWG 9.C)
+- alternative not required reading: OR ch. 12  is a well written piece on the issues mentioned in the lecture; OR ch. 11 covers some more foundational issues that we skipped
 
 ** Signaling and refinements
 - Spence signaling model (MWG 13.C and MWG 13.Appendix)
