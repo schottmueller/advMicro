@@ -165,7 +165,7 @@ for all $\tilde\sigma_i$ differing from $\sigma_i$ only at $H$.
 
 *** Weak perfect Bayesian Nash equilibrium (weak PBE)
 A profile of strategies $\sigma$ together with a system of beliefs $\mu$ is a weak PBE in an extensive form game $\Gamma_E$ if 
-- $\sigma$ is sequentiall rational given $\mu$,
+- $\sigma$ is sequentially rational given $\mu$,
 - $\mu$ is derived from $\sigma$ using Bayes' rule at all information sets reached with positive probability under $\sigma$.
 
 *** 							    :B_ignoreheading:
@@ -260,7 +260,7 @@ A profile of strategies $\sigma$ together with a system of beliefs $\mu$ is a we
     :END:
 A strategy profile $\sigma$ and belief system $\mu$ is a /sequential equilibrium/ of an extensive form game $\Gamma_E$ iff
 - $\sigma$ is sequentially rational given $\mu$
-- there exists a esequnce of completely mixed strategy profiles $\{\sigma^k\}_{k=1}^\infty$ such that
+- there exists a sequence of completely mixed strategy profiles $\{\sigma^k\}_{k=1}^\infty$ such that
    - $\sigma^k\rightarrow\sigma$
    - $\mu^k\rightarrow\mu$ where $\mu^k$ is the belief system derived from Bayes' rule under $\sigma^k$.
 
@@ -289,7 +289,7 @@ If $(\sigma,\mu)$ is a sequential equilibrium, then $\sigma$ is a SPNE and $(\si
 ** Sequential equilibrium forces agreement off path 
 \includegraphics[width=10cm]{fig_ft_85}
 
-- $(\sigma,\mu)$ given is not sequentail equilibrium as P2 and P3 have different beliefs about P1's deviation is P1 deviates from A
+- $(\sigma,\mu)$ given is not sequential equilibrium as P2 and P3 have different beliefs about P1's deviation if P1 deviates from A
 
 * Examples
 ** Example: Repeated offers I
@@ -301,7 +301,7 @@ If $(\sigma,\mu)$ is a sequential equilibrium, then $\sigma$ is a SPNE and $(\si
   - B accepts or rejects
   - if rejected S sets second period price $p_2$
   - B accepts or rejects
-  - if reject: payoff $(0,0)$
+  - if $p_2$ rejected: payoff $(0,0)$
 - players discount with discount factor $\delta\in(0,1)$
   - acceptance in period $t$ leads to payoffs $(\delta^{t-1}p,\delta^{t-1}(v-p))$
 
@@ -340,3 +340,6 @@ If $(\sigma,\mu)$ is a sequential equilibrium, then $\sigma$ is a SPNE and $(\si
 
 
 # p_2<p_1, 
+
+- (essentially) unique sequential equilibrium \linebreak (check that many weak PBE with different outcomes exist in this game!)
+# weak PBE: take any p_1>0, on path play -- following p_1 -- as above but off path S believes that v=0 and therefore any p_1>0 and p_2>0 is rejected and he makes zero profits (while B strategy is as above)
