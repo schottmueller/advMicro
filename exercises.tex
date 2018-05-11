@@ -371,8 +371,57 @@ D  \> 4,4$+\theta _2$    \>1,5
     \item Intuitively, which state will the expert reveal trughtfully? % high state as expert always wants higher action than DM
     \item Given a mixed strategy of the expert, what are the decision maker's beliefs when receiving a low/high message? % in state 0, let prob of h be q (while in state 1 it is 1), then $mu(l)=0$ and $\mu(h)=\frac{.5*1}{.5*1+0.5*q}=1/(1+q)$
       \item Given a mixed strategy of the expert, what is the best response of the decision maker? % $min \mu * (a-1)^2+(1-\mu)(a)^2$ which gives foc: $a=\mu$ 
-    \item What is the equilibrium strategy of the expert? %truthtelling is eq if $-b^2\geq-(1-b)^2$, i.e. if $b\leq 1/2$; otherwise indifference of expert in 0 state: $b^2=(1/(1-q)-b)^2$ solved for $q=1-2b$
-  \end{enumerate}
+      \item What is the equilibrium strategy of the expert? %truthtelling is eq if $-b^2\geq-(1-b)^2$, i.e. if $b\leq 1/2$; otherwise indifference of expert in 0 state: $b^2=(1/(1-q)-b)^2$ solved for $q=1-2b$
+      \end{enumerate}
+    \item A patient can be in one of three health states: A, B, C. Stae A and B have prior probability 2/5 and C has 1/5. Doctor and patient both receive a private signal about the health state that is either 0 or 1. The following table describes the signal distribution.
+      \begin{table}[h]
+        \centering
+        \begin{tabular}{l|c|c|c}
+          $\sigma$&A&B&C\\ \hline
+          (0,0) & 0 &0&1\\
+          (0,1) & 0&4/5&0\\
+          (1,0)&1/5&1/5&0\\
+          (1,1)&4/5&0&0
+        \end{tabular}
+        \caption{Signal}
+        \label{tab:signcifd}
+      \end{table}
+
+The interpretation is that, given health state A, signal $(\sigma^p,\sigma^d)=(1,1)$ occurs with probability 4/5 where $\sigma^p$ is the patint's signal etc.
+
+There are three treatments: a,b,c. The patient's payoff as function of state and treatment and the costs of each treatment are given in the following table. (There is some interpretation that $a$ is effective but expensive, $c$ is no treatment; A is severe problem, B is slight problem and C is healthy; under- and overtreatment both reduce the patient's payoff.) 
+\begin{table}[h]
+  \centering
+  \begin{tabular}{l|c|c|c|c}
+    &A&B&C&costs\\ \hline
+    a&8&9.7&9.2&5\\
+    b&4&9&9.6&3\\
+    c&0&5&10&1
+  \end{tabular}
+  \caption{Payoffs and costs}
+  \label{tab:payoffcifd}
+   \begin{tabular}{l|c|c|c}
+    &A&B&C\\ \hline
+    a&3&4.7&4.2\\
+    b&1&6&6.6\\
+    c&-1&4&9
+  \end{tabular}
+  \caption{welfare: payoff - costs}
+  \label{tab:welfarecifd}
+\end{table}
+
+The timing of the game is that the patient can send a cheap talk message in $\{0,1\}$ about his signal to the doctor. The doctor then determines the treatment.
+
+\begin{enumerate}
+\item Let welfare be patient payoff minus costs. What are the welfare maximizing treatments in each state? What are the treatments maximizing patient payoff (i.e. neglecting the costs)? 
+\item Assume doctor and patient have the objective of maximizing the patient's payoff (and ignore costs because the patient is insured). What is the equilibrium? (If you see that there are more than 1, use the one you find most reasonable for the following questions.)
+\item Assume that the patient's objective is to maximize his payoff while the doctor maximizes welfare. Is there an equilibrium in which the patient truthfully reveals his signal to the doctor? (If not, assume in the following that there is a babbling equilibrium in which the doctor relies only on his own signal.)
+\item Is welfare higher when the doctor maximizes welfare or when the doctor maximizes patient payoff?
+  \item Show that costs are higher when the doctor maximizes welfare if the prior is $(1/2-p_c/2,1/2-p_c/2,p_c)$ for $p_c>0$ small enough.
+\end{enumerate}
+
+For a solution, see section 3 in \cite{schottmueller2013cifd}.
+
 \end{enumerate}
 
 \bibliographystyle{chicago}
