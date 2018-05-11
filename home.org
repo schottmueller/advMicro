@@ -18,6 +18,7 @@
   - [[https://github.com/schottmueller/advMicro/files/1966289/spne.pdf][SPNE]]
   - [[https://github.com/schottmueller/advMicro/files/1987255/pbe.pdf][PBE]]
   - [[https://github.com/schottmueller/advMicro/files/1980963/signal.pdf][signaling]]
+  - [[https://github.com/schottmueller/advMicro/files/1994283/cheapTalk.pdf][cheap talk]]
 - Handouts etc.:
   - [[https://github.com/schottmueller/advMicro/files/1954228/math.pdf][math handout]]
 * Prerequisites

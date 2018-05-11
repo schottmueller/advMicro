@@ -361,7 +361,19 @@ D  \> 4,4$+\theta _2$    \>1,5
 \item Exercise 13.C.6 in MWG.
 \end{enumerate}
 
+\section{Cheap talk}
+\label{sec:cheap-talk}
 
+\begin{enumerate}
+\item The state of the world $\theta $ is either 0 or 1. Both, 0 and 1, have probability 1/2. An expert observes the state and then sends a cheap talk message to a decision maker. The available messages are ``high'' (h) and ``low'' (l). (Assume in the following that the messages are used in accordance with their name, i.e. the high message leads to a higher belief of the decision maker.) The decision maker chooses an action $a\in [0,2]$ with the objective of maximizing $(a-\theta )^2$. The objective of the expert is $-(a-\theta-b)^2$ for some $b\in(0,1)$.
+  \begin{enumerate}
+  \item What is a mixed strategy for the expert? % probability of sending high message for each state
+    \item Intuitively, which state will the expert reveal trughtfully? % high state as expert always wants higher action than DM
+    \item Given a mixed strategy of the expert, what are the decision maker's beliefs when receiving a low/high message? % in state 0, let prob of h be q (while in state 1 it is 1), then $mu(l)=0$ and $\mu(h)=\frac{.5*1}{.5*1+0.5*q}=1/(1+q)$
+      \item Given a mixed strategy of the expert, what is the best response of the decision maker? % $min \mu * (a-1)^2+(1-\mu)(a)^2$ which gives foc: $a=\mu$ 
+    \item What is the equilibrium strategy of the expert? %truthtelling is eq if $-b^2\geq-(1-b)^2$, i.e. if $b\leq 1/2$; otherwise indifference of expert in 0 state: $b^2=(1/(1-q)-b)^2$ solved for $q=1-2b$
+  \end{enumerate}
+\end{enumerate}
 
 \bibliographystyle{chicago}
 \bibliography{/home/christoph/stuff/bibliography/references.bib}

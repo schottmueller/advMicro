@@ -28,16 +28,18 @@
   - today: different objectives
     - expert advice to decision maker but the expert has own agenda --> incentives to manipulate advice
   #  - central bank inflation forecast influences fiscal policy --> incentives to manipulate forecast?
+  # doctor in NL
 
     - stylized model of cheap talk when the \emph{sender} and the \emph{receiver} of the message have (partially) different objectives
 
 ** Setup
 two players: a sender $S$ and a receiver $R$
-- sender observes state of the world $\theta \in \Theta $ (receiver does not)
+- sender observes state of the world $\theta\in\Theta$ (receiver does not)
 - sender sends a message $m\in M$ to the receiver where $M$ is a set of all possible messages
 - receiver takes an action $a\in A$ where $A$ is the set of all possible actions
 - payoffs: $u^R(a,\theta )$ and $u^S(a,\theta)$
 - note that $m$ does not enter the utility functions!
+- equilibrium: weak PBE
 
 ** A (too) simple example I
 - let $\Theta =\{0, 1\}$, $A=\{0,1\}$ and  $M=\{0,1\}$ 
@@ -56,12 +58,13 @@ two players: a sender $S$ and a receiver $R$
 - when should R believe the message?
 
 - say S has same preferences as R ($x=z=1$, $y<1$)
-  - what are weak PBNE? % babbling and truthful communication
+  - what are the equilibria?
+# babbling and truthful communication
 
 - say S always likes the action to be 1, i.e. $x>0$ and $y>z$
-    - weak PBNE?
+    - equilibrium?
 - say S prefers a=1 if $\theta =0$ and a=0 if $\theta =1$, i.e. $x<0$ and $y>z$
-    - weak PBNE?
+    - equilibrium?
 
 ** A (too) simple example II
  - meaningful communication is only possible if the interests are aligned
@@ -70,9 +73,9 @@ two players: a sender $S$ and a receiver $R$
 * Crawford and Sobel
 ** Standard setup
 - $\Theta =[0,1]$ and $A=[0,1]$ 
-- R has a prior that $\theta $ is uniformly distributed on $[0,1]$
+- R has a prior that $\theta$ is uniformly distributed on $[0,1]$
 - messages are real numbers in $[0,1]$ 
-- $u^R(a,\theta )=-(a-\theta )^2$, i.e. R wants to play an action the equals the state
+- $u^R(a,\theta )=-(a-\theta )^2$, i.e. R wants to play an action that equals the state
 - $u^S(a,\theta )=-(a-\theta -b)^2$ for some $b\geq0$, i.e. S wants R to play an action that is $b$ higher than the state
 
 ** Negative results
@@ -80,7 +83,7 @@ two players: a sender $S$ and a receiver $R$
     :PROPERTIES:
     :BEAMER_env: block
     :END:
-  If $b\neq0$, there is no BNE where the sender truthfully reports the state, i.e. no BNE where $m(\theta )=\theta $.
+  If $b\neq0$, there is no BNE where the sender truthfully reports the state, i.e. no BNE where $m(\theta )=\theta$.
 *** 							    :B_ignoreheading:
     :PROPERTIES:
     :BEAMER_env: ignoreheading
@@ -92,7 +95,7 @@ two players: a sender $S$ and a receiver $R$
     :PROPERTIES:
     :BEAMER_env: block
     :END:
-  There exists a completely uninformative weak PBE (babbling equilibrium), e.g. $m(\theta)=0$ for any state and $a=1/2$ for any message.
+  There exists a completely uninformative equilibrium (babbling equilibrium), e.g. $m(\theta)=0$ for any state and $a=1/2$ for any message.
 *** 							    :B_ignoreheading:
     :PROPERTIES:
     :BEAMER_env: ignoreheading
@@ -115,7 +118,7 @@ For $b<1/4$, there exist a partially informative equilibrium in which a high (lo
 
 ** Most informative equilibrium
 
-- equilibrium is partitional
+- equilibrium is partitional (show!)
 # if one type of S prefers a high action to a low one than the same is true for all higher types (draw utility functions, i.e. quadratics, to see this)
 
 - partition: $(0,\theta_1,\dots,\theta_{n-1},1)$
@@ -135,6 +138,8 @@ $$\Leftrightarrow\theta _{k+1}=-\theta _{k-1}-4x=\theta_k+(\theta_k-\theta_{k-1}
 $$\theta _{k+1}=\theta_k+(\theta_k-\theta_{k-1})+4b$$
 - for given $\theta_1$ all partition points determined
 - choose $\theta_1$ such that $\theta_n=1$
+  - higher $\theta_1\quad\rightarrow$ higher $\theta_2$, $\theta_3$ \dots
+  - for given $n$, (at most) one equilibrium, i.e. (at most) one $\theta_1$
 
 ** Example
 - take $b=1/20$, then the following equilibria exist
@@ -169,11 +174,13 @@ $$\theta _{k+1}=\theta_k+(\theta_k-\theta_{k-1})+4b$$
      - $-((1/4)-\theta )^2$ if $\theta \in [2/15,7/15)$
      - $-((41/60)-\theta )^2$ if $\theta \in [7/15,1)$
 
-- if S commits, the action will be $a=\theta $ and therefore the utility of S is $-b^2=-1/400=-0.0025$
+- if S commits, the action will be $a=\theta$ and therefore the utility of S is $-b^2=-1/400=-0.0025$
 - commitment makes S better/worse off in some states of the world
 - in expectation utility of S in the three part partition is
+
  \begin{multline*}
-     \int_0^{2/15}-(1/60-\theta)^2 d\theta+\int_{2/15}^{7/15}-(1/4-\theta)^2 d\theta\\+\int_{7/15}^1-(41/60-\theta)^2 d\theta\approx-0.01058
+     \int_0^{2/15}-(1/60-\theta)^2 d\theta+\int_{2/15}^{7/15}-(1/4-\theta)^2 d\theta \\ +\int_{7/15}^1-(41/60-\theta)^2 d\theta\approx-0.01058
 \end{multline*}
-- commitment is of value in expectation
+\vspace*{-2cm}
+- commitment is valuable in expectation
 
