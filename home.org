@@ -17,7 +17,7 @@
   - [[https://github.com/schottmueller/advMicro/files/1960716/auctions.pdf][auctions]]
   - [[https://github.com/schottmueller/advMicro/files/1966289/spne.pdf][SPNE]]
   - [[https://github.com/schottmueller/advMicro/files/1987255/pbe.pdf][PBE]]
-  - [[https://github.com/schottmueller/advMicro/files/1980963/signal.pdf][signaling]]
+  - [[https://github.com/schottmueller/advMicro/files/2000878/signal.pdf][signaling]]
   - [[https://github.com/schottmueller/advMicro/files/1994283/cheapTalk.pdf][cheap talk]]
 - Handouts etc.:
   - [[https://github.com/schottmueller/advMicro/files/1954228/math.pdf][math handout]]
@@ -93,7 +93,7 @@ The following plan is...well a plan...and as such it might be adapted to unforse
 
 ** Cheap talk
 - Crawford and Sobel (cite:crawford1982cheap)
-- further not required reading: see the [[https://doi.org/10.1057/978-1-349-95189-5_2525][article]] in the New Palgrave Dictionary of Economics on Cheap Talk for a quick overview over the literature
+- further not required reading: see the [[https://doi.org/10.1057/978-1-349-95189-5_2525][article]] in the New Palgrave Dictionary of Economics on Cheap Talk for a quick overview over the literature, for more on the delegation example see Alonso, Ricardo, and Niko Matouschek. "Optimal delegation." Review of Economic Studies 75.1 (2008): 259-293. (and several other papers by these authors)
 ** Mechanism design I: revelation principle
 - mechanism design problem (MWG 23.B)
 - revelation principle (MWG 23.B)
