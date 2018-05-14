@@ -22,10 +22,13 @@
 * Pirates
 
 ** Signaling example: Jolly Rodger
-
+\begin{center}
     \includegraphics[width=6cm]{jollyroger}
+\end{center}
 
 (story based on Leeson, "The invisible hook: the hidden economics of pirates", Princeton University Press, 2011)
+
+\tiny{Flag image: By Oren neu dag [CC BY-SA 3.0] from Wikimedia Commons}
 
 ** Pirate model
 timing:  
@@ -60,7 +63,7 @@ Payoffs:
    - C play J with prob $\lambda=2p/(1-p)$
    - defender surrenders against J with prob $\mu=X/2$ and with prob 0 against F
 
-- if  $p\geq 1/3$, then "pooling" equilibrium
+- if $X\leq2$ and  $p\geq 1/3$, then "pooling" equilibrium
    - P and C mix between J and F in (roughly) the same proportion, e.g. always F
    - defender always surrenders
 
@@ -71,8 +74,8 @@ Payoffs:
 - 2 firms observe $e$ and simultaneously offer a wage
 - worker takes higher offer (if $>0$)
 - information
-   - $\theta $ is worker's private information
-   - firms view $\theta $ as being $\theta _h$ with probability $\lambda\in(0,1)$
+   - $\theta$ is worker's private information
+   - firms view $\theta$ as being $\theta _h$ with probability $\lambda\in(0,1)$
 
 - payoff worker $w-c(e,\theta)$
 - payoff firm: $\theta-w$ (if offer accepted, 0 else)
@@ -87,7 +90,7 @@ either
 - firms' belief $\mu(e)$ that worker is $\theta_h$ derived by Bayes rule wherever possible
 - off equilibrium path choices of $e$:
    - firms have the same belief $\mu(e)$
-- firms play Nash equilibrium given $\mu(e)$ (on and off path)
+- firms' wage offers constitute a Nash equilibrium given $\mu(e)$ (on and off path)
 
 \vspace*{0.5cm}
 - what are firms' equilibrium wage offers?
@@ -123,11 +126,13 @@ In a separating equilibrium, $w(e(\theta_l))=\theta_l$ and $w(e(\theta_h))=\thet
 \draw[red,thick,domain=0:0.85] plot(\x,{.9*\x^2+0.2});
 \node[below] at (0.44,0) {$\tilde e$};
 \node[below] at (0.81,0) {$\bar e$};
+\node[below] at (-.01,0.01) {$0$};
 \node[below,red] at (0.81,1.02) {$\bar u(\theta_h)$};
 \node[below,blue] at (0.44,1.03) {$\bar u(\theta_l)$};
 \draw[help lines,dashed] (0.44,0.0)--(0.44,.8);
 \draw[help lines,dashed] (0.81,0.0)--(0.81,.8);
 \end{tikzpicture}
+# $\tilde e$ up to $\bar e$
 
 ** Separating equilibria II
 
@@ -145,6 +150,7 @@ In a separating equilibrium, $w(e(\theta_l))=\theta_l$ and $w(e(\theta_h))=\thet
 \draw[red,thick,domain=0:0.85] plot(\x,{.9*\x^2+0.2});
 \node[below] at (0.44,0) {$\tilde e$};
 \node[below] at (0.81,0) {$\bar e$};
+\node[below] at (-.01,0.01) {$0$};
 %\node[below,red] at (0.81,1.02) {$\bar u(\theta_h)$};
 %\node[below,blue] at (0.44,1.03) {$\bar u(\theta_l)$};
 %\draw[help lines,dashed] (0.44,0.0)--(0.44,.8);
@@ -179,6 +185,7 @@ In a separating equilibrium, $w(e(\theta_l))=\theta_l$ and $w(e(\theta_h))=\thet
 \draw[red,thick,domain=0:0.85] plot(\x,{.9*\x^2+0.2});
 \node[below] at (0.44,0) {$\tilde e$};
 \node[below] at (0.81,0) {$\bar e$};
+\node[below] at (-.01,0.01) {$0$};
 \node[below] at (0.34,0) {$e'$};
 \node[below,red] at (0.81,1.02) {$\bar u(\theta_h)$};
 \node[below,blue] at (0.44,1.03) {$\bar u(\theta_l)$};
@@ -203,6 +210,7 @@ In a separating equilibrium, $w(e(\theta_l))=\theta_l$ and $w(e(\theta_h))=\thet
 \draw[red,thick,domain=0:0.7] plot(\x,{.9*\x^2+0.505});
 %\node[below] at (0.36,0) {$e'$};
 \node[below] at (0.22,0) {$e^*$};
+\node[below] at (-.01,0.01) {$0$};
 %\node[below,red] at (0.81,1.02) {$\bar u(\theta_h)$};
 %\node[below,blue] at (0.44,1.03) {$\bar u(\theta_l)$};
 %\draw[help lines,dashed] (0.44,0.0)--(0.44,.8);
@@ -253,7 +261,7 @@ In a separating equilibrium, $w(e(\theta_l))=\theta_l$ and $w(e(\theta_h))=\thet
      - not strictly dominated for type $\theta''$
   - then belief after observing $a'$ should not assign positive probability to type $\theta'$
 
-- no education level in job market signaling is strictly dominated
+- no education level in job market signaling is strictly dominated 
 
 ** Refinements: equilibrium dominance
 - "equilibrium domination"
