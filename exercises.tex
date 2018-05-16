@@ -356,8 +356,8 @@ D  \> 4,4$+\theta _2$    \>1,5
 
 \begin{enumerate}
 % \item Take the jobmarket model from the slides. Suppose that the worker has an outside option, i.e. if he is offered only wages of less than $r>0$, than he will refuse all offers and take his outside option (of value $r$). The value of the outside option does not depend on type. What are the equilibria if $r\in(\theta_l,\mathbb{E}[\theta]$? What are the equilibria if $r>\mathbb{E}[\theta ]$? How do you evaluate the welfare effect of the possibility to signal?
-\item Consider the least cost separating equilibrium of the jobmarket model on the slides. Suppose the government introduces a tax on high wages (all wages above $\mathbb{E}[\theta ]$) and a subsidy for low wages (all others). The tax is $t$ and the subsidy is $t*\lambda/(1-\lambda)$, i.e. the tax subsidy scheme has a balanced budget. Show that this tax scheme leads to a Pareto improvement if $\lambda$ is sufficiently large (and $t$ is chosen not too large). More precisley, show that $\lambda\geq 1/2$ is sufficient for a Pareto improvement.
-% Firms always get zero profits and $\theta_l$ types clearly are made better off by the subsidy.  A marginal increase in $t$ from $t=0$ improves welfare of high types if their cost of effort is reduced by more than the tax burden. The marginal effect of the tax on payoff is $-1$. The reduction in effort (at $t=0$) is $d\tilde e/dt=-\lambda/((1-\lambda)*c_e(\tilde e,\theta_l))$. Hence, welfare of $\theta_j$ goes up by $\frac{\lambda}{1-\lambda}\frac{c_e(\tilde e,\theta_h)}{c_e(\tilde{e},\theta _l)}$. For $\lambda$ sufficiently close to 1 this is higher than 1. By the single crossing assumption $\frac{c_e(\tilde e,\theta_h)}{c_e(\tilde{e},\theta _l)}>1$ which implies that $\lambda\geq 1/2$ is sufficient for a Pareto improvement. 
+\item Consider the least cost separating equilibrium of the jobmarket model on the slides. Suppose the government introduces a tax on high wages (all wages above $\mathbb{E}[\theta ]$) and a subsidy for low wages (all others). The tax is $t$ and the subsidy is $t*\lambda/(1-\lambda)$, i.e. the tax subsidy scheme has a balanced budget. Show that this tax scheme leads to a Pareto improvement if $\lambda$ is sufficiently large (and $t$ is chosen not too large). More precisley, show that $\lambda\geq 1/2$ is necessary for a Pareto improvement.
+% Firms always get zero profits and $\theta_l$ types clearly are made better off by the subsidy.  A marginal increase in $t$ from $t=0$ improves welfare of high types if their cost of effort is reduced by more than the tax burden. The marginal effect of the tax on payoff is $-1$. The reduction in effort (at $t=0$) is $d\tilde e/dt=-\lambda/((1-\lambda)*c_e(\tilde e,\theta_l))$. Hence, welfare of $\theta_j$ goes up by $\frac{\lambda}{1-\lambda}\frac{c_e(\tilde e,\theta_h)}{c_e(\tilde{e},\theta _l)}$. For $\lambda$ sufficiently close to 1 this is higher than 1. By the single crossing assumption $\frac{c_e(\tilde e,\theta_h)}{c_e(\tilde{e},\theta _l)}<1$ which implies that $\lambda\geq 1/2$ is necessary for a Pareto improvement. 
 \item Exercise 13.C.6 in MWG.
 \end{enumerate}
 
@@ -373,7 +373,7 @@ D  \> 4,4$+\theta _2$    \>1,5
       \item Given a mixed strategy of the expert, what is the best response of the decision maker? % $min \mu * (a-1)^2+(1-\mu)(a)^2$ which gives foc: $a=\mu$ 
       \item What is the equilibrium strategy of the expert? %truthtelling is eq if $-b^2\geq-(1-b)^2$, i.e. if $b\leq 1/2$; otherwise indifference of expert in 0 state: $b^2=(1/(1-q)-b)^2$ solved for $q=1-2b$
       \end{enumerate}
-    \item A patient can be in one of three health states: A, B, C. Stae A and B have prior probability 2/5 and C has 1/5. Doctor and patient both receive a private signal about the health state that is either 0 or 1. The following table describes the signal distribution.
+    \item A patient can be in one of three health states: A, B, C. State A and B have prior probability 2/5 and C has 1/5. Doctor and patient both receive a private signal about the health state that is either 0 or 1. The following table describes the signal distribution.
       \begin{table}[h]
         \centering
         \begin{tabular}{l|c|c|c}
@@ -417,10 +417,11 @@ The timing of the game is that the patient can send a cheap talk message in $\{0
 \item Assume doctor and patient have the objective of maximizing the patient's payoff (and ignore costs because the patient is insured). What is the equilibrium? (If you see that there are more than 1, use the one you find most reasonable for the following questions.)
 \item Assume that the patient's objective is to maximize his payoff while the doctor maximizes welfare. Is there an equilibrium in which the patient truthfully reveals his signal to the doctor? (If not, assume in the following that there is a babbling equilibrium in which the doctor relies only on his own signal.)
 \item Is welfare higher when the doctor maximizes welfare or when the doctor maximizes patient payoff?
-  \item Show that costs are higher when the doctor maximizes welfare if the prior is $(1/2-p_c/2,1/2-p_c/2,p_c)$ for $p_c>0$ small enough.
+\item Show that costs are higher when the doctor maximizes welfare if the prior is $(1/2-p_c/2,1/2-p_c/2,p_c)$ for $p_c>0$ small enough.
+  \item What economic implications do these results have?
 \end{enumerate}
 
-For a solution, see section 3 in \cite{schottmueller2013cifd}.
+This exercise will not be covered in class. For a solution, see \cite{schottmueller2013cifd}, in particular section 3.
 
 \end{enumerate}
 
