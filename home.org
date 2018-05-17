@@ -3,6 +3,7 @@
 #+Options: toc:nil
 #+Latex_Header: \usepackage{natbib}
 * News
+- PhD students who cannot register for the exam through Klips should write me an email with their full name and their student number before June 03 in order to register.
 - There are no lectures on May 21 (Monday) and May 23 (Wednesday) due to the pentecost break.
 - I would be interested in feedback. In particular concerning overlap with other courses, the level of the course, (mis-)match with expectations etc.
 - Registration for the exam is now possible in KLIPS.
