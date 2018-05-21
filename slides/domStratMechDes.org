@@ -1,0 +1,175 @@
+#+Title: Mechanism Design: Dominant Strategy 
+#+AUTHOR:    Christoph Schottmüller
+#+Date: 
+
+#+LANGUAGE:  en
+#+OPTIONS:   H:2 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+
+
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: 
+#+BEAMER_FRAME_LEVEL: 2
+#+latex_header: \mode<beamer>{\useinnertheme{rounded}\usecolortheme{rose}\usecolortheme{dolphin}\setbeamertemplate{navigation symbols}{}\setbeamertemplate{footline}[frame number]{}}
+#+latex_header: \mode<beamer>{\usepackage{amsmath}\usepackage{ae,aecompl,amsthm,amssymb}\usepackage{sgamevar,tikz}\usetikzlibrary{trees}}
+#+LATEX_HEADER:\let\oldframe\frame\renewcommand\frame[1][allowframebreaks]{\oldframe[#1]}
+#+LATEX_HEADER: \setbeamertemplate{frametitle continuation}[from second]
+
+* Dominant strategy implementation
+
+**  Dominant strategy equilibrium in mechanism design
+
+- last time: mechanism $(S_1,\dots,S_I,g)$ implements scf $f$ if game induced by mecahnism has *an equilibrium* $(s_1^*,\dots,s_I^*)$ such that $f(\theta)=g(s_1^*(\theta_1),\dots,s_I^*(\theta_I))$
+- normally: *equilibrium* = Bayesian Nash equilibrium
+- today: *equilibrium* = dominant strategy equilibrium
+
+*** Dominant strategy equilibrium			       :B_definition:
+    :PROPERTIES:
+    :BEAMER_env: definition
+    :END:
+The strategy profile $(s_1^*,\dots,s_I^*)$ is a dominant strategy equilibrium in the game induced by the mechanism $(S_1,\dots,S_I,g)$ iff for each player $i$ and type $\theta_i\in \Theta_i$ 
+$$u_i(g(s^*_i(\theta_i),s_{-i}),\theta_i)\geq u_i(g(s_i,s_{-i}),\theta_i)$$ 
+for all $s_i\in S_i$ and all $s_{-i}\in S_{-i}$.
+
+*** 							    :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+
+- dominant strategy (in mechanism design): a strategy that is weakly (!) optimal no matter what the other players are doing
+
+- examples for games with dominant strategy equilibrium?
+
+** Dominant strategy equilibrium
+
+- every dominant strategy equilibrium is also a BNE (not vice versa)
+
+- very robust equilibrium concept
+  - beliefs about others' play irrelevant
+  - knowledge of others' payoffs or rationality irrelevant
+
+*** Revelation principle for dominant strategy implementation
+If $f$ is implementable in dominant strategy equilibrium by some mechanism, then $f$ is truthfully implementable in dominant strategy equilibrium by the direct revelation mechanism. (proof: see MWG)
+*** 							    :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+- dominant strategy incentive compatibility: for all $\theta_i,\theta_i'\in\Theta_i$ and $\tilde\theta_{-i}\in\Theta_{-i}$
+$$u_i(f(\theta_i,\tilde\theta_{-i}),\theta_{i})\geq u_i(f(\theta_i',\tilde\theta_{-i}),\theta_{i})$$
+
+- any drawbacks of using dominant strategy equilibrium?
+# only few games have DSE, hence much less scope to implement scf. put differently, dom strat ic constraints much stricter than BNE ic
+
+* Gibbard Satterthwaite theorem
+
+
+** Towards Gibbard Satterthwaite
+- BIG QUESTION:
+Which social choice functions are incentive compatible in dominant strategies?
+
+** Towards Gibbard Satterthwaite
+- One class of ic social choice functions that are however /not so nice/ are dictatorial choice functions:
+*** dictatorial social choice function			       :B_definition:
+    :PROPERTIES:
+    :BEAMER_env: definition
+    :END:
+The social choice function is dictatorial if there is an agent $i$ (the dictator) such that for all $\theta\in\Theta$
+$$ f(\theta)\in\{x\in X:\, u_i(x,\theta_i)\geq u_{i}(y,\theta_{i})\;\text{ for all }\;y\in X\}.$$
+
+*** 							    :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+- roughly: if the social choice function always picks the alternative that $i$ loves most, then $i$ is a dictator
+- Check: a dictatorial social choice function is incentive compatible and Pareto efficient
+
+** Gibbard Satterthwaite Theorem (informal)
+- Assumptions
+- $X$ is a finite set with at least 3 elements, say $X=\{x_{1},x_{2},\dots,x_{n}\}$
+- preferences are strict, i.e. no agent is indifferent between two alternatives $x_{m}$ and $x_{k}$ 
+- all preferences over $X$ are possible; e.g. for $n=3$ this means that for each player $i$ there is 
+  - a type $\theta_{i}^{1}$ such that $u_{i}(x_{1},\theta_{i}^{1})>u_{i}(x_{2},\theta_{i}^{1})>u_{i}(x_{3},\theta_{i}^{1})$
+  - a type $\theta_{i}^{2}$ such that $u_{i}(x_{1},\theta_{i}^{2})>u_{i}(x_{3},\theta_{i}^{2})>u_{i}(x_{2},\theta_{i}^{2})$
+  - a type $\theta_{i}^{3}$ such that $u_{i}(x_{2},\theta_{i}^{3})>u_{i}(x_{1},\theta_{i}^{3})>u_{i}(x_{3},\theta_{i}^{3})$
+  - a type $\theta_{i}^{4}$ such that $u_{i}(x_{2},\theta_{i}^{4})>u_{i}(x_{3},\theta_{i}^{4})>u_{i}(x_{1},\theta_{i}^{4})$
+  - a type $\theta_{i}^{5}$ such that $u_{i}(x_{3},\theta_{i}^{5})>u_{i}(x_{2},\theta_{i}^{5})>u_{i}(x_{3},\theta_{i}^{5})$
+  - a type $\theta_{i}^{6}$ such that $u_{i}(x_{3},\theta_{i}^{6})>u_{i}(x_{1},\theta_{i}^{6})>u_{i}(x_{2},\theta_{i}^{6})$
+- Result: Only dictatorial social choice functions are truthfully implementable in dominant strategies.
+
+** Gibbard Satterthwaite Theorem (formal)
+*** Gibbard Satterthwaite Theorem				  :B_theorem:
+    :PROPERTIES:
+    :BEAMER_env: theorem
+    :END:
+Suppose $X$ is finite and contains at least three elements. Suppose further that all preferences on $X$ are possible for all agents $i$.\\ 
+A social choice function $f$ is then truthfully implementable in dominant stategies if and only if it is dictatorial.
+*** Proof							    :B_proof:
+    :PROPERTIES:
+    :BEAMER_env: proof
+    :END:
+(skipped; see, for example, Lars-Gunnar Svensson, Alexander Reffgen, The proof of the Gibbard–Satterthwaite theorem revisited, Journal of Mathematical Economics, Volume 55, December 2014, Pages 11-14, http://dx.doi.org/10.1016/j.jmateco.2014.09.007.)
+
+** Gibbard Satterhwaite Theorem: Interpretation and economics
+- in connection with revelation principle:\linebreak only dictatorial social welfare functions can be implemented by any mechanism
+- original application of mechanism design: writing a constitution\linebreak What does the Gibbard Satterthwaite theorem imply in this context?
+- quite demoralizing!
+- comment: similar result holds for infinite $X$
+
+
+** Gibbard Satterhwaite Theorem: What now?
+- two ways to get out of this negative result:
+  - don't allow all possible preferences 
+  - don't use dominant strategy implementation; i.e. use Bayesian Nash equilibrium instead of dominant strategy equilibrium (see the following lectures)
+- both ways out have their drawbacks!!!
+
+
+* Vickrey Clarke Groves mechanism
+
+** Quasi-linear preferences
+- consider setups where outcome consists of one decision $y\in\Re$ and transfer payments $t_1,\dots,t_I$ 
+  - e.g. public good example last time where $X=\{(y,t_1,\dots,t_I)\in\Re^{I+1}: y\in\{0,1\},\sum_i t_i\geq y*c\}$
+- restrict preferences to quasi-linear preferences: $u_i(x,\theta_i)=v_i(y,\theta_i)-t_i$
+- denote by $y^*$ efficient decision, i.e. $$y^*(\theta)\in argmax_{y}\sum_i v_i(y,\theta_i)$$
+  - e.g. public good example: $y^*(\theta)=\begin{cases} 1 & \text{ if }\sum_i\theta_i>c\\ 0 & \text{ else }\end{cases}$
+
+** Vickrey Clarke Groves (VCG) mechanisms
+
+*** Vickrey Clarke Groves mechanism				  :B_theorem:
+    :PROPERTIES:
+    :BEAMER_env: theorem
+    :END:
+Let $$t_i^*(\theta)=h_i(\theta_{-i})-\sum_{j\neq i}v_j(y^*(\theta),\theta_j)$$ for some function $h_i:\Theta_{-i}\rightarrow\Re$. Then the social choice function 
+$$f(\theta)=(y^*(\theta),t_1^*(\theta),\dots,t_I^*(\theta))$$ is dominant strategy incentive compatible.
+
+*** 							    :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+
+- $f$ is not dictatorial!
+- $f$ implements efficient project choice
+- many such $f$ as $h_i$ can be any function
+
+** Proof VCG theorem
+To show: for all $\tilde\theta_{-i}\in\Theta_{-i}$ and all $\theta_i,\theta_i'\in \Theta_i$
+$$\theta_i\in argmax_{\hat\theta_i\in\Theta_i} v_i(y^*(\hat{\theta}_i,\tilde{\theta}_{-i}),\theta_i)-h_i(\tilde\theta_{-i})+\sum_{j\neq i}v_j(y^*(\hat\theta_i,\tilde{\theta}_{-i}),\tilde{\theta}_j)$$
+$$\Leftrightarrow \theta_i\in argmax_{\hat\theta_i\in\Theta_i} v_i(y^*(\hat{\theta}_i,\tilde{\theta}_{-i}),\theta_i)+\sum_{j\neq i}v_j(y^*(\hat\theta_i,\tilde{\theta}_{-i}),\tilde{\theta}_j)$$
+
+- true as $y^*(\theta_i,\tilde\theta_{-i})\in argmax_{y} v_i(y,\theta_i)+\sum_{j\neq i}v_j(y,\tilde{\theta}_j)$ by definition of $y^*$ \qed
+
+** Example VCG
+
+- public good example with $c=0$ (note: $\theta_i$ may be negative)
+- $v_i(y,\theta_i)=y*\theta_i$
+$$t_i(\theta)=h_i(\theta_{-i})-\sum_{j\neq i}y^*(\theta)\theta_j$$
+- take $h_i$ such that 
+  - $\hat y_i(\theta-{-i})=\begin{cases} 1 & \text{ if }\sum_{j\neq i}\theta_j>c\\ 0 & \text{ else }\end{cases}$
+  - $h(\theta_{-i})=\sum_{j\neq i}\hat y(\theta_{-i})\theta_j$
+$$t_i(\theta)=(\hat y(\theta_{-i})-y^*(\theta))\sum_{j\neq i}\theta_j$$
+- why is this transfer rule called "externality transfer"?
+- say $\theta_1=2$, $\theta_2=-3$, $\theta_3=2$, calculate the externality transfers!
+# t_1=t_3=-(-3+2)=1, t_2=0
