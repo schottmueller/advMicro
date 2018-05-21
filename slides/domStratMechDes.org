@@ -161,15 +161,39 @@ $$\Leftrightarrow \theta_i\in argmax_{\hat\theta_i\in\Theta_i} v_i(y^*(\hat{\the
 
 - true as $y^*(\theta_i,\tilde\theta_{-i})\in argmax_{y} v_i(y,\theta_i)+\sum_{j\neq i}v_j(y,\tilde{\theta}_j)$ by definition of $y^*$ \qed
 
-** Example VCG
+** Example VCG: public good
 
 - public good example with $c=0$ (note: $\theta_i$ may be negative)
 - $v_i(y,\theta_i)=y*\theta_i$
 $$t_i(\theta)=h_i(\theta_{-i})-\sum_{j\neq i}y^*(\theta)\theta_j$$
 - take $h_i$ such that 
-  - $\hat y_i(\theta-{-i})=\begin{cases} 1 & \text{ if }\sum_{j\neq i}\theta_j>c\\ 0 & \text{ else }\end{cases}$
+  - $\hat y_i(\theta_{-i})=\begin{cases} 1 & \text{ if }\sum_{j\neq i}\theta_j>c\\ 0 & \text{ else }\end{cases}$
   - $h(\theta_{-i})=\sum_{j\neq i}\hat y(\theta_{-i})\theta_j$
 $$t_i(\theta)=(\hat y(\theta_{-i})-y^*(\theta))\sum_{j\neq i}\theta_j$$
 - why is this transfer rule called "externality transfer"?
 - say $\theta_1=2$, $\theta_2=-3$, $\theta_3=2$, calculate the externality transfers!
 # t_1=t_3=-(-3+2)=1, t_2=0
+
+** Example VCG: private value auction of an indivisible object
+- $y_i$ be probability that $i$ gets good
+- $v_i(y,\theta_i)=y_i\theta_i$
+- take $h_i(\theta_{-i})=\max \theta_{-i}$
+- $y^*$: assign good to person with highest value
+- $t_i^*(\theta)=\max \theta_{-i}-\sum_{j\neq i}y_j^*(\theta)\theta_j$ 
+- reminds you of anything?
+
+** Pivot mechanism
+- as in the examples, let $h_i(\theta_{-i})$ be welfare of other players if $i$ was not there
+  - $\hat y(\theta_{-i})\in argmax_y \sum_{j\neq i}v_j(y,\theta_j)$
+  - $h_i(\theta_{-i})=\sum_{j\neq i}v_j(\hat y,\theta_j)$
+
+- using this $h_i$ in VCG leads to the so called "pivot mechanism"
+  - what will $t_i^*$ be if $\hat y(\theta_{-i})=y^*(\theta_i,\theta_{-i})$?
+  - how to interpret $t_i^*$ in the pivot mechanism? 
+# 0, externality payments
+
+** Dealing with positive costs
+- if alternatives come with costs then adopt a default sharing of costs
+  - e.g. public good example with $c>0$
+- $\tilde v_i(y,\theta_i)=v_i(y,\theta_i)-c(y)/I$
+- use VCG mecahnism with $\tilde v_i$ instead of $v_i$

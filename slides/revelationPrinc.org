@@ -24,7 +24,7 @@
 - which game do you have to let agents play to get the outcome that you want?
 
 
-** The Mechanism Design Problem: Examples
+** The Mechanism Design Problem: Example
 *** Example: A public project 				     :B_exampleblock:
     :PROPERTIES:
     :BEAMER_env: exampleblock
@@ -201,4 +201,5 @@ $$\Leftrightarrow \theta_i\in argmax_{\theta_i'\in\Theta_i}\mathbb{E}_{\theta_{-
 ** Revelation principle: relevance
 - "can $f$ be implemented?" $\Leftrightarrow$ "is $f$ truthfully implementable?" $\Leftrightarrow$ "is announcing the true type equilibrium in direct revelation mechanism?"
 - no need to try out many different mechanisms
-- focus on direct revelation mechanism and incentive compatibility
+- /set of implementable social choice functions/ is set of social choice functions for which the direct revelation mechanism is incentive compatible
+- focus of mechanism design on direct revelation mechanism and incentive compatibility
