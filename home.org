@@ -95,14 +95,14 @@ The following plan is...well a plan...and as such it might be adapted to unforse
 # - Rothschild-Stiglitz insurance market (cite:rothschild1976equilibrium)
 
 ** Cheap talk
-- Crawford and Sobel (cite:crawford1982cheap)
+- Crawford and Sobel (cite:crawford1982cheap) (the paper is not super easy to read; so I do not expect you to go through all the details)
 - further not required reading: see the [[https://doi.org/10.1057/978-1-349-95189-5_2525][article]] in the New Palgrave Dictionary of Economics on Cheap Talk for a quick overview over the literature, for more on the delegation example see Alonso, Ricardo, and Niko Matouschek. "Optimal delegation." Review of Economic Studies 75.1 (2008): 259-293. (and several other papers by these authors)
 ** Mechanism design I: revelation principle
 - mechanism design problem (MWG 23.B)
 - revelation principle (MWG 23.B)
 
 ** Mechanism design II: dominant strategy implementation
-# - Gibbard Satterthwaite theorem (MWG 23.C)
+- Gibbard Satterthwaite theorem (MWG 23.C)
 - Vickrey-Clarke-Groves mechanism (MWG 23.C)
 
 # ** Mechanism design III: AGV
