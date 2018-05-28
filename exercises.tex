@@ -373,7 +373,9 @@ D  \> 4,4$+\theta _2$    \>1,5
       \item Given a mixed strategy of the expert, what is the best response of the decision maker? % $min \mu * (a-1)^2+(1-\mu)(a)^2$ which gives foc: $a=\mu$ 
       \item What is the equilibrium strategy of the expert? %truthtelling is eq if $-b^2\geq-(1-b)^2$, i.e. if $b\leq 1/2$; otherwise indifference of expert in 0 state: $b^2=(1/(1-q)-b)^2$ solved for $q=1-2b$
       \end{enumerate}
-    \item A patient can be in one of three health states: A, B, C. State A and B have prior probability 2/5 and C has 1/5. Doctor and patient both receive a private signal about the health state that is either 0 or 1. The following table describes the signal distribution.
+    \item Take the model from the lecture but assume that the state is distributed not uniformly but with some arbitrary distribution $\Phi$ (with strictly positive density $\phi$) on $[0,1]$. Take a partitional equilibrium as in the lecture. Show that $a(m)=\mathbb{E}[\theta |m]$. Show then that S benefits from commitment in expectation, i.e. if S could commit to always truthfully reveal the state he would in expectation be better off than in equilibrium (where the expectation is taken over the state of the world $\theta $).\footnote{We use here the assumption that the utility is a quadratic loss function. I think the result can be generalized to the case $u^R(a,\theta )=u(a-\theta)$ and $u^S(a,\theta )=u(a-\theta -b)$ if $u$ is a strictly concave function. However, already for strictly quasiconcave $u$ functions the result is no longer true. }
+      % S's exp utility in each partition element $\int -(E[theta|m]-\theta-b)^2 d\Phi(\theta|m) = -var(\theta|m)-b^2+0>-b^2$
+    \item (Extra exercise) A patient can be in one of three health states: A, B, C. State A and B have prior probability 2/5 and C has 1/5. Doctor and patient both receive a private signal about the health state that is either 0 or 1. The following table describes the signal distribution.
       \begin{table}[h]
         \centering
         \begin{tabular}{l|c|c|c}
@@ -387,7 +389,7 @@ D  \> 4,4$+\theta _2$    \>1,5
         \label{tab:signcifd}
       \end{table}
 
-The interpretation is that, given health state A, signal $(\sigma^p,\sigma^d)=(1,1)$ occurs with probability 4/5 where $\sigma^p$ is the patint's signal etc.
+The interpretation is that, given health state A, signal $(\sigma^p,\sigma^d)=(1,1)$ occurs with probability 4/5 where $\sigma^p$ is the patient's signal etc.
 
 There are three treatments: a,b,c. The patient's payoff as function of state and treatment and the costs of each treatment are given in the following table. (There is some interpretation that $a$ is effective but expensive, $c$ is no treatment; A is severe problem, B is slight problem and C is healthy; under- and overtreatment both reduce the patient's payoff.) 
 \begin{table}[h]
@@ -414,15 +416,50 @@ The timing of the game is that the patient can send a cheap talk message in $\{0
 
 \begin{enumerate}
 \item Let welfare be patient payoff minus costs. What are the welfare maximizing treatments in each state? What are the treatments maximizing patient payoff (i.e. neglecting the costs)? 
-\item Assume doctor and patient have the objective of maximizing the patient's payoff (and ignore costs because the patient is insured). What is the equilibrium? (If you see that there are more than 1, use the one you find most reasonable for the following questions.)
+\item Assume doctor and patient have the objective of maximizing the patient's payoff (and ignore costs because the patient is insured). What is the equilibrium? (If you see that there are more than 1 equilibrium, use the one you find most reasonable for the following questions.)
 \item Assume that the patient's objective is to maximize his payoff while the doctor maximizes welfare. Is there an equilibrium in which the patient truthfully reveals his signal to the doctor? (If not, assume in the following that there is a babbling equilibrium in which the doctor relies only on his own signal.)
 \item Is welfare higher when the doctor maximizes welfare or when the doctor maximizes patient payoff?
 \item Show that costs are higher when the doctor maximizes welfare if the prior is $(1/2-p_c/2,1/2-p_c/2,p_c)$ for $p_c>0$ small enough.
-  \item What economic implications do these results have?
+  \item What implications do these results have for designing the health care system?
 \end{enumerate}
 
 This exercise will not be covered in class. For a solution, see \cite{schottmueller2013cifd}, in particular section 3.
 
+\end{enumerate}
+
+\section{Revelation principle}
+\label{sec:revelation-principle}
+
+\begin{enumerate}
+\item A policy $x\in[0,1]$ has to be selected (e.g. a tax rate). There are $I\geq 3$ agents and each agent $i$ has a most preferred policy $\theta _i$ called $i$'s ``peak''. The payoff of agent $i$ if policy $x$ is selected is $-|x-\theta _i|$. We consider two social choice functions:
+  \begin{itemize}
+  \item mean selection: $f(\theta _1,\dots,\theta _I)=\sum_{i=1}^I\theta _i/I$
+    \item median selection: select the median of $\{x_1,\dots,x_I\}$
+  \end{itemize}
+  \begin{enumerate}
+  \item Let each $\theta _i$ be uniformly and independently be distributed on $[0,1]$. Is mean selection implementable by any mechanism $\Gamma$? Is median selection implementable by any mechanism $\Gamma$?
+    \item Find a distribution $\Phi$ such that both policies are implementable if each $\theta _i$ is independently distributed according to $\Phi$.
+    \end{enumerate}
+    \item MWG 23.D.1
+    \end{enumerate}
+
+\section{Dominant strategy implementation}
+\label{sec:domin-strat-impl}
+
+\begin{enumerate}
+\item VCG with positive costs: A public project costs $c=3$. There are three agents with valuations $\theta _1=2$, $\theta _2=0$ and $\theta _3=2$. Calculate the transfers in the Pivot mechanism and determine the players payoffs. Is there anything potentially problematic?
+\item There is a seller with privately known costs $c$ and a buyer with privately known valuation $v$. Both, $v$ and $c$ are (from the other players' point of view) uniformly distributed on $[0,1]$. The seller has payoff $t_S-c x$ where $t_S$ is a monetary payment the seller receives and $x$ the probability of trade. The buyer has payoff $vx-t_B$.
+  \begin{enumerate}
+  \item What is the efficient decision?
+  \item What are the Pivot payments?
+    \item Can you spot something problematic with the Pivot payments?
+    \end{enumerate}
+%seller is paid $v$ and buyer pays only $c$ if trade takes place (0 otherwise)
+\item (Extra exercise: probably not covered in class) A country with $I$ citizens has to decide how much it wants to reduce emissions. Denote the fraction of the current level by which emissions should be reduced as $x\in[0,1]$. Each citizen has a private valuation of emission reduction which is $u_i(x)=\theta _ix-t_i$ (where $\theta _i$ is private information and $t_i$ is a tax/transfer). Reducing emissions by $x$ will reduce production and therefore wealth by $x^2$. Assume that the support of the distribution of $\theta _i$ is $[0,2/I)$.
+  \begin{enumerate}
+  \item What is the efficient level of emission reduction $x$?
+    \item Calculate the Pivot mechanism transfers for this problem.
+  \end{enumerate}
 \end{enumerate}
 
 \bibliographystyle{chicago}

@@ -9,7 +9,7 @@
 - Registration for the exam is now possible in KLIPS.
 - Exam date: July 18, 10:00-11:00 
 * Material
-- Exercises: [[./exercises.tex][tex]] [[https://github.com/schottmueller/advMicro/files/2008479/exercises.pdf][pdf]]
+- Exercises: [[./exercises.tex][tex]] [[https://github.com/schottmueller/advMicro/files/2044518/exercises.pdf][pdf]]
 - Slides:
   - [[https://github.com/schottmueller/advMicro/files/1890670/dominRatio.pdf][Dominance and rationalizability]]
   - [[https://github.com/schottmueller/advMicro/files/1888753/NashEq.pdf][Nash Theorem]]
@@ -20,6 +20,8 @@
   - [[https://github.com/schottmueller/advMicro/files/1987255/pbe.pdf][PBE]]
   - [[https://github.com/schottmueller/advMicro/files/2000878/signal.pdf][signaling]]
   - [[https://github.com/schottmueller/advMicro/files/1994283/cheapTalk.pdf][cheap talk]]
+  - [[https://github.com/schottmueller/advMicro/files/2044522/revelationPrinc.pdf][revelation principle]]
+  - [[https://github.com/schottmueller/advMicro/files/2044524/domStratMechDes.pdf][dominant strat. implementation]]
 - Handouts etc.:
   - [[https://github.com/schottmueller/advMicro/files/1954228/math.pdf][math handout]]
 * Prerequisites
