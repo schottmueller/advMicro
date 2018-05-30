@@ -173,7 +173,7 @@ A social choice function $f$ is \emph{truthfully implementable} (or \emph{incent
     :PROPERTIES:
     :BEAMER_env: example
     :END:
-- whether $f$ is incentive compatible depends on the setting
+- whether $f$ (egalitarian contribution) is incentive compatible depends on the setting
   - if $I=2$, $\Theta_{1}=\{2\}$, $\Theta_{2}=\{1,3\}$ and $c=4$, then $f$ is ic (no matter what $\phi$ is) (why?)
   - if $I=2$, $\Theta_{1}=\{2\}$, $\Theta_{2}=\{0,1\}$ and $c=2.5$, then $f$ is not ic (no matter what $\phi$ is) (why?)
   - if $I=2$, $\Theta_{1}=\Theta_{2}=[0,1]$, $c=1$ and $\phi$ is a uniform distribution, then $f$ is not ic (why?)
@@ -194,12 +194,14 @@ Proof:
 - let  $\Gamma=(S_1,\dots,S_I,g)$ implement $f$, i.e. let $\langle I,(S_{i})_{i=1,\dots,I},(\tilde{u}_{i})_{i=1,\dots,I},\Theta_{1}\times\dots\times\Theta_{I},\phi(\cdot)\rangle$ have an equilibrium $(s_1^*,\dots,s_I^*)$ such that $g(s_1^*(\theta_1),\dots,s_I^*(\theta_I))=f(\theta)$ for all $\theta$
 - this means 
 $$s_i^*(\theta_i)\in argmax_{s_i\in S_i}\mathbb{E}_{\theta_{-i}}\left[u_i(g(s_1^*(\theta_1),\dots,s_i,\dots,s_I^*(\theta_I)),\theta_i)|\theta_i\right]$$
-$$\Rightarrow\quad\theta_i\in argmax_{\theta_i'\in\Theta_i}\mathbb{E}_{\theta_{-i}}\left[u_i(g(s_1^*(\theta_1),\dots,s_i^*(\theta_i),\dots,s_I^*(\theta_I)),\theta_i)|\theta_i\right]$$
-$$\Leftrightarrow \theta_i\in argmax_{\theta_i'\in\Theta_i}\mathbb{E}_{\theta_{-i}}\left[u_i(f(\theta_1,\dots,\theta_i',\dots,\theta_I),\theta_i)|\theta_i\right]$$
-- i.e. truthtelling is equilibrium in direct revelation mechanism given that others tell truth \qed
+$$\Rightarrow\quad\theta_i\in argmax_{\hat\theta_i\in\Theta_i}\mathbb{E}_{\theta_{-i}}\left[u_i(g(s_1^*(\theta_1),\dots,s_i^*(\hat\theta_i),\dots,s_I^*(\theta_I)),\theta_i)|\theta_i\right]$$
+$$\Leftrightarrow \theta_i\in argmax_{\hat\theta_i\in\Theta_i}\mathbb{E}_{\theta_{-i}}\left[u_i(f(\theta_1,\dots,\hat\theta_i,\dots,\theta_I),\theta_i)|\theta_i\right]$$
+- i.e. truthtelling is best response in direct revelation mechanism given that others tell truth \qed
 
 ** Revelation principle: relevance
 - "can $f$ be implemented?" $\Leftrightarrow$ "is $f$ truthfully implementable?" $\Leftrightarrow$ "is announcing the true type equilibrium in direct revelation mechanism?"
 - no need to try out many different mechanisms
 - /set of implementable social choice functions/ is set of social choice functions for which the direct revelation mechanism is incentive compatible
 - focus of mechanism design on direct revelation mechanism and incentive compatibility
+
+- caveat:  there may be other equilibria not corresponding to $f$ as well!

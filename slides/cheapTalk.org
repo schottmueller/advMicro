@@ -184,3 +184,14 @@ $$\theta _{k+1}=\theta_k+(\theta_k-\theta_{k-1})+4b$$
 \vspace*{-2cm}
 - commitment is valuable in expectation
 
+* Extra slides
+** Extra slide: Computing equilibria I
+We had the formula $$\theta _{k+1}=\theta_k+(\theta_k-\theta_{k-1})+4b.$$ To illustrate how to compute equilibria take $b=1/40$. First we compute a two part partition, i.e. a partition $(\theta_0,\theta_1,\theta_2)=(0,\theta_1,1)$. For an arbitrary $\theta_1$ the formula tells us $\theta_2=\theta_1+(\theta_1-0)+4/40$. i.e. $\theta_2=2\theta_1+1/10$. We know that in a two part partition equilibrium $\theta_2=1$. Hence, $1=2\theta_1+1/10$ and we solve for $\theta_1=0.45$ in equilibrium. Hence, the only two part partition equilibrium with $b=1/40$ is $(0,0.45,1)$. 
+
+Now the three part partition $(0,\theta_1,\theta_2,1)$: For an arbitrary $\theta_1$ we get as above $\theta_2=2\theta_1+1/10$. The formula tells us that $\theta_3=\theta_2+(\theta_2-\theta_1)+4/40$; plugging in $\theta_2=2\theta_1+1/10$ yields $\theta_3=2\theta_1+1/10+(\theta_1+1/10)+1/10=3\theta_1+3/10$. We know that $\theta_3=1$ in a 2 part partition equilibrium and therefore $1=3\theta_1+3/10$ gives us $\theta_1=7/30$ in a three part partition equilibrium. Then, $\theta_2=2*7/30+1/10=17/30$ and the equilibrium is $(0,7/30,17/30,1)$.
+
+** Extra slide: Computing equilibria II
+
+Next we try a four part partition equilibrium. We already know that $\theta_2=2\theta_1+1/10$ and $\theta_3=3\theta_1+3/10$. Using the formula we get $\theta_4=3\theta_1+3/10+(3\theta_1+3/10-\theta_1-1/10)+4/40=5\theta_1+6/10$. As $\theta_4=1$ in a four part partition equilibrium, we get $\theta_1=4/50$ and the equilibrium partition is $(0,4/50,13/50,27/50,1)$.
+
+The five part partition: $\theta_5=5\theta_1+6/10+(5\theta_1+6/10-3\theta_1-3/10)+4/40=7\theta_1+1$. In a five part partition equilibrium $\theta_5=1$ which yields $\theta_1=0$. But this is not a five part partition as $\theta_0=\theta_1$ while a partition would require $\theta_1>\theta_0$. Hence, there is no five part partition equilibrium and the most informative equilibrium is the four part partition equilibrium.
