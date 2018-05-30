@@ -22,6 +22,9 @@
   - [[https://github.com/schottmueller/advMicro/files/2052819/cheapTalk.pdf][cheap talk]]
   - [[https://github.com/schottmueller/advMicro/files/2052823/revelationPrinc.pdf][revelation principle]]
   - [[https://github.com/schottmueller/advMicro/files/2044524/domStratMechDes.pdf][dominant strat. implementation]]
+  - [[https://github.com/schottmueller/advMicro/files/2054659/ms.pdf][Myerson Satterthwaite]]
+  - [[https://github.com/schottmueller/advMicro/files/2054661/screening.pdf][screening]]
+  - [[https://github.com/schottmueller/advMicro/files/2054663/revenueEquivalence.pdf][optimal auctions]]
 - Handouts etc.:
   - [[https://github.com/schottmueller/advMicro/files/1954228/math.pdf][math handout]]
 * Prerequisites
