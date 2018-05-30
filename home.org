@@ -19,7 +19,7 @@
   - [[https://github.com/schottmueller/advMicro/files/1966289/spne.pdf][SPNE]]
   - [[https://github.com/schottmueller/advMicro/files/1987255/pbe.pdf][PBE]]
   - [[https://github.com/schottmueller/advMicro/files/2000878/signal.pdf][signaling]]
-  - [[https://github.com/schottmueller/advMicro/files/1994283/cheapTalk.pdf][cheap talk]]
+  - [[https://github.com/schottmueller/advMicro/files/2052819/cheapTalk.pdf][cheap talk]]
   - [[https://github.com/schottmueller/advMicro/files/2044522/revelationPrinc.pdf][revelation principle]]
   - [[https://github.com/schottmueller/advMicro/files/2044524/domStratMechDes.pdf][dominant strat. implementation]]
 - Handouts etc.:
