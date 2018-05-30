@@ -1,0 +1,167 @@
+#+TITLE:    Screening
+#+AUTHOR:    Christoph Schottmüller
+#+EMAIL:     christoph@worknotebook.home
+#+DATE:   
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LANGUAGE:  en
+#+OPTIONS:   H:2 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+
+
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [bigger]
+#+BEAMER_FRAME_LEVEL: 2
+#+latex_header: \mode<beamer>{\useinnertheme{rounded}\usecolortheme{rose}\usecolortheme{dolphin}\setbeamertemplate{navigation symbols}{}\setbeamertemplate{footline}[frame number]{}}
+#+latex_header: \mode<beamer>{\usepackage{amsmath}\usepackage{ae,aecompl}}
+
+
+* Introduction
+** Introduction
+- last time: subject to participation constraints and balanced budget conditions no efficient mechanism is implementable
+   - what is the most efficient implementable mechanism?
+# 
+
+- screening problems
+  - applications: /pricing/, regulation, labor contracts, insurance,\dots
+
+
+* Optimal non-linear pricing
+
+** Optimal non-linear pricing by a monopolist I
+
+- Monopolist sells a good and has costs $c*q$, i.e. constant marginal costs $c$
+- there is a single consumer with quasilinear utility  $v(q,\theta)-p$ where $q$ is the quantity the consumer gets and $p$ is the price paid
+- we assume  $v_{q}>0$, $v_{qq}<0$ and $v(0,\theta)=0$
+- $\theta$ is the consumer's type which is private information
+- we assume $v_{q\theta}>0$ ("Spence-Mirrlees condition", "single crossing")\linebreak a higher type has a higher marginal utility 
+- from the monopolist's point of view, $\theta$ is distributed on $[0,1]$ with density function $\phi$  (and corresponding distribution function $\Phi$) and we assume $\phi(\theta)>0$ for all $\theta\in[0,1]$
+
+** Optimal non-linear pricing by a monopolist I
+- monopolist can charge a non-linear pricing schedule $p(q)$
+- Our question:\linebreak What is the expected profit maximizing pricing scheme for the monopolist?
+
+
+** Optimal non-linear pricing by a monopolist III
+- revelation principle:
+  - we can concentrate on incentive compatible direct revelation mechanisms 
+    - $q(\theta)$: quantity type $\theta$ gets
+    - $t(\theta)$: transfer type $\theta$ has to pay
+    - incentive compatibility: $\theta=arg\max_{\hat{\theta}}v(q(\hat{\theta}),\theta)-t(\hat{\theta})$
+    - individual rationality: $U(\theta)=v(q(\theta),\theta)-t(\theta)\geq 0$
+
+** Optimal non-linear pricing by a monopolist IV
+*** envelope theorem and monotonicity 				  :B_theorem:
+    :PROPERTIES:
+    :BEAMER_env: theorem
+    :END:
+A mechanism is incentive compatible if and only if
+  - $U(\theta)=U(0)+\int_{0}^{\theta} v_{\theta}(q(x),x)\, dx$
+  - $q(\theta)$ is non-decreasing.
+
+
+** Optimal non-linear pricing by a monopolist V
+- expected profits
+\[\pi=\int_{0}^{1} \left(t(\theta)-c q(\theta) \right) \phi(\theta)\,d\theta \]
+substitute $U(\theta)=v(q(\theta),\theta)-t(\theta)$ for $t(\theta)$
+\[\pi=\int_{0}^{1} \left(v(q(\theta),\theta)-c q(\theta)-U(\theta) \right) \phi(\theta)\,d\theta \]
+
+substitute $U(\theta)$ from the envelope theorem
+\begin{align*}
+\pi=&\int_{0}^{1} \left(v(q(\theta),\theta)-c q(\theta)\right) \phi(\theta)\,d\theta\\ 
+&-  U(0)- \int_{0}^{1} \int_{0}^{\theta}v_{\theta}(q(x),x)\,dx\, \phi(\theta)\,d\theta  
+\end{align*}
+
+** Optimal non-linear pricing by a monopolist VI
+use integration by parts to simplify the last term (first "part" is $\int_{0}^{\theta}v_{\theta}\,dx$ and second "part" is $\phi(\theta)$)
+\begin{align*}
+\pi=&\int_{0}^{1} \left(v(q(\theta),\theta)-c q(\theta)\right) \phi(\theta)\,d\theta-  U(0)\\ 
+&-\left(\int_{0}^{1}v_{\theta}(q(x),x)\,dx- \int_{0}^{1} v_{\theta} (q(\theta),\theta) \Phi(\theta)\,d\theta  \right)
+\end{align*}
+
+taking all the integrals together gives
+\begin{align*}
+\pi=&\int_{0}^{1} \left[v(q(\theta),\theta)-c q(\theta)\right] \phi(\theta)-[1-\Phi(\theta)]v_{\theta}(q(\theta),\theta)\,d\theta-  U(0)
+\end{align*} 
+or equivalently
+\begin{align*}
+\pi=&\int_{0}^{1} \left[v(q(\theta),\theta)-c q(\theta)-\frac{1-\Phi(\theta)}{\phi(\theta)}v_{\theta}(q(\theta),\theta)\right] \phi(\theta)\,d\theta-  U(0)
+\end{align*} 
+
+** Optimal non-linear pricing by a monopolist VII
+- the monopolist's maximization problem
+\[\hspace*{-1cm}\max_{q(\theta)}\;\int_{0}^{1} \left[v(q(\theta),\theta)-c q(\theta)-\frac{1-\Phi(\theta)}{\phi(\theta)}v_{\theta}(q(\theta),\theta)\right] \phi(\theta)\,d\theta -  U(0)\]
+subject to
+- individual rationality $U(\theta)\geq 0$ for all $\theta$
+- incentive compatibility: $q(\theta)$ is non-decreasing
+
+- individual rationality is satisfied for all types if $U(0)\geq 0$ $\rightarrow$ optimal to have $U(0)=0$
+- we will ignore the constraint "$q(\theta)$ non-decreasing" and check later whether it is satisfied
+
+** Optimal non-linear pricing by a monopolist VIII
+- then we are left with 
+\[\max_{q(\theta)}\;\int_{0}^{1} \left[v(q(\theta),\theta)-c q(\theta)-\frac{1-\Phi(\theta)}{\phi(\theta)}v_{\theta}(q(\theta),\theta)\right] \phi(\theta)\,d\theta \]
+
+- this can be maximized "pointwise" (separately for each type) leading to the first order condition
+\[ v_{q}(q(\theta),\theta)-c-\frac{1-\Phi(\theta)}{\phi(\theta)}v_{q\theta}(q(\theta),\theta)=0  \]
+
+  - comparison to first best: downward distortion but no distortion at the top
+  - interpretation and rent extraction effect
+
+** Optimal non-linear pricing by a monopolist IX
+- still to check: is the constraint "$q(\theta)$ non-decreasing" satisfied?
+  - monotone hazard rate assumption (MHR):  $\frac{1-\Phi(\theta)}{\phi(\theta)}$ is non-increasing in $\theta$ \linebreak (satisfied by uniform, normal and most other commonly used distributions)
+  - under (MHR) and $v_{q\theta\theta}\leq0$, $q$ is increasing
+
+** An example I
+- say $v(q,\theta)=(\theta+1)\sqrt{q}$ and $\phi$ is the uniform distribution
+- first order condition
+\[\frac{\theta+1}{2\sqrt{q(\theta)}}-c-(1-\theta)\frac{1}{2\sqrt{q(\theta)}}=0\]
+solving for $q$:
+\[q(\theta)=\left(\frac{\theta}{c}\right)^{2} \]
+- check: $q$ is increasing in $\theta$
+- rents under the optimal pricing scheme
+\[U(\theta)=\int_{0}^{\theta}v_{\theta}(q(x),x)\,dx=\int_{0}^{\theta}\sqrt{q(x)}\,dx=\frac{1}{2}\frac{\theta^{2}}{c}\]
+
+** An example II
+- from rents we can calculate optimal transfers $t$ because $U(\theta)=v(q(\theta),\theta)-t(\theta)$
+\[t(\theta)=\sqrt{q(\theta)}(\theta+1)-U(\theta)=\frac{\theta^{2}+\theta}{c}- \frac{\theta^{2}}{2c}=\frac{\theta^{2}+2\theta}{2c}  \]
+- bringing $t(\theta)$ and $q(\theta)$ together gives the optimal price as function of quantity
+  - quantity $q$ is sold to type $\theta=\sqrt{q}c$ who pays $t(\theta)=(\theta^{2}+2\theta)/(2c)$
+  - hence, the price of $q$ is $p(q)=\frac{(\sqrt{q}c)^{2}+2\sqrt{q}c}{(2c)}=\frac{qc+2\sqrt{q}}{2}$
+  - offering this price schedule is equivalent to the optimal direct revelation mechanism and therefore optimal
+
+** The option of not selling:
+- we had the maximization problem
+\[\max_{q(\theta)}\;\int_{0}^{1} \left[v(q(\theta),\theta)-c q(\theta)-\frac{1-\Phi(\theta)}{\phi(\theta)}v_{\theta}(q(\theta),\theta)\right] \phi(\theta)\,d\theta \]
+
+- this can be maximized "pointwise" (separately for each type) where the optimal $q$ is characterized by a first order condition
+- there is also the option of not selling to type $\theta$:
+  - if you do not sell to $\theta$ your profit for this type is 0
+  - if $\left[v(q(\theta),\theta)-c q(\theta)-\frac{1-\Phi(\theta)}{\phi(\theta)}v_{\theta}(q(\theta),\theta)\right] <0$, it is better not to sell to this type at all
+(where $q(\theta)$ is the  $q$ determined by the first order condition)
+
+** The option of not selling: An example
+- say $v(q,\theta)= log(q)(\theta+1)$ with  and $\phi$ is the uniform distribution on $[0,1]$ and $c=1/4$
+- first order condition
+\[\frac{1+\theta}{q}-\frac{1}{4}-(1-\theta)\frac{1}{q}=0\]
+solving for $q$:
+\[q(\theta)=8\theta \]
+- If we now calculate $v(q(\theta),\theta)-cq(\theta)-(1-\Phi(\theta))v_{\theta}(q(\theta),\theta)$ we get
+\[(1+\theta)log(8\theta)-2\theta-(1-\theta)log(8\theta)=2\theta\left(log(8\theta)-1\right)\]
+which is negative for all $\theta<e/8\approx 0.34$.
+- the optimal selling mechanism does not sell to types $\theta<0.34$ and sells $q(\theta)=8\theta$ to all types above $0.34$
+
+** Interpretation and economics
+- the model can be reinterpreted:
+  - not one consumer but a continuum of consumers with different tastes (i.e. types) and the monopolist cannot tell them apart
+- a monopolist distorts the quantity for all types but the highest type downward
+- reason: "rent extraction"
+- a lower quantity reduces the slope of the rent function $U(\theta)$ and therefore the rent of all higher types
+
+
+

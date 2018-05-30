@@ -1,0 +1,116 @@
+#+TITLE:    Revenue Equivalence and Optimal Auctions
+#+AUTHOR:    Christoph Schottmüller
+#+EMAIL:     christoph@worknotebook.home
+#+DATE:      
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LANGUAGE:  en
+#+OPTIONS:   H:2 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+
+
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [bigger]
+#+BEAMER_FRAME_LEVEL: 2
+#+latex_header: \mode<beamer>{\useinnertheme{rounded}\usecolortheme{rose}\usecolortheme{dolphin}\setbeamertemplate{navigation symbols}{}\setbeamertemplate{footline}[frame number]{}}
+#+latex_header: \mode<beamer>{\usepackage{amsmath}\usepackage{ae,aecompl}}
+
+* Revenue equivalence in auctions
+** Setting: Independent private value auction
+- you have one indivisible good that you want to sell
+- $I$ potential buyers (bidders) with valuation $(\theta_{1},\theta_{2},\dots,\theta_{I})$
+- the valuation of bidder $i$ is distributed on $[\underline{\theta}_{i},\bar{\theta}_{i}]$ with distribution $\Phi_{i}$ with strictly positive density $\phi_{i}$
+- types of the different bidders are independent
+- the utility of bidder $i$ if he gets the good with probability $y_{i}$ and receives a transfer $t_{i}$ is $y_{i}\theta_{i}+t_{i}$
+
+** Direct revelation mechanism
+- by the revelation principle, we can concentrate on direct revelation mechanisms 
+- an (auction) mechanism conists of
+  - $0\leq y_{i}(\theta_{1},\theta_{2},\dots,\theta_{I})\leq 1$ is the probability that $i$ gets the good
+  - $t_{i}(\theta_{1},\theta_{2},\dots,\theta_{I})$ is the transfer $i$ gets
+- the direct mechanism must be incentive compatible:
+\[E_{\theta_{-i}}\left[y_{i}(\theta_{i},\theta_{-i})\theta_{i}+t_{i}({\theta}_{i},\theta_{-i})\right]\geq E_{\theta_{-i}}\left[y_{i}(\hat\theta_{i},\theta_{-i})\theta_{i}+t_{i}(\hat{\theta}_{i},\theta_{-i})\right]  \]
+
+** Envelope theorem
+- define the expected rent of type $\theta_{i}$ as $U_{i}(\theta_{i})=E_{\theta_{-i}}\left[y_{i}(\theta_{i},\theta_{-i})\theta_{i}+t_{i}({\theta}_{i},\theta_{-i})  \right]$
+- by the envelope theorem, incentive compatibility implies:
+\[U_{i}(\theta_{i})=U_{i}(\underline{\theta}_{i})+\int_{\underline{\theta}_{i}}^{\theta_{i}}E_{\theta_{-i}}[y_{i}(s,\theta_{-i})]\,ds\]
+
+** Revenue equivalence theorem
+
+*** Revenue equivalence theorem					  :B_theorem:
+    :PROPERTIES:
+    :BEAMER_env: theorem
+    :END:
+Any two auction formats such that
+- for all $i$ and every type vector $(\theta_{1},\theta_{2},\dots,\theta_{I})$ the probability of bidder $i$ to get the good is the same under both auction formats
+- for all $i$, the expected utility of type $\underline{\theta}_{i}$ is the same under both formats
+lead to the same expected revenue for the seller.
+*** 							    :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+- e.g. compare English auction and Vickrey auction (but also all-pay-auction etc.)
+- intuition: envelope condition
+
+** Revenue equivalence theorem: Proof I
+- take any incentive compatible direct mechanism
+- the expected seller revenue is $\sum_{i=1}^{I}E_{\theta}[-t_{i}(\theta)]$
+- denote by $Y_{i}(\theta_{i})=E_{\theta_{-i}}[y_{i}(\theta_{i},\theta_{-i})]$
+
+- using the envelope theorem 
+\begin{align*}
+E_{\theta}[-t_{i}(\theta)]&=E_{\theta_{i}} E_{\theta_{-i}}[-t_{i}(\theta)]\\
+  &=\int_{\underline{\theta}_{i}}^{\bar{\theta}_{i}}E_{\theta_{-i}}[y_{i}(\theta_{i},\theta_{-i})\theta_{i}-U_{i}(\theta_{i})]\phi_{i}(\theta_{i})\,d\theta_{i}\\
+&=\int_{\underline{\theta}_{i}}^{\bar{\theta}_{i}}\left[Y_{i}(\theta_{i})\theta_{i}-U_{i}(\underline{\theta}_{i})-\int_{\underline{\theta}_{i}}^{\theta_{i}}Y_{i}(s)\,ds\right]\phi_{i}(\theta_{i})\,d\theta_{i}\\
+&=\int_{\underline{\theta}_{i}}^{\bar{\theta}_{i}}Y_{i}(\theta_{i})\left[\theta_{i}-\frac{1-\Phi_{i}(\theta_{i})}{\phi_{i}(\theta_{i})}\right]\phi_{i}(\theta_{i})\,d\theta_{i} -U_{i}(\underline{\theta}_{i})
+\end{align*}
+where the last step uses integration by parts
+
+** Revenue equivalence theorem: Proof II
+this is equivalent to
+\begin{align*} 
+E_{\theta}[-t_{i}(\theta)]=&\int_{\underline{\theta}_{1}}^{\bar{\theta}_{1}}\dots \int_{\underline{\theta}_{I}}^{\bar{\theta}_{I}} \left[y_{i}(\theta_{1},\dots,\theta_{I})\left[\theta_{i}-\frac{1-\Phi_{i}(\theta_{i})}{\phi_{i}(\theta_{i})}\right]\right. \\
+&\left. \phi_{1}(\theta_{1})\dots\phi_{I}(\theta_{I})\right]\,d\theta_{I}\dots d\theta_{1} -U_{i}(\underline{\theta}_{i}) 
+\end{align*}
+the seller's revenue is therefore
+\begin{multline*} 
+\sum_{i=1}^{I}E_{\theta}[-t_{i}(\theta)]=\int_{\underline{\theta}_{1}}^{\bar{\theta}_{1}}\dots \int_{\underline{\theta}_{I}}^{\bar{\theta}_{I}} \left\{\left(\sum_{i=1}^{I}y_{i}(\theta_{1},\dots,\theta_{I})\right.\right.  \\
+\left. \left. \left[\theta_{i}-\frac{1-\Phi_{i}(\theta_{i})}{\phi_{i}(\theta_{i})}\right]\right) 
+ \phi_{1}(\theta_{1})\dots\phi_{I}(\theta_{I})\right\}\,d\theta_{I}\dots d\theta_{1} -\sum_{i=1}^{I}U_{i}(\underline{\theta}_{i}) 
+\end{multline*}
+- hence, if $y_{i}(\theta_{1},\dots,\theta_{I})$ and $U_{i}(\underline{\theta}_{i})$ is the same for two auction mechanisms, the seller's revenue is the same \qed
+
+* Myerson auctions
+
+** Revenue maximizing auctions
+
+- which auction format should a seller choose in order to maximize expected revenue?
+
+- expected seller revenue:
+\begin{multline*} 
+\int_{\underline{\theta}_{1}}^{\bar{\theta}_{1}}\dots \int_{\underline{\theta}_{I}}^{\bar{\theta}_{I}} \left\{\left(\sum_{i=1}^{I}y_{i}(\theta_{1},\dots,\theta_{I}) \left[\theta_{i}-\frac{1-\Phi_{i}(\theta_{i})}{\phi_{i}(\theta_{i})}\right]\right)\right.\\ 
+\left. \phi_{1}(\theta_{1})\dots\phi_{I}(\theta_{I})\right\}\,d\theta_{I}\dots d\theta_{1} -\sum_{i=1}^{I}U_{i}(\underline{\theta}_{i}) 
+\end{multline*}
+
+** Examples
+- let $\phi_i=\phi$ for all $i$ and $(1-\Phi(\theta))/\phi(\theta)$ be decreasing in $\theta$
+  - which auction format is optimal? 
+
+- let $I=2$, $\theta_1$ uniformly distibuted on $[0,1]$ and $\theta_2$ uniformly distributed on $[1,2]$
+  - what is the revenue maximizing mechanism?
+  - is this mechanism efficient?
+
+** Interpretation
+- many different auction formats are optimal
+  - however, revenue equivalence relies on the following implicit assumptions
+    - risk neutrality (linear utility, no binding budget constraint)
+    - independent, private values
+    
+
+
+

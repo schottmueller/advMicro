@@ -1,0 +1,219 @@
+#+TITLE:    Myerson Satterthwaite Theorem 
+#+AUTHOR:    Christoph Schottmüller
+#+EMAIL:     christoph@worknotebook.home
+#+DATE:      
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LANGUAGE:  en
+#+OPTIONS:   H:2 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+
+
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [bigger]
+#+BEAMER_FRAME_LEVEL: 2
+#+latex_header: \mode<beamer>{\useinnertheme{rounded}\usecolortheme{rose}\usecolortheme{dolphin}\setbeamertemplate{navigation symbols}{}\setbeamertemplate{footline}[frame number]{}}
+#+latex_header: \mode<beamer>{\usepackage{amsmath}\usepackage{ae,aecompl}}
+#+LATEX_HEADER:\let\oldframe\frame\renewcommand\frame[1][allowframebreaks]{\oldframe[#1]}
+#+LATEX_HEADER: \setbeamertemplate{frametitle continuation}[from second]
+
+* Introduction
+** Introduction
+- advantages of VCG
+  - efficiency
+  - dominat strategy implementation
+- problems of VCG
+  - not budget balanced
+  - agents might not want to participate
+- can we overcome these problems when turning to Bayesian Nash equilibrium implementation?
+
+** Introduction
+- we analyze this question in a trade setting 
+- 1 buyer with value $v$ which is uniformly distributed on $[0,1]$ 
+- 1 seller with costs $c$ that are uniformly distributed on $[0,1]$
+- Bayesian Nash equilibrium implementation
+- using the revelation principle we concentrate on direct mechanisms, i.e. buyer announces $\hat{v}$,  seller announces $\hat{c}$ and it must be incentive compatible to announce the true value/costs
+- direct mechanism: after announcements $(\hat{v},\hat{c})$ trade occurs with probability $y(\hat{v},\hat{c})$ and a transfer $t(\hat{v},\hat{c})$ is paid from buyer to seller
+- utility buyer: $y(\hat{v},\hat{c})v-t(\hat{v},\hat{c})$
+- utiltiy seller: $t(\hat{v},\hat{c})-c y(\hat{v},\hat{c})$
+
+** Possible mechanism
+*** Seller posted price 					  :B_example:
+    :PROPERTIES:
+    :BEAMER_env: example
+    :END:
+- seller sets a price 
+- buyer decides to buy at this price or not to buy
+- which price maximizes expected profits?
+- is this mechanism efficient?
+- how would a direct revelation mechanism look like that gives the same outcome as the seller posted price mechanism?
+
+* Important result on incentive compatibility
+** Incentive compatibility 
+- revelation principle says that we can concentrate on direct mechanisms that are /incentive compatible/ (announcing true value is equilibrium)
+- which direct mechanisms are incentive compatible?
+- for which functions $y(\hat{v},\hat{c})$ and $t(\hat{v},\hat{c})$ is announcing your true type an equilibrium?
+
+** Incentive compatibility buyer I
+- we use capital letters for expected transfers/trade probabilities/utility
+- $T(v)=E_{c}\left[t({v},{c})\right]$
+- $Y(v)=E_{c}\left[y({v},{c})\right]$
+- $U_{b}(v)=vY(v)-T(v)$
+
+- if the mechanism with $y$ and $v$ is incentive compatible, then for all $v$ and $v'$
+ \vspace*{-0.01cm}
+\[ vY(v)-T(v)\geq vY(v')-T(v') \]
+\vspace*{-0.5cm}\[v'Y(v')-T(v')\geq v'Y(v)-T(v) \]
+- this is the same as writing
+\vspace*{-0.01cm}\[U_{b}(v)\geq U_{b}(v')+ (v-v')Y(v')  \]
+\vspace*{-0.2cm}\[ U_{b}(v')\geq U_{b}(v)+ (v'-v) Y(v) \]
+
+** Incentive compatibility buyer II
+- if $v-v'>0$ this can also be written as\par (if $v-v'<0$, the inequalities hold in the opposite direction)
+\[Y(v)\geq\frac{U_{b}(v)-U_{b}(v')}{v-v'}\geq Y(v')\]
+
+- Implications: 
+if the direct mechanism consisting of the functions $y$ and $t$ is incentive compatible, then
+- $Y$ is increasing in $v$ \par (as $v>v'$ implies $Y(v)\geq Y(v')$)
+- the derivative of $U_{b}$ has to be $Y(v)$: $U_{b}'(v)=Y(v)$ \par(take the limit $v'\rightarrow v$)
+
+- do these implications intuitively make sense?
+
+** Incentive compatibility buyer III
+
+*** Envelope theorem and monotonicity				  :B_theorem:
+    :PROPERTIES:
+    :BEAMER_env: theorem
+    :END:
+A social choice function $(t(v,c),y(v,c))$ is incentive compatible for the buyer if and only if 
+- $U_{b}'(v)=Y(v)$ and
+- $Y(v)$ is increasing in $v$
+
+- note: we have shown the "only if" part but we have not shown the "if" part (see MWG p. 888-889 for this)
+
+
+** Incentive compatibility seller I
+- we now do the same for the seller:
+- $T(c)=E_{v}\left[t({v},{c})\right]$
+- $Y(c)=E_{v}\left[y({v},{c})\right]$
+- $U_{s}(c)=T(c)-cY(c)$
+
+- if the mechanism with $y$ and $v$ is incentive compatible, then for all $c$ and $c'$
+\vspace*{-0.1cm}
+\[ T(c)-cY(c)\geq T(c')-cY(c') \]
+\vspace*{-0.5cm}\[  T(c')-c'Y(c')\geq T(c)-c'Y(c)  \]
+- this is the same as writing
+\vspace*{-0.01cm}\[U_{s}(c)\geq U_{s}(c')+ (c'-c)Y(c')  \]
+\vspace*{-0.3cm}\[ U_{s}(c')\geq U_{s}(c)+ (c-c') Y(c) \]
+
+** Incentive compatibility seller II
+- if $c-c'>0$ this can also be written as\par (if $c-c'<0$, the inequalities hold in the opposite direction)
+\[Y(c)\leq\frac{U_{s}(c')-U_{s}(c)}{c-c'}\leq Y(c')\]
+
+- Implications: 
+if the direct mechanism consisting of the functions $y$ and $t$ is incentive compatible, then
+- $Y$ is decreasing in $c$ \par(as $c>c'$ implies $Y(c)\leq Y(c')$)
+- the derivative of $U_{s}$ has to be $Y(c)$: $U_{s}'(c)=-Y(c)$ \par(take the limit $c'\rightarrow c$)
+
+- do these implications intuitively make sense?
+
+** Incentive compatibility seller III
+
+*** Envelope theorem and monotonicity				  :B_theorem:
+    :PROPERTIES:
+    :BEAMER_env: theorem
+    :END:
+A social choice function $(t(v,c),y(v,c))$ is incentive compatible for the seller if and only if 
+- $U_{s}'(c)=-Y(c)$ and
+- $Y(c)$ is decreasing in $c$
+
+- note: we have shown the "only if" part but we have not shown the "if" part (see MWG p. 888-889 for this)
+
+** Incentive compatibility: comments
+- there are many functions $y(v,c)$ that lead to the same $Y(c)$ or the same $Y(v)$
+
+- $U$ and $T$ are almost interchangeable:
+   - if we know $U_{s}$ and $Y$, we can always determine $T$ as 
+\[T(c)=U_{s}(c)+cY(c)\]
+   - same for the buyer
+\[T(v)=-U_{b}(v)+vY(v)\]
+   - in most mechanism design application, people search for the optimal $y$, $U_{s}$ and $U_{b}$ instead of searching for the optimal $y$ and $t$
+
+* Myerson-Satterthwaite Theorem
+
+** Participation constraints
+- we wanted to search for an incentive compatible direct mechanism that 
+   1. is efficient, 
+   2. has a balanced budget and 
+   3. every agent of every type is willing to voluntarily participate
+- ad 1.: $y(v,c)=1$ if $v>c$ and $y(v,c)=0$ otherwise;\par this implies $Y(c)=1-c$ and $Y(v)=v$
+- ad 2.: as we only looked at a transfer paid from buyer to seller, this is fine in our formulation
+- ad 3.: *Participation constraints*
+\[U_{b}(v)\geq 0\qquad \text{ for all }v\in[0,1]\]
+\[U_{s}(c)\geq 0\qquad \text{ for all }c\in[0,1]\]
+
+** Myerson-Satterthwaite Theorem
+\begin{theorem}[Myerson-Satterthwaite]
+  No incentive compatible direct revelation mechanism satisfying budget balance and the participation constraints yields the efficient outcome. Therefore, by the revelation principle, no mechanism can achieve the ex post efficient outcome in the bilateral trade setting.
+\end{theorem}
+
+** Myerson-Satterthwaite Theorem: Intuition
+*** efficient, buyer-friendly mechanism 			  :B_example:
+    :PROPERTIES:
+    :BEAMER_env: example
+    :END:
+   - buyer announces $v$; seller announces $c$
+   - if $v>c$, trade takes place at price $c$
+   - is this incentive compatible? (i.e. do both have incentives to announce their true type?)
+
+** Myerson-Satterthwaite Theorem: Proof I
+
+- The proof is by contradiction. Suppose there was an incentive compatible (IC) direct mechanism satisfying participation constraints (PC) and efficiency (E).
+-  (E) implies that $Y(c)=1-c$ and $Y(v)=v$.
+- (IC) implied  $U_{b}'(v)=Y(v)$ (envelope theorem), therefore
+\begin{align*}
+U_{b}(v)&=U_{b}(0)+\int_{0}^{v}U_{b}'(\tilde{v})\,d\tilde{v}&\text{\scriptsize{(fundamental thm of calculus)}}\\
+ &=U_{b}(0)+\int_{0}^{v}Y(\tilde{v})\,d\tilde{v}&\text{\scriptsize{(envelope thm)}}\\
+&=U_{b}(0)+\int_{0}^{v}\tilde{v}\,d\tilde{v}&\text{\scriptsize{(efficiency)}}\\
+&=U_{b}(0)+\frac{v^{2}}{2}&
+\end{align*}
+\vspace*{-0.3cm}
+- as $T(v)=-U_{b}(v)+vY(v)$ we get $T(v)=-U_{b}(0)-\frac{v^{2}}{2}+v^{2}=-U_{b}(0)+\frac{v^{2}}{2}$
+
+** Myerson-Satterthwaite Theorem: Proof II
+- (IC) implies by the envelope theorem that $U_{s}'(c)=-Y(c)$, therefore
+\begin{align*}
+U_{s}(c)&=U_{s}(1)-\int_{c}^{1}U_{s}'(\tilde{c})\,d\tilde{c}&\text{\scriptsize{(fundamental thm of calculus)}}\\
+&=U_{s}(1)+\int_{c}^{1}Y(\tilde{c})\,d\tilde{c}&\text{\scriptsize{(envelope thm)}}\\
+&=U_{s}(1)+\int_{c}^{1}1-\tilde{c}\,d\tilde{c}&\text{\scriptsize{(efficiency)}}\\
+&=U_{s}(1)+\frac{1}{2}-c+\frac{c^{2}}{2}
+\end{align*}
+- as $T(c)=U_{s}(c)+cY(c)$ we get $T(c)=U_{s}(1)+\frac{1}{2}-c+\frac{c^{2}}{2}+c(1-c)=U_{s}(1)+\frac{1}{2}-\frac{c^{2}}{2}$
+
+
+** Myerson-Satterthwaite Theorem: Proof III
+- by budget balance, the expected transfer payment made by the buyer has to equal the expected transfer payment received by the seller:
+\begin{equation*}
+\int_{0}^{1}T(c)\,dc-\int_{0}^{1}T(v)\,dv=0
+\end{equation*}
+- Plugging in the expressions we derived for $T$ gives
+\begin{align*}
+&\int_{0}^{1}U_{s}(1)+\frac{1}{2}-\frac{c^{2}}{2}\,dc-\int_{0}^{1}-U_{b}(0)+\frac{v^{2}}{2}\, dv=0\\
+&U_{s}(1)+U_{b}(0)+\frac{1}{3}-\frac{1}{6}=0\\
+&U_{s}(1)+U_{b}(0)+\frac{1}{6}=0
+\end{align*}
+but this is impossible because $U_{s}(1)\geq 0$ and $U_{b}(0)\geq 0$ by (PC).\qed
+
+** Myerson-Satterthwaite Theorem: Take aways and economics
+- same theorem applies more generally (other distributions, non-identical type spaces etc.)
+- contrast to "Coase theorem"
+- it can be shown that a double auction is the most efficient mechanism in our setting
+- economic implication:
+   - "market failure" alone does not justify government intervention
+   - no "government intervention mechanism" can improve on the double auction (which is a private market mechanism) in this example!
+
+

@@ -462,6 +462,67 @@ This exercise will not be covered in class. For a solution, see \cite{schottmuel
   \end{enumerate}
 \end{enumerate}
 
+\section{Myerson Satterthwaite}
+\label{sec:myers-satt}
+
+\begin{enumerate}
+\item Take the setting form the slides. Show that the following social choice function is not incentive compatible
+  $$f(v,c)=
+  \begin{cases}
+    (1,\frac{v+c}{2})&\text{ if }v\geq c\\
+    (0,0) &\text{ else}
+  \end{cases}
+$$
+  where the first number in the tuple refers to whether trade takes place (1=yes, 0=no) and the second number is the price paid from buyer to seller.
+\item Show that envelope theorem and monotonicity constraint are (together!) sufficient for incentive compatibility.
+\item Take the model from the slides but change the assumption on the distribution of types: Assume that the seller's cost is either 1 or 4 with equal probability; the buyer's valuation is 2 or $\bar v>4$ with equal probability. Let $t(1,2)=2$, $t(4,\bar v)=4$ and $t(4,2)=0$. 
+  Is there a $t(1,\bar v)$ such that efficient trade is possible at these prices without violating the participation constraints? \\(Extra exercise not discussed in class: show that for $\bar v<5$ there are also no other prices that will implement the efficient outcome without violating the participation constraints.)
+% incentive constraint c=1: $2/2+t/2-1\geq(4-1)/2$ or $t\geq 3$. incentive constraint $\bar v$: $\bar v-t/2-4/2\geq (\bar v-2)/2$ or $t\leq \bar v-2$. Hence, for $\bar v\geq 5$ there are $t$, e.g. $t=3$, that satisfy both. For $t=3$, IR and other IC are automatically satisfied. 
+ % 
+% \item This exercise gives you an alternative way to arrive at the envelope theorem under the restriction that we consider only differentiable functions in the mechanism. Incentive compatibility means that stating the true type is the utility maximizing type announcement for every agent (given that the other agent announces his type truthfully). The buyer's expected utility when being type $v$ and announcing $\hat{v}$ is $vY(\hat{v})-T(\hat{v})$.\par
+%  Write the first order condition of the maximization problem of the buyer $$\max_{\hat{v}}vY(\hat{v})-T(\hat{v}).$$ Remember that we defined $U_{b}(v)=vY(v)-T(v)$. Take the derivative of $U_{b}$ to get $U_{b}'(v)$. Use the first order condition from the last step and incentive compatibility to derive the envelope condition $U_{b}'(v)=Y(v)$.\par 
+% Derive the monotonicity condition from the second order condition of $max_{\hat{v}}vY(\hat{v})-T(\hat{v})$, i.e. show that monotonicity holds in every incentive compatible mechanism (you will have to use the fact that the first order condition holds for all types).
+\end{enumerate}
+
+\section{Screening}
+\label{sec:screening}
+
+\begin{enumerate}
+\item Assume $v(q,\theta)=q(2+\theta)-\frac{q^{2}}{4}$, let $\theta$ be uniformly distributed on $[0,1]$ and $c=1$.
+  \begin{enumerate}
+  \item Derive the optimal $q(\theta)$, the rents in the optimal
+    mechanism $U(\theta)$ and the optimal transfers $t(\theta)$. Check
+    whether it is optimal to sell to all types.
+   \item From $t(\theta)$ and $q(\theta)$, derive the optimal price schedule, i.e. price as function of quantity.
+   \item Derive the "first best", i.e. the quantity that maximizes
+    $v(q,\theta)-c q$. Show that there exists a pricing scheme such that
+    every type will buy his first best quantity. Why is this pricing
+    scheme not optimal for the monopolist?
+\end{enumerate}
+% $q(\theta)=4\theta$, $U(\theta)=2\theta^{2}$, $t(\theta)=8\theta-2\theta^{2}$, $p(q)=2q-q^{2}/8$
+\item Regulation of a natural monopoly: A natural monopolist has costs $\theta q^2$ when producing quantity $q$. His type $\theta $ is private information and from the regulator's point of view uniformly distributed on $[0,1]$. Consumers value $q$ units of the good according to $S(q)=q$. The regulator offers the natural monopolist a menu of transfer payments and quantities from which the monopolist can choose an option. The regulator maximizes expected consumer surplus, $S(q)$, minus the payments made to the monopolists. The monopolist maximizes profits, i.e. $t-\theta  q^2$ when receiving tansfer $t$ and producing quantity $q$, and has always the outside option of not producing which yields a profit of zero.
+  \begin{enumerate}
+  \item Argue that one can concentrate on direct revelation mechanisms $(q(\theta ),t(\theta ))$.
+  \item Show that a mechanism is incentive compatible if and only if $U'(\theta )=-q(\theta )^2$ and $q$ is decreasing where $U(\theta )=t(\theta )-\theta q(\theta )^2$.
+  \item Show that the regulator's maximization problem can be written as $$\max_{q(\cdot)}\int_0^1 q(\theta )-\theta q(\theta )^2-\theta q(\theta )^2\,d\theta. $$
+  \item Derive the regulator's optimal mechanism.
+    \item How does the optimal $q(\theta )$ differ from $q^{fb}(\theta )$, i.e. the one maximizing $S(q(\theta ))-\theta q(\theta )^2$? 
+  \end{enumerate}
+\end{enumerate}
+
+\section{Revenue equivalence}
+\label{sec:revenue-equivalence}
+
+\begin{enumerate}
+\item There are $I$ players whose valuations for an indivisible object are independently and identically distributed with density $\phi>0$ on $[0,1]$. The players participate in an all pay auction. That is, each player bids $b_i$ and the highest bidder gets the object but all bidders have to pay their own bid (no matter whether they get the object or not). In this exercise, we use the envelope theorem to determine a symmetric equilibrium in strictly increasing strategies.
+  \begin{enumerate}
+  \item Show that the expected utility of a player in such an equilibrium is $U(\theta)=U(0)+\int_0^\theta Y(s)\,ds$ where $Y(\theta)$ is the expected utility of a player with valuation $\theta$ to win the auction (in this equilibrium).
+  \item Use the definition of a players expected utility $U(\theta)=\theta Y(\theta )-b(\theta )$, symmetry and strict monotonicity of the equilibrium and the result of the previous subquestion to determine the equilibrium bidding strategy.
+    \item First, show that the equilibrium bidding function $b(\theta )$ is weakly increasing in every symmetric equilibrium. Second, show that there cannot be and interval of types bidding the same amount in a symmetric equilibrium, i.e. $b$ is strictly increasing in every symmetric equilibrium. Conclude that there is a unique symmetric equilibrium.
+    \end{enumerate}
+    \item 
+\end{enumerate}
+
 \bibliographystyle{chicago}
 \bibliography{/home/christoph/stuff/bibliography/references.bib}
 
