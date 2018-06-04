@@ -368,10 +368,10 @@ D  \> 4,4$+\theta _2$    \>1,5
 \item The state of the world $\theta $ is either 0 or 1. Both, 0 and 1, have probability 1/2. An expert observes the state and then sends a cheap talk message to a decision maker. The available messages are ``high'' (h) and ``low'' (l). (Assume in the following that the messages are used in accordance with their name, i.e. the high message leads to a higher belief of the decision maker.) The decision maker chooses an action $a\in [0,2]$ with the objective of maximizing $(a-\theta )^2$. The objective of the expert is $-(a-\theta-b)^2$ for some $b\in(0,1)$.
   \begin{enumerate}
   \item What is a mixed strategy for the expert? % probability of sending high message for each state
-    \item Intuitively, which state will the expert reveal trughtfully? % high state as expert always wants higher action than DM
+    \item Intuitively, which state will the expert reveal truthfully? % high state as expert always wants higher action than DM
     \item Given a mixed strategy of the expert, what are the decision maker's beliefs when receiving a low/high message? % in state 0, let prob of h be q (while in state 1 it is 1), then $mu(l)=0$ and $\mu(h)=\frac{.5*1}{.5*1+0.5*q}=1/(1+q)$
       \item Given a mixed strategy of the expert, what is the best response of the decision maker? % $min \mu * (a-1)^2+(1-\mu)(a)^2$ which gives foc: $a=\mu$ 
-      \item What is the equilibrium strategy of the expert? %truthtelling is eq if $-b^2\geq-(1-b)^2$, i.e. if $b\leq 1/2$; otherwise indifference of expert in 0 state: $b^2=(1/(1-q)-b)^2$ solved for $q=1-2b$
+      \item What is the equilibrium strategy of the expert? %truthtelling is eq if $-b^2\geq-(1-b)^2$, i.e. if $b\leq 1/2$; otherwise indifference of expert in 0 state: $b^2=(1/(1+q)-b)^2$ solved for $q=1/2b-1$ which is eq also for b<1/2; otherwise babbling
       \end{enumerate}
     \item Take the model from the lecture but assume that the state is distributed not uniformly but with some arbitrary distribution $\Phi$ (with strictly positive density $\phi$) on $[0,1]$. Take a partitional equilibrium as in the lecture. Show that $a(m)=\mathbb{E}[\theta |m]$. Show then that S benefits from commitment in expectation, i.e. if S could commit to always truthfully reveal the state he would in expectation be better off than in equilibrium (where the expectation is taken over the state of the world $\theta $).\footnote{We use here the assumption that the utility is a quadratic loss function. I think the result can be generalized to the case $u^R(a,\theta )=u(a-\theta)$ and $u^S(a,\theta )=u(a-\theta -b)$ if $u$ is a strictly concave function. However, already for strictly quasiconcave $u$ functions the result is no longer true. }
       % S's exp utility in each partition element $\int -(E[theta|m]-\theta-b)^2 d\Phi(\theta|m) = -var(\theta|m)-b^2+0>-b^2$
@@ -434,7 +434,7 @@ This exercise will not be covered in class. For a solution, see \cite{schottmuel
 \item A policy $x\in[0,1]$ has to be selected (e.g. a tax rate). There are $I\geq 3$ agents and each agent $i$ has a most preferred policy $\theta _i$ called $i$'s ``peak''. The payoff of agent $i$ if policy $x$ is selected is $-|x-\theta _i|$. We consider two social choice functions:
   \begin{itemize}
   \item mean selection: $f(\theta _1,\dots,\theta _I)=\sum_{i=1}^I\theta _i/I$
-    \item median selection: select the median of $\{x_1,\dots,x_I\}$
+    \item median selection: select the median of $\{\theta_1,\dots,\theta_I\}$
   \end{itemize}
   \begin{enumerate}
   \item Let each $\theta _i$ be uniformly and independently be distributed on $[0,1]$. Is mean selection implementable by any mechanism $\Gamma$? Is median selection implementable by any mechanism $\Gamma$?
