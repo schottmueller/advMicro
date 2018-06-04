@@ -21,7 +21,7 @@
   - [[https://github.com/schottmueller/advMicro/files/2000878/signal.pdf][signaling]]
   - [[https://github.com/schottmueller/advMicro/files/2052819/cheapTalk.pdf][cheap talk]]
   - [[https://github.com/schottmueller/advMicro/files/2052823/revelationPrinc.pdf][revelation principle]]
-  - [[https://github.com/schottmueller/advMicro/files/2044524/domStratMechDes.pdf][dominant strat. implementation]]
+  - [[https://github.com/schottmueller/advMicro/files/2067460/domStratMechDes.pdf][dominant strat. implementation]]
   - [[https://github.com/schottmueller/advMicro/files/2054659/ms.pdf][Myerson Satterthwaite]]
   - [[https://github.com/schottmueller/advMicro/files/2054661/screening.pdf][screening]]
   - [[https://github.com/schottmueller/advMicro/files/2054663/revenueEquivalence.pdf][optimal auctions]]
@@ -106,7 +106,7 @@ The following plan is...well a plan...and as such it might be adapted to unforse
 
 ** Mechanism design II: dominant strategy implementation
 - Gibbard Satterthwaite theorem (MWG 23.C)
-- Vickrey-Clarke-Groves mechanism (MWG 23.C)
+- Pivot (and VCG) mechanism  (MWG 23.C)
 
 # ** Mechanism design III: AGV
 # - Bayesian implementation (MWG 23.D)
