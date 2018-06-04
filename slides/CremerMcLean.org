@@ -1,0 +1,229 @@
+#+TITLE:    Correlated types: Cremer-McLean mechanism
+#+AUTHOR:    Christoph Schottmüller
+#+EMAIL:     christoph@worknotebook.home
+#+DATE:      
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LANGUAGE:  en
+#+OPTIONS:   H:2 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+
+
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [bigger]
+#+BEAMER_FRAME_LEVEL: 2
+#+latex_header: \mode<beamer>{\useinnertheme{rounded}\usecolortheme{rose}\usecolortheme{dolphin}\setbeamertemplate{navigation symbols}{}\setbeamertemplate{footline}[frame number]{}}
+#+latex_header: \mode<beamer>{\usepackage{amsmath,amsthm,amssymb,mathtools}\usepackage{ae,aecompl}}
+#+LATEX_HEADER:\let\oldframe\frame\renewcommand\frame[1][allowframebreaks]{\oldframe[#1]}
+#+LATEX_HEADER: \setbeamertemplate{frametitle continuation}[from second]
+
+* Introduction
+** Introduction
+- so far: independent types: private information creates distortions
+- you have to pay rents in order to truthfully extract information
+- distortions are used to reduce these information rents
+
+- perfectly correlated types
+  - shoot all agent mechanism
+    - costless extraction of private information
+    - no distortions needed
+- today: what about imperfect correlation?
+
+* Preliminaries
+** Setup
+
+- $I$ agents
+- each agent has type $\theta_i\in\Theta_i$; $\theta_i$ is $i$'s private information
+- for most of today: assume $\Theta_i$ is finite
+- distribution $\phi$ over $\Theta=\Theta_1\times\dots\times\Theta_I$ (no independence assumption: types can now be correlated!)
+- assume: $\phi$ has full support
+- decision $x\in X$ and transfers $t_i\in\Re$
+- utility function: $v_i(x,\theta_i)-t_i$
+- revelation principle still holds
+
+** Envelope theorem and revenue equivalence I
+- agent $i$ 's utility when announcing $\hat\theta_i$ while being $\theta_i$ is
+\begin{equation*}
+U_i(\theta _i,\hat\theta _i)=  \int_{\Theta _{-i}}v_i(x(\hat\theta _i,\theta _{-i}),\theta _i)-t(\hat\theta _i,\theta _{-i})\;d\Phi(\theta _{-i}|\theta _i)
+\end{equation*}
+- rent when saying truth
+\begin{equation*}
+U_i(\theta _i)=U_i(\theta _i,\theta _i)=  \int_{\Theta _{-i}}v_i(x(\theta _i,\theta _{-i}),\theta _i)-t(\theta _i,\theta _{-i})\;d\Phi(\theta _{-i}|\theta _i)
+\end{equation*}
+- quick way to get envelope theorem: $U'_i(\theta _i)=\frac{\partial\,U_i}{\partial\theta _i} +\frac{\partial\,U_i}{\partial \hat\theta _i}\frac{d\hat\theta_i}{d\theta _i}$ and then use that $\frac{\partial\,U_i}{\partial\hat\theta _i}=0$
+- revenue equivalence: as $U_i'$ does not depend on $t_i$, $t_i$ is determined (up to a constant) by the decision rule $x$ (on which $U_i'$ depends)
+- problem now: $\partial\,U_i/\partial\theta _i$ still contains $t_i$ (because we have to consider $\partial\Phi(\theta _{-i}|\theta _i)/\partial\theta_i$)
+- revenue equivalence no longer holds!
+** Envelope theorem and revenue equivalence II
+- the $t_i$ play a direct role for incentive compatibility\par before:\linebreak when $x$ is non-decreasing, then the mechanism $(x,t)$ is incentive compatible where transfers are given by the envelope condition (which did not contain $t_i$)
+
+** Cremer-McLean condition I
+- assume finite $\Theta$
+- if $i$ has type $\theta _i$ his beliefs about $\theta _{-i}$ are derived from Bayes' rule
+\begin{equation*}
+  \phi(\theta_{-i}|\theta_i)=\frac{\phi(\theta_{-i},\theta_i)}{\sum_{\theta_{-i'}\in\Theta_{-i}}\phi(\theta_{-i}',\theta_i)}
+\end{equation*}
+** Cremer-McLean condition I
+*** 2-player, 2-type						  :B_example:
+    :PROPERTIES:
+    :BEAMER_env: example
+    :END:
+type distribution
+| type | high | low | 
+|------+------+-----+
+| high | 1/3  | 1/6 | 
+| low  | 1/6  | 1/3 | 
+
+What is belief about other type when you have a high (low) type?
+*** 							    :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+** Cremer-McLean condition III
+- write your beliefs $\phi(\theta_{-i}|\theta_i)$ as a vector $\tilde\phi(\theta_i)$ (for each $\theta_{-i}\in\Theta_{-i}$ one entry in the vector)
+- write down these vectors for each type $\theta_i$ you can have
+- Cremer-McLean condition: no such vector $\tilde\phi(\theta_i)$ is a convex combination of the other vectors in $\{\tilde\phi(\theta_i'):\;\theta_i\neq\theta_i'\in\Theta_i\}$
+
+*** Cremer-McLean condition					    :B_block:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+The distribution $\phi$ satisfies the Cremer-McLean condition if there is no agent $i$ with type $\theta_i\in\Theta_i$ and $\lambda_i:\Theta_i\setminus\{\theta_i\}\rightarrow\Re_+$  such that
+\begin{equation*}
+  \phi(\theta _{-i}|\theta _i)=\sum_{\theta _i'\in\Theta_i\setminus\{\theta_i\}}\lambda_i(\theta_i')\phi(\theta_{-i}|\theta_i')\qquad\text{for all }\theta_{-i}\in\Theta_{-i}.
+\end{equation*}
+*** 							    :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+** Cremer-McLean condition IV
+- condition is satisfied if and only if belief $\phi(\theta_{-i}|\theta_i)$ is not in the convex hull of $\{\phi(\theta_{-i}|\theta_i'):\;\theta_i'\neq\theta_i \}$ for all players and all types
+# - (condition is satisfied if $\phi(\theta_{-i}|\theta_i)$ is not in the space spanned by $\{\phi(\theta_{-i}|\theta_i'):\;\theta_i'\neq\theta_i \}$ )
+- is the condition satisfied if types are distributed independently?
+# no
+- is the condition satisfied if types are perfectly correlated?
+# yes
+- is the condition satisfied in the example?
+
+* Cremer-McLean result
+** Cremer-McLean possibility result I
+*** Cremer-McLean possibility result				  :B_theorem:
+    :PROPERTIES:
+    :BEAMER_env: theorem
+    :END:
+Let $\phi$ satisfy the Cremer-McLean condition. Consider a mechanism $(x,t)$ (possibly not incentive compatible!). Then there is a direct mechanism $(x,t')$ such that
+   - $(x,t')$ is Bayesian incentive compatible
+   - both mechanisms have the same decision rule $x$
+   - both mechanism have the same interim expected payoffs
+\begin{equation*}
+  \sum_{\theta _{-i}\in\Theta _{-i}}t_i(\theta _i,\theta _{-i})\phi(\theta _{-i}|\theta _i)=  \sum_{\theta _{-i}\in\Theta _{-i}}t_i'(\theta _i,\theta _{-i})\phi(\theta _{-i}|\theta _i)
+\end{equation*}
+*** 							    :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+- same interim utilities
+- incentive compatibility comes "for free"
+- same result as in the perfect correlation case 
+** Cremer-McLean possibility result II
+*** Trade/Auction					  :B_example:
+    :PROPERTIES:
+    :BEAMER_env: example
+    :END:
+- seller wants to sell indivisible good to one of $n$ bidders at a price equal to the highest bidder's valuation
+# result says there is an equivalent mech with same interim utilities and therefore same expected revenues as the mechanism above
+
+** Proof idea I
+- let us forget about the allocation $x$ and think about how to elicit private beliefs truthfully
+   - say there is a state of the world $w\in\Omega$ and an expert has private information about how likely each state is
+   - you offer the expert the following scheme
+      - expert announces a probability $\pi(w)$ for each $w\in\Omega$ (and those probabilities have to sum to 1)
+      - when the state realizes, the expert has to pay  $k-log(\pi(w))$
+   - if the expert's believe is $\hat\pi$, what probabilities will he announce?
+\begin{equation*}
+  \min_{\pi(w)}\sum_{w\in\Omega}\left(k-log(\pi(w))\right)\hat\pi(w)
+\end{equation*}
+subject to $\sum_{w\in\Omega}\pi(w)=1$.
+# write Lagrangian and show that $\hat\pi(w)/\pi(w)=\mu$ where $\mu$ is Lagange parameter and therefore (as relative proportion is same for all $w$) truth announcing is optimal
+
+** Proof idea II
+
+- back to our mechanism design problem 
+   - if we had transfers $t_i(\theta_i,\theta_{-i})+c(k-log(\theta_{-i}|\theta_i))$ and $c$ is very high, then revelation incentives trump allocation incentives, i.e. truthtelling is optimal
+   - but: to get result we need for every type a ``revelation payment/lottery'' that is  (i) zero in expectation  when truthfully announced (ii) positive in expectation for all other types 
+   - Cremer-McLean condition ensures that each type has a different belief --> extracting a player's belief is equivalent to extracting his type
+
+** Proof 
+- pick type $\theta_i$ of agent $i$
+- Cremer-McLean condition: $\phi(\theta_{-i}|\theta_i)$ is not in the convex hull of $\{\phi(\theta_{-i}|\theta_i'):\;\theta_i'\neq\theta_i \}$ 
+- separating hyperplane theorem: there exists a vector $y_{\theta_i}$ such that $y_{\theta_i}\phi(\theta_{-i}|\theta_i)=0$ and $y_{\theta_i}x>0$ for all $x\in co\left(\{\phi(\theta_{-i}|\theta_i'):\;\theta_i'\neq\theta_i \}\right)$ \linebreak $\Rightarrow$   $y_{\theta_i}\phi(\theta_{-i}|\theta_i')>0$ for all $\theta_i'\neq \theta_i$
+- interpretation: 
+  - $y_{\theta_i}$ has as many elements as $\Theta _{-i}$: \par each entry corresponds to a $\theta _{-i}$ in the sense that agent $i$ has to pay this amount if he reports $\theta _i$ and other agents report $\theta _{-i}$
+  - player $i$ chooses from lotteries $\{y_{\theta_i}:\;\theta_i\in\Theta_i\}$ \linebreak \rightarrow optimal to choose lottery for his actual type 
+- scale the revelation payments up by multiplying all $y_{\theta_i}$ by some $c>0$ such that revelation incentives trump allocation incentives
+
+** Example I
+- sale of an indivisible object
+- 2 buyers with valuation either 4 or 2
+- type distribution
+| type | high | low |
+|------+------+-----|
+| /    |<     |     |
+| high | 1/3  | 1/6 |
+| low  | 1/6  | 1/3 |
+- allocation rule
+| type | high    | low     |
+|------+---------+---------|
+| /    |<        |         |
+| high | 1/2,1/2 | 1,0     |
+| low  | 0,1     | 1/2,1/2 |
+- transfers $t(\theta_1,\theta_2)$
+| type | high | low |
+|------+------+-----|
+| /    | <    |     |
+| high | 2,2  | 4,0 |
+| low  | 0,4  | 1,1 |
+
+** Example II
+- let's take $\theta_1=4$,  $\phi(\theta_2|4)=\begin{pmatrix}2/3\\1/3\end{pmatrix}$ and $\phi(\theta_2|2)=\begin{pmatrix}1/3\\2/3\end{pmatrix}$ 
+- now we want to have a $y_4$ such that\par $y_4\tilde\phi(\theta_2|4)=0$ and $y_4\phi(\theta_2|2)>0$, i.e.
+
+\begin{align*}  
+2y^1_4/3+y^2_4/3&=0\\  
+y^1_4/3+2y^2_4/3&>0 
+\end{align*} 
+
+say $y_4=\begin{pmatrix}-1\\2\end{pmatrix}$
+
+** Example III
+- similar steps show that for $\theta_1=2$ we get $y_2=\begin{pmatrix}2 \\-1\end{pmatrix}$
+- $t'_1(\theta_1,\theta_2)=t_1(\theta_1,\theta_2)+c  y_{\theta_1}(\theta_1,\theta_2)$
+- choose $c>0$ high enough to ensure truthful revelation
+   - consider type $\theta_1=4$:
+     - truthtelling gives an expected payoff of $$\hspace*{-0.5cm}U_1(4,4)=\frac{2}{3}\left(4/2-2-c\left(-1\right)\right)+\frac{1}{3}\left(4-4-c2\right)=0$$
+     - lying gives an expected payoff of $$\hspace*{-0.5cm}U_1(4,2)=\frac{2}{3}\left(0-0-c2\right)+\frac{1}{3}\left(4/2-1-c\left(-1\right)\right)=\frac{1}{3}-c$$
+- $c\geq 1/3$ will ensure that type $\theta_1=4$ tells the truth
+
+** Example IV
+- zero expected surplus for all types of all buyers
+- efficient allocation
+- seller extracts full rent 
+
+
+* Discussion
+** Discussion
+- result is surprising; perhaps best understood as a paradox
+- some caveats
+   - required (out of equilibrium) payments can be very large
+      - risk aversion
+      - budget constraints
+   - mechanism possibly creates substantial collusion incentives
+   - debate how restrictive Cremer-McLean condition is
+      - payoff type determines belief type (crucial to obtain result) $\rightarrow$ robustness?
+   - mechanism requires precise knowledge of agents' beliefs
+
+
