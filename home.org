@@ -9,7 +9,7 @@
 - Registration for the exam is now possible in KLIPS.
 - Exam date: July 18, 10:00-11:00 
 * Material
-- Exercises: [[./exercises.tex][tex]] [[https://github.com/schottmueller/advMicro/files/2044518/exercises.pdf][pdf]]
+- Exercises: [[./exercises.tex][tex]] [[https://github.com/schottmueller/advMicro/files/2067615/exercises.pdf][pdf]]
 - Slides:
   - [[https://github.com/schottmueller/advMicro/files/1890670/dominRatio.pdf][Dominance and rationalizability]]
   - [[https://github.com/schottmueller/advMicro/files/1888753/NashEq.pdf][Nash Theorem]]
