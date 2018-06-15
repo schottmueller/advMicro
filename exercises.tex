@@ -365,7 +365,7 @@ D  \> 4,4$+\theta _2$    \>1,5
 \label{sec:cheap-talk}
 
 \begin{enumerate}
-\item The state of the world $\theta $ is either 0 or 1. Both, 0 and 1, have probability 1/2. An expert observes the state and then sends a cheap talk message to a decision maker. The available messages are ``high'' (h) and ``low'' (l). (Assume in the following that the messages are used in accordance with their name, i.e. the high message leads to a higher belief of the decision maker.) The decision maker chooses an action $a\in [0,2]$ with the objective of maximizing $(a-\theta )^2$. The objective of the expert is $-(a-\theta-b)^2$ for some $b\in(0,1)$.
+\item The state of the world $\theta $ is either 0 or 1. Both, 0 and 1, have probability 1/2. An expert observes the state and then sends a cheap talk message to a decision maker. The available messages are ``high'' (h) and ``low'' (l). (Assume in the following that the messages are used in accordance with their name, i.e. the high message leads to a higher belief of the decision maker.) The decision maker chooses an action $a\in [0,2]$ with the objective of maximizing $-(a-\theta )^2$. The objective of the expert is $-(a-\theta-b)^2$ for some $b\in(0,1)$.
   \begin{enumerate}
   \item What is a mixed strategy for the expert? % probability of sending high message for each state
     \item Intuitively, which state will the expert reveal truthfully? % high state as expert always wants higher action than DM
@@ -447,8 +447,8 @@ This exercise will not be covered in class. For a solution, see \cite{schottmuel
 \label{sec:domin-strat-impl}
 
 \begin{enumerate}
-\item VCG with positive costs: A public project costs $c=3$. There are three agents with valuations $\theta _1=2$, $\theta _2=0$ and $\theta _3=2$. Calculate the transfers in the Pivot mechanism and determine the players payoffs. Is there anything potentially problematic?
-\item There is a seller with privately known costs $c$ and a buyer with privately known valuation $v$. Both, $v$ and $c$ are (from the other players' point of view) uniformly distributed on $[0,1]$. The seller has payoff $t_S-c x$ where $t_S$ is a monetary payment the seller receives and $x$ the probability of trade. The buyer has payoff $vx-t_B$.
+\item Pivot mechanism with positive costs: A public project costs $c=3$. There are three agents with valuations $\theta _1=2$, $\theta _2=0$ and $\theta _3=2$. Calculate the transfers in the Pivot mechanism and determine the players' payoffs. 
+\item There is a seller with privately known costs $c$ and a buyer with privately known valuation $v$. Both, $v$ and $c$ are (from the other players' point of view) uniformly distributed on $[0,1]$. The seller has payoff $-c x-t_S$ where $t_S$ is a monetary payment the seller  pays (i.e. $t_S<0$ negative in the usual case that the seller receives money) and $x$ the probability of trade. The buyer has payoff $vx-t_B$.
   \begin{enumerate}
   \item What is the efficient decision?
   \item What are the Pivot payments?
@@ -507,7 +507,9 @@ $$
   \item Show that the regulator's maximization problem can be written as $$\max_{q(\cdot)}\int_0^1 q(\theta )-\theta q(\theta )^2-\theta q(\theta )^2\,d\theta. $$
   \item Derive the regulator's optimal mechanism.
     \item How does the optimal $q(\theta )$ differ from $q^{fb}(\theta )$, i.e. the one maximizing $S(q(\theta ))-\theta q(\theta )^2$? 
-  \end{enumerate}
+    \end{enumerate}
+  \item Extra exercise (probably not covered in class; based on the example in section 6 of \cite{schottmueller2015jet}): In the regulation setting of the previous exercise assume that the cost function of the monopolist is $\theta q+q^2/(2\theta)-\theta /10$. Show that the envelope condition, $U'(\theta )=-q(\theta )+q(\theta )^2/(2\theta ^2)+1/10$, together with the monotonicity condition are no longer sufficient for incentive compatibility. (Hint: show that for $q(\theta )=\theta ^2+\theta ^3/5$, $\theta _1=1/2$ wants to misrepresent as type $\theta _2=1/4$ when transfers are calculated using the envelope condition.)\\
+    (on possible interpretations of the cost function: the private information of the firm is not -- as in other examples -- how (marginally) efficient a firm is but could be which technology it uses where different technologies are most efficient depending on the quantity, i.e. which type has the lowest (marginal) cost depends on the quantity level.)
 \end{enumerate}
 
 \section{Revenue equivalence}
@@ -517,10 +519,97 @@ $$
 \item There are $I$ players whose valuations for an indivisible object are independently and identically distributed with density $\phi>0$ on $[0,1]$. The players participate in an all pay auction. That is, each player bids $b_i$ and the highest bidder gets the object but all bidders have to pay their own bid (no matter whether they get the object or not). In this exercise, we use the envelope theorem to determine a symmetric equilibrium in strictly increasing strategies.
   \begin{enumerate}
   \item Show that the expected utility of a player in such an equilibrium is $U(\theta)=U(0)+\int_0^\theta Y(s)\,ds$ where $Y(\theta)$ is the expected utility of a player with valuation $\theta$ to win the auction (in this equilibrium).
-  \item Use the definition of a players expected utility $U(\theta)=\theta Y(\theta )-b(\theta )$, symmetry and strict monotonicity of the equilibrium and the result of the previous subquestion to determine the equilibrium bidding strategy.
+  \item Use the definition of a player's expected utility $U(\theta)=\theta Y(\theta )-b(\theta )$, symmetry and strict monotonicity of the equilibrium and the result of the previous subquestion to determine the equilibrium bidding strategy.
     \item First, show that the equilibrium bidding function $b(\theta )$ is weakly increasing in every symmetric equilibrium. Second, show that there cannot be and interval of types bidding the same amount in a symmetric equilibrium, i.e. $b$ is strictly increasing in every symmetric equilibrium. Conclude that there is a unique symmetric equilibrium.
     \end{enumerate}
-    \item 
+\end{enumerate}
+
+\section{Correlated types}
+\label{sec:correlated-types}
+
+\begin{enumerate}
+\item Show in the example on the lecture slides that type $\theta_1=2$ finds truthtelling optimal for any $c> 0$.
+\item Check for which values of $\varepsilon\in[0,1/16)$ the Cremer-McLean condition holds in the following distribution of types
+  \begin{center}
+\begin{tabular}{r|lll}
+ & 1 & 2 & 3\\
+\hline
+1 & 1/2,1/2 & 0,2 & 0,3\\
+2 & 2,0 & 1,1 & 0,3\\
+3 & 3,0 & 3,0 & 3/2,3/2\\
+\end{tabular}
+\end{center}
+What is your interpretation? Construct a payment scheme that elicits the beliefs of buyer 1 assuming that his high value is 2 and his low value is 1. 
+\item What does the Cremer-McLean result imply for the Myerson-Satterthwaite theorem? (Hint: Be careful with regard to the budget balance condition (and timing).)
+\item Extra exercise (possibly not covered in class): consider a single unit auction with two potential buyers; valuations (=types) are distributed as below:
+\begin{center}
+\begin{tabular}{r|lll}
+ & 1 & 2 & 3\\
+\hline
+1 & 4/20 & 2/20 & 1/20\\
+2 & 2/20 & 2/20 & 2/20\\
+3 & 1/20 & 2/20 & 4/20\\
+\end{tabular}
+\end{center}
+e.g. the probability that both buyers have valuation 1 is 4/20. The seller wants to give the good to the buyer with the higher valuation (and with probability 1/2 to each buyer if valuations are equal). The seller wants to extract all surplus (in expectation) which corresponds to a payment rule as in the table below
+\begin{center}
+\begin{tabular}{r|lll}
+ & 1 & 2 & 3\\
+\hline
+1 & 1/2,1/2 & 0,2 & 0,3\\
+2 & 2,0 & 1,1 & 0,3\\
+3 & 3,0 & 3,0 & 3/2,3/2\\
+\end{tabular}
+\end{center}
+\begin{enumerate}
+\item Check whether the Cremer-McLean condition holds in the type distribution above.
+\item Verify that the payment rule above is not incentive compatible.
+\item Construct belief elicitation payments that give each type a zero payoff when revealing his beliefs and a negative payoff when lying.
+\item Construct a new payment scheme by adding the old payments above to (a multiple) of your belief elicitation payments. Show that the new mechanism is incentive compatible and extracts all the surplus (in expectation).
+\end{enumerate}
+
+solution: see  \citet[p. 134--136]{boergers2015}
+\end{enumerate}
+
+\section{Information Design}
+\label{sec:information-design}
+\begin{enumerate}
+\item A defendant is guilty with probability $\phi$. The judge's payoffs are given in the table below. The prosecutor chooses an ``investigation''. An investigation consists of two probabilities $p_I$ and $p_G$ where $p_j$ is the probability that the investigation produces signal $i$ given state $j\in\{G,I\}$ (and $1-p_j$ is the probability of signal $g$ in state $j$). Assume that the prosecutor wants a conviction regardless of state.
+  
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline
+ & innocent I & guilty G\\
+\hline
+aquit & 1 & 0\\
+\hline
+convict & 0 & 1\\
+\hline
+\end{tabular}
+\end{center}
+\begin{enumerate}
+\item  What will the prosecutor do in case of $\phi>0.5$?
+\item Let $\phi=0.3$. Which investigations lead to judge obedience (acquitting iff the signal is $i$)? Which $(p_I,p_G)$ will the prosecutor choose?
+\item For arbitrary $\phi<0.5$, argue that the prosecutor chooses $p_G=0$ and $0<p_I<1$. 
+\end{enumerate}
+This exercise is based on \cite{kamenica11_bayes_persuas}. 
+\end{enumerate}
+
+%\item Let $F$ and $G$ be lotteries, i.e. distributions of possible monetary payoffs. Show that a risk averse expected utility maximizer, i.e. soemone with concave Bernoulli utilits $u(x)$, prefers a lottery $F$ to a lottery $G$ if $G$ is a mean preserving spread of $F$.
+%  \item Let $F$ and $G$ be lotteries, i.e. distributions of possible monetary payoffs. Assume that $F$ does \emph{not} second order stochastically dominate $G$. Show that there exists a concave Bernoulli utility $u(x)$ such that an expected utility maximizer with this utility function would prefer $G$ over $F$.\\ (Hint: find a suitable piecewise linear function $u$.) 
+
+\section{Buyer optimal learning}
+\label{sec:buyer-optim-learn}
+
+\begin{enumerate}
+\item Let $F$ be the uniform distribution and consider the binary information partition with a low signal if $v\in(a,a+0.5)$ and a high signal else for $a\in[0,1/4]$ (The illustration in the slides is a special case with a=0.1.) 
+
+  \begin{enumerate}
+  \item What is the expected valuation conditional on a low/high
+    signal?
+\item What is the profit maximizing price? What is consumer surplus?
+\item Which $a\in[0,0.25]$ maximizes consumer surplus?
+\end{enumerate}
 \end{enumerate}
 
 \bibliographystyle{chicago}

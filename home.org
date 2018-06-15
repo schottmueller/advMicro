@@ -129,8 +129,8 @@ The following plan is...well a plan...and as such it might be adapted to unforse
  - Cremer-McLean mechanism (cite:cre88)
 
 ** Information design I: Bayesian persuasion
-- Bayesian persuasion (cite:bergemann17_infor_desig, cite:kamenica11_bayes_persuas)
-- Bayes correlated equilibrium (cite:bergemann16_infor_desig_bayes_persuas_bayes_correl_equil)
+- Bayesian persuasion (cite:bergemann17_infor_desig)
+- Further non-required reading: cite:kamenica11_bayes_persuas, cite:bergemann16_infor_desig_bayes_persuas_bayes_correl_equil
 
 ** Information design II: interlude
  - value of information in experimentation

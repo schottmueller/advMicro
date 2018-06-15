@@ -1,0 +1,119 @@
+#+Title: Information Design
+#+AUTHOR:    Christoph Schottmüller
+#+Date: 
+
+#+LANGUAGE:  en
+#+OPTIONS:   H:2 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+
+
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [bigger]
+#+BEAMER_FRAME_LEVEL: 2
+#+latex_header: \mode<beamer>{\useinnertheme{rounded}\usecolortheme{rose}\usecolortheme{dolphin}\setbeamertemplate{navigation symbols}{}\setbeamertemplate{footline}[frame number]{}}
+#+latex_header: \mode<beamer>{\usepackage{amsmath}\usepackage{ae,aecompl}}
+#+LATEX_HEADER:\let\oldframe\frame\renewcommand\frame[1][allowframebreaks]{\oldframe[#1]}
+#+LATEX_HEADER: \setbeamertemplate{frametitle continuation}[from second]
+
+
+* Introduction
+** Introduction
+- classic mechanism design: 
+   - information structure given, design rules of the game
+   - identify all implementable outcomes, maybe choose optimal
+- information design:
+   - game given, design information structure
+   - identify all possible outcomes, maybe choose optimal
+
+- (of course there are hybrid models as well)
+
+- interpretation:
+   - literal design
+   - "robustness": set prediction for unknown information structure, best/worst case scenarios
+
+* Example
+** Example
+#+ATTR_LATEX:  :align |l|c|c|
+|------------+-------------+--------------|
+|            | bad state B | good state G |
+|------------+-------------+--------------|
+| invest     |          -1 | /x/          |
+|------------+-------------+--------------|
+| not invest |           0 | 0            |
+|------------+-------------+--------------|
+
+- $0<x<1$
+- investor does not know state
+- prior: B and G equally likely
+- adviser knows state and recommends invest with prob $p_i$ in state $i\in\{G,B\}$
+
+*** Questions
+- for which strategy $(p_B,p_G)$ will you follow advice?
+- if the adviser wants you to invest, to which strategy should he commit? 
+
+
+** Prior information
+
+- same as before
+- a signal $t\in\{b,g\}$ that corresponds to state with probability $q>1/2$ is observed by both investor and adviser
+- adviser strategy $p_{ij}$ for $i\in\{B,G\}$ and $j\in\{b,g\}$
+
+** Private prior information
+
+- same as before but signal $t\in\{b,g\}$ is only observed by investor
+- ask the investor for his signal
+- incentive compatibility constraints: provide incentives for investor to tell true type
+
+* General model
+** Model
+- set of states \Theta
+- prior \phi over \Theta
+- set of actions $A_i$ for each player ($A=A_1\times\dots\times A_n$)
+- utility functions $u_i:\,A\times \Theta \rightarrow \Re$
+- set of signals/types $T_i$ for each player ($T=T_1\times\dots\times T_n$)
+- distribution $\pi:\,\Theta \rightarrow\Delta(T)$
+
+\vspace*{0.5cm}
+
+- usually finiteness assumptions to avoid equilibrium existence problems
+
+** Obedience I
+- which decision rule $\sigma:\,T\times \Theta \rightarrow\Delta(A)$ is implementable? (omniscient designer case, i.e. no incentive compatibility constraints)
+
+*** Obedience
+Decision rule $\sigma:\,T\times \Theta \rightarrow\Delta(A)$ is *obedient* if for each player $i$ and type $t_i\in T_i$ and $a_i$ in the support of $\sigma$
+\begin{equation*}
+  \mathbb{E}_{a_{-i},t_{-i},\theta }\left[u_i(a_i,a_{-i},\theta )| t_i,a_i\right]\geq   \mathbb{E}_{a_{-i},t_{-i},\theta }\left[u_i(a_i',a_{-i},\theta )| t_i,a_i\right]
+\end{equation*}
+for all $a_i'\in A_i$.
+
+** Obedience II
+Obedience in finite case:
+\begin{multline*}
+  \sum_{a_{-i},t_{-i},\theta }u_i(a_i,a_{-i},\theta )\frac{\sigma(a_i,a_{-i}|t_i,t_{-i},\theta )\pi(t_i,t_{-i}|\theta )\phi(\theta )}{\sum_{a_{-i},t_{-i},\theta }\sigma(a_i,a_{-i}|t_i,t_{-i},\theta )\pi(t_i,t_{-i}|\theta )\phi(\theta )}\\
+  \geq \sum_{a_{-i},t_{-i},\theta }u_i(a_i',a_{-i},\theta )\frac{\sigma(a_i,a_{-i}|t_i,t_{-i},\theta )\pi(t_i,t_{-i}|\theta )\phi(\theta )}{\sum_{a_{-i},t_{-i},\theta }\sigma(a_i,a_{-i}|t_i,t_{-i},\theta )\pi(t_i,t_{-i}|\theta )\phi(\theta )}
+\end{multline*}
+or 
+\begin{multline*}
+  \sum_{a_{-i},t_{-i},\theta }u_i(a_i,a_{-i},\theta )\sigma(a_i,a_{-i}|t_i,t_{-i},\theta )\pi(t_i,t_{-i}|\theta )\phi(\theta )\\
+  \geq \sum_{a_{-i},t_{-i},\theta }u_i(a_i',a_{-i},\theta )\sigma(a_i,a_{-i}|t_i,t_{-i},\theta )\pi(t_i,t_{-i}|\theta )\phi(\theta ).
+\end{multline*}
+
+- set of linear inequalities
+
+** Private prior information
+- truthtelling constraints if the agent's type has to be extracted
+- note: double deviations have to be discouraged (type announcement + action)
+
+*** Incentive compatibility (finite case)
+Decision rule $\sigma: \,T\times\Theta \rightarrow\Delta(A)$ is *incentive compatible* if for each agent $i$ and each type $t_i\in T_i$
+\begin{multline*}
+  \sum_{a_{-i},t_{-i},\theta }u_i(a_i,a_{-i},\theta )\sigma(a_i,a_{-i}|t_i,t_{-i},\theta )\pi(t_i,t_{-i}|\theta )\phi(\theta )\\
+  \geq \sum_{a_{-i},t_{-i},\theta }u_i(\delta_i(a_i),a_{-i},\theta )\sigma(a_i,a_{-i}|t_i',t_{-i},\theta )\pi(t_i,t_{-i}|\theta )\phi(\theta ).
+\end{multline*}
+holds for all $t_i'\in T_i$ and $\delta_i:\,A_i\rightarrow A_i$.
+

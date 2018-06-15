@@ -1,0 +1,162 @@
+#+Title: Buyer-Optimal Learning and Monopoly Pricing
+#+AUTHOR:    Christoph Schottmüller
+#+Date: 
+
+#+LANGUAGE:  en
+#+OPTIONS:   H:2 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+
+
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [bigger]
+#+BEAMER_FRAME_LEVEL: 2
+#+latex_header: \mode<beamer>{\useinnertheme{rounded}\usecolortheme{rose}\usecolortheme{dolphin}\setbeamertemplate{navigation symbols}{}\setbeamertemplate{footline}[frame number]{}}
+#+latex_header: \mode<beamer>{\usepackage{amsmath}\usepackage{ae,aecompl}}
+#+LATEX_HEADER:\let\oldframe\frame\renewcommand\frame[1][allowframebreaks]{\oldframe[#1]}
+#+LATEX_HEADER: \setbeamertemplate{frametitle continuation}[from second]
+
+
+* Some Maths
+
+** Mathematical questions
+
+- when is a random variable (distribution) "higher" than another?
+- when is a random variable more dispersed (i.e. spread out) than another? 
+
+
+** Mathematical answers
+- "higher": $F$ *first order stochastically dominates* $G$ if $F(x)\leq G(x)$ for all $x\in\Re$. 
+
+- "more dispersed 1": $F$ *second order stochastically dominates* $G$ if $\int_{-\infty}^x F(y)\,dy \leq \int_{-\infty}^x G(y)\,dy$ for all $x\in\Re$.
+
+- "more dispersed 2": A random variable /x/ with distribution $F$ is a *mean preserving spread* of a random variable $s$ if there is a random variable /z/ with $\mathbb{E}[z|s]=0$ such that the distribution of $s+z$ is /F/.
+
+*** Result
+If two random variables /x/ and /s/ have the same mean, then /s/ second order stochastically dominates /x/ if and only if /x/ is a mean preserving spread of /s/.
+
+
+* Introduction
+** Introduction
+- how much do you value a new PC?
+- will customer reviews and other online product information sources increase consumer surplus?
+
+\pause
+
+\vspace*{0.5cm}
+- direct effect vs. pricing response
+
+\vspace*{0.5cm}
+- can we predict (a range of) possible profits and consumer surplus without knowing what information consumers have?
+
+* Model
+** Model
+- buyer value $v$ distributed on $[0,1]$ according to cdf $F$
+- \mu is expected valuation under $F$
+- buyer does not know $v$ but receives private signal $s$ (correlated with $v$)
+- seller knows neither $v$ nor $s$
+- joint distribution of $s$ and $v$ is commonly known
+\vspace*{0.2cm}
+- seller sets price /p/ to maximize expected profits (zero costs)
+- buyer decides whether to buy maxmizing expected $v-p$
+\vspace*{0.2cm}
+- without loss of generality $s=\mathbb{E}(v|s)$
+- $v$ has to be a mean preserving spread of $s$
+
+** Illustration
+- let $F$ be uniform distribution on $[0,1]$
+- suppose buyer has complete information ($s=v$)
+   - optimal price? 
+# p=1/2
+   - consumer surplus?
+# CS=1/8
+
+- suppose signal is either "low" or "high"
+   - low if $v\in[0.1,0.6]$ 
+   - high else
+   - expected /v/ given high (low) signal?
+# l=0.35, h = 0.65
+   - optimal /p/?, expected consumer surplus?
+# p=0.35>0.65/2, CS = 1/2-0.35=0.15>1/8
+
+
+* Analysis
+
+** Feasible signal distributions
+The distribution of signals $G$ is feasible if and only if $F$ is a mean preserving spread of $G$, that is:
+- the expected value of $G$ equals the expected value of $F$
+- SOSD: $\int_0^x F(v)\,dv\geq\int_0^xG(s)\,ds$ for all $x\in[0,1]$, i.e. $F$ is more spread out than  $G$.
+
+*** Outcome 						       :B_definition:
+    :PROPERTIES:
+    :BEAMER_env: definition
+    :END:
+$(G,p)$ is an outcome if $G$ is a feasible distribution of signals and $p$ is a profit maximizing price given signal distribution $G$.
+
+** key of the analysis I
+*** Lemma
+Let $(G,p)$ be an outcome leading to expected profit $\pi$. Then there is an outcome $(G_\pi^B,\pi)$ where
+\[G_\pi^B(s)=\begin{cases}0&\text{ if }s\in[0,\pi)\\ 1-\pi/s & \text{ if }s\in[\pi,B)\\1&\text{ if }s\geq B \end{cases} \]
+ such that (i) $G$ is a mean preserving spread of $G_\pi^B$ and (ii) expected consumer surplus under $(G_\pi^B,\pi)$ is at least as high as under $(G,p)$.
+
+*** 							    :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+
+- note: $G_\pi^B$ has a mass point with mass $\pi/B$ at $B$
+- implication: without loss of generality we can focus on $G_\pi^B$
+
+** key to analysis II
+
+Proof of lemma:
+- $\pi$ is a profit maximizing price (at which every type of buyer buys)
+# leads to profit \pi, prices in (\pi,B] also lead to profit \pi, price above B leads to 0 demand and profit
+- expected consumer surplus is at least as high under $G_\pi^B$ as under $G$
+# CS=\mu-\pi, as profits are \pi under both distributions and expected gross consumer value can never be higher than \mu, the result follows
+- there is a unique $B$ such that $G_\pi^B$ has expected value $\mu$
+# expected value of $G_\pi^B$ is increasing in B (higher B shifts mass from old B to higher values); $G_\pi^\pi$ is a unit mass on \pi\leq \mu; to show: $G_\pi^1$ has expected value above \mu: by optimality of p for G we have $\pi\geq s(1-G(s)+\Delta G(s))$ for all $s\in[0,1]$ which is equivalent to $1-\pi/s\leq G(s)-\Delta G(s)$ and therefore $G_\pi^1(s)\leq G(s)$, i.e. G_\pi^1\succ_{FOSD} G and has a higher expected value than $G$
+-  $G_\pi^B\succeq_{SOSD}G$ and therefore $G_\pi^B$ is feasible
+# as $G_\pi^B(s)=G_\pi^1(s)$ for $s<B$, the FOSD above implies the result for those $s$. Take $s\geq B$. Note that the expected value for a distribution H equals $\int_0^1H(x)\,dx$ (using integration by parts. Hence, $\int_0^s G(x)\,dx=1-\mu-\int_s^1G(x)\,dx\geq 1-\mu-(1-s)=\mu-\int_s^1G_\pi^B(x)\,dx=\int_0^sG_\pi^B(x)dx$
+
+** Result
+*** Optimal information
+The buyer-optimal distribution of signals is given by 
+\[G_q^B(s)=\begin{cases}0&\text{ if }s\in[0,q)\\ 1-q/s & \text{ if }s\in[q,B)\\1&\text{ if }s\geq B \end{cases} \]
+where /q/ is the price charged in equilibrium and /q/ and /B/ are chosen such that /q/ is the lowest among all $(q,B)$ for which $G_q^B$ satisfies both the expected value and SOSD constraint. 
+
+*** 							    :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+\textbf{Proof:} As lower prices lead to higher consumer surplus, this is a direct implication of the lemma.\qed
+
+# ** Heuristic proof
+# Let $G^*$  and $p^*$ be optimal
+
+# 1. All buyers buy.
+# If not, one can merge types below p^*$ with types at and slightly above p^* to a new type p'<p^* such that profits when chargin p' in the modified problem are equal to profits in the original problem when charging p^*. Hence, welfare increases (as all types have vabove zero costs) while profits remain constant -> CS up.
+
+# 2. Seller has to be indifferent between all prices above $p^*$ (that give positive demand).
+# suppose not, i.e. p\in(p',p'+epsilon) gives strictly lower profits than p^*. Then pushing up the values of some types just below p' to values just above p' gives higher CS while leaving p^* as optimal price. In order not to violate expected value constraint, merge types at and some just above p^* and give them valuation p^*-\epsilon such that p^*-\epsilon is new optimal price. (By full support assumption SOSD constraint cannot bind around p^*>0.)
+
+# 3. $G^*$ has no mass point at $p^*$.
+# directly implied by 2: If there was mass point, p^* would give higher profit than p^*+\epsilon.
+
+# Hence: $G^*=G_q^B$
+
+# 4. For each /q/, there is (at most) one /B/ that satisfies expected value constraint.
+# expected value of G^* is strictly increasing in $B$
+
+# 5. Choose lowest /q/ satisfying both constraints
+# q will be the price and as every type buys the lowest q leads to highest CS
+
+** Robust outcome prediction
+- for every $q\in[p^*,\mu]$ there is a $B$ such that $G_q^B$ is feasible 
+# for q>p^*, G_q^B (where B chosen to satisfy expected value constraint) is more concentrated than optimal G^* --> SOSD fine
+- different optimal prices generate outcome triangle $(\mu-p^*)$, $(0,p^*)$, $(0,\mu)$
+
+
