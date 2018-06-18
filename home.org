@@ -27,6 +27,7 @@
   - [[https://github.com/schottmueller/advMicro/files/2054663/revenueEquivalence.pdf][optimal auctions]]
 - Handouts etc.:
   - [[https://github.com/schottmueller/advMicro/files/1954228/math.pdf][math handout]]
+  - [[https://github.com/schottmueller/advMicro/files/2110550/envelopeMonoNonLinPric.pdf][envelope]] theorem and monotonicity constraint
 * Prerequisites
 I assume that you have some introductory knowledge of game theory on the level of cite:gibbons1992primer. In particular, you should know the material in chapters 1 and 2 in Gibbons' book (strategic form games, dominance, mixed strategies, mixed and pure Nash equilibrium, extensive form games, game trees, backwards induction, subgame perfect Nash equilibrium) and be able to apply it in simple games. From Advanced Microeconomics I, we built upon the part about /decision making under uncertainty/ (expected utility theorem). In terms of mathematics, it is helpful if you master the material of the course /Advanced Mathematics for Economists/. Having said that, most of the used math tools will not be far beyond high school maths. At the minimum you have to know (partial) differentiation, integration and optimization of functions and basic statistics (discrete and continuous probability distributions, expected values as well as Bayes' rule and conditional probabilities). Ideally, you should also have some idea of what a mathematical proof is.
 
@@ -118,7 +119,8 @@ The following plan is...well a plan...and as such it might be adapted to unforse
 - Myerson-Satterthwaite theorem (MWG 23.E)
 
 ** Mechanism design IV: screening
-- non-linear pricing by a monopolist (cite:maskin1984monopoly)
+- non-linear pricing by a monopolist (see handout) 
+- a classic reference on this topic is cite:maskin1984monopoly, MWG cover a different screening problem in Example 23.F.1 and MWG pp. 897-903 is recommended reading
 
 ** Mechanism design V: optimal auctions
 - revenue equivalence (MWG 23.D p.889-)
