@@ -24,7 +24,8 @@
   - [[https://github.com/schottmueller/advMicro/files/2075056/domStratMechDes.pdf][dominant strat. implementation]]
   - [[https://github.com/schottmueller/advMicro/files/2054659/ms.pdf][Myerson Satterthwaite]]
   - [[https://github.com/schottmueller/advMicro/files/2054661/screening.pdf][screening]]
-  - [[https://github.com/schottmueller/advMicro/files/2054663/revenueEquivalence.pdf][optimal auctions]]
+  - [[https://github.com/schottmueller/advMicro/files/2115403/revenueEquivalence.pdf][optimal auctions]]
+  - [[https://github.com/schottmueller/advMicro/files/2115410/CremerMcLean.pdf][correlated information]]
 - Handouts etc.:
   - [[https://github.com/schottmueller/advMicro/files/1954228/math.pdf][math handout]]
   - [[https://github.com/schottmueller/advMicro/files/2110550/envelopeMonoNonLinPric.pdf][envelope]] theorem and monotonicity constraint
