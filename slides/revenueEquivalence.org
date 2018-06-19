@@ -17,7 +17,7 @@
 #+LaTeX_CLASS_OPTIONS: [bigger]
 #+BEAMER_FRAME_LEVEL: 2
 #+latex_header: \mode<beamer>{\useinnertheme{rounded}\usecolortheme{rose}\usecolortheme{dolphin}\setbeamertemplate{navigation symbols}{}\setbeamertemplate{footline}[frame number]{}}
-#+latex_header: \mode<beamer>{\usepackage{amsmath}\usepackage{ae,aecompl}}
+#+latex_header: \mode<beamer>{\usepackage{amsmath,amssymb}\usepackage{ae,aecompl}}
 
 * Revenue equivalence in auctions
 ** Setting: Independent private value auction
@@ -114,3 +114,49 @@ the seller's revenue is therefore
 
 
 
+
+* Optimal mechanism in bilateral trade
+** Optimal mechanism in bilateral trade I
+- Myerson-Satterthwaite setup
+- for simplicity: $c$ and $v$ are uniformly distributed on $[0,1]$
+- envelope theorem:
+  - $U_S(c)=U_S(1)+\int_c^1 \mathbb{E}_v[y(v,x)] \,dx$ \linebreak $\Rightarrow$ $T_S(c) = U_S(1)+\int_c^1 \mathbb{E}_v[y(v,x)] \,dx+ \mathbb{E}_v[y(v,c)]c$
+  - $U_B(v)=U_B(0)+\int_0^v \mathbb{E}_c[y(x,c)] \,dx$ \linebreak $\Rightarrow$ $T_B(v) = v\mathbb{E}_c[y(x,c)]  - U_B(0)-\int_0^v \mathbb{E}_c[y(x,c)] \,dx$
+- budget constraint (in ex ante form):\linebreak $\int_0^1 U_S(1)+\int_c^1 \mathbb{E}_v[y(v,x)] \,dx+ \mathbb{E}_v[y(v,c)]c\, dc\leq \int_0^1 v\mathbb{E}_c[y(x,c)]  - U_B(0)-\int_0^v \mathbb{E}_c[y(x,c)] \,dx\; dv$ 
+  - use integration by parts to eliminate double integrals:
+$$U_S(1)+\int_0^1 2\mathbb{E}_v[y(v,c)]c \;dc\leq -U_B(0)+ \int_0^1 \mathbb{E}_c[y(v,c)] (2v-1)\;dv$$
+$$U_S(1)+U_B(0)\leq  \int_0^1\int_0^1 y(v,c) (2v-1-2c)\;dv\; dc$$
+
+** Optimal mechanism in bilateral trade II
+- objective:\linebreak $\int_0^1\int_0^1 y(v,c)(v-c)\;dv\;dc$
+- constraints:
+  - budget balance: \linebreak $U_S(1)+U_B(0)\leq  \int_0^1\int_0^1 y(v,c) (2v-1-2c)\;dv\; dc$
+  - monotonicity: 
+     - $\mathbb{E}_v[y(v,c)]$ non-increasing in $c$
+     - $\mathbb{E}_c[y(v,c)]$ non-decreasing in $v$
+  - participation:
+     - $U_S(1)\geq 0$
+     - $U_B(0)\geq 0$
+- variables: $y$, $U_S(1)$, $U_B(0)$
+
+\vspace*{0.5cm}
+
+- what is optimal $U_S(1)$, $U_B(0)$?
+
+** Optimal mechanism in bilateral trade III
+- Lagrangian relaxed problem:
+$$\mathcal{L}(y,\lambda)=\int_0^1\int_0^1 y(v,c)\left(v-c+\lambda (2v-2c-1)  \right)\;dv\;dc$$
+
+- $\max_y \mathcal{L}$:
+$$y^*(v,c)=\begin{cases}1 &\text{ if }v-c\geq \lambda/(1+2\lambda)\\ 0 & \text{ else} \end{cases}$$
+
+- $\lambda$ such that budget balance constraint holds with equality:
+$$\int_0^{1-\lambda/(1+2\lambda)}\int_{c+\lambda/(1+2\lambda)}^1  (2v-1-2c)\;dv\; dc=0$$
+
+$\Leftrightarrow \frac{\lambda}{1+2\lambda}=1/4$ $\quad\Rightarrow\quad y^*(v,c)=\begin{cases}1 &\text{ if }v-c\geq 1/4\\ 0 & \text{ else} \end{cases}$
+
+- monotonicity: $\checkmark$ 
+
+** Optimal mechanism in bilateral trade IV
+- "second best": trade if and only if $v-c\geq 1/4$
+- compare to equilibrium in linear strategies of the double auction (exercise 2c for lecture 5)
