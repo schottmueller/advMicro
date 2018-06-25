@@ -500,7 +500,7 @@ $$
     scheme not optimal for the monopolist?
 \end{enumerate}
 % $q(\theta)=4\theta$, $U(\theta)=2\theta^{2}$, $t(\theta)=8\theta-2\theta^{2}$, $p(q)=2q-q^{2}/8$
-\item Regulation of a natural monopoly: A natural monopolist has costs $\theta q^2$ when producing quantity $q$. His type $\theta $ is private information and from the regulator's point of view uniformly distributed on $[0,1]$. Consumers value $q$ units of the good according to $S(q)=q$. The regulator offers the natural monopolist a menu of transfer payments and quantities from which the monopolist can choose an option. The regulator maximizes expected consumer surplus, $S(q)$, minus the payments made to the monopolists. The monopolist maximizes profits, i.e. $t-\theta  q^2$ when receiving tansfer $t$ and producing quantity $q$, and has always the outside option of not producing which yields a profit of zero.
+\item Regulation of a natural monopoly: A natural monopolist has costs $\theta q^2$ when producing quantity $q$. His type $\theta $ is private information and from the regulator's point of view uniformly distributed on $[0,1]$. Consumers value $q$ units of the good according to $S(q)=q$. The regulator offers the natural monopolist a menu of transfer payments and quantities from which the monopolist can choose an option. The regulator maximizes expected consumer surplus, $S(q)$, minus the payments made to the monopolists. The monopolist maximizes profits, i.e. $t-\theta  q^2$ when receiving transfer $t$ and producing quantity $q$, and has always the outside option of not producing which yields a profit of zero.
   \begin{enumerate}
   \item Argue that one can concentrate on direct revelation mechanisms $(q(\theta ),t(\theta ))$.
   \item Show that a mechanism is incentive compatible if and only if $U'(\theta )=-q(\theta )^2$ and $q$ is decreasing where $U(\theta )=t(\theta )-\theta q(\theta )^2$.
@@ -520,8 +520,22 @@ $$
   \begin{enumerate}
   \item Show that the expected utility of a player in such an equilibrium is $U(\theta)=U(0)+\int_0^\theta Y(s)\,ds$ where $Y(\theta)$ is the expected utility of a player with valuation $\theta$ to win the auction (in this equilibrium).
   \item Use the definition of a player's expected utility $U(\theta)=\theta Y(\theta )-b(\theta )$, symmetry and strict monotonicity of the equilibrium and the result of the previous subquestion to determine the equilibrium bidding strategy.
-    \item First, show that the equilibrium bidding function $b(\theta )$ is weakly increasing in every symmetric equilibrium. Second, show that there cannot be and interval of types bidding the same amount in a symmetric equilibrium, i.e. $b$ is strictly increasing in every symmetric equilibrium. Conclude that there is a unique symmetric equilibrium.
+    \item First, show that the equilibrium bidding function $b(\theta )$ is weakly increasing in every symmetric equilibrium. Second, show that there cannot be an interval of types bidding the same amount in a symmetric equilibrium, i.e. $b$ is strictly increasing in every symmetric equilibrium. Conclude that there is a unique symmetric equilibrium.
     \end{enumerate}
+\end{enumerate}
+
+\section{Optimal mechanisms and limits}
+\label{sec:optim-mech-limits}
+
+\begin{enumerate}
+\item Take the public good model from the slides but assume that the costs of the public good are fixed, i.e. the cost is $c=5/4$ no matter what the number of players $I$ is. (In the lecture, we assumed costs $c*I$.)
+  \begin{enumerate}
+  \item  Check why the proof that $x(\theta )=0$ with probability 1 if $I\rightarrow\infty$ no longer works.
+  \item Take the following game: Each player decides whether to contribute or not. If at least $I/2$ players contributed (assume $I$ even), then the public good is provided and each of the contributing players pays $2c/I$ to finance it. Verify that there is a threshold equilibrium where every player with valuation above a threshold $\theta ^*$ contributes. Derive the characterizing equation for the equilibrium threshold $\theta ^*$ and check numerically that $\theta ^*$ is increasing in $I$.
+    % $\theta ^* prob(pivotal)=2c/I$, i.e. $\theta ^*\binom{I-1}{I/2-1}{\theta ^*}^{I/2-1}(1-\theta ^*)^{I/2}=2c/I$ which is equivalent to $\binom{I}{I/2}{\theta ^*}^{I/2}(1-\theta ^*)^{I/2}=c/I$.
+  \item Derive the mechanism maximizing ex ante welfare.
+    % similar to slides but $c$ is outside the sum
+  \end{enumerate}
 \end{enumerate}
 
 \section{Correlated types}
@@ -531,12 +545,11 @@ $$
 \item Show in the example on the lecture slides that type $\theta_1=2$ finds truthtelling optimal for any $c> 0$.
 \item Check for which values of $\varepsilon\in[0,1/16)$ the Cremer-McLean condition holds in the following distribution of types
   \begin{center}
-\begin{tabular}{r|lll}
- & 1 & 2 & 3\\
+\begin{tabular}{r|ll}
+ & 1 & 2 \\
 \hline
-1 & 1/2,1/2 & 0,2 & 0,3\\
-2 & 2,0 & 1,1 & 0,3\\
-3 & 3,0 & 3,0 & 3/2,3/2\\
+1 & $3/16+\varepsilon $ & 9/16 \\
+2 & $1/16-\varepsilon $ & 3/16
 \end{tabular}
 \end{center}
 What is your interpretation? Construct a payment scheme that elicits the beliefs of buyer 1 assuming that his high value is 2 and his low value is 1. 

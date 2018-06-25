@@ -1,0 +1,157 @@
+#+TITLE:    Optimal mechanism in bilateral trade + Limit results
+#+AUTHOR:    Christoph Schottmüller
+#+EMAIL:     christoph@worknotebook.home
+#+DATE:      
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LANGUAGE:  en
+#+OPTIONS:   H:2 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+
+
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [bigger]
+#+BEAMER_FRAME_LEVEL: 2
+#+latex_header: \mode<beamer>{\useinnertheme{rounded}\usecolortheme{rose}\usecolortheme{dolphin}\setbeamertemplate{navigation symbols}{}\setbeamertemplate{footline}[frame number]{}}
+#+latex_header: \mode<beamer>{\usepackage{amsmath,amssymb}\usepackage{ae,aecompl}}
+
+* Optimal mechanism in bilateral trade
+** Optimal mechanism in bilateral trade I
+- Myerson-Satterthwaite setup
+- for simplicity: $c$ and $v$ are uniformly distributed on $[0,1]$
+- envelope theorem:
+  - $U_S(c)=U_S(1)+\int_c^1 \mathbb{E}_v[y(v,x)] \,dx$ \vspace*{0.2cm}\linebreak\vspace*{0.2cm} $\Rightarrow$ $T_S(c) = U_S(1)+\int_c^1 \mathbb{E}_v[y(v,x)] \,dx+ \mathbb{E}_v[y(v,c)]c$
+  - $U_B(v)=U_B(0)+\int_0^v \mathbb{E}_c[y(x,c)] \,dx$ \vspace*{0.2cm}\linebreak\vspace*{0.2cm} $\Rightarrow$ $T_B(v) = v\mathbb{E}_c[y(x,c)]  - U_B(0)-\int_0^v \mathbb{E}_c[y(x,c)] \,dx$
+- budget constraint (in ex ante form): \begin{multline*}\int_0^1 U_S(1)+\int_c^1 \mathbb{E}_v[y(v,x)] dx+ \mathbb{E}_v[y(v,c)]c dc\\\leq \int_0^1 v\mathbb{E}_c[y(x,c)]  - U_B(0)-\int_0^v \mathbb{E}_c[y(x,c)] dx dv\end{multline*}
+
+** Optimal mechanism in bilateral trade II
+- budget constraint (in ex ante form):\begin{multline*}\int_0^1 U_S(1)+\int_c^1 \mathbb{E}_v[y(v,x)] dx+ \mathbb{E}_v[y(v,c)]c dc\\\leq \int_0^1 v\mathbb{E}_c[y(x,c)]  - U_B(0)-\int_0^v \mathbb{E}_c[y(x,c)] dx dv\end{multline*}
+- use integration by parts to eliminate double integrals:
+$$U_S(1)+\int_0^1 2\mathbb{E}_v[y(v,c)]c \;dc\leq -U_B(0)+ \int_0^1 \mathbb{E}_c[y(v,c)] (2v-1)\;dv$$
+$$U_S(1)+U_B(0)\leq  \int_0^1\int_0^1 y(v,c) (2v-1-2c)\;dv\; dc$$
+
+** Optimal mechanism in bilateral trade II
+- objective:\linebreak $\int_0^1\int_0^1 y(v,c)(v-c)\;dv\;dc$
+- constraints:
+  - budget balance: \linebreak $U_S(1)+U_B(0)\leq  \int_0^1\int_0^1 y(v,c) (2v-1-2c)\;dv\; dc$
+  - monotonicity: 
+     - $\mathbb{E}_v[y(v,c)]$ non-increasing in $c$
+     - $\mathbb{E}_c[y(v,c)]$ non-decreasing in $v$
+  - participation:
+     - $U_S(1)\geq 0$
+     - $U_B(0)\geq 0$
+- variables: $y$, $U_S(1)$, $U_B(0)$
+
+\vspace*{0.5cm}
+
+- what is optimal $U_S(1)$, $U_B(0)$?
+
+** Optimal mechanism in bilateral trade III
+- Lagrangian relaxed problem:
+$$\mathcal{L}(y,\lambda)=\int_0^1\int_0^1 y(v,c)\left(v-c+\lambda (2v-2c-1)  \right)\;dv\;dc$$
+
+- $\max_y \mathcal{L}$:
+$$y^*(v,c)=\begin{cases}1 &\text{ if }v-c\geq \lambda/(1+2\lambda)\\ 0 & \text{ else} \end{cases}$$
+
+- $\lambda$ such that budget balance constraint holds with equality:
+$$\int_0^{1-\lambda/(1+2\lambda)}\int_{c+\lambda/(1+2\lambda)}^1  (2v-1-2c)\;dv\; dc=0$$
+
+$\Leftrightarrow \frac{\lambda}{1+2\lambda}=1/4$ $\quad\Rightarrow\quad y^*(v,c)=\begin{cases}1 &\text{ if }v-c\geq 1/4\\ 0 & \text{ else} \end{cases}$
+
+- monotonicity: $\checkmark$ 
+
+** Optimal mechanism in bilateral trade IV
+- "second best": trade if and only if $v-c\geq 1/4$
+- compare to equilibrium in linear strategies of the double auction (exercise 2c for lecture 5)
+
+* Trade with many buyers and sellers
+** Many buyers and sellers: setup
+- $n$ buyers and $m$ sellers
+- buyer $i$ has unit demand and valuation $v_i$ (private information)
+- seller $i$ has unit supply and costs $c_i$ (private information)
+\vspace*{1cm}
+- which trades are efficient?
+
+
+** Many buyers and sellers: efficiency
+- order valuations (relabeling buyers if necessary): $v_1\geq v_2\geq\dots\geq v_n$
+- order costs (relabeling sellers if necessary): $c_1\leq c_2\leq\dots\leq c_m$
+- draw supply and demand
+# efficient let k be such that $v_k\geq c_k$ but $v_{k+1}<c_{k+1}$; efficiency is that buyer 1 to k trade with seller 1 to k
+
+** Many buyers and sellers: almost efficient trade
+- let k be such that $v_k\geq c_k$ but $v_{k+1}<c_{k+1}$
+  - efficiency: buyers 1 to $k$ trade with sellers 1 to $k$
+- "almost efficient mechanism":
+  - buyers 1 to $k-1$ trade with sellers 1 to $k-1$ at price $(v_k+c_k)/2$
+- show: almost efficient mechanism is (dominant strategy!) incentive compatible and budget balanced
+- assume that $v_i\sim \Phi$ with strictly positive density on support $[a,b]$
+- assume that $c_i\sim \Psi$ with strictly positive density on support $[c,d]$ with $[a,b]\cap[c,d]\neq\emptyset$
+*** 
+Efficiency in almost efficient mechanism is arbitrarily close to first best efficiency as $m,n\rightarrow\infty$.
+
+* Public good problem with many players
+** Public good problem with many players: setting
+- public good is either provided, $x=1$, or not, $x=0$
+- $I$ players with private valuation $\theta_i$
+- $\theta_i$ are independently uniformly distributed on $[0,1]$
+- cost of public good in $cI$ with $0<c<1/2$
+- outside option: 0
+
+\vspace*{0.2cm}
+- direct mechanism: $(x(\theta),t_i(\theta))$ 
+- participation constraint: $U_i(\theta_i)=X_i(\theta_i)\theta_i-T_i(\theta_i)\geq 0$
+- ex ante budget balance: $\mathbb{E}_\theta\left[\sum_i t_i(\theta)\right]\geq \mathbb{E}_\theta[x(\theta)]c$ 
+
+** IC
+- incentive compatibility is equivalent to
+  - envelope theorem: $U(\theta_i)=\int_0^{\theta_i}X_i(s)\,ds$
+  - monotonicity: $X_i$ increasing in $\theta_i$
+
+** budget balance I
+$$\mathbb{E}_\theta\left[\sum_i t_i(\theta)\right]\geq \mathbb{E}_\theta[x(\theta)]cI$$
+$$\Leftrightarrow \sum_i \int_0^1 T_i(\theta_i)\,d\theta_i\geq\mathbb{E}_\theta[x(\theta)]cI$$
+$$\Leftrightarrow \sum_i \int_0^1 X_i(\theta_i)\theta_i-U_i(\theta_i)\,d\theta_i\geq\mathbb{E}_\theta[x(\theta)]cI$$
+$$\Leftrightarrow \sum_i \int_0^1 X_i(\theta_i)\theta_i-\int_0^{\theta_i}X_i(s)\,ds\,d\theta_i\geq\mathbb{E}_\theta[x(\theta)]cI$$
+$$\Leftrightarrow \sum_i \int_0^1 X_i(\theta_i)(2\theta_i-1)\,d\theta_i\geq\sum_i\mathbb{E}_\theta[x(\theta)]c$$
+$$\Leftrightarrow \mathbb{E}_\theta\left[ \sum_i x(\theta)(2\theta_i-1-c)\right]\geq 0$$
+# $$\Leftrightarrow \sum_i \int_0^1 X_i(\theta_i)(2\theta_i-1-c)\,d\theta_i\geq0$$
+** budget balance II
+$$\Leftrightarrow \mathbb{E}_\theta\left[ x(\theta)\sum_i (2\theta_i-1-c)\right]\geq 0$$
+
+- if $I\rightarrow\infty$, then $(\sum_i (2\theta_i-1-c))/I$ converges to $\mathbb{E}_{\theta_i}[2\theta_i-1-c]$ 
+# (independence of $\theta_i$ and law of large numbers)
+- $\mathbb{E}_{\theta_i}[2\theta_i-1-c]< 0$ 
+# as $\theta_i\sim u[0,1]$ and $c>0$
+
+- in the limit budget balance holds only if $x(\theta)=0$ with probability 1
+
+- in the limit, $\sum_i \theta_i-c$ is strictly positive with probability 1 if $c<1/2$
+
+- large numbers of players amplify the free-rider problem
+* Optimal provision of a public good
+** Public good: Welfare maximizing mechanism
+$$\max_x\mathbb{E}_\theta\left[ x(\theta)\sum_i\{\theta_i-c\} \right]$$
+$$ s.t.:\quad  \mathbb{E}_\theta\left[ \sum_i x(\theta)(2\theta_i-1-c)\right]\geq 0$$
+
+$$\mathcal{L}=\mathbb{E}_\theta\left[ x(\theta)\sum_i\{\theta_i-c+\lambda(2\theta_i-1-c)\} \right]$$
+
+$$x^*(\theta)=\begin{cases} 1 &\sum_i \theta_i-c\geq\frac{\lambda}{1+\lambda}\sum_i 1-\theta_i \\ 0 & \text{else}\end{cases}$$
+$\lambda^*$ such that budget balance constraint holds with equality 
+ 
+** Public good: Welfare maximizing mechanism example
+
+- for $c=1/4$ (all values are rounded):
+|   I | $\lambda/(1+\lambda)$ | prob $x^*=1$ | prob $x^{fb}=1$ |
+|-----+-----------------------+--------------+-----------------|
+| /   |                   <  |           < |               < |
+|   2 |                  0.31 |         0.63 |            0.88 |
+|   3 |                  0.45 |         0.54 |            0.93 |
+|   4 |                  0.54 |         0.46 |            0.96 |
+|   5 |                   0.6 |         0.4  |            0.97 |
+|  10 |                  0.76 |         0.21 |     $\approx 1$ |
+

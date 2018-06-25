@@ -9,7 +9,7 @@
 - Registration for the exam is now possible in KLIPS.
 - Exam date: July 18, 10:00-11:00 
 * Material
-- Exercises: [[./exercises.tex][tex]] [[https://github.com/schottmueller/advMicro/files/2067615/exercises.pdf][pdf]]
+- Exercises: [[./exercises.tex][tex]] [[https://github.com/schottmueller/advMicro/files/2133302/exercises.pdf][pdf]]
 - Slides:
   - [[https://github.com/schottmueller/advMicro/files/1890670/dominRatio.pdf][Dominance and rationalizability]]
   - [[https://github.com/schottmueller/advMicro/files/1888753/NashEq.pdf][Nash Theorem]]
@@ -25,6 +25,7 @@
   - [[https://github.com/schottmueller/advMicro/files/2054659/ms.pdf][Myerson Satterthwaite]]
   - [[https://github.com/schottmueller/advMicro/files/2054661/screening.pdf][screening]]
   - [[https://github.com/schottmueller/advMicro/files/2115403/revenueEquivalence.pdf][optimal auctions]]
+  - [[https://github.com/schottmueller/advMicro/files/2133299/optTradeLimits.pdf][optimal trading mechanism and limit results]]
   - [[https://github.com/schottmueller/advMicro/files/2115410/CremerMcLean.pdf][correlated information]]
 - Handouts etc.:
   - [[https://github.com/schottmueller/advMicro/files/1954228/math.pdf][math handout]]
@@ -127,21 +128,29 @@ The following plan is...well a plan...and as such it might be adapted to unforse
 - revenue equivalence (MWG 23.D p.889-)
 - optimal independent, private value auctions (MWG Example 23.F.2)
 
+** Mechanism design VI: optimal mechanisms and limits
+- welfare maximizing mechanism in bilateral trade
+- limits when number of agents gets large in bilateral trade and public good setting
+- references: Börgers 3.4.3; Fudenberg and Tirole "Game Theory" ch. 7.4.5+7.4.6
 ** Mechanism design VI: correlated information
  - belief extraction
  - Cremer-McLean mechanism (cite:cre88)
 
+** Mechanism design VII: many agent limits
+- public good provision
+- bilateral trade
 ** Information design I: Bayesian persuasion
 - Bayesian persuasion (cite:bergemann17_infor_desig)
 - Further non-required reading: cite:kamenica11_bayes_persuas, cite:bergemann16_infor_desig_bayes_persuas_bayes_correl_equil
 
-** Information design II: interlude
- - value of information in experimentation
- - stochastic dominance orderings
+# ** Information design II: interlude
+#  - value of information in experimentation
+#  - stochastic dominance orderings
  # - Blackwell's theorem (cite:blackwell53)
 
-** Information design III: combined information and mechanism design
-- recent paper, e.g. cite:roe17
+** Information design II
+- stochastic dominance
+- buyer optimal information design, e.g. cite:roe17
 
 bibliographystyle:chicago
 bibliography:/home/christoph/stuff/bibliography/references.bib
