@@ -3,10 +3,8 @@
 #+Options: toc:nil
 #+Latex_Header: \usepackage{natbib}
 * News
+- Updtaed slides (lecture June 27): added an explanation at the end of the slides why ex ante budget balance is sufficient for ex post budget balance; changed almost efficient mechanism for many seller/buyer setting such that it is dominant strategy incentive compatible for finite $m$ and $n$
 - PhD students who cannot register for the exam through Klips should write me an email with their full name and their student number before June 03 in order to register.
-- There are no lectures on May 21 (Monday) and May 23 (Wednesday) due to the pentecost break.
-- I would be interested in feedback. In particular concerning overlap with other courses, the level of the course, (mis-)match with expectations etc.
-- Registration for the exam is now possible in KLIPS.
 - Exam date: July 18, 10:00-11:00 
 * Material
 - Exercises: [[./exercises.tex][tex]] [[https://github.com/schottmueller/advMicro/files/2133302/exercises.pdf][pdf]]
@@ -25,8 +23,10 @@
   - [[https://github.com/schottmueller/advMicro/files/2054659/ms.pdf][Myerson Satterthwaite]]
   - [[https://github.com/schottmueller/advMicro/files/2054661/screening.pdf][screening]]
   - [[https://github.com/schottmueller/advMicro/files/2115403/revenueEquivalence.pdf][optimal auctions]]
-  - [[https://github.com/schottmueller/advMicro/files/2133299/optTradeLimits.pdf][optimal trading mechanism and limit results]], [[https://github.com/schottmueller/advMicro/blob/master/Public%20good.ipynb][numerics]]
-  - [[https://github.com/schottmueller/advMicro/files/2115410/CremerMcLean.pdf][correlated information]]
+  - [[https://github.com/schottmueller/advMicro/files/2140703/optTradeLimits.pdf][optimal trading mechanism and limit results]], [[https://github.com/schottmueller/advMicro/blob/master/Public%20good.ipynb][numerics]]
+  - [[https://github.com/schottmueller/advMicro/files/2140704/CremerMcLean.pdf][correlated information]]
+  - [[https://github.com/schottmueller/advMicro/files/2140707/infoDesign.pdf][information design]]
+  - [[https://github.com/schottmueller/advMicro/files/2140709/buyerOptLearning.pdf][buyer optimal learning]]
 - Handouts etc.:
   - [[https://github.com/schottmueller/advMicro/files/1954228/math.pdf][math handout]]
   - [[https://github.com/schottmueller/advMicro/files/2110550/envelopeMonoNonLinPric.pdf][envelope]] theorem and monotonicity constraint
