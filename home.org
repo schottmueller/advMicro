@@ -25,7 +25,7 @@
   - [[https://github.com/schottmueller/advMicro/files/2054659/ms.pdf][Myerson Satterthwaite]]
   - [[https://github.com/schottmueller/advMicro/files/2054661/screening.pdf][screening]]
   - [[https://github.com/schottmueller/advMicro/files/2115403/revenueEquivalence.pdf][optimal auctions]]
-  - [[https://github.com/schottmueller/advMicro/files/2133299/optTradeLimits.pdf][optimal trading mechanism and limit results]]
+  - [[https://github.com/schottmueller/advMicro/files/2133299/optTradeLimits.pdf][optimal trading mechanism and limit results]], [[https://github.com/schottmueller/advMicro/blob/master/Public%20good.ipynb][numerics]]
   - [[https://github.com/schottmueller/advMicro/files/2115410/CremerMcLean.pdf][correlated information]]
 - Handouts etc.:
   - [[https://github.com/schottmueller/advMicro/files/1954228/math.pdf][math handout]]
@@ -132,13 +132,10 @@ The following plan is...well a plan...and as such it might be adapted to unforse
 - welfare maximizing mechanism in bilateral trade
 - limits when number of agents gets large in bilateral trade and public good setting
 - references: Börgers 3.4.3; Fudenberg and Tirole "Game Theory" ch. 7.4.5+7.4.6
-** Mechanism design VI: correlated information
+** Mechanism design VII: correlated information
  - belief extraction
  - Cremer-McLean mechanism (cite:cre88)
 
-** Mechanism design VII: many agent limits
-- public good provision
-- bilateral trade
 ** Information design I: Bayesian persuasion
 - Bayesian persuasion (cite:bergemann17_infor_desig)
 - Further non-required reading: cite:kamenica11_bayes_persuas, cite:bergemann16_infor_desig_bayes_persuas_bayes_correl_equil
