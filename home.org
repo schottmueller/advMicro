@@ -4,7 +4,7 @@
 #+Latex_Header: \usepackage{natbib}
 * News
 - On July 11, we use the class as question hour. If you want to have an answer for sure, please send me your questions before July 9. 
-- Updtaed slides (lecture June 27): added an explanation at the end of the slides why ex ante budget balance is sufficient for ex post budget balance; changed almost efficient mechanism for many seller/buyer setting such that it is dominant strategy incentive compatible for finite $m$ and $n$
+- Updated slides (lecture June 27): added an explanation at the end of the slides why ex ante budget balance is sufficient for ex post budget balance; changed almost efficient mechanism for many seller/buyer setting such that it is dominant strategy incentive compatible for finite $m$ and $n$
 - PhD students who cannot register for the exam through Klips should write me an email with their full name and their student number before June 03 in order to register.
 - Exam date: July 18, 10:00-11:00 
 * Material
@@ -25,7 +25,7 @@
   - [[https://github.com/schottmueller/advMicro/files/2054661/screening.pdf][screening]]
   - [[https://github.com/schottmueller/advMicro/files/2115403/revenueEquivalence.pdf][optimal auctions]]
   - [[https://github.com/schottmueller/advMicro/files/2140703/optTradeLimits.pdf][optimal trading mechanism and limit results]], [[https://github.com/schottmueller/advMicro/blob/master/Public%20good.ipynb][numerics]]
-  - [[https://github.com/schottmueller/advMicro/files/2140704/CremerMcLean.pdf][correlated information]]
+  - [[https://github.com/schottmueller/advMicro/files/2149786/CremerMcLean.pdf][correlated information]]
   - [[https://github.com/schottmueller/advMicro/files/2140707/infoDesign.pdf][information design]]
   - [[https://github.com/schottmueller/advMicro/files/2140709/buyerOptLearning.pdf][buyer optimal learning]]
 - Handouts etc.:
@@ -129,7 +129,7 @@ The following plan is...well a plan...and as such it might be adapted to unforse
 - revenue equivalence (MWG 23.D p.889-)
 - optimal independent, private value auctions (MWG Example 23.F.2)
 
-** Mechanism design VI: optimal mechanisms and limits
+** Mechanism design VI: welfare optimal mechanisms and limits
 - welfare maximizing mechanism in bilateral trade
 - limits when number of agents gets large in bilateral trade and public good setting
 - references: Börgers 3.4.3; Fudenberg and Tirole "Game Theory" ch. 7.4.5+7.4.6
