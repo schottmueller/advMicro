@@ -3,10 +3,9 @@
 #+Options: toc:nil
 #+Latex_Header: \usepackage{natbib}
 * News
-- On July 11, we use the class as question hour. If you want to have an answer for sure, please send me your questions before July 9. 
+- On July 11, we use the class for question hour. If you want to have an answer for sure, please send me your questions before July 9. 
 - Updated slides (lecture June 27): added an explanation at the end of the slides why ex ante budget balance is sufficient for ex post budget balance; changed almost efficient mechanism for many seller/buyer setting such that it is dominant strategy incentive compatible for finite $m$ and $n$
-- PhD students who cannot register for the exam through Klips should write me an email with their full name and their student number before June 03 in order to register.
-- Exam date: July 18, 10:00-11:00 
+- Exam date: July 18, 10:00-11:00 in 103 Seminarraum S56 (63 Sitzpl.) (103/EG/0.106)	
 * Material
 - Exercises: [[./exercises.tex][tex]] [[https://github.com/schottmueller/advMicro/files/2133302/exercises.pdf][pdf]]
 - Slides:
@@ -135,7 +134,7 @@ The following plan is...well a plan...and as such it might be adapted to unforse
 - references: Börgers 3.4.3; Fudenberg and Tirole "Game Theory" ch. 7.4.5+7.4.6
 ** Mechanism design VII: correlated information
  - belief extraction
- - Cremer-McLean mechanism (cite:cre88)
+ - Cremer-McLean mechanism (cite:cre88) or Börgers ch. 6.4
 
 ** Information design I: Bayesian persuasion
 - Bayesian persuasion (cite:bergemann17_infor_desig)
