@@ -531,8 +531,8 @@ $$
 \item Take the public good model from the slides but assume that the costs of the public good are fixed, i.e. the cost is $c=5/4$ no matter what the number of players $I$ is. (In the lecture, we assumed costs $c*I$.)
   \begin{enumerate}
   \item  Check why the proof that $x(\theta )=0$ with probability 1 if $I\rightarrow\infty$ no longer works.
-  \item Take the following game: Each player decides whether to contribute or not. If at least $I/2$ players contributed (assume $I$ even), then the public good is provided and each of the contributing players pays $2c/I$ to finance it. Verify that there is a threshold equilibrium where every player with valuation above a threshold $\theta ^*$ contributes. Derive the characterizing equation for the equilibrium threshold $\theta ^*$ and check numerically that $\theta ^*$ is increasing in $I$.
-    % $\theta ^* prob(pivotal)=2c/I$, i.e. $\theta ^*\binom{I-1}{I/2-1}{\theta ^*}^{I/2-1}(1-\theta ^*)^{I/2}=2c/I$ which is equivalent to $\binom{I}{I/2}{\theta ^*}^{I/2}(1-\theta ^*)^{I/2}=c/I$.
+  \item Take the following game: Each player decides whether to contribute or not. If at least $I/2$ players contributed (assume $I$ even), then the public good is provided and each of the contributing players pays $2c/I$ to finance it. Verify that there is a threshold equilibrium where every player with valuation above a threshold $\theta ^*$ contributes. Derive the characterizing equation for the equilibrium threshold $\theta ^*$ and check numerically that the probability that the public good is provided is increasing in $I$.
+    % $\theta ^* prob(I/2-1 contribute)=2c/I Prob(I/2-1 or more contribute)$, which is $\theta^* pdf(Binom(I-1,1-\theta^*),I/2-1)=2c/I (1-cdf(Binom(I-1,1-\theta^*),I/2-2))
   \item Derive the mechanism maximizing ex ante welfare.
     % similar to slides but $c$ is outside the sum
   \end{enumerate}
