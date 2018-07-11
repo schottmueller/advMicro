@@ -47,6 +47,8 @@ Some other interesting books on game theory covering the course material partial
 
 For mechanism design, cite:boergers2015 is an excellent source which naturally covers much more than we do in the course.
 
+References for the papers in the [[https://github.com/schottmueller/advMicro/files/2184022/home.pdf][pdf version]] of this site.
+
 * Schedule
 
 The following plan is...well a plan...and as such it might be adapted to unforseen circumstances if necessary.
