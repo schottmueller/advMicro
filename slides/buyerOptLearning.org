@@ -120,13 +120,13 @@ Proof of lemma:
 - there is a unique $B$ such that $G_\pi^B$ has expected value $\mu$
 # expected value of $G_\pi^B$ is increasing in B (higher B shifts mass from old B to higher values); $G_\pi^\pi$ is a unit mass on \pi\leq \mu; to show: $G_\pi^1$ has expected value above \mu: by optimality of p for G we have $\pi\geq s(1-G(s)+\Delta G(s))$ for all $s\in[0,1]$ which is equivalent to $1-\pi/s\leq G(s)-\Delta G(s)$ and therefore $G_\pi^1(s)\leq G(s)$, i.e. G_\pi^1\succ_{FOSD} G and has a higher expected value than $G$
 -  $G_\pi^B\succeq_{SOSD}G$ and therefore $G_\pi^B$ is feasible
-# as $G_\pi^B(s)=G_\pi^1(s)$ for $s<B$, the FOSD above implies the result for those $s$. Take $s\geq B$. Note that the expected value for a distribution H equals $\int_0^1H(x)\,dx$ (using integration by parts. Hence, $\int_0^s G(x)\,dx=1-\mu-\int_s^1G(x)\,dx\geq 1-\mu-(1-s)=\mu-\int_s^1G_\pi^B(x)\,dx=\int_0^sG_\pi^B(x)dx$
+# as $G_\pi^B(s)=G_\pi^1(s)$ for $s<B$, the FOSD above implies the result for those $s$. Take $s\geq B$. Note that the expected value for a distribution H equals $1-\int_0^1H(x)\,dx$ (using integration by parts). Hence, $\int_0^s G(x)\,dx=1-\mu-\int_s^1G(x)\,dx\geq 1-\mu-(1-s)=\mu-\int_s^1G_\pi^B(x)\,dx=\int_0^sG_\pi^B(x)dx$
 
 ** Result
 *** Optimal information
 The buyer-optimal distribution of signals is given by 
-\[G_q^B(s)=\begin{cases}0&\text{ if }s\in[0,q)\\ 1-q/s & \text{ if }s\in[q,B)\\1&\text{ if }s\geq B \end{cases} \]
-where /q/ is the price charged in equilibrium and /q/ and /B/ are chosen such that /q/ is the lowest among all $(q,B)$ for which $G_q^B$ satisfies both the expected value and SOSD constraint. 
+\[G_{p^*}^B(s)=\begin{cases}0&\text{ if }s\in[0,p^*)\\ 1-p^*/s & \text{ if }s\in[p^*,B)\\1&\text{ if }s\geq B \end{cases} \]
+where $p^*$ is the price charged in equilibrium and $p^*$ and /B/ are chosen such that $p^*$ is the lowest among all $(p^*,B)$ for which $G_{p^*}^B$ satisfies both the expected value and SOSD constraint. 
 
 *** 							    :B_ignoreheading:
     :PROPERTIES:
@@ -157,6 +157,7 @@ where /q/ is the price charged in equilibrium and /q/ and /B/ are chosen such th
 ** Robust outcome prediction
 - for every $q\in[p^*,\mu]$ there is a $B$ such that $G_q^B$ is feasible 
 # for q>p^*, G_q^B (where B chosen to satisfy expected value constraint) is more concentrated than optimal G^* --> SOSD fine
-- different optimal prices generate outcome triangle $(\mu-p^*)$, $(0,p^*)$, $(0,\mu)$
+- different optimal prices generate outcome triangle $(\mu-p^*,p^*)$, $(0,p^*)$, $(0,\mu)$
+# (CS,profits) of optimal structure, optimal structure but charging the also optimal price B, no information and price equal mu
 
 
