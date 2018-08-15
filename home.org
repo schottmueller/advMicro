@@ -3,6 +3,7 @@
 #+Options: toc:nil
 #+Latex_Header: \usepackage{natbib}
 * News
+- The second exam attempt will be on October 2, 16:00-17:00 in SSC 3.206. Registration via Klips is open.
 - On July 11, we use the class for question hour. If you want to have an answer for sure, please send me your questions before July 9. 
 - Updated slides (lecture June 27): added an explanation at the end of the slides why ex ante budget balance is sufficient for ex post budget balance; changed almost efficient mechanism for many seller/buyer setting such that it is dominant strategy incentive compatible for finite $m$ and $n$
 - Exam date: July 18, 10:00-11:00 in 103 Seminarraum S56 (63 Sitzpl.) (103/EG/0.106)	
