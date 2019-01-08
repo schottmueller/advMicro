@@ -60,8 +60,8 @@
 - Harsanyi's trick transforms incomplete information (not knowing $c$) into imperfect information (not knowing nature's move)
 
 ** Harsanyi's trick II
-#+attr_latex: :width 10cm
-   [[./treeBNE.pdf]]
+#+attr_latex: :height 8cm
+   [[./treeBNE.jpg]]
 
 ** A first example III
 - optimal not to invest if /h/ \rightarrow only prob of investment when /l/ relevant, called $x$ 

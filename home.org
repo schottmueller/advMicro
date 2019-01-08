@@ -2,11 +2,11 @@
 #+AUTHOR: Christoph Schottmüller
 #+Options: toc:nil
 #+Latex_Header: \usepackage{natbib}
-* News
-- The second exam attempt will be on October 2, 16:00-17:00 in SSC 3.206. Registration via Klips is open.
-- On July 11, we use the class for question hour. If you want to have an answer for sure, please send me your questions before July 9. 
-- Updated slides (lecture June 27): added an explanation at the end of the slides why ex ante budget balance is sufficient for ex post budget balance; changed almost efficient mechanism for many seller/buyer setting such that it is dominant strategy incentive compatible for finite $m$ and $n$
-- Exam date: July 18, 10:00-11:00 in 103 Seminarraum S56 (63 Sitzpl.) (103/EG/0.106)	
+# * News
+# - The second exam attempt will be on October 2, 16:00-17:00 in SSC 3.206. Registration via Klips is open.
+# - On July ?, we use the class for question hour. If you want to have an answer for sure, please send me your questions before July ?. 
+# - Updated slides (lecture June 27): added an explanation at the end of the slides why ex ante budget balance is sufficient for ex post budget balance; changed almost efficient mechanism for many seller/buyer setting such that it is dominant strategy incentive compatible for finite $m$ and $n$
+# - Exam date: July ?, 10:00-11:00 in 103 Seminarraum S56 (63 Sitzpl.) (103/EG/0.106)	
 * Material
 - Exercises: [[./exercises.tex][tex]] [[https://github.com/schottmueller/advMicro/files/2133302/exercises.pdf][pdf]]
 - Slides:
@@ -35,7 +35,7 @@
 I assume that you have some introductory knowledge of game theory on the level of cite:gibbons1992primer. In particular, you should know the material in chapters 1 and 2 in Gibbons' book (strategic form games, dominance, mixed strategies, mixed and pure Nash equilibrium, extensive form games, game trees, backwards induction, subgame perfect Nash equilibrium) and be able to apply it in simple games. From Advanced Microeconomics I, we built upon the part about /decision making under uncertainty/ (expected utility theorem). In terms of mathematics, it is helpful if you master the material of the course /Advanced Mathematics for Economists/. Having said that, most of the used math tools will not be far beyond high school maths. At the minimum you have to know (partial) differentiation, integration and optimization of functions and basic statistics (discrete and continuous probability distributions, expected values as well as Bayes' rule and conditional probabilities). Ideally, you should also have some idea of what a mathematical proof is.
 
 * Plan
-We have 15*2=30 meetings. The idea is to have 20 lectures and 10 exercise classes, i.e. every third class we talk about exercises dealing with the material of the two previous lectures. /You are expected to have tried to solve the exercises beforehand/ (and hopefully you succeeded with some of them), i.e. in the exercise classes we deal with your questions and problems and we are /not/ solving the exercises there from scratch.
+The idea is to have  every third class as an exercise session dealing with the material of the two previous lectures. /You are expected to have tried to solve the exercises beforehand/ (and hopefully you succeeded with some of them), i.e. in the exercise classes we deal with your questions and problems and we are /not/ solving the exercises there from scratch. If you feel that making additional exercises would help you, you find more exercises in cite:mas1995microeconomic. (I am told that a solution manual exists and is not too hard to find.)
 
 * Books
 
@@ -48,7 +48,7 @@ Some other interesting books on game theory covering the course material partial
 
 For mechanism design, cite:boergers2015 is an excellent source which naturally covers much more than we do in the course.
 
-References for the papers in the [[https://github.com/schottmueller/advMicro/files/2184022/home.pdf][pdf version]] of this site.
+References for the papers in the [[https://github.com/schottmueller/advMicro/files/2737411/home.pdf][pdf version]] of this site.
 
 * Schedule
 

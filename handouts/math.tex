@@ -43,4 +43,103 @@ In the Cournot example, $q_1$ has the role of $f$, $q_2$ the role of $x$ and $g(
 
 This is a useful expression because, by our assumptions $P'<0$ and $P''\leq0$, it tells us that $q_1'(q_2)<0$, i.e. firm 1's best response to an increase in firm 2's quantity is a decrease in quantity. (We call this property ``strategic substitutability''.)
 
+\section{Integration by parts}
+\label{sec:integration-parts}
+
+This is a little trick that allows you to solve some seemingly tricky integration problems. We will use it a lot in the course. 
+
+You might remember how to integrate simple polynomial functions, e.g.\footnote{Reminder on notation: $[f(x)]_a^b\equiv f(b)-f(a)$.}
+$$\int_{2}^{3}x^{2}+1\;dx=\left[ \frac{x^{3}}{3}+x\right]_{2}^{3}=\frac{27}{3}+3-\frac{8}{3}-2=8-\frac{2}{3}.$$
+However, constructing the ``antiderivative'' is not always this easy. Think for example of the following integral:
+$$\int_{4}^{5} x e^{x}\;dx$$
+Here the following little rule helps us:
+\begin{theorem}
+$\int_{a}^{b}u(x)v'(x)\;dx=\left[u(x)v(x)\right]_{a}^{b}-\int_{a}^{b}u'(x)v(x)\;dx$
+\end{theorem} 
+
+Here $u$ and $v$ are (almost everywhere) differentiable functions of $x$. How does this help us? Let's take the example above and say $v'(x)=e^x$ and $u(x)=x$. This implies that $v(x)=e^x$ because the exponential function is its own derivative and $u'(x)=1$. Then the formula above gives us
+\begin{equation*}
+  \int_4^5 x e^x\;dx=\left[x e^x\right]_4^5-\int_4^5 1*e^x\;dx.
+\end{equation*}
+This last integral is something we can solve: The antiderivative of $e^x$ is $e^x$ and therefore the last expression can be rewritten as
+\begin{equation*}
+  = 5 e^5-4 e^4-\left[e^x\right]_4^5=4 e^4-5 e^5-e^5+e^4=5 e^4-6 e^5.
+\end{equation*}
+
+\textbf{Another example: }
+\begin{equation*}
+  \int_a^b x^2 log(x)\;dx
+\end{equation*}
+Here we use $u(x)=log(x)$ and $v'(x)=x^2$. Therefore, we get $u'(x)=1/x$ and $v(x)=x^3/3$. Plugging this into our rule gives
+\begin{align*}
+  \int_a^b &x^2 log(x)\;dx=\left[log(x)x^3/3\right]_a^b- \int_a^b\frac{1}{x}\frac{x^3}{3}\;dx=log(b)b^3/3-log(a)a^3/3-\int_a^b\frac{x^2}{3}\;dx\\
+&=log(b)b^3/3-log(a)a^3/3-\left[\frac{x^3}{9}\right]_a^b=log(b)b^3/3-log(a)a^3/3-\frac{b^3}{9}+\frac{a^3}{9}.
+\end{align*}
+
+
+\subsection{Why does integration by parts work? (optional and mathematically somewhat loose)}
+\label{sec:why-doe-sintegration}
+Integration by parts is actually a rule that you already know (but in disguise). You might remember the differentiation rule:
+\begin{equation*}
+  \left(u(x) v(x)\right)'=u'(x)v(x)+u(x)v'(x)
+\end{equation*}
+
+Now rearrange this last equation by subtracting $u'(x)v(x)$ on both sides. This gives
+\begin{equation*}
+  \left(u(x) v(x)\right)'-u'(x)v(x)=u(x)v'(x).
+\end{equation*}
+Now integrate both sides from $a$ to $b$:
+\begin{equation*}
+  \int_a^b\left\{(u(x) v(x))'-u'(x)v(x)\right\}\;dx=\int_a^bu(x)v'(x)\;dx
+\end{equation*}
+Now we can split up the integral on the left hand side and get
+\begin{equation*}
+  \int_a^b\left(u(x) v(x)\right)' \;dx-\int_a^bu'(x)v(x)\;dx=\int_a^bu(x)v'(x)\;dx.
+\end{equation*}
+Taking derivatives and integrating are inverse operations (``they cancel each other out''). Therefore, the first term on the left hand side can be rewritten $\int_a^b\left(u(x) v(x)\right)' \;dx=\left[ u(x) v(x)\right]_a^b$. If you plug this in, you get exactly the integration by parts formula!
+
+
+
+\section{Leibniz rule}
+\label{sec:leibniz-rule}
+
+The Leibniz rule tells you how to take the derivative of a function that is an integral. We will only use one very special case of it. Therefore, I show you this special case and give the complete rule only for sake of completeness below.
+
+What we want to look at are functions like the following
+$$f(x)=\int_0^x g(y) \;dy.$$
+What is the derivative of $f$? The Leibniz rule says that\footnote{Strictly speaking, we should assume for this that $g$ is continuous at $x$. If you go through the next paragraph, you should understand why.} 
+$$f'(x)=g(x).$$
+The way you should think about this is that the integral is the area below the curve. So, draw some (continuous) function $g$ now. Seriously, do it! The integral $\int_0^xg(y)\, dy$ is the area between the axis and the function $g$ from $0$ to some $x$ (take some $x>0$ and shade this area in the graph you just drew). The derivative of $f$ with respect to $x$ gives the answer to the following question: How does the size of the shaded area change if you make $x$ a bit bigger. From the graph, it should be clear that the area gets approximately $g(x)*dx$ bigger if you increase $x$ by $dx$. This means that $f'(x)=g(x)$ (one marginal unit increase in $x$ increases $f$ by $g(x)$).
+
+With a similar intuition the derivative of the function 
+\begin{equation*}
+  h(x)=\int_x^1g(y)\; dy
+\end{equation*}
+is 
+\begin{equation*}
+  h'(x)=-g(x).
+\end{equation*}
+The complete Leibniz rule (that we won't need) uses a function
+\begin{equation*}
+  f(x)=\int_{a(x)}^{b(x)}g(x,y)\;dy
+\end{equation*}
+and says (assuming that all the functions are nicely behaved, i.e. $a$, $b$ and $g$ are differentiable at $x$) that 
+\begin{equation*}
+  f'(x)=-a'(x) g(x,a(x))+b'(x)g(x,b(x))+\int_{a(x)}^{b(x)}\frac{\partial g}{\partial x}(x,y)\;dy.
+\end{equation*}
+
+\textbf{Example: Using integration by parts to eliminate a double integral}
+
+Integration by parts can sometimes be used to transform double integrals to simple integrals:
+\begin{equation*}
+  \int_0^1\left(2x \int_a^x f(y)\;dy\right)\;dx
+\end{equation*}
+Here $f(y)$ is some measurable function. We choose $u(x)=\int_a^xf(y)\;dy$ and $v'(x)=2x$. This implies that $u'(x)=f(x)$ (this uses the Leibniz rule above!) and $v(x)=x^2$. Integration by parts gives now
+\begin{equation*}
+  \int_0^1\left(2x \int_a^x f(y)\;dy\right)\;dx= \left[x^2 \int_a^x f(y)\;dy\right]_0^1-\int_0^1f(x) x^2\;dx=\int_a^1f(y)\;dy-\int_0^1f(x)x^2\;dx.
+\end{equation*}
+
+If you check the last expression, you see that we simplified the complicated double intergral we started out with into two simpler ``normal'' integrals.
+
+
 \end{document}

@@ -81,7 +81,7 @@
     :PROPERTIES:
     :BEAMER_env: theorem
     :END:
-Every finite game of  perfect information has a pure strategy Nash equilibrium that can be derived through backwards induction. If no player has the same payoff at any two terminal nodes, then there is a unique Nash equilibrium that can be derived through backwards induction.
+Every finite game of  perfect information has a pure strategy Nash equilibrium that can be derived through backwards induction. If no player has the same payoff at any two terminal nodes, then there is a unique NE that is compatible with backwards induction.
 
 *** 							    :B_ignoreheading:
     :PROPERTIES:
@@ -153,7 +153,7 @@ Every finite game of  perfect information has a pure strategy Nash equilibrium t
              child{
                node(b){I}
                   child{
-               node{-2,1}
+               node{-2,-1}
                edge from parent
                node[left]{fight}
                }
@@ -188,6 +188,8 @@ subgame after "in":
 
 - what are the Nash equilibria of the game?
 - which outcome should we predict?
+
+# NE: (in+acc,acc), (out+x,fight)
 
 ** Definition: Subgame 
 - starts at an information set containing a single decision node
@@ -232,11 +234,11 @@ A profile of strategies $(\sigma_1,\dots,\sigma_I)$ is a subgame perfect Nash eq
 - perpetual diagreement cannot be equilibrium
 - if agreement happens in any period, it should happen in period 1 (discounting)
 - suppose equilibrium in round 3: split $(s,1-s)$
-- offer in round 2: $(\delta s,1-\delta s)\rightarrow$ accept
-- offer in round 1: $(1-\delta+\delta^2 s, \delta-\delta^2 s)\rightarrow$ accept 
+   - offer in round 2: $(\delta s,1-\delta s)\rightarrow$ accept
+   - offer in round 1: $(1-\delta+\delta^2 s, \delta-\delta^2 s)\rightarrow$ accept 
 \pause
 - situation in period 1 and 3 is the same! (stationary equilibrium)
-- $s=1-\delta+\delta^2 s\quad\Leftrightarrow\quad s=(1-\delta)/(1-\delta^2)=1/(1+\delta)$ while $1-s=\delta/(1+\delta)$
+   - $s=1-\delta+\delta^2 s\quad\Leftrightarrow\quad s=(1-\delta)/(1-\delta^2)=1/(1+\delta)$ while $1-s=\delta/(1+\delta)$
 
 
 * Problems of SPNE
@@ -429,12 +431,13 @@ A profile of strategies $(\sigma_1,\dots,\sigma_I)$ is a subgame perfect Nash eq
 \end{tikzpicture}
 \end{figure}
 
-|               | ballet | soccer |
-|---------------+--------+--------|
-| /             | <      |        |
-| book, $\cdot$ | 2,2    | 2,2    |
-| out,ballet    | 3,1    | 0,0    |
-| out, soccer   | 0,0    | 1,3    |
+|              | ballet | soccer |
+|--------------+--------+--------|
+| /            | <      |        |
+| book, ballet | 2,2    | 2,2    |
+| book, soccer | 2,2    | 2,2    |
+| out,ballet   | 3,1    | 0,0    |
+| out, soccer  | 0,0    | 1,3    |
 
 - if Bob realizes that Alice went out, where should he expect her to be?
 

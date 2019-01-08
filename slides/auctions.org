@@ -24,7 +24,7 @@
 ** Setup: Independent private value (IPV) auction
 - one indivisible object is allocated through an auction
 - $n$ bidders
-- bidder $i$ draws valuation $v_i$ from distribution $\Phi$ with continuous desnity \phi and support $[0,1]$
+- bidder $i$ draws valuation $v_i$ from distribution $\Phi$ with continuous density \phi and support $[0,1]$
 - $v_i$ is $i$'s private information
 - valuations of bidders are drawn independently
 - payoff: $v_i x_i-t_i$
@@ -54,7 +54,7 @@
 # in sym eq.: b=s(v_i) and t(b)=v_i and t'(b)=1/(s'(v_i)), hence $(n-1)(v_i-s(v_i))\Phi(v_i)^{n-2}\phi(v_i)/s'(v_i)-(\Phi(v_i)^{n-1}=0$ which is equivalent to $(n-1)(v_i-s(v_i))\Phi(v_i)^{n-2}\phi(v_i)-(\Phi(v_i)^{n-1}s'(v_i)=0$ or to 
 # $(n-1)v_i\Phi(v_i)^{n-2}\phi(v_i)=d[s(v_i))\Phi(v_i)^{n-1}]/dv_i$ which means that -- using $s(0)=0$ --
 # $s(v_i))\Phi(v_i)^{n-1}=\int_0^v_i (n-1)x\Phi(x)^{n-2}\phi(x) \;dx$ or 
-# $s(v_i)=\int_0^v_i (n-1)x\Phi(x)^{n-2}\phi(x) \;dx/\Phi(v_i)$ for $v_i>0$ 
+# $s(v_i)=\int_0^v_i (n-1)x\Phi(x)^{n-2}\phi(x) \;dx/\Phi(v_i)^{n-1}$ for $v_i>0$ 
  
 
 
@@ -65,7 +65,7 @@
     :BEAMER_env: theorem
     :END:
 There exists a symmetric BNE in which all bidders use the bidding strategy
-$$s(v_i)=\int_0^{v_i} (n-1)x\Phi(x)^{n-2}\phi(x) \;dx/\Phi(v_i) \quad\text{for}\quad v_i>0$$
+$$s(v_i)=\int_0^{v_i} (n-1)x\Phi(x)^{n-2}\phi(x) \;dx/{\Phi(v_i)}^{n-1} \quad\text{for}\quad v_i>0$$
 and $s(0)=0$.
 
 *** :B_ignoreheading:
@@ -73,13 +73,11 @@ and $s(0)=0$.
     :BEAMER_env: ignoreheading
     :END:
 
-# * Double auction (IPV) Exercise!
-
 $s$ is strictly increasing:\linebreak
-$s'(v_i)=(n-1)\frac{v_i\Phi^{n-1}(v_i)\phi(v_i)-\phi(v_i)\int_0^{v_i} x\Phi(x)^{n-2}\phi(x) \;dx}{\Phi^2(v_i)}$
-   - numerator is positive if $v_i\Phi^{n-1}(v_i)-\int_0^{v_i} x\Phi(x)^{n-2}\phi(x) \;dx>0$
-   - integration by parts: $\int_0^{v_i} x\Phi(x)^{n-2}\phi(x) \;dx=\left[x\frac{\Phi^{n-1}(x)}{n-1}\right]_{0}^{v_i}-\int_0^{v_i}\frac{\Phi^{n-1}(x)}{n-1}\,dx=v_i\frac{\Phi^{n-1}(v_i)}{n-1}-\int_0^{v_i}\frac{\Phi^{n-1}(x)}{n-1}$
-   - hence, $v_i\Phi^{n-1}(v_i)-\int_0^{v_i} x\Phi(x)^{n-2}\phi(x) \;dx=v_i\Phi^{n-1}(v_i)(1-1/(n-1))+\int_0^{v_i} \Phi(x)^{n-1}/(n-1) \;dx>0$
+$s'(v_i)=(n-1)\frac{v_i\Phi^{n-2}(v_i)\phi(v_i)\Phi^{n-1}(v_i)-(n-1)\Phi(v_i)^{n-2}\phi(v_i)\int_0^{v_i} x\Phi(x)^{n-2}\phi(x) \;dx}{(\Phi^{n-1}(v_i))^2}$
+   - numerator is positive if $v_i\Phi^{n-1}(v_i)-(n-1)\int_0^{v_i} x\Phi(x)^{n-2}\phi(x) \;dx>0$
+   - integration by parts: $\int_0^{v_i}(n-1) x\Phi(x)^{n-2}\phi(x) \;dx=\left[x\Phi^{n-1}(x)\right]_{0}^{v_i}-\int_0^{v_i}\Phi^{n-1}(x)\,dx=v_i\Phi^{n-1}(v_i)-\int_0^{v_i}\Phi^{n-1}(x)dx$
+   - hence, $v_i\Phi^{n-1}(v_i)-(n-1)\int_0^{v_i} x\Phi(x)^{n-2}\phi(x) \;dx=\int_0^{v_i} \Phi(x)^{n-1}\;dx>0$
 
 
 * Common value auction
@@ -87,11 +85,11 @@ $s'(v_i)=(n-1)\frac{v_i\Phi^{n-1}(v_i)\phi(v_i)-\phi(v_i)\int_0^{v_i} x\Phi(x)^{
 - one indivisible object is allocated through an auction
 - $2$ bidders
 - value $v$ of the object is either 1 /for all bidders/ or 0 /for all bidders/ (both probability 1/2)
-- bidder $i$ draws signal $v_i$ from distribution $\Phi(v_i|v)$ with density $\phi(v_i|v)$ (independent draws conditional on $v$)
+- bidder $i$ draws signal $v_i$ from distribution $\Phi(v_i|v)$ with density $\phi(v_i|v)$ 
    - $\phi(v_i|0)=2-2v_i$ for $v_i\in[0,1]$
    - $\phi(v_i|1)=2v_i$ for $v_i\in[0,1]$
 - $v_i$ is $i$'s private information
-- valuations of bidders are drawn independently
+- signals of bidders are drawn independently conditional on $v$
 - payoff: $v x_i-t_i$
    - $x_i$: probability of getting the good
    - $t_i$: transfer that $i$ pays to auctioneer
@@ -113,18 +111,29 @@ $\mathbb{E}[v|v_i]=\frac{\phi(v_i|0)}{\phi(v_i|0)+\phi(v_i|1)}0+\frac{\phi(v_i|1
 
 # \vspace*{0.3cm}
 # - aside: $\mathbb{E}[v|v_i,v_j\leq v_i]\leq \mathbb{E}[v|v_i]$ and  $\mathbb{E}[v|v_i,v_j\leq v_i]$ increasing in $v_i$ (check!)
-- what should a bidder bid in a second price sealed bid auction?
-# $\mathbb{E}[v|v_i, v_j= v_i]
+*** Equilibrium							    :B_block:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+Both bidders bidding 
+ $s(v_i)=\mathbb{E}[v|v_i, v_j= v_i]$
+is a symmetric equilibrium in increasing strategies.
+*** 							    :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+Expected payoff bid $b$: $\int_0^{s^{-1}(b)} (\mathbb{E}[v|v_i, v_j]-\mathbb{E}[v|v_j, v_j])\phi(v_j|v_i)\,dv_j$
 
 ** Common value auction: English auction
 - auctioneer continuously increases price starting from zero
 - bidders have hands raised at start and drop their hand if they are no longer interested in the item (i.e. if the price is too high)
 - the last bidder with his hand raised gets the object at a price equal to the auctioneer price at the time he lowers his hand
 #
-- what should you do when you are the only bidder with yor hand raised?
+- what should you do when you are the only bidder with your hand raised?
+#
 - we look for a symmetric equilibrium in strictly increasing strategies
 #
-- at what price should $i$ drop his hand given that $j$ still has his hand up?
+- at what price should $i$ drop his hand given that $j$ still has his hand up in a symmetric equilibrium?
 # $\mathbb{E}[v|v_i, v_j=v_i]
 
 ** Common value auction: first price sealed bid

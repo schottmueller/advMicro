@@ -1,5 +1,33 @@
 \begin{thebibliography}{}
 
+\bibitem[\protect\citeauthoryear{B\"orgers}{B\"orgers}{2015}]{boergers2015}
+B\"orgers, T. (2015).
+\newblock {\em An Introduction to the Theory of Mechanism Design}.
+\newblock Oxford University Press.
+\newblock (with a chapter by Daniel Kr\"ahmer and Roland Strausz).
+
+\bibitem[\protect\citeauthoryear{Kamenica and Gentzkow}{Kamenica and
+  Gentzkow}{2011}]{kamenica11_bayes_persuas}
+Kamenica, E. and M.~Gentzkow (2011).
+\newblock Bayesian persuasion.
+\newblock {\em American Economic Review\/}~{\em 101\/}(6), 2590--2615.
+
+\bibitem[\protect\citeauthoryear{Moldovanu and Sela}{Moldovanu and
+  Sela}{2001}]{moldovanu2001optimal}
+Moldovanu, B. and A.~Sela (2001).
+\newblock The optimal allocation of prizes in contests.
+\newblock {\em American Economic Review\/}~{\em 91\/}(3), 542--558.
+
+\bibitem[\protect\citeauthoryear{Schottm\"uller}{Schottm\"uller}{2013}]{schottmueller2013cifd}
+Schottm\"uller, C. (2013).
+\newblock Cost incentives for doctors: A double-edged sword.
+\newblock {\em European Economic Review\/}~{\em 61}, 43 -- 58.
+
+\bibitem[\protect\citeauthoryear{Schottm\"uller}{Schottm\"uller}{2015}]{schottmueller2015jet}
+Schottm\"uller, C. (2015).
+\newblock Adverse selection without single crossing: Monotone solutions.
+\newblock {\em Journal of Economic Theory\/}~{\em 158}, 127 -- 164.
+
 \bibitem[\protect\citeauthoryear{Weinstein}{Weinstein}{2016}]{weinstein2016effect}
 Weinstein, J. (2016).
 \newblock The effect of changes in risk attitude on strategic behavior.

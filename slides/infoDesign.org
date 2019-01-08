@@ -106,14 +106,20 @@ or
 - set of linear inequalities
 
 ** Private prior information
+\vspace*{-0.4cm}
 - truthtelling constraints if the agent's type has to be extracted
 - note: double deviations have to be discouraged (type announcement + action)
-
+\vspace*{-0.4cm}
 *** Incentive compatibility (finite case)
 Decision rule $\sigma: \,T\times\Theta \rightarrow\Delta(A)$ is *incentive compatible* if for each agent $i$ and each type $t_i\in T_i$
+\vspace*{-0.4cm}
 \begin{multline*}
   \sum_{a_{-i},t_{-i},\theta }u_i(a_i,a_{-i},\theta )\sigma(a_i,a_{-i}|t_i,t_{-i},\theta )\pi(t_i,t_{-i}|\theta )\phi(\theta )\\
-  \geq \sum_{a_{-i},t_{-i},\theta }u_i(\delta_i(a_i),a_{-i},\theta )\sigma(a_i,a_{-i}|t_i',t_{-i},\theta )\pi(t_i,t_{-i}|\theta )\phi(\theta ).
+  \geq \sum_{a_{-i},t_{-i},\theta }u_i(\delta_i(a_i),a_{-i},\theta )\sigma(a_i,a_{-i}|t_{i}',t_{-i},\theta )\pi(t_i,t_{-i}|\theta )\phi(\theta ).
 \end{multline*}
 holds for all $t_i'\in T_i$ and $\delta_i:\,A_i\rightarrow A_i$.
 
+*** 							    :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:

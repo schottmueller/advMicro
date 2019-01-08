@@ -18,6 +18,9 @@
 #+latex_header: \mode<beamer>{\usepackage{amsmath}\usepackage{ae,aecompl,amsthm,amssymb}\usepackage{sgamevar,tikz}\usetikzlibrary{trees}}
 #+LATEX_HEADER:\let\oldframe\frame\renewcommand\frame[1][allowframebreaks]{\oldframe[#1]}
 #+LATEX_HEADER: \setbeamertemplate{frametitle continuation}[from second]
+
+# note: in 2018 I finished 10 minutes early (maybe add another examples, e.g. auction or bilateral trade next time)
+
 * The Mechanism Design Problem
 ** What is Mechanism Design?
 - people ("agents") have private information

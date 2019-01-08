@@ -114,7 +114,7 @@ A social choice function $f$ is then truthfully implementable in dominant stateg
 (skipped; see, for example, Lars-Gunnar Svensson, Alexander Reffgen, The proof of the Gibbard–Satterthwaite theorem revisited, Journal of Mathematical Economics, Volume 55, December 2014, Pages 11-14, http://dx.doi.org/10.1016/j.jmateco.2014.09.007.)
 
 ** Gibbard Satterhwaite Theorem: Interpretation and economics
-- in connection with revelation principle:\linebreak only dictatorial social welfare functions can be implemented by any mechanism
+- in connection with revelation principle:\linebreak only dictatorial social choice functions can be implemented by any mechanism
 - quite demoralizing!
 - comment: similar result holds for infinite $X$
 
@@ -191,15 +191,14 @@ $$t_i(\theta)=\sum_{j\neq i} y^*_{-i}(\theta_{-i})\theta_j-\sum_{j\neq i}y^*(\th
 
 ** Dealing with positive costs
 - if alternatives come with costs then adopt a default sharing of costs
-  - e.g. public good example with $c>0$
-- $\tilde v_i(y,\theta_i)=v_i(y,\theta_i)-c(y)/I$
+  - e.g. public good example with $c>0$; equal cost sharing as default: $$\tilde v_i(y,\theta_i)=v_i(y,\theta_i)-c(y)/I$$
 - use Pivot mechanism with $\tilde v_i$ instead of $v_i$ (leading to Pivot transfers $\tilde t_i^*$) and set 
-$$t_i^*(\theta)=\tilde t_i^*(\theta)-c(y^*(\theta))/I$$
+$$t_i^*(\theta)=\tilde t_i^*(\theta)+c(y^*(\theta))/I$$
 
 ** Example: positive costs
 - say $\theta_1=2$, $\theta_2=0.9$, $\theta_3=2$, $c=4.5$
 # - then $\tilde\theta_1=2-1.5=0.5$, $\tilde\theta_2=0.9-1.5=-0.6$, $\tilde\theta_3=0.5$
-# - $\tilde t_1=\tilde t_3=-0.1$, $\tilde\theta_2=0$
-# - $t_1=t_3=-1.6$, $t_2=-1.5$
+# - $\tilde t_1=\tilde t_3=0.1$, $\tilde\theta_2=0$
+# - $t_1=t_3=1.6$, $t_2=1.5$
 - calculate the Pivot transfers!
 - participation?

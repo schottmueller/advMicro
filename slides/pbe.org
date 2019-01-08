@@ -334,7 +334,7 @@ If $(\sigma,\mu)$ is a sequential equilibrium, then $\sigma$ is a SPNE and $(\si
 # indifference condition $v-p_1=\delta(v-v/2)$ -> $\bar v(p_1)=p_1/(1-\delta/2)$
 
 - what is equilibrium $p_1$?
-# max_{p_1} p_1(1-p_1/(1-\delta/2))+\delta*(p_1/(2-\delta))^2
+# max_{p_1} p_1(1-p_1/(1-\delta/2))+\delta*(p_1/(2-\delta))^2 ????
 # p_1=(1-\delta/2)^2/(2-3\delta/2)
 # p_2(p_1*)=(1/4-\delta/8)/(2-3\delta)
 

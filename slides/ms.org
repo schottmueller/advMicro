@@ -5,7 +5,7 @@
 #+DESCRIPTION:
 #+KEYWORDS:
 #+LANGUAGE:  en
-#+OPTIONS:   H:2 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   H:2 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
 #+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
 #+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
 #+EXPORT_SELECT_TAGS: export
@@ -23,10 +23,10 @@
 
 * Introduction
 ** Introduction
-- advantages of VCG
+- advantages of Pivot/VCG
   - efficiency
-  - dominat strategy implementation
-- problems of VCG
+  - dominant strategy implementation
+- problems of Pivot/VCG
   - not budget balanced
   - agents might not want to participate
 - can we overcome these problems when turning to Bayesian Nash equilibrium implementation?
@@ -79,7 +79,7 @@
 - Implications: 
 if the direct mechanism consisting of the functions $y$ and $t$ is incentive compatible, then
 - $Y$ is increasing in $v$ \par (as $v>v'$ implies $Y(v)\geq Y(v')$)
-- the derivative of $U_{b}$ has to be $Y(v)$: $U_{b}'(v)=Y(v)$ \par(take the limit $v'\rightarrow v$)
+- the derivative of $U_{b}$ has to be $Y(v)$: $U_{b}'(v)=Y(v)$ if it exists (take the limit $v'\rightarrow v$)
 
 - do these implications intuitively make sense?
 
@@ -90,9 +90,12 @@ if the direct mechanism consisting of the functions $y$ and $t$ is incentive com
     :BEAMER_env: theorem
     :END:
 A social choice function $(t(v,c),y(v,c))$ is incentive compatible for the buyer if and only if 
-- $U_{b}'(v)=Y(v)$ and
+- $U_{b}'(v)=Y(v)$ almost everywhere and
 - $Y(v)$ is increasing in $v$
-
+*** 							    :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
 - note: we have shown the "only if" part but we have not shown the "if" part (see MWG p. 888-889 for this)
 
 
@@ -117,7 +120,7 @@ A social choice function $(t(v,c),y(v,c))$ is incentive compatible for the buyer
 - Implications: 
 if the direct mechanism consisting of the functions $y$ and $t$ is incentive compatible, then
 - $Y$ is decreasing in $c$ \par(as $c>c'$ implies $Y(c)\leq Y(c')$)
-- the derivative of $U_{s}$ has to be $Y(c)$: $U_{s}'(c)=-Y(c)$ \par(take the limit $c'\rightarrow c$)
+- the derivative of $U_{s}$ has to be $Y(c)$: $U_{s}'(c)=-Y(c)$ if it exists \par(take the limit $c'\rightarrow c$)
 
 - do these implications intuitively make sense?
 
@@ -128,9 +131,12 @@ if the direct mechanism consisting of the functions $y$ and $t$ is incentive com
     :BEAMER_env: theorem
     :END:
 A social choice function $(t(v,c),y(v,c))$ is incentive compatible for the seller if and only if 
-- $U_{s}'(c)=-Y(c)$ and
+- $U_{s}'(c)=-Y(c)$ almost everywhere and
 - $Y(c)$ is decreasing in $c$
-
+*** 							    :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
 - note: we have shown the "only if" part but we have not shown the "if" part (see MWG p. 888-889 for this)
 
 ** Incentive compatibility: comments
