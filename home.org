@@ -26,8 +26,8 @@
   - [[https://github.com/schottmueller/advMicro/files/2115403/revenueEquivalence.pdf][optimal auctions]]
   - [[https://github.com/schottmueller/advMicro/files/2140703/optTradeLimits.pdf][optimal trading mechanism and limit results]], [[https://github.com/schottmueller/advMicro/blob/master/Public%20good.ipynb][numerics]]
   - [[https://github.com/schottmueller/advMicro/files/2149786/CremerMcLean.pdf][correlated information]]
-  - [[https://github.com/schottmueller/advMicro/files/2140707/infoDesign.pdf][information design]]
-  - [[https://github.com/schottmueller/advMicro/files/2140709/buyerOptLearning.pdf][buyer optimal learning]]
+#  - [[https://github.com/schottmueller/advMicro/files/2140707/infoDesign.pdf][information design]]
+#  - [[https://github.com/schottmueller/advMicro/files/2140709/buyerOptLearning.pdf][buyer optimal learning]]
 - Handouts etc.:
   - [[https://github.com/schottmueller/advMicro/files/1954228/math.pdf][math handout]]
   - [[https://github.com/schottmueller/advMicro/files/2110550/envelopeMonoNonLinPric.pdf][envelope]] theorem and monotonicity constraint
@@ -139,18 +139,18 @@ The following plan is...well a plan...and as such it might be adapted to unforse
  - belief extraction
  - Cremer-McLean mechanism (cite:cre88) or Börgers ch. 6.4
 
-** Information design I: Bayesian persuasion
-- Bayesian persuasion (cite:bergemann17_infor_desig)
-- Further non-required reading: cite:kamenica11_bayes_persuas, cite:bergemann16_infor_desig_bayes_persuas_bayes_correl_equil
+# ** Information design I: Bayesian persuasion
+# - Bayesian persuasion (cite:bergemann17_infor_desig)
+# - Further non-required reading: cite:kamenica11_bayes_persuas, cite:bergemann16_infor_desig_bayes_persuas_bayes_correl_equil
 
 # ** Information design II: interlude
 #  - value of information in experimentation
 #  - stochastic dominance orderings
  # - Blackwell's theorem (cite:blackwell53)
 
-** Information design II
-- stochastic dominance
-- buyer optimal information design, e.g. cite:roe17
+# ** Information design II
+# - stochastic dominance
+# - buyer optimal information design, e.g. cite:roe17
 
 bibliographystyle:chicago
 bibliography:/home/christoph/stuff/bibliography/references.bib
