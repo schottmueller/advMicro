@@ -60,9 +60,9 @@
 - Harsanyi's trick transforms incomplete information (not knowing $c$) into imperfect information (not knowing nature's move)
 
 ** Harsanyi's trick II
-#+attr_latex: :height 8cm
+   #+attr_latex: :height 7.75cm
    [[./treeBNE.jpg]]
-
+\tiny{Figure 6.3 from Fudenberg and Tirole, "Game Theory", 1991, MIT Press}
 ** A first example III
 - optimal not to invest if /h/ \rightarrow only prob of investment when /l/ relevant, called $x$ 
 - entrant optimally enters if $p+(1-p)(-1x+(1-x)1)>0$ \Leftrightarrow $x<1/(2(1-p))$

@@ -55,8 +55,10 @@ References for the papers in the [[https://github.com/schottmueller/advMicro/fil
 The following plan is...well a plan...and as such it might be adapted to unforseen circumstances if necessary.
 
 ** Static games of complete information I
+- strategic form games and their interpretation (OR ch. 1 and 2.1)
 - iterative elimination of strictly dominated strategies (MWG 8.B)
 - rationalizability (MWG 8.C)
+- refresher reading (optional): MWG ch. 7
 
 ** Static games of complete information II
 - mixed strategy Nash equilibrium (MWG 8.D)

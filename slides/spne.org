@@ -69,8 +69,8 @@
 
 # (L,A) is NE but not credible; problem: threats off path are not "checked" out and therefore NE cannot avoid incredible threats
 
-** Backwards induction in finite games of complete information
-- start from decsion nodes furthest down the game tree
+** Backwards induction in finite games of perfecte information
+- start from decision nodes furthest down the game tree
 - what is optimal choice at this node? pick one optimal decision in case of indifference (decision problem)
 - substitute node by payoffs resulting from optimal choice
 - repeat until you reach starting node
@@ -81,7 +81,7 @@
     :PROPERTIES:
     :BEAMER_env: theorem
     :END:
-Every finite game of  perfect information has a pure strategy Nash equilibrium that can be derived through backwards induction. If no player has the same payoff at any two terminal nodes, then there is a unique NE that is compatible with backwards induction.
+Every finite game of perfect information has a pure strategy Nash equilibrium that can be derived through backwards induction. If no player has the same payoff at any two terminal nodes, then there is a unique NE that is compatible with backwards induction.
 
 *** 							    :B_ignoreheading:
     :PROPERTIES:
@@ -231,7 +231,7 @@ A profile of strategies $(\sigma_1,\dots,\sigma_I)$ is a subgame perfect Nash eq
 - no final round!
 
 \pause
-- perpetual diagreement cannot be equilibrium
+- perpetual disagreement cannot be equilibrium
 - if agreement happens in any period, it should happen in period 1 (discounting)
 - suppose equilibrium in round 3: split $(s,1-s)$
    - offer in round 2: $(\delta s,1-\delta s)\rightarrow$ accept

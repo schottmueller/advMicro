@@ -199,7 +199,7 @@ In game $[I,\{S_i\},\{u_i\}]$, the strategies surviving iterative elimination of
 - one consumer with unit demand and willingness to pay $v>c$
 
 *** Example: Cournot competition
-- 2 firms with marginal costs $c\in(0,1)$ (zero fixed costs) compete in quantities
+- 2 firms with marginal costs $c\in(0,1)$ (zero fixed costs) compete in quantities $q_i\geq 0$
 - inverse demand $P(q_1+q_2)=1-q_1-q_2$
 - firm $i$ profit: $u_i(q_1,q_2)=(1-q_1-q_2-c)q_i$
 
@@ -210,3 +210,8 @@ In game $[I,\{S_i\},\{u_i\}]$, the strategies surviving iterative elimination of
 - for 2 player games: set of rationalizable actions and set of actions surviving IESDS are identical
 
 
+# * Reading
+# ** Reading
+# - strategic form games and their interpretation (OR ch. 1 and 2.1)
+# - iterative elimination of strictly dominated strategies (MWG 8.B)
+# - rationalizability (MWG 8.C)

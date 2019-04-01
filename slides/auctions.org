@@ -74,11 +74,14 @@ and $s(0)=0$.
     :END:
 
 $s$ is strictly increasing:\linebreak
-$s'(v_i)=(n-1)\frac{v_i\Phi^{n-2}(v_i)\phi(v_i)\Phi^{n-1}(v_i)-(n-1)\Phi(v_i)^{n-2}\phi(v_i)\int_0^{v_i} x\Phi(x)^{n-2}\phi(x) \;dx}{(\Phi^{n-1}(v_i))^2}$
-   - numerator is positive if $v_i\Phi^{n-1}(v_i)-(n-1)\int_0^{v_i} x\Phi(x)^{n-2}\phi(x) \;dx>0$
-   - integration by parts: $\int_0^{v_i}(n-1) x\Phi(x)^{n-2}\phi(x) \;dx=\left[x\Phi^{n-1}(x)\right]_{0}^{v_i}-\int_0^{v_i}\Phi^{n-1}(x)\,dx=v_i\Phi^{n-1}(v_i)-\int_0^{v_i}\Phi^{n-1}(x)dx$
-   - hence, $v_i\Phi^{n-1}(v_i)-(n-1)\int_0^{v_i} x\Phi(x)^{n-2}\phi(x) \;dx=\int_0^{v_i} \Phi(x)^{n-1}\;dx>0$
-
+\footnotesize
+\begin{eqnarray*}
+\hspace*{-0.5cm}
+s'(v_i)&=&(n-1)\frac{v_i\Phi^{n-2}(v_i)\phi(v_i)\Phi^{n-1}(v_i)-(n-1)\Phi(v_i)^{n-2}\phi(v_i)\int_0^{v_i} x\Phi(x)^{n-2}\phi(x) \;dx}{(\Phi^{n-1}(v_i))^2}\\
+&=& (n-1)\frac{\phi(v_i)}{\Phi^n(v_i)}\left(v_i\Phi^{n-1}(v_i)-\int_0^{v_i} (n-1)x\Phi(x)^{n-2}\phi(x) \;dx\right)\\
+&=&(n-1)\frac{\phi(v_i)}{\Phi^n(v_i)}\left(v_i\Phi^{n-1}(v_i)-\left[x\Phi^{n-1}(x)\right]_{0}^{v_i}+\int_0^{v_i}\Phi^{n-1}(x)\,dx\right)\\
+&=&(n-1)\frac{\phi(v_i)}{\Phi^n(v_i)}\left(\int_0^{v_i}\Phi^{n-1}(x)\,dx\right)>0\qquad \text{if }v_i>0 
+\end{eqnarray*}
 
 * Common value auction
 ** Common value auction: setup
