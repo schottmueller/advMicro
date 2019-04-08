@@ -1,0 +1,296 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{ae,aecompl}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage{natbib}
+\usepackage{sgame}
+\usepackage[onehalfspacing]{setspace}
+
+
+\newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{claim}{Claim}
+\newtheorem{example}{Example}
+\newtheorem{corollary}{Corollary}
+
+\title{Notes for Advanced Microeconomics II}
+\author{Christoph Schottmüller}
+\begin{document}
+\maketitle
+
+\section{Dominance and Rationalizability}
+\label{sec:domin-ratio}
+
+\paragraph{Notation. }Players are assumed to act as if maximizing expected utility, i.e. their preferences are assumed to sastisfy the conditions of the von Neumann-Morgenstern expected utility theorem. With slight abuse of notation, I denote by $u_i(\sigma_i,\sigma_{-i})$ the expected utility of player $i$ when using the mixed strategy $\sigma_i$ while the other players use themixed strategy $\sigma_{-i}$. Put differently,
+\begin{equation*}
+  u_i(\sigma_i,\sigma_{-i})=\sum_{s\in S} \left\{u_i(s_i,s_{-i}) \prod_{j\in I}\sigma_j(s_j) \right\}.
+\end{equation*}
+
+\subsection{Dominance}
+\label{sec:dominance}
+
+\begin{definition}[Strictly dominant action]
+An action \(s_i\in S_i\) is \emph{strictly dominant} for player i in game \([I,\{S_i\},\{u_i\}]\) if for all \(s_i'\neq s_i\), we have
+$$u_i(s_i,s_{-i})>u_i(s_i',s_{-i})$$
+for all \(s_{-i}\in S_{-i}\).
+\end{definition}
+
+\begin{definition}[Strictly dominated action]
+An action \(s_i\in S_i\) is \emph{strictly dominated} for player i in game \([I,\{S_i\},\{u_i\}]\) if there exists a \(\sigma_i'\in\Delta(S_i)\), such that
+$$u_i(\sigma_i',s_{-i})>u_i(s_i,s_{-i})$$
+for all \(s_{-i}\in S_{-i}\).
+\end{definition}
+
+Due to expected utility assumption, the definition of a strictly dominated action could equivalently use the expression:
+\begin{equation}
+u_i(\sigma_i',\sigma_{-i})>u_i(s_i,\sigma_{-i}) \text{ for all }\sigma_{-i}\in\prod_{j\neq i}\Delta(S_j).\label{eq:dominatedMix}
+\end{equation}
+To see equivalence, first note that this condition clearly implies the one in the definition as the set of mixed strategies includes the set of pure strategies. To see that the condition in the definition implies \eqref{eq:dominatedMix}, note that
+\begin{equation*}
+  u_i(\sigma_i',\sigma_{-i})= \sum_{s_{-i}\in S_{-i}}\sigma_{-i}(s_{-i})  u_i(\sigma_i',s_{-i})
+\end{equation*}
+where $\sigma_{-i}(s_{-i})=\prod_{j\in I\setminus\{i\}}\sigma_j(s_j)$ by the expected utility form of $u_i$. Condition \eqref{eq:dominatedMix} is therefore equivalent to
+\begin{equation*}
+  \sum_{s_{-i}\in S_{-i}}\sigma_{-i}(s_{-i})  \left(u_i(\sigma_i',s_{-i})-u_i(s_i,s_{-i})\right)\geq 0 \text{ for all }\sigma_{-i}\in\prod_{j\neq i}\Delta(S_j)
+\end{equation*}
+which is implied by the condition in the definition as $u_i(\sigma_i',s_{-i})-u_i(s_i,s_{-i})\geq 0$.
+
+\subsection{Iterative elimination of strictly dominated strategies}
+\label{sec:iesds}
+
+\begin{lemma}\label{lem:iesdsOrder}
+  Let $\left[\{I\},\{S_i\},\{u_i\}\right]$ be a finite game. The outcome of IESDS is independent of the order of elimination.
+\end{lemma}
+
+To prove this, we have to be a bit more precise about how IESDS works:we will eliminate a single strategy in each step and denote steps by $t=1,\dots,T$. Note that by the finiteness of the game, a finite $T$ exists at which the procedure stops. (The maximal number of steps is $\sum_{i\in I}(|S_i|-1)$ as at least one strategy per player will survive.)
+
+\textbf{Proof of lemma \ref{lem:iesdsOrder}: }
+The proof is by contradiction. Suppose that two orders of elimination, denoted by A and B, lead to different sets surviving IESDS and denote the sets surviving IESDS under the respective orders $S^A$ and $S^B$. Let $t$ be the \emph{first} step in which according to one of the two orders a strategy is eliminated that survives IESDS under the other order. Without loss of generality, say that in step $t$ under A $s_i'\in S_i$ is eliminated although $s_i'\in S_i^B$. Denote by $\sigma_i'$ the mixed strategy that strictly dominates $s_i'$ in step $t$. If all strategies in the support of $\sigma_i'$ are in $S^B$, then $s_i'$ is strictly dominated in $\left[\{I\},\{S_i^B\},\{u_i\}\right]$: By definition of $t$ (as first step in which an action is eliminated that survives IESDS according to the other order), all strategies eliminated in steps $1$ to $t-1$ under A are also eliminated under B and therefore $\sigma_i'$ strictly dominates $s_i'$. This, however, contradicts that $s_i$ survives IESDS under order B.
+
+To complete the argument, we only have to argue that $s_i'$ is also strictly dominated in $\left[\{I\},\{S_i^B\},\{u_i\}\right]$ if IESDS under order B eliminates some strategies in the support of $\sigma_i'$. Intuitively, we substitute the eliminated strategy in the support of $\sigma_i'$ by the strategy that strictly dominates it and obtain a new strategy strictly dominating $s_i'$. Unfortuntately, this is notationally cumbersome: Let $\sigma_i'=(\alpha_1,\dots,\alpha_{|S_i|})$ where $\alpha_k$ is the probability put on action  $s_{ik}\in S_i=\{s_{ik}:\;k=1,\dots,|S_i|\}$. Suppose -- without loss of generality -- $s_{i1}$ is the strategy in the support of $\sigma_i'$ that is eliminated at some step under order B as it is strictly dominated by $\sigma_i''=(0,\beta_2,\dots,\beta_{|S_i|})$. Then the strategy $\sigma_i'''= \alpha_1 \sigma_i''+(1-\alpha_1) (0,\alpha_2/(1-\alpha_1),\alpha_3/(1-\alpha_1),\dots,\alpha_{|S_i|}/(1-\alpha_1))$ strictly dominates $s_i'$ as for all $s_{-i}\in S_{-i}^B$
+\begin{multline*}
+  u_i(s_i',s_{-i})<u_i(\sigma_i',s_{-i})=\alpha_1 u_i(s_{i1},s_{-i}) +\sum_{k=2}^{|S_i|}\alpha_k u_i(s_{ik},s_{-i})\\ <\alpha_1 u_i(\sigma_i'',s_{-i})+\sum_{k=2}^{|S_i|}\alpha_k u_i(s_{ik},s_{-i})=u_i(\sigma_i''',s_{-i}).
+\end{multline*}
+Proceeding by repeating the previous step if necessary, we can obtain a strategy $\sigma_i'''$ that strictly dominates $s_i'$ (in the game $\left[\{I\},\{S_i^B\},\{u_i\}\right]$) and has support in $S_i^B$. But this contradicts $s_i'\in S_i^B$. (The assumed finiteness of the game assures us that we obtain such a $\sigma_i'''$ in a finite number of steps.) \qed
+
+\subsection{Rationalizability}
+\label{sec:rationalizability}
+
+\begin{definition}[(Never) Best response]
+In game \([I,\{S_i\},\{u_i\}]\), strategy \(\sigma_i\) is a \emph{best response} for player \(i\) to the other players' strategies \(\sigma_{-i}\) if
+$$u_i(\sigma_i,\sigma_{-i})\geq u_i(\sigma_i',\sigma_{-i})$$
+for all \(\sigma_i'\in\Delta(S_i)\). Strategy \(\sigma_i\) is a \emph{never best response} if there is no \(\sigma_{-i}\) to which \(\sigma_i\) is a best response.
+\end{definition}
+
+
+
+\begin{lemma}\label{lem:mixedBRSupport}
+Let \([I,\{S_i\},\{u_i\}]\) be a finite game. A mixed strategy $\sigma_i$ is a best response to $\sigma_{-i}$ if and only if every pure strategy in its support is a best response.  
+\end{lemma}
+\textbf{Proof of lemma \ref{lem:mixedBRSupport}: }
+Let $s_i'$ be a best response among the pure strategies of player $i$, i.e. $u_i(s_i',\sigma_{-i})\geq u_i(s_i'',\sigma_{-i})$ for all $s_i''\in S_i$ and note that such a pure strategy exists by the finiteness of the game. The strategy putting probability one on $s_i'$ is a best response within the class of mixed strategies as for an arbitrary mixed strategy $\sigma_i\in\Delta S_i$
+\begin{equation*}
+  u_i(s_i',\sigma_{-i})-u_i(\sigma_i,\sigma_{-i})=\sum_{k=1}^{|S_i|}\sigma_i(s_{ik})\left(u_i(s_i',\sigma_{-i})-u_i(s_{ik},\sigma_{-i})\right)\geq0.
+\end{equation*}
+
+A mixed strategy with its support in the set of pure best responses will yield utility equal to $u_i(\sigma_i,\sigma_{-i})=\sum _{k=1}^{|S_i|}\sigma_i(s_{ik}) u_i(s_{ik},\sigma_{-i})=\sum _{k=1}^{|S_i|}\sigma_i(s_{ik}) u_i(s_i',\sigma_{-i})=u_i(s_i',\sigma_{-i})$ and therefore be a best response itself.
+
+If $\sigma_i$ put positive probability on a $s_i''$ for which $u_i(s_i',\sigma_{-i})> u_i(s_i'',\sigma_{-i})$, then
+\begin{equation*}
+  u_i(\sigma_i,\sigma_{-i})=\sum_{k=1}^{|S_i|}\sigma_i(s_{ik}) u_i(s_{ik},\sigma_{-i})<\sum_{k=1}^{|S_i|}\sigma_i(s_{ik}) u_i(s_i',\sigma_{-i})=u_i(s_i',\sigma_{-i})
+\end{equation*}
+contradicting that $\sigma_i$ is a best response (as the strategy putting probability one on $s_i'$ yields a higher utility). Consequently, the support of a best response $\sigma_i$ is within the set of pure best responses.  \qed
+
+\begin{lemma}\label{lem:sDomNeverBR}
+  A strictly dominated action is a never best response.
+\end{lemma}
+\textbf{Proof of lemma \ref{lem:sDomNeverBR}: }If $s_i\in S_i$ is strictly dominated by $\sigma_i'$, then $u_i(\sigma_i',\sigma_{-i})>u_i(s_i,\sigma_{-i})$ for all $\sigma_{-i}\in \prod_{j\neq i} \Delta S_j$. Hence, $u_i(s_i,\sigma_{-i})\geq u_i(\sigma_i',\sigma_{-i})$ can never hold.\qed
+
+\begin{corollary}\label{cor:brNotSDomed}
+  A best response action is not strictly dominated.
+\end{corollary}
+\textbf{Proof of corollary \ref{cor:brNotSDomed}: }Follows directly from lemma \ref{lem:sDomNeverBR}.\qed
+
+\begin{lemma}\label{lem:ratioInIESDS}
+  Every rationalizable action survives IESDS.
+\end{lemma}
+\textbf{Proof of lemma \ref{lem:ratioInIESDS}: } The proof is by inducation on the steps in IESDS. Let $s_i\in S_i$ be rationalizable, i.e. survive the iterated elimination of never best responses. Then $s_i$ has to be a best response to some belief $\mu_i(s_i)$ with support in the rationalizable actions of the players $I\setminus {i}$. By corollary \ref{cor:brNotSDomed}, $s_i$ cannot be eliminated in the first step of IESDS. As $s_i$ was arbitrary, no rationalizable action can be eliminated in the first step of IESDS. Given that no rationalizable action was eliminated in steps 1 to $t$ of IESDS, no rationalizable action $s_i$ is eliminated in step $t+1$: This follows from corollary \ref{cor:brNotSDomed} and the hypothesis that no rationalizable action (and therefore no action in the support of $\mu_i(s_i)$) was eliminated in steps 1 to $t$. \qed
+
+\paragraph{In games with three or more players some actions surviving IESDS may not be rationalizable. }I will give an example to this end, see figure \ref{fig:IESDSnotRatio}. No action is strictly dominated: Action $a$ is a best response to $(L,A)$ (and therefore not strictly dominated by corollary \ref{cor:brNotSDomed}) while $c$ is a best response to $(R,B)$. Mixing over $a$ (with $\alpha$ and $b$ with $1-\alpha$) yields expected utility $2.1\alpha+.9$ against $(L,A)$ and $3-2.1\alpha$ against $(R,B)$. There is no $\alpha\in[0,1]$ such that both are above 2 which is the payoff of $b$ in these two cases. Hence, $b$ is not strictly dominated. As players 2 and 3 are indifferent between all outcomes, all strategies survive IESDS in this example. Next I will show that $b$ is nevertheless a never best response and therefore not rationalizable. To see this, let player 2 play $L$ ($R$) with probability $\lambda$ ($1-\lambda$) and let player 3 play $A$ ($B$) with probablity $\alpha$ ($1-\alpha$). Player 1's expected utility when taking his actions $a$ or $b$ or $c$ are then:
+\begin{eqnarray*}
+  u^a_1&=&3*(\lambda\alpha+\lambda(1-\alpha)+(1-\lambda)\alpha)+0.9*(1-\lambda)(1-\alpha)=2.1\lambda+2.1\alpha-2.1\alpha\lambda+0.9\\
+  u_1^b&=&2*(\lambda\alpha+(1-\lambda)(1-\alpha))=-2\alpha-2\lambda+4\alpha\lambda+2\\
+  u_1^c&=&0.9\lambda\alpha+3*(1-\lambda\alpha)=3-2.1\lambda\alpha.
+\end{eqnarray*}
+In order for $b$ being a best response, $u_1^b\geq u_1^a$ and $u_1^b\geq u_1^c$ have to hold for some $(\lambda,\alpha)$. The latter inequality is equivalent to $1-6.1\alpha\lambda+2\alpha+2\lambda\leq 0$. Note that this can only be staisfied if both $\alpha$ and $\lambda$ are greater than 0.6: if, for instance, $\alpha=0.6$ the inequality becomes $2.2-3.66\lambda+2\lambda\leq 0$ and there is no $\lambda\in[0,1]$ for which this holds (the same argument holds for smaller $\alpha$). Now turn to  $u_1^b\geq u_1^a$ which is equivalent to $-1.1-6.1\lambda\alpha+4.1\alpha+4.1\lambda\leq 0$. This inequality cannot be satisfied by any $(\alpha,\lambda)$ given that $\alpha\geq0.6$ and $\lambda\geq 0.6$. Hence, $b$ is not a best response against any pair of mixed strategies by players 2 and 3.
+
+\begin{figure}[htb]\hspace*{\fill}%
+\begin{game}{3}{2}[$A$]
+& $L$      & $R$\\
+$a$   &$3,0,0$   &$3,0,0$\\
+$b$   &$2,0,0$   &$0,0,0$\\
+$c$   & $0.9,0,0$  &$3,0,0$
+\end{game}\hspace*{20mm}%
+\begin{game}{3}{2}[$B$]
+& $L$      & $R$\\
+$a$   &$3,0,0$   &$0.9,0,0$\\
+$b$   &$0,0,0$   &$2,0,0$\\
+$c$  & $3,0,0$         &$3,0,0$
+\end{game}\hspace*{\fill}%
+\caption[]{Action $b$ survives IESDS but is not rationalizable.}
+\label{fig:IESDSnotRatio}
+\end{figure}
+
+What is the logic here? $b$ would be a best response if players 2 and 3 could coordinate, e.g. if they could play $(L,A)$ with probability $1/2$ and $(R,B)$ with probability $1/2$. However, our definition of best response requires each player to choose a mixed strategy. Players cannot correlate their strategies. There is an alterantive definition of best response in which $s_i$ is a best response if it maximizes expected utility given some belief $\mu_i(s_i)\in \Delta(S_{-i})$, i.e. a belief in which other players correlate their strategies is allowed. This definition of best response leads to the concept of ``correlated rationalizability'' and it can be shown that the outcome of IESDS is equivalent to correlated rationalizability, see proposition 61.2 in \cite{osborne1994course} where this is shown using the minmax theorem for zero sum games. This leads us to the 2-player case: As there is only one other player, correlation between other players' strategies plays no role here because there is only one other player. Consequently, rationalizability as defined above and correlated rationalizability are the same in the 2-player case. This implies in particular that the outcome of IESDS coincides with the set of rationalizable actions. We show the underlying result, i.e. the equivalence of never best responses and strictly dominated actions in finite 2 player games, explicitly.
+
+\begin{lemma}\label{lem:2PlayerNbrIsSDom}
+  In a finite 2 player game, every never best response is strictly dominated. 
+\end{lemma}
+\textbf{Proof of lemma \ref{lem:2PlayerNbrIsSDom}: }We show the contrapositive: If a strategy is not strictly dominated, then it must be a best response to some mixed strategy by the other player. To this end, let $\sigma_i'$ be a strategy by player $i$ that is not strictly dominated. The task is to find a strategy $\sigma_j'$ such that $\sigma_i'$ is a best response to $\sigma_j'$.
+
+Denote by $u_i(s_i)$ the vector of utilities that strategy $s_i\in S_i$ achieves against all possible pure strategies of player $j$. More precisely, if $S_j=\{s_j^1,s_j^2,\dots,s_j^n\}$, then $u_i(s_i)=(u_i(s_i,s_j^1),u_i(s_i,s_j^2),\dots,u_i(s_i,s_j^n))$. Let $\tilde{U}_i=\{\sum_{s_i\in S_i}\sigma(s_i) u_i(s_i):\;\sigma_i(s_i)\in\Delta S_i\}$ (i.e. $\tilde{U}_i$ is the set of payoff vectors achievable for player $i$ by mixed strategies; this is a set in $\Re^n$). Note that $\tilde{U}_i$ is a convex set. The assumption that $\sigma_i'$ is not strictly dominated can be expressed in the following way: the intersection of $\tilde{U}_i$ and $\bar{U}=\{ u_i:\;u_i\in\Re^n,\;u_i>u_i(\sigma_i)\}$ is empty. (The set $\bar{{U}}$ are all the payoff vectors that are strictly larger than the payoff vector induced by the mixed strategy $\sigma_i$; saying that $\bar{U}\cap\tilde{U}_i=\emptyset$ means that there is no achievable vector yielding a strictly higher payoff than the one of $\sigma_i'$  against any pure strategy of $j$.) Note that $\bar{U}$ is also a convex set.
+
+By the separating hyperplane theorem, the facts that $\bar{U}\cap\tilde{U}_i=\emptyset$ and $\bar{U}$ and $\tilde{U}_i$ are convex implies that there is a hyperplane separating these two sets. Put differently, there exists a non-zero vector $\sigma_j'\in \Re^n$ and some $c\in Re$ such that $\sigma_j' u_i\geq c$ for all $u_i\in \bar{U}$ and $\sigma_j'u_i\leq c$ for all $u_i\in\tilde{U}_i$. If $\sigma_j'$ is a mixed strategy (i.e. all its components are weakly positive and sum to 1), then this implies that $\sigma_i'$ is a best response to this strategy $\sigma_j'$ and we are done.
+
+The final step is to show that $\sigma_j'\in\Delta S_j$, i.e. $\sigma_j'$ is a strategy. First, we show that $\sigma_j'\geq \mathbb{0}$ (i.e. all elements of the vector $\sigma_j'$ are non-negative). Suppose to the contrary that the $k$-th element was negative. Note that the vector $\bar u(z)=(u_i(\sigma_i',s_j^1)+1,\dots,u_i(\sigma_i',s_j^{k-1})+1,u_i(\sigma_i',s_j^1)+z,u_i(\sigma_i',s_j^{k+1})+1,\dots,u_i(\sigma_i',s_j^n)+1)$ is an element of $\bar{U}$ for every $z>0$. If the $k$-th element $\sigma_j'$ was negative, however, $\lim_{z\rightarrow\infty}\sigma_j' \bar u(z)=-\infty$ which contradicts that $\sigma_j'\bar u(z)\geq c$ for all $z>0$. Hence, all elements of $\sigma_j'$ are non-negative. To establish that $\sigma_j'\in \Delta S_j$ the elements if $s_j'$ have to sum to 1. Note, however, that the defining inequalities -- namely $\sigma_j' u_i\geq c$ for all $u_i\in \bar{U}$ and $\sigma_j'u_i\leq c$ for all $u_i\in\tilde{U}_i$ -- still hold if we divide $\sigma_j'$ by a strictly positive number as, for instance, the sum of its elements. Hence, a suitable vector with element sum equal to 1 exists.\qed
+
+
+
+
+
+\section{Nash equilibrium}
+\label{sec:nash-equilibrium}
+
+\begin{theorem}[Nash theorem]\label{thm:nash}
+A strategic game \([I, \{S_i\},\{u_i\}]\) with
+\begin{itemize}
+\item a finite number of players 
+ \item a finite number of actions for each player
+\end{itemize}
+has a Nash equilibrium in mixed strategies.
+\end{theorem}
+
+\textbf{Proof sketch of theorem \ref{thm:nash}:}\footnote{\citet[ch. 5.3]{maschler2013game} presents a detailed proof along the lines desribed here.} The proof on the slides for $2\times 2$ can be generalized to general finite games. The trick is the same: Come up with functions $f_i:\Delta (S)\rightarrow \Delta S_i$ such that $f_i(\sigma_i\sigma_{-i})(s_i)\geq\sigma_i(s_i)$ if $s_i$ is a beter response to $\sigma_{-i}$ than $\sigma_i$ (with strict inequality if $\sigma_i(s_i)<1$) and $f_i(\sigma_i\sigma_{-i})(s_i)\leq\sigma_i(s_i)$ if $s_i$ is not a worse response (with strict inequality if $\sigma_i(s_i)>0$). One such function is
+\begin{equation*}
+  f_i(\sigma_i,\sigma_{-i})(s_i)=\frac{\sigma_i(s_i)+u_i(s_i,\sigma_{-i})-u_i(\sigma_i,\sigma_{-i})}{1+|u_i(s_i,\sigma_{-i})-u_i(\sigma_i,\sigma_{-i})|}.
+\end{equation*}
+This function is, however, insufficient as it could lead to (i) negative values and (ii) the $\sum_{s_i\in S_i} f_i(\sigma_i,\sigma_{-i})(s_i)$ might not be 1, i.e. the outcome might not be a mixed strategy. To correct the first problem, we can change to 
+\begin{equation*}
+  \tilde f_i(\sigma_i,\sigma_{-i})(s_i)=\max\left\{\frac{\sigma_i(s_i)+u_i(s_i,\sigma_{-i})-u_i(\sigma_i,\sigma_{-i})}{1+|u_i(s_i,\sigma_{-i})-u_i(\sigma_i,\sigma_{-i})|},0\right\}.
+\end{equation*}
+To address the second problem we have to renormalize
+\begin{equation*}
+  f_i^*(\sigma_i,\sigma_{-i})(s_i)=\frac{\tilde{f}_i(\sigma_i,\sigma_{-i})(s_i)}{\sum_{\tilde s_i\in S_i}\tilde{f}_i(\sigma_i,\sigma_{-i})(\tilde s_i)}.
+\end{equation*}
+
+If $(\sigma_i^*,\sigma_{-i}^*)$ is a Nash equilibrium, then $f_i^*(\sigma_i,\sigma_{-i})(s_i)=\sigma_i(s_i)$. To see that only Nash equilibria are fixed points of $f^*$, let $s_i'$ be the strategy $s_i$ for which $\sigma_i(s_i)-\tilde{f}_i(\sigma_i,\sigma_{-i})(s_i)$ is largest. If the normalization was such that $f_i^*(\sigma_i,\sigma_{-i})(s_i')=\sigma_i(s_i')$, then for all $s_i\neq s_i'$ we would have $f_i^*(\sigma_i,\sigma_{-i})(s_i)\leq\sigma_i(s_i)$ with strict inequality for some $s_i$ by the definition of $s_i'$. But this contradicts that $\sum_{s_i\in S_i}
+f_i^*(\sigma_i,\sigma_{-i})(s_i)=1$ which is obviously true by the definition of $f_i^*$. Hence, $f_i^*(\sigma_i,\sigma_{-i})(s_i')\neq\sigma_i(s_i')$ and we get that a mixed strategy profile that is not a Nash equilibrium is not a fixed point of $f^*$. Applying Brouwer's fixed point theorem to $f^*$ yields the result in theorem \ref{thm:nash}. \qed
+
+\begin{theorem}[Nash theorem (continuum)]\label{thm:nashContinuous}
+A strategic game \([I, \{S_i\},\{u_i\}]\) with
+\begin{itemize}
+\item a finite number of players 
+ \item a convex and compact action set $S_i$ (for all $i$)
+\item continuous utility functions $u_i$
+\end{itemize}
+has a Nash equilibrium in mixed strategies (and in pure strategies if all \(u_i\) are quasi-concave in \(s_i\)).
+\end{theorem}
+
+\textbf{Proof of theorem \ref{thm:nashContinuous} for strictly quasi-concave utility functions: }The assumption of a compact action set $S_i$ and a continuous utility function $u_i$ imply that -- by the Weierstrass (extreme value) theorem -- a solution to the maximization problem $\max_{s_i\in S_i} u_i(s_i,\sigma_{-i})$ exists. The solution is unique if $u_i$ is strictly quasi-concave. Put differently, a $i$'s best response exists to any strategy $\sigma_{-i}$ and this best response is unique if $u_i$ is strictly quasi-concave.
+
+Assume strict quasi-concavity of $u_i$. The maximization problem above will then define a best response function $B_i:S_{-i}\rightarrow S_i$. By the continuity of $u_i$, this best response function $B_i$ is continuous.\footnote{Formally, this is an application of Berge's ``theorem of the maximum''.} The function $B:S\rightarrow S$ defined by $B=(B_1,B_2,\dots,B_I)$ is then continuous. As $S$ is by assumption convex and compact, applying Brouwer's theorem establishes the existence of a fixed point. A fixed point of $B$ is clearly a Nash equilibrium in pure strategies.\qed
+
+\section{Correlated equilibrium}
+\label{sec:corr-equil}
+
+\begin{lemma}[Mixed NE as correlated equilibria]\label{lem:mneCorrEq}
+Let \(\sigma^*\) be a mixed strategy equilibrium. Then the distribution \(p_{\sigma^*}\) defined by
+\begin{equation*}
+  p_{\sigma^*}(s_1,\dots,s_n)=\Pi_{i=1}^n\sigma_i^*(s_i)
+\end{equation*}
+is a correlated equilibrium.
+\end{lemma}
+\textbf{Proof of lemma \ref{lem:mneCorrEq}: }We need to show that
+  \begin{equation*}
+    \sum_{s_{-i}\in S_{-i}}p_{\sigma^*}(s_i,s_{-i})u_i(s_i,s_{-i})\geq \sum_{s_{-i}\in S_{-i}}p_{\sigma^*}(s_i,s_{-i})u_i(s_i',s_{-i})
+  \end{equation*}
+  for all players $i$ and all actions $s_i,s_i'\in S_i$. Plugging in $p_{\sigma^*}$ yields
+   \begin{equation*}
+    \sigma_i^*(s_i) \sum_{s_{-i}\in S_{-i}}\Pi_{j\neq i}\sigma_j^*(s_j) u_i(s_i,s_{-i})\geq \sigma_i^*(s_i)\sum_{s_{-i}\in S_{-i}}\Pi_{j\neq i}\sigma_j^*(s_j)u_i(s_i',s_{-i}).
+  \end{equation*}
+If $\sigma_i^*(s_i)=0$, this inequality clearly holds. If $\sigma_i^*(s_i)>0$, then $s_i$ is a best response to $\sigma_{-i}^*$, i.e. $u_i(s_i,\sigma_{-i}^*)\geq u_i(s_i',\sigma_{-i}^*)$ for all $s_i'\in S_i$, because $\sigma^*$ is a Nash equilibrium. Consequently the inequality above, which can be rewritten as $\sigma_i^*(s_i) u_i(s_i,\sigma_{-i}^*)\geq \sigma_i^*(s_i) u_i(s_i',\sigma_{-i}^*)$, holds.\qed 
+
+\section{Bayesian Nash equilibrium}
+\label{sec:bayes-nash-equil}
+
+\begin{lemma}\label{lem:BNEexp}
+A decision profile \((s_1(\cdot),\dots,s_I(\cdot))\) is a BNE if and only if for all \(i\) and all \(\bar \theta_i\in\Theta_i\) occurring with positive probability
+$$\mathbb{E}_{\theta_{-i}}[u_i(s_i(\bar\theta_i),s_{-i}(\theta_{-i}),\theta_i)|\bar\theta_i)]\geq \mathbb{E}_{\theta_{-i}}[u_i(s_i',s_{-i}(\theta_{-i}),\theta_i)|\bar\theta_i)]$$
+for all \(s_i'\in S_i\).
+\end{lemma}
+\textbf{Proof of lemma \ref{lem:BNEexp}: }A BNE is defined by
+$$\tilde{u}_i(s_i(\cdot),\dots,s_{-i}(\cdot))\geq \tilde{u}_i (s_i'(\cdot),\dots,s_{-i}(\cdot)) \text{ for all } s_i'\in\mathcal{S}_i $$
+or equivalently 
+\begin{equation}\label{eq:1}
+\mathbb{E}_{\theta}[u_i(s_1(\theta_1),\dots,s_I(\theta_I),\theta_i)] \geq \mathbb{E}_{\theta}[u_i(\tilde s_1(\theta_1),\dots,s_I(\theta_I),\theta_i)] \text{ for all } \tilde s_i\in\mathcal{S}_i.
+\end{equation}
+
+If the condition in the lemma is satisfied, then $s$ is a BNE. To see this, multiply the condition in the lemma through by the ex ante probablity that $\bar \theta _i$ occurs under $F$, i.e. by $f(\bar\theta _i)=\sum_{\theta_{-i}\in\Theta _{-i}}f(\bar{\theta }_i,\theta _{-i})$, and sum up the inequalities for all $\bar{\theta }_i\in\Theta _i$. This yields (\ref{eq:1}) by the law of iterated expectations.
+
+In the other direction, (\ref{eq:1}) would be violated if the condition in the lemma did not hold for some $\bar{\theta }_i$ and some  $s_i'\in S_i$ as then we could choose $\tilde{s}_i\in\mathcal{S}_i$ such that $\tilde{s}_i(\bar{\theta }_i)=s_i'$ and $\tilde{s}_i({\theta }_i')=s_i(\theta_i')$ for all $\theta _i'\neq\bar \theta _i$.\footnote{Here we use that -- due to the finiteness of the game -- $\bar{\theta }_i$ has positive probability under $F$.} Hence, any BNE $s$ satisfies the condition of the lemma.
+ \qed
+
+\section{Auctions}
+\label{sec:auctions}
+
+\subsection{Common value auction: second price sealed bid}
+\label{sec:comm-value-auct}
+
+\begin{eqnarray*}
+\mathbb{E}[v|v_i]&=&\frac{\phi(v_i|0)}{\phi(v_i|0)+\phi(v_i|1)}0+\frac{\phi(v_i|1)}{\phi(v_i|0)+\phi(v_i|1)}1=(1-v_i)0+v_i1=v_i\\
+ \phi(v_j|v_i)&=&\frac{\phi(v_i|0)}{\phi(v_i|0)+\phi(v_i|1)}\phi(v_j|0)+\frac{\phi(v_i|1)}{\phi(v_i|0)+\phi(v_i|1)}\phi(v_j|1)\\ &=&(1-v_i)(2-2v_j)+v_i(2v_j) =2-2v_i-2v_j+4v_iv_j\\
+\mathbb{E}[v|v_i,v_j]&=&\frac{\phi(v_i|0)\phi(v_j|0)}{\phi(v_i|0)\phi(v_j|0)+\phi(v_i|1)\phi(v_j|1)}0+\frac{\phi(v_i|1)\phi(v_j|1)}{\phi(v_i|0)\phi(v_j|0)+\phi(v_i|1)\phi(v_j|1)}1\\ &=&\frac{v_iv_j}{1-v_i-v_j+2v_iv_j}
+\end{eqnarray*}
+
+\begin{claim}
+  $\mathbb{E}[v|v_i,v_j]\leq\mathbb{E}[v|v_i]$ if and only if $v_j\leq 1/2$ 
+\end{claim}
+\textbf{Proof: }$\mathbb{E}[v|v_i,v_j]\leq\mathbb{E}[v|v_i]$ is equivalent to
+\begin{eqnarray*}
+  \frac{v_iv_j}{1-v_i-v_j+2v_iv_j}&\leq& v_i\\
+  \Leftrightarrow \frac{v_j}{1-v_i-v_j+2v_iv_j}&\leq& 1.
+\end{eqnarray*}
+If $1-v_i-v_j+2v_iv_j>0$, this is equivalent to $v_j\leq1-v_i-v_j+2v_iv_j\Leftrightarrow v_j2 (1-v_i)\leq 1-v_i\Leftrightarrow v_j\leq 1/2$.
+
+It remains to show that $1-v_i-v_j+2v_iv_j>0$. Note that $1-v_i-v_j+2v_iv_j=1-v_i-v_j(1-v_i)+v_iv_j=(1-v_i)(1-v_j)+v_iv_j>0$.\qed
+
+
+\section{Sequential equilibrium}
+\label{sec:sequ-equil}
+
+\begin{theorem}\label{thm:seqEqExistence}
+A sequential equilibrium exists in every finite game.
+\end{theorem}
+\textbf{Proof of theorem \ref{thm:seqEqExistence}: }I first define a sequence of auxiliary games. We use Nash's theorem to establish that an equilibrium exists in each of the auxiliary games and then show that these equilibria converge to a Nash equilibrium in the actual game and that this Nash equilibrium is a sequential equilibrium.
+
+Define auxiliary game $k$ as follows. Each information set $x$ in the original game corresponds to one player in the auxilliary game; i.e. if a player $i$ moves several time within the game, then we ``split him up'' into several players $x_1,\, x_2\dots$ where each $x_j$ corresponds to one information set in which player $i$ had to act in the original game. As the original game is finite, the auxilliary game has a finite number of players. The action set of player $x$ in the auxilliary game is derived from the one in the original game: say player $x$ corresponds to the information set $x$ of player $i$ in the orignal game and $i$ has to pick from a finite action set $A$ in information set $x$ of the original game. The action set of player $x$ in auxiliary game $k$ is now $\Delta(A)\cap [\min\{1/k,1/|A|\},1]^{|A|}$. Put differently, $x$ has to choose a mixed strategy over $A$ that assigns at least probability $\min\{1/k,1/|A|\}$ to each action in $A$. This ensures that player $x$'s strategy is completely mixed. Finally, the utility function of player $x$ in the auxilliary game is the utility function of player $i$ in the original game where $i$ is the player that has to act at information set $x$ in the original game.\footnote{You may have realized that I cheat here a bit since before evaluating $x$'s utility one has to piece together the strategies of the players in the original game from all the auxiliary players representing these players at different information sets in the auxiliary game. But I hope that it is reasonably intuitive how to do this.}
+
+There exists a Nash equilibrium $\sigma_k^*$ in each auxiliary game $k$. The proof is essentially the same as the one for Nash's theorem. The only difference is that the functions $f_i^*$ now have to map into $[\min\{1/k,1/|A|\},1]$ instead of mapping into $[0,1]$. Using $\min\{1/k,1/|A|\}$ instead of $0$ in the minimum expression in the  definition of $\tilde{f}_i$ will take care of this.\footnote{One also has adapt the normalization leading to $f_i^*$ to ensure that this normalization does not lead to probabilities below $\min\{1/k,1/|A|\}$. This is easily done by normalizing only the probability mass in excess of $\min\{1/k,1/|A|\}$. }
+
+For each auxiliary game $k$, we now have a Nash equilibrium $\sigma_k^*$ (of the auxiliary game) that puts probability of at least $1/k$ on each action at each information set. Consequently, no node is off path and Bayes' rule can be used to compute a system of beliefs $\mu_k^*$. Furthermore, the elements of the sequence $(\sigma_k^*)$ are bounded (as the strategy of $x$ in $k$ is in the bounded set $\Delta(A)$). A sequence whose elements belong to a bounded subset of $\Re^n$ contains a converging subsequence by the Bolzano-Weierstrass theorem. We will work with this convergent subsequence but -- with a slight abuse of notation -- still denote it by $(\sigma_k^*) $. The limit will be denoted by $\sigma^*$. Note that beliefs derived by Bayes' rule are continuous in the strategies and therefore also the system of beliefs convergences along our (sub)sequence to some system of beliefs $\mu^*$.
+
+By construction $(\sigma^*,\mu^*)$ corresponds to a sequential equilibrium of the original game if we can show that $(\sigma^*,\mu^*)$ is sequentially rational. Roughly speaking, the argument for sequential rationality is as follows: If $i$ has a profitable deviation at some information set $x$ of the original game, then this deviation would also be a profitable deviation from $\sigma_k^*(x)$ in auxiliary game $k$ for sufficiently large $k$. As $\sigma_k^*$ was an equilibrium of the auxiliary game this cannot be the case. Let us be a bit more precise about this argument: Suppose player $i$ had a profitable deviation at information set $x$ in the original game under strategy profile $\sigma^*$. This means that there are actions $a_1,a_2\in A$ such that $\sigma^*(x)(a_1)>0$, $\sigma^*(x)(a_2)<1$ and $\mathbb{E}[u_i(a_2,\sigma^*_{-i}|x,\mu^*)]>\mathbb{E}[u_i(a_1,\sigma^*_{-i}|x,\mu^*)]$. By continuity of the expected utility and the facts that $\sigma_k^*\rightarrow \sigma^*$ and $\mu_k^*\rightarrow\mu^*$, this implies $u_i(a_2,\sigma^*_k|x,\mu^*_k)>u_i(a_1,\sigma^*_k|x,\mu^*_k)$ for sufficiently large $k$. Furthermore, $\sigma_k^*(x)(a_1)>1/k$ for sufficiently large $k$ as $1/k\rightarrow 0$ and $\sigma^*_k\rightarrow\sigma^*$. But this implies that player $x$ has a profitable deviation in the auxiliary game $k$: He would gain from shifting probability mass from $a_1$ to $a_2$. This contradicts that $\sigma_k^*$ is an equilibrium in auxiliary game $k$.
+\qed 
+
+
+\newpage
+
+\bibliographystyle{chicago}
+\bibliography{/home/christoph/stuff/bibliography/references.bib}
+
+\end{document}
