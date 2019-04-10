@@ -15,7 +15,7 @@
 - Slides:
   - [[https://github.com/schottmueller/advMicro/files/3028996/dominRatio.pdf][Dominance and rationalizability]]
   - [[https://github.com/schottmueller/advMicro/files/1888753/NashEq.pdf][Nash Theorem]]
-  - [[https://github.com/schottmueller/advMicro/files/1890677/corrEq.pdf][correlated eq.]]
+  - [[https://github.com/schottmueller/advMicro/files/3062253/corrEq.pdf][correlated eq.]]
   - [[https://github.com/schottmueller/advMicro/files/1927713/BNE.pdf][BNE]]
   - [[https://github.com/schottmueller/advMicro/files/1960716/auctions.pdf][auctions]]
   - [[https://github.com/schottmueller/advMicro/files/1966289/spne.pdf][SPNE]]

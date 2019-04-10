@@ -69,12 +69,14 @@ Check that no deviation is profitable!
 ** Interpretation of correlated equilibrium
 
 
-  \begin{itemize}
-\item  both players first communicate and  \emph{construct a correlation machine together}\\
-each player sees output of the machine before taking action  
-  \item \emph{ impartial mediator} gives (private!) recommendations $s_i$ to each player according to some probability distribution \\Recommendations are self-enforcing 
-\item observer does not know on what information players base their decision (what they observe etc.) $\rightarrow$ set of possible (Bayesian) equilibria for all possible information structures
-  \end{itemize}
+ 
+-  both players first communicate and  \emph{construct a correlation machine together}
+  - each player sees output of the machine before taking action  
+- \emph{ impartial mediator} gives (private!) recommendations $s_i$ to each player according to some probability distribution 
+  - recommendations are self-enforcing 
+- observer does not know on what information players base their decision (what random variables they observe etc.) 
+  - set of correlated equilibria as set of possible (Bayesian) equilibria for all possible information structures
+ 
 
 ** Formal definition I
 \begin{itemize}
@@ -143,7 +145,7 @@ probabilities $p_{UL}$, $p_{UR}$, $p_{DL}$, $p_{DR}$
 - obedience D: $p_{DL}*4+p_{DR}*1 \geq p_{DL}*5+p_{DR}*0$
 - obedience L: $p_{UL}*1+p_{DL}*4\geq p_{UL}*0+p_{DL}*5$
 - obediecne R: $p_{UR}*0+p_{DR}*5\geq p_{UR}*1+p_{DR}*4$
-- nonnegativity:  $p_{UL}\geq 0$, $p_{UR}\geq 0$, $p_{DL}\geq 0$, $p_{DR}\geq 0$
+- non-negativity:  $p_{UL}\geq 0$, $p_{UR}\geq 0$, $p_{DL}\geq 0$, $p_{DR}\geq 0$
 - probs sum to 1: $p_{UL}+p_{UR}+p_{DL}+p_{DR}=1$
 
 set of $(p_{UL},p_{UR},p_{DL},p_{DR})$ satisfying all these linear inequalities is set of correlated equilibria
