@@ -69,6 +69,11 @@ which is implied by the condition in the definition as $u_i(\sigma_i',s_{-i})-u_
 
 To prove this, we have to be a bit more precise about how IESDS works:we will eliminate a single strategy in each step and denote steps by $t=1,\dots,T$. Note that by the finiteness of the game, a finite $T$ exists at which the procedure stops. (The maximal number of steps is $\sum_{i\in I}(|S_i|-1)$ as at least one strategy per player will survive.)
 
+% \textbf{Proof of lemma \ref{lem:iesdsOrder}: }
+% The proof is by contradiction. Suppose that two orders of elimination, denoted by A and B, lead to different sets surviving IESDS and denote the sets surviving IESDS under the respective orders $S^A$ and $S^B$. Let $t$ be the \emph{first} step in which according to one of the two orders a strategy is eliminated that survives IESDS under the other order. Without loss of generality, say that in step $t$ under A $s_i'\in S_i$ is eliminated although $s_i'\in S_i^B$.
+
+% Note that an action that is strictly dominated in some step of the procedure will remain strictly dominated in all following steps: eliminating actions of other players will only reduce the set of strategies for which the dominating strategy has to be better than the dominated one. Consequently, $s_i'\in S_i^B$ implies that $s_i'$ was not strictly dominated at any step in procedure B. 
+
 \textbf{Proof of lemma \ref{lem:iesdsOrder}: }
 The proof is by contradiction. Suppose that two orders of elimination, denoted by A and B, lead to different sets surviving IESDS and denote the sets surviving IESDS under the respective orders $S^A$ and $S^B$. Let $t$ be the \emph{first} step in which according to one of the two orders a strategy is eliminated that survives IESDS under the other order. Without loss of generality, say that in step $t$ under A $s_i'\in S_i$ is eliminated although $s_i'\in S_i^B$. Denote by $\sigma_i'$ the mixed strategy that strictly dominates $s_i'$ in step $t$. If all strategies in the support of $\sigma_i'$ are in $S^B$, then $s_i'$ is strictly dominated in $\left[\{I\},\{S_i^B\},\{u_i\}\right]$: By definition of $t$ (as first step in which an action is eliminated that survives IESDS according to the other order), all strategies eliminated in steps $1$ to $t-1$ under A are also eliminated under B and therefore $\sigma_i'$ strictly dominates $s_i'$. This, however, contradicts that $s_i$ survives IESDS under order B.
 
@@ -245,6 +250,64 @@ If the condition in the lemma is satisfied, then $s$ is a BNE. To see this, mult
 In the other direction, (\ref{eq:1}) would be violated if the condition in the lemma did not hold for some $\bar{\theta }_i$ and some  $s_i'\in S_i$ as then we could choose $\tilde{s}_i\in\mathcal{S}_i$ such that $\tilde{s}_i(\bar{\theta }_i)=s_i'$ and $\tilde{s}_i({\theta }_i')=s_i(\theta_i')$ for all $\theta _i'\neq\bar \theta _i$.\footnote{Here we use that -- due to the finiteness of the game -- $\bar{\theta }_i$ has positive probability under $F$.} Hence, any BNE $s$ satisfies the condition of the lemma.
  \qed
 
+\subsection{2 player all pay auction}
+\label{sec:2-player-all-pay}
+
+Consider the two player all pay auction with
+\begin{equation*}
+  u_i(s_i,s_j,\theta _i)=
+  \begin{cases}
+    \theta _i-s_i & \text{ if }s_i>s_j\\
+    \theta _i/2-s_i & \text{ if }s_i=s_j\\
+    -s_i &\text{ if }s_i<s_j
+  \end{cases}
+\end{equation*}
+where $\theta _i\in \Re_+$ is distributed with cdf $\Phi(\theta _i)=1-e^{-\theta _i}$. I want to show that in a Bayesian Nash equilibrium the strategy of player $i$, $s_i:\Re_+\rightarrow\Re_+$, is strictly increasing.\footnote{The proofs below do not rely on the exponential distribution. In other words, the results hold for all distributions with a continuous and strictly increasing cdf, i.e. distributions with convex support and no mass points. The proof for weak monotonicity is even more general as it does not utilize the distribution at all!} 
+In order to show this we first need an intermediate result that is of independent interest: The probability distribution of bids in equilibrium cannot have atoms (at strictly positive bids), i.e. no bid has strictly positive probability mass in equilibrium. This implies that the probability of a tie is zero in equilibrium.
+
+\begin{lemma}\label{lem:2plAllPayNo Atom}
+  Let $(s_1,s_2)$ be a Bayesian equilibrium. Then the sets $T_b=\{\theta _i| s_i(\theta _i)=b\}$ of types that bid exactly $b$ has zero probability under $\Phi$ for every $b>0$.
+\end{lemma}
+\textbf{Proof of lemma \ref{lem:2plAllPayNo Atom}:} Suppose, by way of contradiction, that there was a $b>0$ such that $p_b=\Phi(T_b)>0$. % To simplify the task first, let us assume that $b>0$ and come back to $b=0$ later.
+Note that no type $\theta _j$ will bid more than $b_j$ as this would lead to a strictly negative payoff while bidding zero ensures a zero payoff. Therefore, $s_j(\theta _j)\leq \theta_j$ for all $\theta _j\in\Re_+$.
+
+The expected utility of $\theta _j$ when bidding $b_j$ equals $prob(b_i<b_j)\theta _j+prob(b_i=b_j)\theta _j/2-b_j$.
+
+For  $\varepsilon <p_b\theta _j/2$, bidding $b+\varepsilon $ yields a higher payoff than bidding $b-\varepsilon $:
+\begin{multline*}
+ prob(b_i<b+\varepsilon )\theta _j+prob(b_i=b+\varepsilon )\theta _j/2-b-\varepsilon\geq (prob(b_i<b)+p_b)\theta _j-b-\varepsilon\\ >prob(b_i<b)\theta _j-b+\varepsilon\geq prob(b_i<b-\varepsilon )\theta _j+prob(b_i=b-\varepsilon )\theta _j/2-b+\varepsilon.
+\end{multline*}
+ Take $\varepsilon =p_bb/4$. Then no type $\theta _j> b/2$ will find a bid in  $(b-\varepsilon ,b]$ optimal (as bidding $b+\varepsilon $ yields a strictly higher payoff) and types below $b/2$ will not bid above $b/2<b-\varepsilon $ by $\theta _j\geq s_j(\theta _j)$. Therefore, no type of player $j$ bids in  $(b-\varepsilon ,b]$ in equilibrium. But then there is a profitable deviation for player $i$: If those types in $T_b$ bid $b-\varepsilon /2$ instead of $b$, they will have the same probability of winning but lower costs and therefore a strictly higher expected payoff. This contradicts that there is an equilibrium with $b>0$ and $p_b>0$.
+ \qed 
+
+\begin{lemma}\label{lem:2plAllPayMono}
+  Let $(s_1,s_2)$ be a Bayesian equilibrium. Then $s_i$ is strictly increasing.
+\end{lemma}
+\textbf{Proof of lemma \ref{lem:2plAllPayMono}:} Consider $\theta _i'$ and $\theta _i''>\theta _i'$ and their equilibrium choices $b_i'=s_i(\theta _i')$ and $b_i''=s_i(\theta _i'')$. The expected utility of $\theta _i$ when bidding $b_i$ equals $prob(b_j<b_i)\theta _i+prob(b_j=b_i)\theta _i/2-b_i$, where ``$prob(b_j<b_i)$'' is the probability that player $j\neq i$ bids strictly less than $b_i$ given his equilibrium strategy. Optimality of $s_i'$ for type $\theta _i'$ implies that
+\begin{equation*}
+  prob(b_j<b_i')\theta _i'+prob(b_j=b_i')\theta _i'/2-b_i'\geq prob(b_j<b_i'')\theta _i'+prob(b_j=b_i'')\theta _i'/2-b_i''
+\end{equation*}
+and similarly optimality of $b_i''$ for type $\theta _i''$ implies
+\begin{equation*}
+  prob(b_j<b_i'')\theta _i''+prob(b_j=b_i'')\theta _i''/2-b_i''\geq prob(b_j<b_i')\theta _i''+prob(b_j=b_i')\theta _i''/2-b_i'.
+\end{equation*}
+Adding these two inequalities yields,
+\begin{equation*}
+  (\theta _i''-\theta _i') \left[prob(b_j<b_i'')+prob(b_j=b_i'')/2-prob(b_j<b_i')-prob(b_j=b_i'')/2\right]\geq 0. 
+\end{equation*}
+By $\theta _i''>\theta _i'$, this can only hold if the term in $[\dots]$ is non-negative, i.e. 
+\begin{equation*}
+  prob(b_j<b_i'')+prob(b_j=b_i'')/2\geq prob(b_j<b_i')+prob(b_j=b_i'')/2.
+\end{equation*}
+This inequality can only be true if $b_i''\geq b_i'$. In summary, $\theta _i''>\theta _i'$ implies $b_i''\geq b_i'$. This proves weak monotonicity of the equilibrium strategies.
+
+Given weak monotonicity, strict monotonicity for types bidding more than zero is implied by the lemma \ref{lem:2plAllPayNo Atom} below.
+
+It remains to show that the set of types bidding zero has measure zero in every BNE. Suppose, by way of contradiction, otherwise. More precisely, suppose that $p_0=\Phi(\{\theta _i| s_i(\theta _i)=0\})>0$. By monotonicity of $s_i$, this means that $s_i(\theta _i)=0$ for all $\theta _i\in[0,\theta _i')$ for some $\theta _i'>0$. Consider now a type $\theta _j'=\theta _i'/2$ of player $j\neq i$. I claim that the optimal $s_j(\theta _j')$ contradicting that $(s_i,s_j)$ is an equilibrium. Note that the expected payoff of $\theta _j'$ when bidding $b_j$ equals $p_0 \theta _j'-b_j$ if $b_j\in(0,\theta _j']$, is strictly negative if $b_j>\theta _j'$ and equals $p_0\theta _j'/2$ if $b_j=0$. Clearly, the first option, i.e. bidding in $(0,\theta _j']$ is optimal but in this range the expected payoff is strictly decreasing in $b_j$ and therefore no optimal $b_j$ exists. This shows that the set of types bidding zero has measure zero in every BNE. Consequently, the strategy has to be strictly increasing.
+\qed
+
+
+
 \section{Auctions}
 \label{sec:auctions}
 
@@ -267,7 +330,8 @@ In the other direction, (\ref{eq:1}) would be violated if the condition in the l
 \end{eqnarray*}
 If $1-v_i-v_j+2v_iv_j>0$, this is equivalent to $v_j\leq1-v_i-v_j+2v_iv_j\Leftrightarrow v_j2 (1-v_i)\leq 1-v_i\Leftrightarrow v_j\leq 1/2$.
 
-It remains to show that $1-v_i-v_j+2v_iv_j>0$. Note that $1-v_i-v_j+2v_iv_j=1-v_i-v_j(1-v_i)+v_iv_j=(1-v_i)(1-v_j)+v_iv_j>0$.\qed
+It remains to show that $1-v_i-v_j+2v_iv_j>0$. Note that $1-v_i-v_j+2v_iv_j=1-v_i-v_j(1-v_i)+v_iv_j=(1-v_i)(1-v_j)+v_iv_j>0$.
+\qed
 
 
 \section{Sequential equilibrium}

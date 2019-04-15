@@ -40,7 +40,7 @@
 
 - $p$: prior probability entrant assigns to /h/
 
-** A first example II 
+** A first example II
 
 - what will the incumbent do if $c_I=h$?
 # dominant to play NI
@@ -53,7 +53,7 @@
 - suppose "nature" chooses the incumbent's *type* in a first step: $h$ with prob $p$ and $l$ with prob $1-p$
 - then players play simultaneous move game but only incumbent observes nature's move
 - strategy: complete plan of action, i.e. action choice for every type
-  - incumbent: prob of investment when /h/ and prob of entry when /l/
+  - incumbent: prob of investment when /h/ and prob of investment when /l/
 - solve for Nash equilibrium in new game in which players' strategy sets are complete plans of actions for each and every type (they could have had)
 
 \vspace*{1cm}
@@ -65,7 +65,7 @@
 \tiny{Figure 6.3 from Fudenberg and Tirole, "Game Theory", 1991, MIT Press}
 ** A first example III
 - optimal not to invest if /h/ \rightarrow only prob of investment when /l/ relevant, called $x$ 
-- entrant optimally enters if $p+(1-p)(-1x+(1-x)1)>0$ \Leftrightarrow $x<1/(2(1-p))$
+- entrant optimally enters if $p+(1-p)(-1x+1(1-x))>0$ \Leftrightarrow $x<1/(2(1-p))$
 - low cost incumbent optimally invests if $y<1/2$
 
 - equilibria: 
@@ -96,7 +96,7 @@ for all $s_i'\in\mathcal{S}_i$.
 
 *** Lemma (BNE in finite games)
 A decision profile $(s_1(\cdot),\dots,s_I(\cdot))$ is a BNE if and only if for all $i$ and all $\bar \theta_i\in\Theta_i$ occurring with positive probability
-$$\mathbb{E}_{\theta_{-i}}[u_i(s_i(\bar\theta_i),s_{-i}(\theta_{-i}),\theta_i)|\bar\theta_i)]\geq \mathbb{E}_{\theta_{-i}}[u_i(s_i',s_{-i}(\theta_{-i}),\theta_i)|\bar\theta_i)]$$
+$$\mathbb{E}_{\theta_{-i}}[u_i(s_i(\bar\theta_i),s_{-i}(\theta_{-i}),\theta_i)|\bar\theta_i]\geq \mathbb{E}_{\theta_{-i}}[u_i(s_i',s_{-i}(\theta_{-i}),\theta_i)|\bar\theta_i]$$
 for all $s_i'\in S_i$.
 
 *** :B_ignoreheading:
@@ -130,7 +130,7 @@ for all $s_i'\in S_i$.
 # as $x$ does not depend on $c_i$
    - at cutoff: indifference
    - prob of /B/ is prob of $c_i$ below cutoff
-- what is equilibrium cutoff?
+- what is (symmetric) equilibrium cutoff?
 # 1/2
 
 ** Generalized public good game

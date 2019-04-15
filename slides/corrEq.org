@@ -110,7 +110,7 @@ Check that no deviation is profitable!
 
 ** Formal definition III
 
-\textbf{Proof. }Expected utility of player $i$ when playing $s_i'$ after receiving recommendation $s_i$ is 
+\textbf{Proof. }Expected utility of player $i$ when playing $s_i$ after receiving recommendation $s_i$ is 
 \begin{equation*}
   EU_i(s_i)= \sum_{s_{-i}\in S_{-i}}\frac{p(s_i,s_{-i})}{\sum_{b_{-i}\in S_{-i}}p(s_i,b_{-i})}u_i(s_i,s_{-i}).
 \end{equation*}

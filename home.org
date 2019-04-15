@@ -16,7 +16,7 @@
   - [[https://github.com/schottmueller/advMicro/files/3028996/dominRatio.pdf][Dominance and rationalizability]]
   - [[https://github.com/schottmueller/advMicro/files/1888753/NashEq.pdf][Nash Theorem]]
   - [[https://github.com/schottmueller/advMicro/files/3062253/corrEq.pdf][correlated eq.]]
-  - [[https://github.com/schottmueller/advMicro/files/1927713/BNE.pdf][BNE]]
+  - [[https://github.com/schottmueller/advMicro/files/3080379/BNE.pdf][BNE]]
   - [[https://github.com/schottmueller/advMicro/files/1960716/auctions.pdf][auctions]]
   - [[https://github.com/schottmueller/advMicro/files/1966289/spne.pdf][SPNE]]
   - [[https://github.com/schottmueller/advMicro/files/1987255/pbe.pdf][PBE]]
@@ -92,7 +92,7 @@ The following plan is...well a plan...and as such it might be adapted to unforse
 
 ** Dynamic games I
 - backwards induction and subgame perfect equilibrium (MWG 9.A and 9.B)
-- one deviation principle (MWG 9.B)
+- one shot deviation principle (MWG 9.B)
 - Rubinstein bargaining  (MWG 9.Appendix A)
 - forward induction (MWG 9.D)
 
