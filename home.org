@@ -17,7 +17,7 @@
   - [[https://github.com/schottmueller/advMicro/files/1888753/NashEq.pdf][Nash Theorem]]
   - [[https://github.com/schottmueller/advMicro/files/3062253/corrEq.pdf][correlated eq.]]
   - [[https://github.com/schottmueller/advMicro/files/3080379/BNE.pdf][BNE]]
-  - [[https://github.com/schottmueller/advMicro/files/1960716/auctions.pdf][auctions]]
+  - [[https://github.com/schottmueller/advMicro/files/3111105/auctions.pdf][auctions]]
   - [[https://github.com/schottmueller/advMicro/files/1966289/spne.pdf][SPNE]]
   - [[https://github.com/schottmueller/advMicro/files/1987255/pbe.pdf][PBE]]
   - [[https://github.com/schottmueller/advMicro/files/2000878/signal.pdf][signaling]]
