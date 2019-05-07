@@ -88,12 +88,12 @@ Every finite game of perfect information has a pure strategy Nash equilibrium th
     :BEAMER_env: ignoreheading
     :END:
 
-- Outcome of backwards induction, $\sigma$, is NE. 
+- Outcome of backwards induction, $\sigma$, is NE: 
   - backwards induction: deviating in one node only is not profitable 
   - suppose profitable deviation exists for player $i$: among $i$'s profitable deviations let $\hat \sigma_i$ be one that deviates from backwards induction in the fewest nodes \pause
-      - let $x$ be node with deviation furthest down game tree under $\hat\sigma_i$ (i.e. no deviation in $\hat\sigma_i$ at succeeding nodes)
+      - let $x$ be node with deviation furthest down game tree under $\hat\sigma_i$ (i.e. $\hat\sigma_i$ does not deviate from  $\sigma_i$ at successors of $x$)
       - deviation at $x$ cannot be profitable by backwards induction
-      - deviation that $\sigma_i'$ defined by $\sigma'_i(x')=\hat\sigma_i(x')$ if $x'\neq x$ and $\sigma'_i(x)=\sigma_i(x)$ must be at least as profitable as $\hat\sigma_i$
+      - deviation $\sigma_i'$ defined by $\sigma'_i(x')=\hat\sigma_i(x')$ if $x'\neq x$ and $\sigma'_i(x)=\sigma_i(x)$ must be at least as profitable as $\hat\sigma_i$
       - contradicts definition of $\hat \sigma_i$ \qed
 
 ** A bargaining application
@@ -104,7 +104,7 @@ Every finite game of perfect information has a pure strategy Nash equilibrium th
    - rejection means
       - going to next round if $t<T$
       - splitting $(s,1-s)$ if $t=T$
-- players have discount rate $\delta<1$ (1$ next round is worth \delta $ today)
+- players have discount rate $\delta<1$ ($1 next round is worth $\delta  today)
 
 - say $T$ is even
    - what will P2 propose in round $T$? (what is the worst offer P1 will accept?)
@@ -233,7 +233,7 @@ A profile of strategies $(\sigma_1,\dots,\sigma_I)$ is a subgame perfect Nash eq
 \pause
 - perpetual disagreement cannot be equilibrium
 - if agreement happens in any period, it should happen in period 1 (discounting)
-- suppose equilibrium in round 3: split $(s,1-s)$
+- suppose subgame equilibrium in round 3: split $(s,1-s)$
    - offer in round 2: $(\delta s,1-\delta s)\rightarrow$ accept
    - offer in round 1: $(1-\delta+\delta^2 s, \delta-\delta^2 s)\rightarrow$ accept 
 \pause
@@ -292,7 +292,7 @@ A profile of strategies $(\sigma_1,\dots,\sigma_I)$ is a subgame perfect Nash eq
 \end{figure}   
 
 - suppose P2 is asked to act, i.e. P1 must have chosen L
-- what should P2 believe will P1's play after A?
+- what should P2 believe about P1's play after A?
 # P1 chose strictly dominated action! mistake/tremble? irrational? got the payoffs wrong?
 
 ** Problems of SPNE: Coordinated beliefs

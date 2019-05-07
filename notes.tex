@@ -1,5 +1,5 @@
 \documentclass[a4paper,11pt]{article}
-
+\usepackage[usenames,dvipsnames]{xcolor}
 \usepackage{amsmath,amsthm,amssymb}
 \usepackage[margin=2.5cm]{geometry}
 \usepackage{ae,aecompl}
@@ -8,7 +8,39 @@
 \usepackage{natbib}
 \usepackage{sgame}
 \usepackage[onehalfspacing]{setspace}
+\usepackage{graphicx}
 
+
+%\usepackage{beramono}
+\usepackage{listings}
+
+
+%%
+%% Julia definition (c) 2014 Jubobs
+%%
+\lstdefinelanguage{Julia}%
+  {morekeywords={abstract,break,case,catch,const,continue,do,else,elseif,%
+      end,export,false,for,function,immutable,import,importall,if,in,%
+      macro,module,otherwise,quote,return,switch,true,try,type,typealias,%
+      using,while},%
+   sensitive=true,%
+   alsoother={$},%
+   morecomment=[l]\#,%
+   morecomment=[n]{\#=}{=\#},%
+   morestring=[s]{"}{"},%
+   morestring=[m]{'}{'},%
+}[keywords,comments,strings]%
+
+\lstset{%
+    language         = Julia,
+    basicstyle       = \ttfamily,
+    keywordstyle     = \bfseries\color{blue},
+    stringstyle      = \color{magenta},
+    commentstyle     = \color{ForestGreen},
+    showstringspaces = false,
+    frame            = single,
+    basicstyle       = \footnotesize,
+}
 
 \newtheorem{definition}{Definition}
 \newtheorem{lemma}{Lemma}
@@ -333,6 +365,37 @@ If $1-v_i-v_j+2v_iv_j>0$, this is equivalent to $v_j\leq1-v_i-v_j+2v_iv_j\Leftri
 It remains to show that $1-v_i-v_j+2v_iv_j>0$. Note that $1-v_i-v_j+2v_iv_j=1-v_i-v_j(1-v_i)+v_iv_j=(1-v_i)(1-v_j)+v_iv_j>0$.
 \qed
 
+\subsection{Common value auction: equilibrium in first price auction}
+\label{sec:comm-value-auct-1}
+
+Expected utility of player $i$ when bidding $b$ while the other player bids according to a strictly increasing bidding strategy $s$ with inverse $t$ equals
+\begin{multline*}
+prob(v_j\leq t(b))*(\mathbb{E}[v|v_i,v_j\leq t(b)]-b)\\=(2t(b)-2v_i t(b)-t(b)^2+2 v_it(b)^2)*\left(\frac{v_i t(b)}{2-2v_i-t(b)+2v_i t(b)}-b\right)\\=v_i t(b)^2-(2t(b)-2v_i t(b)-t(b)^2+2 v_it(b)^2)b.
+\end{multline*}
+Maximizing expected utility over $b$ yields the first order condition
+\begin{equation*}
+  2v_i t(b)t'(b)-(2t(b)-2v_i t(b)-t(b)^2+2 v_it(b)^2)-b*t'(b)(2-2v_i-2t(b)+4v_it(b))=0.
+\end{equation*}
+In a symmetric equilibrium $t(b)=v_i$, $t'(b)=1/s'(v_i)$, $b_i=s(v_i)$ have to hold. Plugging this into the first order condition yields
+\begin{equation*}
+ 2v_i^2/(s'(v_i))-(2v_i-3v_i^2+2v_i^3)-(2-4v_i+4v_i^2)s(v_i)/s'(v_i) =0
+\end{equation*}
+or equivalently
+\begin{equation}\label{eq:ComVal1stPSp}
+  s'(v_i)=\frac{2v_i^2-(2-4v_i+4v_i^2)s(v_i)}{2v_i-3v_i^2+2v_i^3}.
+\end{equation}
+This is a first order differential equation. Note that the boundary condition $s(0)=0$ has to be satisfied in equilibrium: Given signal $v_i=0$, a player believes that $v=0$ with probability 1 and is tehrefore not willing to bid a positive amount. Hence, we have a first order differential condition with an initial condition which can be solved numerically. The resulting strategy is depicted in figure \ref{fig:1stPComVal}.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[height=6cm]{commonValueFirstPrice.png}
+  \caption{Optimal bidding strategy in the first price, common value auction.}
+  \label{fig:1stPComVal}
+\end{figure}
+
+The Julia code producing the graph is given below and meant to illustrate why such differential equations are easy to solve. The idea is to use first order approximation. That is, $s(v+\varepsilon )\approx s(v)+\varepsilon s'(v)$ for $\varepsilon >0$ sufficiently small (and similarly $s(v-\varepsilon )\approx s(v)-\varepsilon s'(v)$). Suppose we knew the value of $s(0.5)$. Then we could calculate $s'(0.5)$ using (\ref{eq:ComVal1stPSp}). Knowing $s(0.5)$ and $s'(0.5)$, we can then get the value for $s(0.5+\varepsilon )$ using the first order approximation. But then we can iterate the procedure: Knowing $s(0.5+\varepsilon )$, (\ref{eq:ComVal1stPSp}) gives us $s'(0.5+\varepsilon )$ and then the approximation formula yields $s(0.5+2\varepsilon )$. Iterating further we get $s$ for all values between 0.5 and 1 (in steps of $\varepsilon $). In the same way we can use the downward approximation formula to get $s$ for all values between 0 and $0.5$ (in steps of $\varepsilon $). That's exactly what I do in the code below where I use $\varepsilon =0.001$. Now the problem is that in fact we do not know $s(0.5)$. But there is a solution for this: As we know that $s(0)=0$, we ``try out'' different values for $s(0.5)$ until we obtain an $s$ at which $s(0)=0$.\footnote{You may wonder why I do not start the approximation at $s(0)=0$, i.e. first obtain $s'(0)$ and then $s(0+\varepsilon )$ and so on. The reason for not doing so is that (\ref{eq:ComVal1stPSp}) actually does not hold for $v_i=0$ as the denominator is 0. Hence, we have to use this somewhat more complicated procedure described above. However, there is nothing special about $v_i=0.5$, i.e. we could just as well use any other $v_i$ and $s(v_i)$ as starting value provided that $v_i>0$. }
+
+\lstinputlisting{commonValueFirstPrice.jl}
 
 \section{Sequential equilibrium}
 \label{sec:sequ-equil}
