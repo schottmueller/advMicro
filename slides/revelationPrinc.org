@@ -116,7 +116,7 @@ where $\tilde{u}_{i}(s_{1},\dots , s_{I},\theta_{i})=u_{i}(g(s_{1},\dots , s_{I}
 - Bayesian game because
    - agents have to choose a strategy from their strategy set
    - through the mechanism (=rules of the game) their payoff depends on all agents' strategy choices
-   - every agent is uncertain about other agents' type
+   - every agent is uncertain about other agents' types
 ** The Mechanism Design Problem: "implementing a social choice function"
 *** implementing					       :B_definition:
     :PROPERTIES:

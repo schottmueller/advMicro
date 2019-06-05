@@ -61,7 +61,7 @@ two players: a sender $S$ and a receiver $R$
   - what are the equilibria?
 # babbling and truthful communication
 
-- say S always likes the action to be 1, i.e. $x>0$ and $y>z$
+- say S always likes the action to be 0, i.e. $x>0$ and $y>z$
     - equilibrium?
 - say S prefers a=1 if $\theta =0$ and a=0 if $\theta =1$, i.e. $x<0$ and $y>z$
     - equilibrium?
@@ -72,7 +72,7 @@ two players: a sender $S$ and a receiver $R$
 
 * Crawford and Sobel
 ** Standard setup
-- $\Theta =[0,1]$ and $A=[0,1]$ 
+- $\Theta =[0,1]$ and $A=\Re$ 
 - R has a prior that $\theta$ is uniformly distributed on $[0,1]$
 - messages are real numbers in $[0,1]$ 
 - $u^R(a,\theta )=-(a-\theta )^2$, i.e. R wants to play an action that equals the state
@@ -83,7 +83,7 @@ two players: a sender $S$ and a receiver $R$
     :PROPERTIES:
     :BEAMER_env: block
     :END:
-  If $b\neq0$, there is no BNE where the sender truthfully reports the state, i.e. no BNE where $m(\theta )=\theta$.
+  If $b\neq0$, there is no BNE in which the sender truthfully reports the state, i.e. no BNE where $m(\theta )=\theta$.
 *** 							    :B_ignoreheading:
     :PROPERTIES:
     :BEAMER_env: ignoreheading

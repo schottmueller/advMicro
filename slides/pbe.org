@@ -90,7 +90,7 @@
 
 ** Sequential rationality
 
-- sequential rational: no player wants to change his behavior in some information set given his beliefs and strategies of the other players
+- sequentially rational: no player wants to change his behavior in some information set given his beliefs and strategies of the other players
 
 *** Sequential rationality
 A strategy profile $\sigma$ is sequentially rational given system of beliefs $\mu$ if for every information set $H$, the player acting at $H$ cannot increase his expected utility by deviating from $\sigma_i$ at $H$:
@@ -343,3 +343,4 @@ If $(\sigma,\mu)$ is a sequential equilibrium, then $\sigma$ is a SPNE and $(\si
 
 - (essentially) unique sequential equilibrium \linebreak (check that many weak PBE with different outcomes exist in this game!)
 # weak PBE: take any p_1>0, on path play -- following p_1 -- as above but off path S believes that v=0 and therefore any p_1>0 and p_2>0 is rejected and he makes zero profits (while B strategy is as above)
+# take some p1 close to p_1^* and say this p_1 is played on path, say mu off path puts probability 1 on v=0 and therefore p_2=0 off path, then buyer accepts off path offer p_1' only if v\geq p_1'/(1-\delta) that is demand is much lower than above in period 1. Seller finds p_1 optimal if it leads on path to profit off at least (1-delta)/4

@@ -11,6 +11,7 @@
 - Monday 16:00-17:30, 101/05/524
 - Wednesday, 10:00-11:30, 100/01/HS XIa
 * Material
+- [[https://github.com/schottmueller/advMicro/files/3255945/exam.pdf][exam]] from 2018
 - Exercises: [[./exercises.tex][tex]] [[https://github.com/schottmueller/advMicro/files/2133302/exercises.pdf][pdf]], [[https://web.tresorit.com/l#q1HQe8-nJBZSRORWTxSfbg][solutions]] for exercises not covered in class
 - Slides:
   - [[https://github.com/schottmueller/advMicro/files/3028996/dominRatio.pdf][Dominance and rationalizability]]
