@@ -130,7 +130,7 @@ $$\Leftrightarrow \mathbb{E}_\theta\left[I x(\theta)\sum_i (2\theta_i-1-c)/I\rig
 - $\mathbb{E}_{\theta_i}[2\theta_i-1-c]< 0$ 
 # as $\theta_i\sim u[0,1]$ and $c>0$
 
-- in the limit budget balance holds only if $x(\theta)=0$ with probability 1
+- if $I\rightarrow\infty$, budget balance holds only if $x(\theta)=0$ with probability 1 as set of $\theta$ where $(\sum_i (2\theta_i-1-c))/I>0$ has zero probability in the limit
 
 - in the limit, $\sum_i \theta_i-c$ is strictly positive with probability 1 if $c<1/2$
 

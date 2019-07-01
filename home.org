@@ -28,7 +28,7 @@
   - [[https://github.com/schottmueller/advMicro/files/2054659/ms.pdf][Myerson Satterthwaite]]
   - [[https://github.com/schottmueller/advMicro/files/2054661/screening.pdf][screening]]
   - [[https://github.com/schottmueller/advMicro/files/2115403/revenueEquivalence.pdf][optimal auctions]]
-  - [[https://github.com/schottmueller/advMicro/files/2140703/optTradeLimits.pdf][optimal trading mechanism and limit results]], [[https://github.com/schottmueller/advMicro/blob/master/Public%20good.ipynb][numerics]]
+  - [[https://github.com/schottmueller/advMicro/files/3345210/optTradeLimits.pdf][optimal trading mechanism and limit results]], [[https://github.com/schottmueller/advMicro/blob/master/Public%20good.ipynb][numerics]]
   - [[https://github.com/schottmueller/advMicro/files/2149786/CremerMcLean.pdf][correlated information]]
 #  - [[https://github.com/schottmueller/advMicro/files/2140707/infoDesign.pdf][information design]]
 #  - [[https://github.com/schottmueller/advMicro/files/2140709/buyerOptLearning.pdf][buyer optimal learning]]

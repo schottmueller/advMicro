@@ -84,4 +84,17 @@ The proof works through backwards induction. The statement we have to show is th
 \end{equation*}
 as in all of the following $T-t'$ following periods $\sigma$ is played by the induction hypothesis and $const$ denotes the payoffs from earlier periods ($1,\dots,t'-1$). That is, the subgame is in fact equivalent to $\Gamma$ with the only difference that payoffs are shifted by a constant for each player -- namely $(T-t')u_i(\sigma)+const$. As such a shift does not affect best responses, the equilibria in the subgame are the same as the equilibria in $\Gamma$ which implies that $\sigma$ is played in the subgame in every SPNE. This establishes the claim in italics. In combination with the  result that $\sigma$ is played in repetition $T$, this proves the result.
 
+\paragraph{Extra exercise.} Let $\Gamma$ be the game below with the unique Nash equilibrium ($M$,$C$) and let $T=2$. 
+\begin{center}
+\begin{game}{3}{3}
+& $L$ & $C$  & $R$ \\
+$T$ & 2,2 & 0,3 &-10,-10\\
+$M$&  3,0    & 1,1  & -10,-10  \\
+$B$ & -10,-10 & -10,-10 & -11,-11
+\end{game}
+\end{center}
+
+
+Let player 1 (2) choose the following strategy in $\Gamma_E$: Play $T$ ($L$) in period 1. If the other player chose $L$ ($T$) in period 1, then play $M$ ($C$) in period 2. Otherwise, play $B$ ($R$) in period 2. It is easily checked that this is a NE of $\Gamma_E$ but not a SPNE.
+
 \end{document}
