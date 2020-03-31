@@ -73,7 +73,7 @@ for all $\sigma_i'\in \Delta S_i$.
     :END:
     \begin{itemize}
     \item 2 players ($N=\{P1,P2\}$)
-    \item each player says a number ($A_i=\Re$)
+    \item each player says a number ($S_i=\Re$)
     \item player that says the higher number wins \\(e.g. winner has payoff 1 while loser has payoff 0, if both say the same number each has payoff 1/2)
     \end{itemize}
 
@@ -97,7 +97,7 @@ Why are we interested in existence of NE?
     :PROPERTIES:
     :BEAMER_env: definition
     :END:
-    Let $f$ be a real function, i.e. $f:\,S\rightarrow\Re$ where $S\subseteq \Re$. A point $a\in A$ is a \emph{fixed point} of $f$ if $f(a)=a$.
+    Let $f$ be a real function, i.e. $f:\,S\rightarrow\Re$ where $S\subseteq \Re$. A point $s\in S$ is a \emph{fixed point} of $f$ if $f(s)=s$.
 
 ***                                                         :B_ignoreheading:
     :PROPERTIES:
@@ -199,7 +199,7 @@ has a Nash equilibrium in mixed strategies.
 - mixed strategy of P2: probability $\beta\in[0,1]$  of playing L  
 - idea of proof:
    \begin{itemize}
-   \item define a function $f(\alpha,\beta)$ such that
+   \item define a function $f:[0,1]\times [0,1]\rightarrow [0,1]\times [0,1]$ such that
      \begin{itemize}
      \item $f$ is continuous
      % \item if $(\alpha^*,\beta^*)$ is a Nash equilibrium, then $f(\alpha^*,\beta^*)=(\alpha^*,\beta^*)$
