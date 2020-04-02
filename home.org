@@ -19,13 +19,11 @@
 - Slides:
   - [[https://github.com/schottmueller/advMicro/files/3028996/dominRatio.pdf][Dominance and rationalizability]]
   - [[https://github.com/schottmueller/advMicro/files/4419534/NashEq.pdf][Nash Theorem]]
-#  - [[https://github.com/schottmueller/advMicro/files/3062253/corrEq.pdf][correlated eq.]]
   - [[https://github.com/schottmueller/advMicro/files/3080379/BNE.pdf][BNE]]
   - [[https://github.com/schottmueller/advMicro/files/3111105/auctions.pdf][auctions]]
   - [[https://github.com/schottmueller/advMicro/files/1966289/spne.pdf][SPNE]]
   - [[https://github.com/schottmueller/advMicro/files/1987255/pbe.pdf][PBE]]
   - [[https://github.com/schottmueller/advMicro/files/2000878/signal.pdf][signaling]]
-#  - [[https://github.com/schottmueller/advMicro/files/2052819/cheapTalk.pdf][cheap talk]]
   - [[https://github.com/schottmueller/advMicro/files/2052823/revelationPrinc.pdf][revelation principle]]
   - [[https://github.com/schottmueller/advMicro/files/2075056/domStratMechDes.pdf][dominant strat. implementation]]
   - [[https://github.com/schottmueller/advMicro/files/2054659/ms.pdf][Myerson Satterthwaite]]
@@ -33,6 +31,9 @@
   - [[https://github.com/schottmueller/advMicro/files/2115403/revenueEquivalence.pdf][optimal auctions]]
   - [[https://github.com/schottmueller/advMicro/files/3345210/optTradeLimits.pdf][optimal trading mechanism and limit results]], [[https://github.com/schottmueller/advMicro/blob/master/Public%20good.ipynb][numerics]]
   - [[https://github.com/schottmueller/advMicro/files/2149786/CremerMcLean.pdf][correlated information]]
+
+#  - [[https://github.com/schottmueller/advMicro/files/2052819/cheapTalk.pdf][cheap talk]]
+#  - [[https://github.com/schottmueller/advMicro/files/3062253/corrEq.pdf][correlated eq.]]
 #  - [[https://github.com/schottmueller/advMicro/files/2140707/infoDesign.pdf][information design]]
 #  - [[https://github.com/schottmueller/advMicro/files/2140709/buyerOptLearning.pdf][buyer optimal learning]]
 - Handouts etc.:
