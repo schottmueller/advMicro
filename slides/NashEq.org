@@ -37,7 +37,7 @@ for all $s_i'\in S_i$.
     :END:
 
 
-- mutual best response: let $b_i(s_{-i})$ be $\{s_i\in S_i:\;u_i(s_i,s_{-i})\geq u_i(s_i',s_{-i})\text{ for all }s_i'\in S_i\}$; then NE is an action profile $(s_1,\dots,S_I)$ such that $s_i\in b_i(s_{-i})$ for all $i$
+- mutual best response: let $b_i(s_{-i})$ be $\{s_i\in S_i:\;u_i(s_i,s_{-i})\geq u_i(s_i',s_{-i})\text{ for all }s_i'\in S_i\}$; then NE is an action profile $(s_1,\dots,s_I)$ such that $s_i\in b_i(s_{-i})$ for all $i$
 
 ** Nash equilibrium: interpretations
 - non-paternalistic prediction
@@ -49,7 +49,7 @@ for all $s_i'\in S_i$.
     :PROPERTIES:
     :BEAMER_env: definition
     :END:
-A mixed strategy Nash equilibrium of the game $\Gamma=[I,\{S_i\},\{u_i\}]$ is a Nash equilibrium $(\sigma_1,\dots,\sigma_I)$ in the game $\Gamma=[I,{\Delta S_i},{u_i}]$, i.e. for every $i=1,\dots,I$
+A mixed strategy Nash equilibrium of the game $\Gamma=[I,\{S_i\},\{u_i\}]$ is a Nash equilibrium $(\sigma_1,\dots,\sigma_I)$ in the game $\Gamma=[I,\{\Delta S_i\},\{u_i\}]$, i.e. for every $i=1,\dots,I$
 $$u_i(\sigma_i,\sigma_{-i})\geq u_i(\sigma_i',\sigma_{-i})$$
 for all $\sigma_i'\in \Delta S_i$.
 
@@ -72,7 +72,7 @@ for all $\sigma_i'\in \Delta S_i$.
     :BEAMER_env: example
     :END:
     \begin{itemize}
-    \item 2 players ($N=\{P1,P2\}$)
+    \item 2 players ($I=\{P1,P2\}$)
     \item each player says a number ($S_i=\Re$)
     \item player that says the higher number wins \\(e.g. winner has payoff 1 while loser has payoff 0, if both say the same number each has payoff 1/2)
     \end{itemize}

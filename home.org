@@ -18,7 +18,7 @@
 - Exercises: [[./exercises.tex][tex]] [[https://github.com/schottmueller/advMicro/files/2133302/exercises.pdf][pdf]], [[https://web.tresorit.com/l#q1HQe8-nJBZSRORWTxSfbg][solutions]] for exercises not covered in class
 - Slides:
   - [[https://github.com/schottmueller/advMicro/files/3028996/dominRatio.pdf][Dominance and rationalizability]]
-  - [[https://github.com/schottmueller/advMicro/files/4410023/NashEq.pdf][Nash Theorem]]
+  - [[https://github.com/schottmueller/advMicro/files/4419534/NashEq.pdf][Nash Theorem]]
 #  - [[https://github.com/schottmueller/advMicro/files/3062253/corrEq.pdf][correlated eq.]]
   - [[https://github.com/schottmueller/advMicro/files/3080379/BNE.pdf][BNE]]
   - [[https://github.com/schottmueller/advMicro/files/3111105/auctions.pdf][auctions]]
