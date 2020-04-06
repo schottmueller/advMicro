@@ -22,7 +22,7 @@ meetings are conducted via zoom
 - [[https://web.tresorit.com/l#s0D6-zGHGHN7NNCTnw-OtA][link]] to screencasts for lecture material
 
 - [[https://github.com/schottmueller/advMicro/files/3255945/exam.pdf][old exam]] 
-- Exercises: [[./exercises.tex][tex]] [[https://github.com/schottmueller/advMicro/files/2133302/exercises.pdf][pdf]], [[https://web.tresorit.com/l#q1HQe8-nJBZSRORWTxSfbg][solutions]] for exercises not covered in class
+- Exercises: [[./exercises.tex][tex]] [[https://github.com/schottmueller/advMicro/files/4439088/exercises.pdf][pdf]], [[https://web.tresorit.com/l#q1HQe8-nJBZSRORWTxSfbg][solutions]] for exercises not covered in class
 - Slides:
   - [[https://github.com/schottmueller/advMicro/files/3028996/dominRatio.pdf][Dominance and rationalizability]]
   - [[https://github.com/schottmueller/advMicro/files/4419534/NashEq.pdf][Nash Theorem]]

@@ -64,25 +64,32 @@
 \begin{enumerate}
 \item Show that a pure strategy Nash equilibrium exists in the following two player game: $I=\{P1,P2\}$, $S_1=S_2=[0,1]$, $u_i(s_i,s_{-i})$ is differentiable and strictly (quasi-)concave in $s_i$ and $\partial u_i/\partial s_i$ is continuous in both variables.\\
   (Hint: Show that the first order condition leads to a continuous best response function. Then, verify that the two best response functions must intersect.)
+\item Take a finite strategic form game $\Gamma=\langle I,\{S_i\},\{u_i\} \rangle$ and let $S_i$ be binary, i.e. $S_i=\{L,R\}$. Now suppose that each player is restricted to mixed strategies that place at least probability $\varepsilon >0$ on each of his two actions (e.g. the player ``trembles'' sometimes and even if he wants to choose $L$, he will choose $R$ with probability $\varepsilon $ and vice versa).
+  \begin{enumerate}
+  \item What is the strategy space from which a player can actually
+    choose in this game with ``trembles''?
+  \item Adapt the proof of the Nash theorem to show that there is a Nash equilibrium in this game  with ``trembles''.
+    \item One could conjecture that the set of equilibria in the game with trembles is the same as in $\Gamma$ in the limit if $\varepsilon \rightarrow 0$. Can you find a game where this is not true?
+\end{enumerate}
 \end{enumerate}
 
-\section{Correlated equilibrium}
-\label{sec:corr-equil}
-\begin{enumerate}
-\item Find a correlated equilibrium that yields a higher payoff to every player than the unique Nash equilibrium (game in table \ref{tab:corEq}).
-   \begin{table}[h]
-\centering
- \begin{game}{3}{3}
-       \> L \> C \>R\\ %\hline
-U   \>1,1   \> 2,4 \> 4,2   \\
-M   \>4,2   \> 1,1 \> 2,4 \\
-D  \> 2,4    \>4,2  \>1,1
-\end{game}  
-\caption{correlated equilibrium}
-\label{tab:corEq}
-\end{table}
-\item In the example from the lecture (using in particular the inequalities on slide 9), show that the set of correlated equilibria is the set of all probability distributions $(p_{UL},p_{UR},p_{DL},p_{DR})$ for which the the probability on each pure Nash equilibrium is at least as high as the probability on any other strategy profile. (Note: This is \emph{not} a general result!) Given this, derive the correlated equilibrium with the lowest and the highest sum of payoffs. 
-\end{enumerate}
+% \section{Correlated equilibrium}
+% \label{sec:corr-equil}
+% \begin{enumerate}
+% \item Find a correlated equilibrium that yields a higher payoff to every player than the unique Nash equilibrium (game in table \ref{tab:corEq}).
+%    \begin{table}[h]
+% \centering
+%  \begin{game}{3}{3}
+%        \> L \> C \>R\\ %\hline
+% U   \>1,1   \> 2,4 \> 4,2   \\
+% M   \>4,2   \> 1,1 \> 2,4 \\
+% D  \> 2,4    \>4,2  \>1,1
+% \end{game}  
+% \caption{correlated equilibrium}
+% \label{tab:corEq}
+% \end{table}
+% \item In the example from the lecture (using in particular the inequalities on slide 9), show that the set of correlated equilibria is the set of all probability distributions $(p_{UL},p_{UR},p_{DL},p_{DR})$ for which the the probability on each pure Nash equilibrium is at least as high as the probability on any other strategy profile. (Note: This is \emph{not} a general result!) Given this, derive the correlated equilibrium with the lowest and the highest sum of payoffs. 
+% \end{enumerate}
 
 \section{Bayesian Nash equilibrium}
 \label{sec:Bayes-nash-eq}
@@ -361,71 +368,71 @@ D  \> 4,4$+\theta _2$    \>1,5
 \item Exercise 13.C.6 in MWG.
 \end{enumerate}
 
-\section{Cheap talk}
-\label{sec:cheap-talk}
+% \section{Cheap talk}
+% \label{sec:cheap-talk}
 
-\begin{enumerate}
-\item The state of the world $\theta $ is either 0 or 1. Both, 0 and 1, have probability 1/2. An expert observes the state and then sends a cheap talk message to a decision maker. The available messages are ``high'' (h) and ``low'' (l). (Assume in the following that the messages are used in accordance with their name, i.e. the high message leads to a higher belief of the decision maker.) The decision maker chooses an action $a\in [0,2]$ with the objective of maximizing $-(a-\theta )^2$. The objective of the expert is $-(a-\theta-b)^2$ for some $b\in(0,1)$.
-  \begin{enumerate}
-  \item What is a mixed strategy for the expert? % probability of sending high message for each state
-    \item Intuitively, which state will the expert reveal truthfully? % high state as expert always wants higher action than DM
-    \item Given a mixed strategy of the expert, what are the decision maker's beliefs when receiving a low/high message? % in state 0, let prob of h be q (while in state 1 it is 1), then $mu(l)=0$ and $\mu(h)=\frac{.5*1}{.5*1+0.5*q}=1/(1+q)$
-      \item Given a mixed strategy of the expert, what is the best response of the decision maker? % $min \mu * (a-1)^2+(1-\mu)(a)^2$ which gives foc: $a=\mu$ 
-      \item What is the equilibrium strategy of the expert? %truthtelling is eq if $-b^2\geq-(1-b)^2$, i.e. if $b\leq 1/2$; otherwise indifference of expert in 0 state: $b^2=(1/(1+q)-b)^2$ solved for $q=1/2b-1$ which is eq also for b<1/2; otherwise babbling
-      \end{enumerate}
-    \item Take the model from the lecture but assume that the state is distributed not uniformly but with some arbitrary distribution $\Phi$ (with strictly positive density $\phi$) on $[0,1]$. Take a partitional equilibrium as in the lecture. Show that $a(m)=\mathbb{E}[\theta |m]$. Show then that S benefits from commitment in expectation, i.e. if S could commit to always truthfully reveal the state he would in expectation be better off than in equilibrium (where the expectation is taken over the state of the world $\theta $).\footnote{We use here the assumption that the utility is a quadratic loss function. I think the result can be generalized to the case $u^R(a,\theta )=u(a-\theta)$ and $u^S(a,\theta )=u(a-\theta -b)$ if $u$ is a strictly concave function. However, already for strictly quasiconcave $u$ functions the result is no longer true. }
-      % S's exp utility in each partition element $\int -(E[theta|m]-\theta-b)^2 d\Phi(\theta|m) = -var(\theta|m)-b^2+0>-b^2$
-    \item (Extra exercise) A patient can be in one of three health states: A, B, C. State A and B have prior probability 2/5 and C has 1/5. Doctor and patient both receive a private signal about the health state that is either 0 or 1. The following table describes the signal distribution.
-      \begin{table}[h]
-        \centering
-        \begin{tabular}{l|c|c|c}
-          $\sigma$&A&B&C\\ \hline
-          (0,0) & 0 &0&1\\
-          (0,1) & 0&4/5&0\\
-          (1,0)&1/5&1/5&0\\
-          (1,1)&4/5&0&0
-        \end{tabular}
-        \caption{Signal}
-        \label{tab:signcifd}
-      \end{table}
+% \begin{enumerate}
+% \item The state of the world $\theta $ is either 0 or 1. Both, 0 and 1, have probability 1/2. An expert observes the state and then sends a cheap talk message to a decision maker. The available messages are ``high'' (h) and ``low'' (l). (Assume in the following that the messages are used in accordance with their name, i.e. the high message leads to a higher belief of the decision maker.) The decision maker chooses an action $a\in [0,2]$ with the objective of maximizing $-(a-\theta )^2$. The objective of the expert is $-(a-\theta-b)^2$ for some $b\in(0,1)$.
+%   \begin{enumerate}
+%   \item What is a mixed strategy for the expert? % probability of sending high message for each state
+%     \item Intuitively, which state will the expert reveal truthfully? % high state as expert always wants higher action than DM
+%     \item Given a mixed strategy of the expert, what are the decision maker's beliefs when receiving a low/high message? % in state 0, let prob of h be q (while in state 1 it is 1), then $mu(l)=0$ and $\mu(h)=\frac{.5*1}{.5*1+0.5*q}=1/(1+q)$
+%       \item Given a mixed strategy of the expert, what is the best response of the decision maker? % $min \mu * (a-1)^2+(1-\mu)(a)^2$ which gives foc: $a=\mu$ 
+%       \item What is the equilibrium strategy of the expert? %truthtelling is eq if $-b^2\geq-(1-b)^2$, i.e. if $b\leq 1/2$; otherwise indifference of expert in 0 state: $b^2=(1/(1+q)-b)^2$ solved for $q=1/2b-1$ which is eq also for b<1/2; otherwise babbling
+%       \end{enumerate}
+%     \item Take the model from the lecture but assume that the state is distributed not uniformly but with some arbitrary distribution $\Phi$ (with strictly positive density $\phi$) on $[0,1]$. Take a partitional equilibrium as in the lecture. Show that $a(m)=\mathbb{E}[\theta |m]$. Show then that S benefits from commitment in expectation, i.e. if S could commit to always truthfully reveal the state he would in expectation be better off than in equilibrium (where the expectation is taken over the state of the world $\theta $).\footnote{We use here the assumption that the utility is a quadratic loss function. I think the result can be generalized to the case $u^R(a,\theta )=u(a-\theta)$ and $u^S(a,\theta )=u(a-\theta -b)$ if $u$ is a strictly concave function. However, already for strictly quasiconcave $u$ functions the result is no longer true. }
+%       % S's exp utility in each partition element $\int -(E[theta|m]-\theta-b)^2 d\Phi(\theta|m) = -var(\theta|m)-b^2+0>-b^2$
+%     \item (Extra exercise) A patient can be in one of three health states: A, B, C. State A and B have prior probability 2/5 and C has 1/5. Doctor and patient both receive a private signal about the health state that is either 0 or 1. The following table describes the signal distribution.
+%       \begin{table}[h]
+%         \centering
+%         \begin{tabular}{l|c|c|c}
+%           $\sigma$&A&B&C\\ \hline
+%           (0,0) & 0 &0&1\\
+%           (0,1) & 0&4/5&0\\
+%           (1,0)&1/5&1/5&0\\
+%           (1,1)&4/5&0&0
+%         \end{tabular}
+%         \caption{Signal}
+%         \label{tab:signcifd}
+%       \end{table}
 
-The interpretation is that, given health state A, signal $(\sigma^p,\sigma^d)=(1,1)$ occurs with probability 4/5 where $\sigma^p$ is the patient's signal etc.
+% The interpretation is that, given health state A, signal $(\sigma^p,\sigma^d)=(1,1)$ occurs with probability 4/5 where $\sigma^p$ is the patient's signal etc.
 
-There are three treatments: a,b,c. The patient's payoff as function of state and treatment and the costs of each treatment are given in the following table. (There is some interpretation that $a$ is effective but expensive, $c$ is no treatment; A is severe problem, B is slight problem and C is healthy; under- and overtreatment both reduce the patient's payoff.) 
-\begin{table}[h]
-  \centering
-  \begin{tabular}{l|c|c|c|c}
-    &A&B&C&costs\\ \hline
-    a&8&9.7&9.2&5\\
-    b&4&9&9.6&3\\
-    c&0&5&10&1
-  \end{tabular}
-  \caption{Payoffs and costs}
-  \label{tab:payoffcifd}
-   \begin{tabular}{l|c|c|c}
-    &A&B&C\\ \hline
-    a&3&4.7&4.2\\
-    b&1&6&6.6\\
-    c&-1&4&9
-  \end{tabular}
-  \caption{welfare: payoff - costs}
-  \label{tab:welfarecifd}
-\end{table}
+% There are three treatments: a,b,c. The patient's payoff as function of state and treatment and the costs of each treatment are given in the following table. (There is some interpretation that $a$ is effective but expensive, $c$ is no treatment; A is severe problem, B is slight problem and C is healthy; under- and overtreatment both reduce the patient's payoff.) 
+% \begin{table}[h]
+%   \centering
+%   \begin{tabular}{l|c|c|c|c}
+%     &A&B&C&costs\\ \hline
+%     a&8&9.7&9.2&5\\
+%     b&4&9&9.6&3\\
+%     c&0&5&10&1
+%   \end{tabular}
+%   \caption{Payoffs and costs}
+%   \label{tab:payoffcifd}
+%    \begin{tabular}{l|c|c|c}
+%     &A&B&C\\ \hline
+%     a&3&4.7&4.2\\
+%     b&1&6&6.6\\
+%     c&-1&4&9
+%   \end{tabular}
+%   \caption{welfare: payoff - costs}
+%   \label{tab:welfarecifd}
+% \end{table}
 
-The timing of the game is that the patient can send a cheap talk message in $\{0,1\}$ about his signal to the doctor. The doctor then determines the treatment.
+% The timing of the game is that the patient can send a cheap talk message in $\{0,1\}$ about his signal to the doctor. The doctor then determines the treatment.
 
-\begin{enumerate}
-\item Let welfare be patient payoff minus costs. What are the welfare maximizing treatments in each state? What are the treatments maximizing patient payoff (i.e. neglecting the costs)? 
-\item Assume doctor and patient have the objective of maximizing the patient's payoff (and ignore costs because the patient is insured). What is the equilibrium? (If you see that there are more than 1 equilibrium, use the one you find most reasonable for the following questions.)
-\item Assume that the patient's objective is to maximize his payoff while the doctor maximizes welfare. Is there an equilibrium in which the patient truthfully reveals his signal to the doctor? (If not, assume in the following that there is a babbling equilibrium in which the doctor relies only on his own signal.)
-\item Is welfare higher when the doctor maximizes welfare or when the doctor maximizes patient payoff?
-\item Show that costs are higher when the doctor maximizes welfare if the prior is $(1/2-p_c/2,1/2-p_c/2,p_c)$ for $p_c>0$ small enough.
-  \item What implications do these results have for designing the health care system?
-\end{enumerate}
+% \begin{enumerate}
+% \item Let welfare be patient payoff minus costs. What are the welfare maximizing treatments in each state? What are the treatments maximizing patient payoff (i.e. neglecting the costs)? 
+% \item Assume doctor and patient have the objective of maximizing the patient's payoff (and ignore costs because the patient is insured). What is the equilibrium? (If you see that there are more than 1 equilibrium, use the one you find most reasonable for the following questions.)
+% \item Assume that the patient's objective is to maximize his payoff while the doctor maximizes welfare. Is there an equilibrium in which the patient truthfully reveals his signal to the doctor? (If not, assume in the following that there is a babbling equilibrium in which the doctor relies only on his own signal.)
+% \item Is welfare higher when the doctor maximizes welfare or when the doctor maximizes patient payoff?
+% \item Show that costs are higher when the doctor maximizes welfare if the prior is $(1/2-p_c/2,1/2-p_c/2,p_c)$ for $p_c>0$ small enough.
+%   \item What implications do these results have for designing the health care system?
+% \end{enumerate}
 
-This exercise will not be covered in class. For a solution, see \cite{schottmueller2013cifd}, in particular section 3.
+% This exercise will not be covered in class. For a solution, see \cite{schottmueller2013cifd}, in particular section 3.
 
-\end{enumerate}
+% \end{enumerate}
 
 \section{Revelation principle}
 \label{sec:revelation-principle}
@@ -611,19 +618,19 @@ This exercise is based on \cite{kamenica11_bayes_persuas}.
 %\item Let $F$ and $G$ be lotteries, i.e. distributions of possible monetary payoffs. Show that a risk averse expected utility maximizer, i.e. soemone with concave Bernoulli utilits $u(x)$, prefers a lottery $F$ to a lottery $G$ if $G$ is a mean preserving spread of $F$.
 %  \item Let $F$ and $G$ be lotteries, i.e. distributions of possible monetary payoffs. Assume that $F$ does \emph{not} second order stochastically dominate $G$. Show that there exists a concave Bernoulli utility $u(x)$ such that an expected utility maximizer with this utility function would prefer $G$ over $F$.\\ (Hint: find a suitable piecewise linear function $u$.) 
 
-\section{Buyer optimal learning}
-\label{sec:buyer-optim-learn}
+% \section{Buyer optimal learning}
+% \label{sec:buyer-optim-learn}
 
-\begin{enumerate}
-\item Let $F$ be the uniform distribution and consider the binary information partition with a low signal if $v\in(a,a+0.5)$ and a high signal else for $a\in[0,1/4]$ (The illustration in the slides is a special case with a=0.1.) 
+% \begin{enumerate}
+% \item Let $F$ be the uniform distribution and consider the binary information partition with a low signal if $v\in(a,a+0.5)$ and a high signal else for $a\in[0,1/4]$ (The illustration in the slides is a special case with a=0.1.) 
 
-  \begin{enumerate}
-  \item What is the expected valuation conditional on a low/high
-    signal?
-\item What is the profit maximizing price? What is consumer surplus?
-\item Which $a\in[0,0.25]$ maximizes consumer surplus?
-\end{enumerate}
-\end{enumerate}
+%   \begin{enumerate}
+%   \item What is the expected valuation conditional on a low/high
+%     signal?
+% \item What is the profit maximizing price? What is consumer surplus?
+% \item Which $a\in[0,0.25]$ maximizes consumer surplus?
+% \end{enumerate}
+% \end{enumerate}
 
 \bibliographystyle{chicago}
 \bibliography{/home/christoph/stuff/bibliography/references.bib}
