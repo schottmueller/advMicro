@@ -12,8 +12,11 @@
 # - exam date: July 8, 16:00-17:30 in 101/05/524 
 
 * Time and place
-- Monday 16:00-17:30, Seminarraum S24 (106/02/2.03)
-- Wednesday, 10:00-11:30, Seminarraum S14 (106/01/1.03)
+# - Monday 16:00-17:30, Seminarraum S24 (106/02/2.03)
+# - Wednesday, 10:00-11:30, Seminarraum S14 (106/01/1.03)
+- Apr. 6, 4pm, intro meeting
+- Apr. 15, 10am, rationalizability meeting (Q&A and exercises)
+- Apr. 20, 4pm, Nash equilibrium meeting (Q&A and exercises)
 * Material
 - [[https://web.tresorit.com/l#s0D6-zGHGHN7NNCTnw-OtA][link]] to screencasts for lecture material (please watch before Easter)
 
