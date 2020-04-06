@@ -3,7 +3,7 @@
 #+Options: toc:nil
 #+Latex_Header: \usepackage{natbib}
 * News
-- Please watch the [[https://web.tresorit.com/l#s0D6-zGHGHN7NNCTnw-OtA][screencasts]] before April 15. Also work on the exercises for rationalizability until then. 
+- Please watch the [[https://web.tresorit.com/l#s0D6-zGHGHN7NNCTnw-OtA][screencasts]] before April 15. Also work on the exercises for rationalizability until then. See the time schedule below for details.
 - Due to the recent pan(dem)ic, this course has to start as an online course. Details will be sent around via email briefly before the course starts. It would be useful to have a copy of the MasColell/Whinston/Green book by the start of the term. Having an internet connected device (computer, tablet or mobile phone) that can be used for video conferencing (e.g. has microphone, webcam and speakers) will also be necessary.
 # - The second exam attempt will be on October 2, 16:00-17:00 in SSC 3.206. Registration via Klips is open.
 # - On July ?, we use the class for question hour. If you want to have an answer for sure, please send me your questions before July ?. 
@@ -14,11 +14,12 @@
 * Time and place
 # - Monday 16:00-17:30, Seminarraum S24 (106/02/2.03)
 # - Wednesday, 10:00-11:30, Seminarraum S14 (106/01/1.03)
+meetings are conducted via zoom
 - Apr. 6, 4pm, intro meeting
 - Apr. 15, 10am, rationalizability meeting (Q&A and exercises)
 - Apr. 20, 4pm, Nash equilibrium meeting (Q&A and exercises)
 * Material
-- [[https://web.tresorit.com/l#s0D6-zGHGHN7NNCTnw-OtA][link]] to screencasts for lecture material (please watch before Easter)
+- [[https://web.tresorit.com/l#s0D6-zGHGHN7NNCTnw-OtA][link]] to screencasts for lecture material
 
 - [[https://github.com/schottmueller/advMicro/files/3255945/exam.pdf][old exam]] 
 - Exercises: [[./exercises.tex][tex]] [[https://github.com/schottmueller/advMicro/files/2133302/exercises.pdf][pdf]], [[https://web.tresorit.com/l#q1HQe8-nJBZSRORWTxSfbg][solutions]] for exercises not covered in class
