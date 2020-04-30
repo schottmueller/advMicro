@@ -14,11 +14,7 @@
 * Time and place
 # - Monday 16:00-17:30, Seminarraum S24 (106/02/2.03)
 # - Wednesday, 10:00-11:30, Seminarraum S14 (106/01/1.03)
-meetings are conducted via zoom; wir verwenden immer denselbe zoom Raum, der in der ersten Einladung angegeben war
-- Apr. 6, 4pm, intro meeting
-- Apr. 15, 10am, rationalizability meeting (Q&A and exercises)
-- Apr. 20, 4pm, Nash equilibrium meeting (Q&A and exercises)
-- Apr. 29, 10am, Bayesian Nash equilibrium (Q&A and exercises)
+Meetings are conducted via zoom using the same zoom room as in the invitation for the first week. Unless stated otherwise, meetings are on Wednesday 10:00-11:30am.
 * Material
 - [[https://web.tresorit.com/l#s0D6-zGHGHN7NNCTnw-OtA][link]] to screencasts for lecture material
 
