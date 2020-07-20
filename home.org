@@ -3,7 +3,7 @@
 #+Options: toc:nil
 #+Latex_Header: \usepackage{natbib}
 * News
-- You will be able to download the exam here on July 20, 4pm. Please, send your solution as an Email attachment (pdf, jpg, png) to c.schottmueller at uni-koeln dot de by 5:30pm..
+- The EXAM is [[https://github.com/schottmueller/advMicro/files/4948118/exam2020.pdf][online]]. Please, send your solution as an Email attachment (pdf, jpg, png) to c.schottmueller at uni-koeln dot de by 5:30pm.
 - There was some technical issue with the screencast upload. As a result the [[https://web.tresorit.com/l/5sWSJ#n7VsMyNRyBLszIHnUrQzXA][link]] has changed.
 - The exam is on Mo, July 20 between 16:00 and 17:30. Please, register via KLIPS. 
 - Please watch the [[https://web.tresorit.com/l/5sWSJ#n7VsMyNRyBLszIHnUrQzXA][screencasts]] before April 15. Also work on the exercises for rationalizability until then. See the time schedule below for details.
