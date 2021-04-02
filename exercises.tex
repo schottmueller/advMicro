@@ -141,7 +141,7 @@ D  \> 4,4$+\theta _2$    \>1,5
 %   \end{enumerate}
 \item A buyer's valuation is uniformly distributed on $[0,1]$ and the buyer's private information. A seller's cost is also uniformly distributed on $[0,1]$ and the seller's private information. The buyer states an ask price $b_b$ and the seller simultaneously states an offer price $b_s$. If $b_s<b_b$, trade takes place at price $(b_s+b_b)/2$ while otherwise trade does not take place.
   \begin{enumerate}
-  \item Explain/show why $b_s(c)=c$ and $b_b(v)=v$ is not an equilibrium although it would maximize welfare. 
+  \item Explain/show why $b_s(c)=c$ and $b_b(v)=v$ is not an equilibrium although it would maximize gains from trade. 
   \item Show that the following is an equilibrium for any given $p\in[0,1]$:
     \begin{equation*}
       b_b(v)=
@@ -156,6 +156,7 @@ D  \> 4,4$+\theta _2$    \>1,5
         1 & \text{ else }.
       \end{cases}
     \end{equation*}
+    (For more on such equilibria, see \cite{leininger1989equilibria}. )
     \item Suppose that players use linear strategies $b_b(v)=\alpha+\beta v$ and $b_s(c)=\gamma+\delta c$ with $\beta,\delta>0$. Taking the strategy of the other player derive the best response of a seller/buyer with valuation $v$ / cost $c$. For which values of $\alpha,\beta,\gamma,\delta$ form the linear strategies an equilibrium?
     \end{enumerate}
   \item Two players participate in a contest: Each player chooses an effort level $e_i$. Effort is costly and reduces player $i$'s payoff by  $\theta _ie_i$. The player who choose the highest effort wins a prize of value 1. That is, the winner has payoff $1-\theta _i e_i$ while the loser has payoff $-\theta _i e_i$. The $\theta _i$ are private information and each player views the other player's type as being uniformly distributed on $[0.1,1.1]$. \\
@@ -508,7 +509,7 @@ $$
     scheme not optimal for the monopolist?
 \end{enumerate}
 % $q(\theta)=4\theta$, $U(\theta)=2\theta^{2}$, $t(\theta)=8\theta-2\theta^{2}$, $p(q)=2q-q^{2}/8$
-\item Regulation of a natural monopoly: A natural monopolist has costs $\theta q^2$ when producing quantity $q$. His type $\theta $ is private information and from the regulator's point of view uniformly distributed on $[0,1]$. Consumers value $q$ units of the good according to $S(q)=q$. The regulator offers the natural monopolist a menu of transfer payments and quantities from which the monopolist can choose an option. The regulator maximizes expected consumer surplus, $S(q)$, minus the payments made to the monopolists. The monopolist maximizes profits, i.e. $t-\theta  q^2$ when receiving transfer $t$ and producing quantity $q$, and has always the outside option of not producing which yields a profit of zero.
+\item Regulation of a natural monopoly (a whole book on incentive regulation as in this exercise is \cite{laffont1993theory}): A natural monopolist has costs $\theta q^2$ when producing quantity $q$. His type $\theta $ is private information and from the regulator's point of view uniformly distributed on $[0,1]$. Consumers value $q$ units of the good according to $S(q)=q$. The regulator offers the natural monopolist a menu of transfer payments and quantities from which the monopolist can choose an option. The regulator maximizes expected consumer surplus, $S(q)$, minus the payments made to the monopolists. The monopolist maximizes profits, i.e. $t-\theta  q^2$ when receiving transfer $t$ and producing quantity $q$, and has always the outside option of not producing which yields a profit of zero.
   \begin{enumerate}
   \item Argue that one can concentrate on direct revelation mechanisms $(q(\theta ),t(\theta ))$.
   \item Show that a mechanism is incentive compatible if and only if $U'(\theta )=-q(\theta )^2$ and $q$ is decreasing where $U(\theta )=t(\theta )-\theta q(\theta )^2$.
