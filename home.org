@@ -18,7 +18,7 @@
 * Time and place
 # - Monday 16:00-17:30, Seminarraum S24 (106/02/2.03)
 # - Wednesday, 10:00-11:30, Seminarraum S14 (106/01/1.03)
-Meetings are conducted via zoom using the room 931 9084 5774. Unless stated otherwise, meetings are on Thursday 14:00-15:30. Before the meeting you should have watched the screencasts on the topic of the week and tried to solve the exercises on this topic on your own. In the meeting, you have the opportunity to ask questions on the screencasts and we will also go through the exercises (quickly).
+Meetings are conducted via zoom using the room 931 9084 5774 the pw is 997194. Unless stated otherwise, meetings are on Thursday 14:00-15:30. Before the meeting you should have watched the screencasts on the topic of the week and tried to solve the exercises on this topic on your own. In the meeting, you have the opportunity to ask questions on the screencasts and we will also go through the exercises (quickly).
 * Material
 - [[https://web.tresorit.com/l/5sWSJ#n7VsMyNRyBLszIHnUrQzXA][link]] to screencasts for lecture material
 
