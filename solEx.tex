@@ -23,6 +23,21 @@
 \begin{document}
 \maketitle
 
+\section{Nash theorem}
+\label{sec:nash-theorem}
+
+\paragraph{Continuity of the best response in exercise 1:} We saw that continuity of $u_i$ and the compactness of the strategy set imply existence of a best response and that strict quasiconcavity implies uniqueness of the best response. Let me show a bit more formally that the best response function is continuous. This is a proof by contradiction. Therefore, suppose that the best response function $s_i^*$ is discontinuous at some $s_{-i}$. This implies that there is a sequence of $\{s_{-i}^k\}_{k=1}^\infty$ converging to $s_{-i}$ such that $|s_{i}^*(s_{-i}^k)-s_i^*(s_{-i})|>\varepsilon $ for some $\varepsilon >0$ and all $k=1,2,\dots$. As the sequence $\{s_i^*(s_{-i}^k)\}_{k=1}^{\infty}$ has all its elements in the compact set $[0,1]$, it has a converging subsequence. Denote this subsequence by $\{ b^k\}_{k=1}^\infty$ and the corresponding sequence of $s_{-i}^k$ to which the $b^k$ are best responses by $\{a^k\}_{k=1}^\infty$ (this is a subsequence of  $\{s_{-i}^k\}_{k=1}^\infty$) . Let $b=\lim_{k\rightarrow\infty}b^k$ and let us, for simplicity, first assume that $b$ is interior, i.e. $b\in(0,1)$. Then $b^k$ are interior for sufficiently high $k$ and for these the first order condition
+$$\frac{\partial u_i}{\partial s_i }(b^k,a^k)=0$$
+has to be satisfied. Hence,
+$$\lim_{k\rightarrow\infty}\frac{\partial u_i}{\partial s_i }(b^k,a^k)=0$$
+(as the limit of a sequence of zeros is simply zero).
+By the continuity of $\partial u_i/\partial s_i$ in both of its arguments
+$$\lim_{k\rightarrow\infty}\frac{\partial u_i}{\partial s_i }(b^k,a^k)=\frac{\partial u_i}{\partial s_i }(\lim_{k\rightarrow\infty}b^k,\lim_{k\rightarrow\infty}a^k)$$
+and therefore
+$$\frac{\partial u_i}{\partial s_i }(\lim_{k\rightarrow\infty}b^k,\lim_{k\rightarrow\infty}a^k)=0.$$
+This implies that $b=\lim_{k\rightarrow\infty}b^k$ is the best response to $\lim_{k\rightarrow\infty}a^k=s_{-i}$. But this contradicts that all $b^k$ (and therefore also their limit) are at least $\varepsilon>0 $ away from $s_i^*(s_{-i})$ (recall that our assumptions implied that the best response is unique!).\footnote{The case where $b$ is not interior works similarly: Still the first order condition (now possibly in inequality form) has to hold for every $k$ and therefore also in the limit. Continuity of $\partial u_i/\partial s_i$ allows to take the limits inside the first order condition and gives the result that the limit $b^k$ is the best response to the limit $a^k$.}
+
+
 \section{Auctions}
 \label{sec:auctions}
 
