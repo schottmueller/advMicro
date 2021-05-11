@@ -5,8 +5,7 @@
 * News
 
 # - The second exam date is October 28 and this exam will also be a remote exam. Please register via KLIPS if you want to participate. You will be able to download the exam here on October 28, 10am. Please, send your solution as an Email attachment (pdf, jpg or png) to c.schottmueller at uni-koeln dot de by 11:30am.
-# - There was some technical issue with the screencast upload. As a result the [[https://web.tresorit.com/l/5sWSJ#n7VsMyNRyBLszIHnUrQzXA][link]] has changed.
-# - The exam is on Mo, July 20 between 16:00 and 17:30. Please, register via KLIPS
+- The exam is on Thursday, July 29 between 14:00 and 15:00. Please, register via KLIPS (if you are a PhD student, register by writing me an email).
 - I added a formal proof of the continuity of the best response in exercise 1 (Nash theorem) to the  "[[https://web.tresorit.com/l#q1HQe8-nJBZSRORWTxSfbg][solutions]] for some exercises not covered in class".
 - Please watch the first three [[https://web.tresorit.com/l/5sWSJ#n7VsMyNRyBLszIHnUrQzXA][screencasts]] before April 15. Also work on the exercises for rationalizability until then. See the time schedule below for details.
 - The meeting room for Thursdays is 931 9084 5774 (sorry for putting the wrong room number here first...) the PW is 997194. The Tuesday lecture is substituted by the  [[https://web.tresorit.com/l/5sWSJ#n7VsMyNRyBLszIHnUrQzXA][screencasts]].
