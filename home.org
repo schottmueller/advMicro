@@ -5,6 +5,8 @@
 * News
 
 # - The second exam date is October 28 and this exam will also be a remote exam. Please register via KLIPS if you want to participate. You will be able to download the exam here on October 28, 10am. Please, send your solution as an Email attachment (pdf, jpg or png) to c.schottmueller at uni-koeln dot de by 11:30am.
+- I updated the lecture notes to explain why there is a unique symmetric equilibrium in the sealed bid first price auction.
+- Due to a public holiday, there is no exercise session on May 13. We will meet again on May 20 and discuss the screencasts and exercise on subgame perfect Nash equilibrium as well as the remaining exercises from last time. 
 - The exam is on Thursday, July 29 between 14:00 and 15:00. Please, register via KLIPS (if you are a PhD student, register by writing me an email).
 - I added a formal proof of the continuity of the best response in exercise 1 (Nash theorem) to the  "[[https://web.tresorit.com/l#q1HQe8-nJBZSRORWTxSfbg][solutions]] for some exercises not covered in class".
 - Please watch the first three [[https://web.tresorit.com/l/5sWSJ#n7VsMyNRyBLszIHnUrQzXA][screencasts]] before April 15. Also work on the exercises for rationalizability until then. See the time schedule below for details.
