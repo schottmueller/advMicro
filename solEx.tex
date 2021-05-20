@@ -86,12 +86,12 @@ The inverse $t$ is then
 \begin{equation*}
 t(s)=e^{log(1.1)-s}.
 \end{equation*}
-(To verify that this is indeed an equilibrium we should check that also the second order condition is satisfied in the maximization problem above with this function $t$. Indeed the second derivative equals $-e^{log(1.1)-s}-1<0$.)
+(To verify that this is indeed an equilibrium we should check that also the second order condition is satisfied in the maximization problem above with this function $t$. Indeed the second derivative equals $-e^{log(1.1)-s}<0$.)
 
 \section{SPNE}
 \label{sec:spne}
 
-Take one of the subgames of $\Gamma_E$ starting after $T-1$ repetitions, i.e. a subgame consisting of the last repetition after some history . Note that this is indeed a subgame as each player is informed about all moves of all other players in previous rounds. Therefore, we do not cut through information sets. This subgame is equivalent to $\Gamma$ with the exception that each player's payoff is increased by some constant equal to the payoff from previous rounds. As this increase is constant, i.e. it does not depend on the choice of strategies in the subgame, it does not affect best responses or equilibrium. Therefore, the unique equilibrium in the subgame is $\sigma$ (as $\sigma$ is the unique equilibrium in $\Gamma$ by assumption). This establishes that in the last repetition $\sigma$ is played in every SPNE of $\Gamma_E$ (regardless of play in repetitions $1,\dots,T-1$.
+Take one of the subgames of $\Gamma_E$ starting after $T-1$ repetitions, i.e. a subgame consisting of the last repetition after some history . Note that this is indeed a subgame as each player is informed about all moves of all other players in previous rounds. Therefore, we do not cut through information sets. This subgame is equivalent to $\Gamma$ with the exception that each player's payoff is increased by some constant equal to the payoff from previous rounds. As this increase is constant, i.e. it does not depend on the choice of strategies in the subgame, it does not affect best responses or equilibrium. Therefore, the unique equilibrium in the subgame is $\sigma$ (as $\sigma$ is the unique equilibrium in $\Gamma$ by assumption). This establishes that in the last repetition $\sigma$ is played in every SPNE of $\Gamma_E$ (regardless of play in repetitions $1,\dots,T-1$).
 
 The proof works through backwards induction. The statement we have to show is the following: \emph{If $\sigma$ is played in all SPNE of $\Gamma_E$ in repetitions $t=t'+1,\dots,T$, then $\sigma$ is also played in all SPNE in repetition $t'$.} To show this, suppose  $\sigma$ is played in all SPNE of $\Gamma_E$ in repetitions $t=t'+1,\dots,T$ and take some subgame in repetition $t'$. Payoffs of player $i$ in SPNE as a function of his decision and the decision of the other players in $t'$ equals
 \begin{equation*}
