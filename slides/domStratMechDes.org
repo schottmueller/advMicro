@@ -106,7 +106,7 @@ $$ f(\theta)\in\{x\in X:\, u_i(x,\theta_i)\geq u_{i}(y,\theta_{i})\;\text{ for a
     :BEAMER_env: theorem
     :END:
 Suppose $X$ is finite and contains at least three elements. Suppose further that all preferences on $X$ are possible for all agents $i$.\\ 
-A social choice function $f$ is then truthfully implementable in dominant stategies if and only if it is dictatorial.
+A social choice function $f$ that maps onto $X$ is then truthfully implementable in dominant stategies if and only if it is dictatorial.
 *** Proof							    :B_proof:
     :PROPERTIES:
     :BEAMER_env: proof

@@ -31,6 +31,7 @@
   - agents might not want to participate
 - can we overcome these problems when turning to Bayesian Nash equilibrium implementation?
 
+
 ** Introduction
 - we analyze this question in a trade setting 
 - 1 buyer with value $v$ which is uniformly distributed on $[0,1]$ 

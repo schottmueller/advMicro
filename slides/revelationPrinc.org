@@ -24,7 +24,7 @@
 * The Mechanism Design Problem
 ** What is Mechanism Design?
 - people ("agents") have private information
-- which game do you have to let agents play to get the outcome that you want?
+- which game do you have to let agents play to get the outcome you want?
 
 
 ** The Mechanism Design Problem: Example
@@ -35,7 +35,7 @@
  - $I$ residents of an island decide whether to build a bridge to the main land which costs $c$
   - each resident knows how much he values the bridge himself but does not know the others' valuation
   - resident $i$ has valuation $\theta_{i}$ and wealth $m_{i}$
-  - if resident $i$ has to pay $t_{i}$ his utility is $m_{i}+\theta_{i}-t_{i}$
+  - if resident $i$ has to pay $t_{i}$ his utility is $m_{i}+\theta_{i}-t_{i}$ when the bridge is built ($m_i-t_i$ otherwise)
 - When is it efficient to build a bridge?
 - How should the decision and payments be organized if we want to achieve efficiency?
 
@@ -157,7 +157,7 @@ A mechanism $\Gamma$ is called a \emph{direct revelation mechanism} if $S_{i}=\T
 check in the previous example: the egalitarian contribution mechanism is a direct mechanism for $f$
 
 ** The Mechanism Design Problem: "truthful implementation/incentive compatibility"
-- a social choice function is *incentive compatible* if truthfully revealing one's type is (Bayesian Nash) equilibrium in the direct revelation mechanism 
+- a social choice function is *incentive compatible* if truthfully revealing one's type is a (Bayesian Nash) equilibrium in the direct revelation mechanism 
 
 *** truthfully implementable				       :B_definition:
     :PROPERTIES:

@@ -9,6 +9,7 @@
 \usepackage{sgame}
 \usepackage[onehalfspacing]{setspace}
 \usepackage{graphicx}
+\usepackage{tikz}
 
 \newtheorem{definition}{Definition}
 \newtheorem{lemma}{Lemma}
@@ -111,5 +112,65 @@ $B$ & -10,-10 & -10,-10 & -11,-11
 
 
 Let player 1 (2) choose the following strategy in $\Gamma_E$: Play $T$ ($L$) in period 1. If the other player chose $L$ ($T$) in period 1, then play $M$ ($C$) in period 2. Otherwise, play $B$ ($R$) in period 2. It is easily checked that this is a NE of $\Gamma_E$ but not a SPNE.
+
+\section{Screening}
+\label{sec:screening}
+
+Exercise 3: Denote the costs of producing quantity $q$ by type $\theta $ as $c(q,\theta )$. Hence, $U(\theta )=t(\theta )-c(q(\theta ),\theta )$ and the envelope theorem states that in every incentive compatible mechanism $U'(\theta )=-c_\theta (q(\theta ),\theta )$ for almost all types.\footnote{ More precisely, incentive compatibility requires
+  \begin{eqnarray*}
+    U(\theta )&\geq& U(\theta ')+c(q(\theta '),\theta ')-c(q(\theta '),\theta )\\
+    U(\theta' )&\geq& U(\theta )+c(q(\theta ),\theta )-c(q(\theta ),\theta' )
+  \end{eqnarray*}
+  which can (let $\theta >\theta '$) be rearranged to
+  \begin{equation*}
+    \frac{-(c(q(\theta ),\theta )-c(q(\theta ),\theta'))}{\theta -\theta'} \geq \frac{U(\theta )-U(\theta')}{\theta -\theta '}\geq \frac{-(c(q(\theta '),\theta )-c(q(\theta '),\theta '))}{\theta -\theta'}.
+  \end{equation*}
+   Take the limit as $\theta '\rightarrow\theta $ to get $U'(\theta )=-c_\theta (q(\theta ),\theta )$ at types where $q$ is continuous. Note that the two outer inequalities chained together can be written as $\int_{\theta '}^\theta  c_\theta (q(\theta '),x)-c(q(\theta ),x)\,dx\geq 0$ or equivalently $\int_{\theta '}^\theta \int_{q(\theta ')}^{q(\theta )}-c_{q\theta }(y,x)\,dy\,dx\geq 0$. If $c_{q\theta }(q(\theta ),\theta )<0$ (and $q$ is continuous at $\theta $), this implies that $q$ has to be increasing in a neighborhood around $\theta $ as otherwise the inequality could not hold for $\theta '$ close to $\theta $.
+}
+  Put differently,
+\begin{equation*}
+  U(\theta )=U(1/4)+\int_{1/4}^\theta -c_\theta (q(x),x)\,dx.
+\end{equation*}
+Incentive compatibility between $\theta =1/2$ and $\theta =1/4$ requires that 
+\begin{equation*}
+  U(1/2)\geq U(1/4)+c(q(1/4),1/4)-c(q(1/4),1/2)
+\end{equation*}
+which -- using the envelope theorem above with $\theta =1/2$ -- can be rewritten as 
+\begin{equation*}
+  \int_{1/4}^{1/2} -c_\theta (q(x),x)\,dx\geq c(q(1/4),1/4)-c(q(1/4),1/2)
+\end{equation*}
+which is equivalent to 
+\begin{equation*}
+  \int_{1/4}^{1/2} -c_\theta (q(x),x)\,dx\geq -\int_{1/4}^{1/2} c_\theta (q(1/4),x)\; dx
+\end{equation*}
+or 
+\begin{equation*}
+  \int_{1/4}^{1/2} c_\theta (q(1/4),x)-c_\theta (q(x),x)\,dx\geq 0
+\end{equation*}
+which is equivalent to
+\begin{equation}
+  \label{eq:6}
+  \int_{1/4}^{1/2}\int_{q(1/4)}^{q(x)} -c_{q\theta} (y,x)\,dy\,dx\geq 0.
+\end{equation}
+For the cost function $c(q,\theta )=\theta  q-q^2/(2\theta )-\theta /5+constant$, the cross derivative is $c_{q\theta }(q,\theta )=1-q/\theta ^2$. If we use $q(\theta )=\theta ^2+\varepsilon $ (for some small $\varepsilon >0$) it is clear that the integrand in (\ref{eq:6}) is mostly negative and therefore the inequality (\ref{eq:6}) cannot be satisfied. (Note, however, that the monotonicity condition derived in the previous footnote, i.e. $q$ has to be increasing if $c_{q\theta }(q(\theta ),\theta )<0$ is satisfied.)
+
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}[scale=8]
+    \draw[thick,<->] (0,0.4)--(0,0)--(0.6,0);
+    \draw[blue, thick, domain=0:0.6] plot (\x, {\x*\x});
+    \draw[red, thick, domain=0.25:0.5] plot (\x, {\x*\x+0.02});
+    \node[right] at (0.6,0.36){$\theta^2$};
+    \node[right] at (0.6,0){$\theta$};
+    \node[left] at (0,0.36){$q$};
+    \node[below] at (0.25,0){$1/4$};
+    \node[below] at (0.5,0){$1/2$};
+    \draw[dashed] (0.25,1/16+0.02)--(0.5,1/16+0.02)--(0.5,0.27);
+  \end{tikzpicture}
+  \caption{Illustration screening exercise 3: above (below) $\theta ^2$ we have $c_{q\theta }<(>)0$. The double integral in (\ref{eq:6}) integrates over the triangular area given by the dashed lines and the red curve which depicts $q(\theta )=\theta ^2+\varepsilon $.}
+  \label{fig:nosc}
+\end{figure}
+\par
+This illustrates that the combination of envelope theorem and a monotonicity condition is only equivalent to incentive compatibility if the so called ``single crossing condition'' is satisfied, i.e. only if $c_{q\theta }$ has the same sign for all $(q,\theta )$ pairs. 
 
 \end{document}

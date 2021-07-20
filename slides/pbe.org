@@ -160,7 +160,7 @@ for all $\tilde\sigma_i$ differing from $\sigma_i$ only at $H$.
 
 ** Weak perfect Bayesian Nash equilibrium
 - beliefs should be consistent with the strategies used
-   - $prob(x|H,\sigma)=\frac{prob(x|\sigma)}{\sum_{x'\in H}prob(x'|\sigma)}$ if $\sum_{x'\in H}prob(x'|\sigma)>0$
+   - $prob(x|H,\sigma)=\frac{prob(x|\sigma)}{\sum_{x'\in H}prob(x'|\sigma)}$ if $\sum_{x'\in H}prob(x'|\sigma)>0$ and $x\in H$
    - arbitrary $\mu_H$ if $\sum_{x'\in H}prob(x'|\sigma)=0$
 
 *** Weak perfect Bayesian Nash equilibrium (weak PBE)
@@ -176,12 +176,12 @@ A profile of strategies $\sigma$ together with a system of beliefs $\mu$ is a we
 - weak PBE in previous example?
 
 ** Why "weak" PBE is (sometimes too) weak: unreasonable beliefs
-   \includegraphics[width=8.25cm]{PBEunreasonableBelief}
+   \hspace*{1cm}\includegraphics[width=8.25cm]{PBEunreasonableBelief}  \linebreak \tiny{Source: MasColell, Whinston, Green; "Microeconomic Theory", Oxford University Press (1995); Fig. 9.C.4}
 
-- why is P2's belief inconsistent?
+- \normalsize{why is P2's belief inconsistent?}
 # P2's info set reached if P1 plays y but as P1 doe snot know nature's move this has to be equally probable after each of nature's moves -> reasonable belief is 1/2,1/2
 \pause
-- (add requirement: some strategy profile leading to off path beliefs has to exist; "structural consistency")
+- \normalsize{(add requirement: some strategy profile leading to off path beliefs has to exist; "structural consistency")}
 
 ** Why "weak" PBE is (sometimes too) weak: not subgame perfect
  \begin{figure}[h]
@@ -287,9 +287,8 @@ A sequential equilibrium exists in every finite game.
 If $(\sigma,\mu)$ is a sequential equilibrium, then $\sigma$ is a SPNE and $(\sigma,\mu)$ is also a weak PBE.
 
 ** Sequential equilibrium forces agreement off path 
-\includegraphics[width=10cm]{fig_ft_85}
-
-- $(\sigma,\mu)$ given is not sequential equilibrium as P2 and P3 have different beliefs about P1's deviation if P1 deviates from A
+\includegraphics[width=9.5cm]{fig_ft_85} \linebreak \tiny{Source: Fudenberg,Tirole; "Game Theory", MIT Press (1991), Fig. 8.5}
+- \normalsize{$(\sigma,\mu)$ given is not sequential equilibrium as P2 and P3 have different beliefs about P1's deviation if P1 deviates from A}
 
 * Examples
 ** Example: Repeated offers I
