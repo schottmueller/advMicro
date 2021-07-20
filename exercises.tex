@@ -475,7 +475,7 @@ D  \> 4,4$+\theta _2$    \>1,5
 \label{sec:myers-satt}
 
 \begin{enumerate}
-\item Take the setting form the slides. Show that the following social choice function is not incentive compatible
+\item Take the setting from the slides. Show that the following social choice function is not incentive compatible
   $$f(v,c)=
   \begin{cases}
     (1,\frac{v+c}{2})&\text{ if }v\geq c\\
@@ -512,12 +512,12 @@ $$
 \item Regulation of a natural monopoly (a whole book on incentive regulation as in this exercise is \cite{laffont1993theory}): A natural monopolist has costs $\theta q^2$ when producing quantity $q$. His type $\theta $ is private information and from the regulator's point of view uniformly distributed on $[0,1]$. Consumers value $q$ units of the good according to $S(q)=q$. The regulator offers the natural monopolist a menu of transfer payments and quantities from which the monopolist can choose an option. The regulator maximizes expected consumer surplus, $S(q)$, minus the payments made to the monopolists. The monopolist maximizes profits, i.e. $t-\theta  q^2$ when receiving transfer $t$ and producing quantity $q$, and has always the outside option of not producing which yields a profit of zero.
   \begin{enumerate}
   \item Argue that one can concentrate on direct revelation mechanisms $(q(\theta ),t(\theta ))$.
-  \item Show that a mechanism is incentive compatible if and only if $U'(\theta )=-q(\theta )^2$ and $q$ is decreasing where $U(\theta )=t(\theta )-\theta q(\theta )^2$.
+  \item Show that a mechanism is incentive compatible if and only if (i) $U'(\theta )=-q(\theta )^2$ for almost all types and (ii) $q$ is decreasing (where $U(\theta )=t(\theta )-\theta q(\theta )^2$).
   \item Show that the regulator's maximization problem can be written as $$\max_{q(\cdot)}\int_0^1 q(\theta )-\theta q(\theta )^2-\theta q(\theta )^2\,d\theta. $$
   \item Derive the regulator's optimal mechanism.
     \item How does the optimal $q(\theta )$ differ from $q^{fb}(\theta )$, i.e. the one maximizing $S(q(\theta ))-\theta q(\theta )^2$? 
     \end{enumerate}
-  \item Extra exercise (probably not covered in class; based on the example in section 6 of \cite{schottmueller2015jet}): In the regulation setting of the previous exercise assume that the cost function of the monopolist is $\theta q+q^2/(2\theta)-\theta /10$. Show that the envelope condition, $U'(\theta )=-q(\theta )+q(\theta )^2/(2\theta ^2)+1/10$, together with the monotonicity condition are no longer sufficient for incentive compatibility. (Hint: show that for $q(\theta )=\theta ^2+\theta ^3/5$, $\theta _1=1/2$ wants to misrepresent as type $\theta _2=1/4$ when transfers are calculated using the envelope condition.)\\
+  \item Extra exercise (probably not covered in class; based on the example in section 6 of \cite{schottmueller2015jet}): In the regulation setting of the previous exercise assume that the cost function of the monopolist is $\theta q+q^2/(2\theta)-\theta /5+constant$ and let types be distributed on $[1/4,1/2]$. Show that the envelope condition, $U'(\theta )=-q(\theta )+q(\theta )^2/(2\theta ^2)+1/5$, together with a monotonicity condition are no longer sufficient for incentive compatibility. (Hint: show that for $q(\theta )=\theta ^2+\varepsilon $, $\theta _1=1/2$ wants to misrepresent as type $\theta _2=1/4$ when transfers are calculated using the envelope condition.)\\
     (on possible interpretations of the cost function: the private information of the firm is not -- as in other examples -- how (marginally) efficient a firm is but could be which technology it uses where different technologies are most efficient depending on the quantity, i.e. which type has the lowest (marginal) cost depends on the quantity level.)
 \end{enumerate}
 
