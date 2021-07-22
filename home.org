@@ -3,6 +3,7 @@
 #+Options: toc:nil
 #+Latex_Header: \usepackage{natbib}
 * News
+- A link to the exam will be published here on July 29, 14:00. Solutions should be sent via email (either with a -- preferably not too large -- attachment or as a link to a public file in your Dropbox/Tresorit etc.) to [c dot schottmueller at uni minus koeln dot de]. Your email must be received by 15:30. Please, keep in mind that email delivery can sometimes take 2 or 3 minutes.
 - The solutions sketches to exercises not covered in class now also contain notes on the screening exercise 3.
 # - The second exam date is October 28 and this exam will also be a remote exam. Please register via KLIPS if you want to participate. You will be able to download the exam here on October 28, 10am. Please, send your solution as an Email attachment (pdf, jpg or png) to c.schottmueller at uni-koeln dot de by 11:30am.
 - I updated the lecture notes to explain why there is a unique symmetric equilibrium in the sealed bid first price auction.
