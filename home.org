@@ -3,16 +3,7 @@
 #+Options: toc:nil
 #+Latex_Header: \usepackage{natbib}
 * News
-- The second exam is planned for September 30, 14:00. Registration via KLIPS is open now. PhD students should register via mail to [c dot schottmueller at uni minus koeln dot de].
-# - you can find the exam [[https://github.com/schottmueller/advMicro/files/6900290/exam21aEx.pdf][here]]  
-- A link to the exam will be published here on July 29, 14:00. Solutions should be sent via email (either with a -- preferably not too large -- attachment or as a link to a public file in your Dropbox/Sciebo/Tresorit etc.) to [c dot schottmueller at uni minus koeln dot de]. Your email must be received by 15:30. Please, keep in mind that email delivery can sometimes take 2 or 3 minutes.
-- The solutions sketches to exercises not covered in class now also contain notes on the screening exercise 3.
-- I updated the lecture notes to explain why there is a unique symmetric equilibrium in the sealed bid first price auction.
-- Due to a public holiday, there is no exercise session on May 13. We will meet again on May 20 and discuss the screencasts and exercise on subgame perfect Nash equilibrium as well as the remaining exercises from last time. 
-- The exam is on Thursday, July 29 between 14:00 and 15:00. Please, register via KLIPS (if you are a PhD student, register by writing me an email).
-- I added a formal proof of the continuity of the best response in exercise 1 (Nash theorem) to the  "[[https://web.tresorit.com/l#q1HQe8-nJBZSRORWTxSfbg][solutions]] for some exercises not covered in class".
-- Please watch the first three [[https://web.tresorit.com/l/5sWSJ#n7VsMyNRyBLszIHnUrQzXA][screencasts]] before April 15. Also work on the exercises for rationalizability until then. See the time schedule below for details.
-- The meeting room for Thursdays is 931 9084 5774 (sorry for putting the wrong room number here first...) the PW is 997194. The Tuesday lecture is substituted by the  [[https://web.tresorit.com/l/5sWSJ#n7VsMyNRyBLszIHnUrQzXA][screencasts]].
+# - The second exam is planned for September 30, 14:00. Registration via KLIPS is open now. PhD students should register via mail to [c dot schottmueller at uni minus koeln dot de].
 # - The second exam attempt will be on October 2, 16:00-17:00 in SSC 3.206. Registration via Klips is open.
 # - On July ?, we use the class for question hour. If you want to have an answer for sure, please send me your questions before July ?. 
 # - Updated slides (lecture June 27): added an explanation at the end of the slides why ex ante budget balance is sufficient for ex post budget balance; changed almost efficient mechanism for many seller/buyer setting such that it is dominant strategy incentive compatible for finite $m$ and $n$
@@ -20,11 +11,11 @@
 # - exam date: July 8, 16:00-17:30 in 101/05/524 
 
 * Time and place
-# - Monday 16:00-17:30, Seminarraum S24 (106/02/2.03)
-# - Wednesday, 10:00-11:30, Seminarraum S14 (106/01/1.03)
-Meetings are conducted via zoom using the room 931 9084 5774 the pw is 997194. Unless stated otherwise, meetings are on Thursday 14:00-15:30. Before the meeting you should have watched the screencasts on the topic of the week and tried to solve the exercises on this topic on your own. In the meeting, you have the opportunity to ask questions on the screencasts and we will also go through the exercises (quickly).
+ - Tuesday, 10:00-11:30, Seminarraum S37 (102/U1/-1.314)
+ - Thursday, 14:00-15:30, Seminarraum S263 (118/03/3.06)
+
 * Material
-- [[https://web.tresorit.com/l/5sWSJ#n7VsMyNRyBLszIHnUrQzXA][link]] to screencasts for lecture material
+# - [[https://web.tresorit.com/l/5sWSJ#n7VsMyNRyBLszIHnUrQzXA][link]] to screencasts for lecture material
 
 - [[https://github.com/schottmueller/advMicro/files/3255945/exam.pdf][old exam]] 
 - Exercises: [[./exercises.tex][tex]] [[https://github.com/schottmueller/advMicro/files/6849499/exercises.pdf][pdf]], [[https://web.tresorit.com/l#q1HQe8-nJBZSRORWTxSfbg][solutions]] for some exercises not covered in class
@@ -52,6 +43,7 @@ Meetings are conducted via zoom using the room 931 9084 5774 the pw is 997194. U
   - [[https://github.com/schottmueller/advMicro/files/1954228/math.pdf][math handout]]
   - [[https://web.tresorit.com/l#adZffHp8odlHv3TH8i48cA][notes]] (occassionally updated)
   - [[https://github.com/schottmueller/advMicro/files/2110550/envelopeMonoNonLinPric.pdf][envelope]] theorem and monotonicity constraint
+
 * Prerequisites
 I assume that you have some introductory knowledge of game theory on the level of cite:gibbons1992primer. In particular, you should know the material in chapters 1 and 2 in Gibbons' book (strategic form games, dominance, mixed strategies, mixed and pure Nash equilibrium, extensive form games, game trees, backwards induction, subgame perfect Nash equilibrium) and be able to apply it in simple games. From Advanced Microeconomics I, we built upon the part about /decision making under uncertainty/ (expected utility theorem). In terms of mathematics, it is helpful if you master the material of the course /Advanced Mathematics for Economists/. Having said that, most of the used math tools will not be far beyond high school maths. At the minimum you have to know (partial) differentiation, integration and optimization of functions and basic statistics (discrete and continuous probability distributions, expected values as well as Bayes' rule and conditional probabilities). More importantly, you should also have some idea of what a mathematical proof is.
 
@@ -60,7 +52,7 @@ I assume that you have some introductory knowledge of game theory on the level o
 
 * Books
 
-Most material is covered in cite:mas1995microeconomic which is abbreviated MWG in the following. Roughly speaking, we will cover chapters 8, 9, 13 and 23 from this book and -- as time permits -- add a few papers on topics not covered in MWG towards the end of the course.
+Most material is covered in cite:mas1995microeconomic which is abbreviated MWG in the following. Roughly speaking, we will cover chapters 8, 9, 13 and 23 from this book.
 
 Some other interesting books on game theory covering the course material partially are
 - cite:fudenberg1991game (FT): Covers an impressive amount of material in considerable depth at PhD level. Some of the proofs are, however, not fully worked out.

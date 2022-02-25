@@ -7,16 +7,76 @@
 
 \newtheorem{theorem}{Theorem}
 
-\title{Math for Advanced Microeconomics II}
+\title{Math for Microeconomics}
 \author{Christoph Schottm\"uller}
 
 \begin{document}
 \maketitle
 
+\section{Uniform distribution}
+\label{sec:uniform-distribution}
+
+The uniform distribution is in some sense the simplest distribution a continuous random variable can have. Recall that a cumulative distribution function (cdf) $F$ of a random variable $X$ gives the answer to the question ``What is the probability that  $X$ is weakly less than some value $x$''. Put differently, $F(x)=0.3$ states that the probability that $X$ is weakly less than $x$ equals $0.3$. Given this interpretation, we immediately know a few properties that a cumulative distribution function has to satisfy:
+\begin{enumerate}
+\item $F(x)\in[0,1]$: as $F(x)$ is a probability, it has to be between 0 and 1.
+\item $F$ is increasing: if the probability that $X\leq x$ is $0.3$, then the probability that $X\leq y$ for $y>x$ has to be at least $0.3$. (Just think about the statement ``The probability that it rains before 3pm is 50\%.'' Logically, this implies that the probability that it rains before 5pm has to be at least 50\%.)
+\item If $X$ takes only values in the interval $[a,b]$ (we then call the smallest such interval the \emph{support} of $X$), then $F(x)=0$ for all $x<a$ and $F(x)=1$ for all $x>b$. (If we know for sure that it is raining at some point between 1pm and 3pm, then the probability that it starts raining before 5pm is 1.) 
+  \item Let $x>y$. Then $F(x)-F(y)$ is the probability that $X$ is in the interval $(y,x]$. (The probability that it rains before 5pm minus the probability that it rains before 3pm equals the probability that it rains between 3pm and 5pm.)
+\end{enumerate}
+
+If the cdf $F$ of the random variable $X$ is continuous and differentiable (almost everywhere), then the derivative of $F$ is called the \emph{density} function of $X$ and typically we denote this density function by $f$. If the support of $X$ is $[a,b]$ and $X$ has the density $f$, then we can write $F(x)=\int_{a}^xf(\tilde x)\,d\tilde{x}$.
+
+The uniform distribution is a particularly simple distribution because its cumulative distribution function is (i) continuous and (ii) linear on its support. In fact, it has a density and the density is constant on the support as the derivative of a linear function is constant. The simplest example of a uniform distribution is the uniform distribution on $[0,1]$ (put differently, we have a random variable $X$ with support $[0,1]$ and and a continuous cdf that is linear on the $[0,1]$). For this uniform distribution on $[0,1]$, we have
+$$F(x)=
+\begin{cases}
+  0 & x<0\\
+  x & x\in[0,1]\\
+  1 &x>0
+\end{cases}$$
+and therefore
+$$f(x)=
+\begin{cases}
+  1 & x\in[0,1]\\
+  0 & else.
+\end{cases}$$
+
+It is tempting to think of a uniform distribution as a distribution for which all values in the support are equally likely. Technically speaking, this intuition is problematic because each value has itself zero probability, i.e. the probability that $X$ equals 0.4546 is zero. Therefore, a better intuition is the following: Fix some interval length, for example, 0.1. The probability that $X$ falls into any subinterval of its support with length 0.1 is the same. That is, the probability that $X$ is in $[0.2,0.3]$ equals the probability that $X$ is in the interval $[0.56,0.66]$ (if both of these intervals are in the support of $X$) because both have length 0.1. If the support of a uniformly distributed random variable has length 1, e.g. in case of the uniform distribution on $[0,1]$, then the length of the subinterval is in fact equal to the probability that $X$ falls into it. For example, the probability that $X$ is in $[0.45,0.49]$ equals $0.04$ in this case.
+
+Finally, let us write down the cdf and density of a uniform distribution on an arbitrary interval $[a,b]$. We know that (i) $F$ is linear on $[a,b]$ and can therefore be written as $F(x)=\alpha+\beta x$ for $x\in[a,b]$, (ii) $F(x)=0$ for $x<a$ and, as $F$ is continuous, $F(a)=0$, (iii) $F(x)=1$ for $x>1$ and $F(b)=1$ by the continuity of $F$. The equations $F(a)=0$ and $F(b)=1$ can be written as
+\begin{align*}
+  \alpha+\beta a&=0\\
+  \alpha+\beta b&=1.
+\end{align*}
+Solving these equations for $\alpha$ and $\beta$, we obtain
+\begin{align*}
+  \alpha&=-\frac{a}{b-a}\\
+  \beta&=\frac{1}{b-a}.        
+\end{align*}
+Hence, $F(x)=(x-a)/(b-a)$ and $f(x)=1/(b-a)$ for $x\in[a,b]$.
+
+\subsection{Expected value}
+\label{sec:expected-value}
+
+Recall that the expected value of a random variable $X$ with density $f$ and support $[a,b]$ can be computed as $\mathbb{E}[X]=\int_a^bxf(x)\,dx$. For the case of the uniform distribution this yields
+$$\int_a^bx\frac{1}{b-a}\,dx=\frac{1}{b-a}\int_a^bx\,dx=\frac{1}{b-a} [\frac{1}{2}x^2]_a^b=\frac{1}{2}\frac{b^2-a^2}{b-a}=\frac{1}{2}\frac{(b-a)(b+a)}{b-a}=\frac{b+a}{2}.$$
+
+This should not be too surprising: The expected value of a uniform distribution is the midpoint of its support. 
+
+\subsection{Conditional expectation}
+\label{sec:cond-expect}
+
+The expected value of $X$ conditional on some condition $C$ is written $\mathbb{E}[X|C]$. This expression answers the question ``What is the expected value of X if we know that X satisfies the condition C?'' For example, one might be interested in the expected value of wage conditional on having a university degree. I will focus here on very simple conditions, namely that $X$ is in some interval $[c,d]$. That is, I am interested in $\mathbb{E}[X|c\leq X\leq d]$. For example, one may be interested in the expected wage of those above the poverty line. If the random variable $X$ has density $f$ and support $[a,b]$, then 
+$$\mathbb{E}[X|c\leq X\leq d]=\frac{\int_c^dxf(x)\,dx}{F(d)-F(c)}.$$
+In case of a uniform distribution and $[c,d]\subseteq[a,b]$, this expression becomes
+$$\frac{\int_c^dxf(x)\,dx}{F(d)-F(c)}=\frac{(d^2/2-c^2/2)/(b-a)}{(d-c)/(b-a)}=\frac{1}{2}\frac{d^2-c^2}{d-c}=\frac{1}{2}\frac{(d+c)(d-c)}{d-c}=\frac{d+c}{2}.$$
+
+Again, this should not surprise too much: The expected value of a uniformly distributed variable under the condition that its value is in $[c,d]$ is the midpoint of this interval. 
+
 \section{Implicit function theorem}
 \label{sec:impl-funct-theor}
 
-Often a best response function is defined as the solution to a first order condition. In a 2-player Cournot model with constant marginal costs $c$ and inverse demand $P$, for example, the first order condition fo firm 1 is
+Often a best response function is defined as the solution to a first order condition.
+Consider, for example, a Cournot competition model with two firms which both have constant marginal costs $c>0$. Inverse demand is $P(q_1+q_2)$ where we assume that the function $P$ is two times continuously differentiable with $P'<0$ (demand is decreasing) and $P''\leq 0$ (weak concavity). Firm $i\in\{1,2\}$ maximizes $q_i*(P(q_1+q_2)-c)$ over $q_i$. The first order condition of firm 1 is then
 \begin{equation*}
   P'(q_1+q_2)q_1+P(q_1+q_2)-c=0.
 \end{equation*}
