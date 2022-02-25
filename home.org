@@ -40,7 +40,7 @@
 #  - [[https://github.com/schottmueller/advMicro/files/2140707/infoDesign.pdf][information design]]
 #  - [[https://github.com/schottmueller/advMicro/files/2140709/buyerOptLearning.pdf][buyer optimal learning]]
 - Handouts etc.:
-  - [[https://github.com/schottmueller/advMicro/files/1954228/math.pdf][math handout]]
+  - [[https://web.tresorit.com/l/AMKQB#HEQU9TL0-KiyAtKbMX0GCQ][math handout]]
   - [[https://web.tresorit.com/l#adZffHp8odlHv3TH8i48cA][notes]] (occassionally updated)
   - [[https://github.com/schottmueller/advMicro/files/2110550/envelopeMonoNonLinPric.pdf][envelope]] theorem and monotonicity constraint
 
