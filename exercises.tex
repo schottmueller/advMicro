@@ -14,8 +14,7 @@
 
 \section{Rationalizability}
 \begin{enumerate}
-\item %Come up with a three player game in which each player has two actions and the actions surviving iterative elimination of strictly dominated strategies is not the same as the set of rationalizable actions.
-  Show that in the following three player game (only payoffs of player 1 are given), $M$ is a never best response although $M$ is not strictly dominated.
+\item   Show that in the following three player game (only payoffs of player 1 are given), $M$ is a never best response although $M$ is not strictly dominated.
 \begin{table}[h]
     \centering
     \begin{tabular}{l|c|c}
@@ -34,7 +33,24 @@
     \caption{P1 chooses row, P2 column, P3 table}
     \label{tab:domVsRatio}
   \end{table}
-  
+\item Show in the game depicted in table \ref{tab:mixNotRatio} that some mixed strategies are not rationalizable although all pure strategies are, i.e. show that some mixed strategies are never best responses while all pure strategies are best responses to some belief.
+    \begin{table}[h]
+    \centering
+    \begin{tabular}{l|c|c}
+      & L &R\\ \hline
+      U& 3,1  &0,0  \\
+      M&2,0&2,1 \\
+      D& 0,1 & 3,0
+    \end{tabular}
+    \caption{A mixed strategy may not be rationalizable even if all actions in its support are.
+}
+    \label{tab:mixNotRatio}
+  \end{table}
+\item Suppose there are two players and let $S_i=[0,1]$. Assume that each player $i$ has a best response function, denoted by $b_i(s_j)$, which is (i) continuous, (ii) strictly increasing and (iii)  differentiable almost everywhere with derivative in $(0,\eta)$ for some $\eta<1$. Furthermore, assume that there is a unique pure strategy Nash equilibrium of the game.
+  \begin{enumerate}
+  \item Draw the best response functions in a graph and use the graph to show that the Nash equilibrium actions are the unique rationalizable actions of the players.
+    \item Can you find a set of conditions on the utility functions $u_i(s_i,s_j)$ such that each player has a best response function that satisfies (i)-(iii)?
+\end{enumerate}
 \item Show that the order of elimination does not matter for the outcome of iterative elimination of strictly dominated strategies. \\(Hint: Consider two orders, say A and B, and suppose they lead to different outcomes. Consider then the first action to be deleted in one procedure, say A, while surviving the other, i.e. B. Show that this action is strictly dominated at the end of procedure B which yields the desired contradiction.)
 \item (Numerical) Consider two players participating in a lab experiment. The monetary payoffs the two players get from the experimenter when choosing their strategies are given in table \ref{tab:monRatio}. (note: this time the numbers in the table are not utilities but amounts of money!) Assume that players are only interested in their own monetary payoffs and not in the monetary payoffs for the other players.
   \begin{table}[h]
@@ -43,7 +59,7 @@
       & L &R\\ \hline
       U& 3,1  &0,0  \\
       M1&1,0&1,1 \\
-      M&2.6,0  &0.5,0 \\
+      M2&2.6,0  &0.5,0 \\
       D& 0,1 & 3,0
     \end{tabular}
     \caption{Monetary payoff}
@@ -63,7 +79,15 @@
 
 \begin{enumerate}
 \item Show that a pure strategy Nash equilibrium exists in the following two player game: $I=\{P1,P2\}$, $S_1=S_2=[0,1]$, $u_i(s_i,s_{-i})$ is differentiable and strictly (quasi-)concave in $s_i$ and $\partial u_i/\partial s_i$ is continuous in both variables.\\
-  (Hint: Show that the first order condition leads to a continuous best response function. Then, verify that the two best response functions must intersect.)
+  (Hint: Show that the first order condition leads to a continuous best response function. Then, verify graphically that the two best response functions must intersect.)
+\item Take the Cournot model from the slides but assume that $P(q_1+q_2)=1-q_1-q_2$ and let the two firms have different marginal costs. Namely assume that firm 1 has marginal costs of $1/4$ and firm 2 has marginal costs of $1/2$.
+  \begin{enumerate}
+  \item Determine a pure strategy Nash equilibrium.
+  \item Why does the proof on the slides not work if firms do not have the same marginal costs?
+    \item Could we prove that a pure strategy Nash equilibrium exists even if we did not assume that demand is linear (but only made the assumptions on the slides instead) and allowed firms to have different marginal costs?
+  \end{enumerate}
+\item Take a two player game with $S_i=[0,1]$. Assume that each player has a best response function that is differentiable with derivative in $(0,\eta)$ for some $\eta<1$. Show that there can be at most one pure strategy equilibrium in this game.
+  % suppose 2 NE: (s_1',s_2') and (s_1'',s_2''); then |s_i''-s_i'|=|b_i(s_j'')-b_i(s_j')|\leq \eta |s_j''-s_j'|<|s_j''-s_j'| but this cannot hold true both for i=1, j=2$ and for $i=2,j=1.
 \item Take a finite strategic form game $\Gamma=\langle I,\{S_i\},\{u_i\} \rangle$ and let $S_i$ be binary, i.e. $S_i=\{L,R\}$. Now suppose that each player is restricted to mixed strategies that place at least probability $\varepsilon >0$ on each of his two actions (e.g. the player ``trembles'' sometimes and even if he wants to choose $L$, he will choose $R$ with probability $\varepsilon $ and vice versa).
   \begin{enumerate}
   \item What is the strategy space from which a player can actually
@@ -99,7 +123,8 @@
   \item If firm 1's equilibrium quantity is $q_1^*$, what is firm 2's best response?
   \item If type $j\in\{l,h\}$ of firm 2 produces quantity $q_2^j$, what is firm 1's best response quantity? (i.e. maximizing expected payoff)
     \item What is the BNE of this game?
-  \end{enumerate}
+    \end{enumerate}
+\item There are two firms. Firm A produces coke at marginal cost $c_A$ while firm B produces chips at marginal cost $c_B$ (neither firm has fixed costs). The two firms simultaneously set prices $p_A\in\Re_+$ and $p_B\in\Re_+$. Consumers consume coke and chips together and therefore market demand for coke equals $\max\{0,1-p_A-p_B/2\}$ while market demand for chips equals $\max\{0,1-p_A/2-p_B\}$. Marginal costs are private information of each firm and firm $i$ believes that $c_j$ is 0 with probability $1/2$ and $0.5$ with probability $1/2$ (for $i,j\in\{A,B\}$ and $i\neq j$). Determine a symmetric pure strategy Bayesian Nash equilibrium of this game.     
 \item Purification: Consider the game in table \ref{tab:purify}. Let $\theta _i$ be private information and be distributed uniformly on $[0 ,\varepsilon ]$. Assuming $\varepsilon >0$ sufficiently small, derive a BNE in cutoff strategies; i.e. P1 (P2) plays U (L) if $\theta _1>\bar{\theta }_1$ ($\theta _2>\bar{\theta }_2$) and D (R) otherwise for some $\bar \theta_i\in(0,{\varepsilon })$. Compare the equilibrium in the limit as $\varepsilon \rightarrow 0$ to the mixed strategy equilibrium in the game without private information (i.e. the game where $\theta _i=0$ is commonly known). 
      \begin{table}[h]
 \centering
