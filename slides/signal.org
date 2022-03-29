@@ -21,7 +21,7 @@
 
 * Pirates
 
-** Signaling example: Jolly Rodger
+** Signaling example: Jolly Roger
 \begin{center}
     \includegraphics[width=6cm]{jollyroger}
 \end{center}
@@ -33,7 +33,7 @@
 ** Pirate model
 timing:  
    1. nature chooses attacker type: Pirate (P) with prob $p$ , commissioned (C) with $1-p$
-   2. attacker chooses between Jolly Rodger (J) and other flag (F)
+   2. attacker chooses between Jolly Roger (J) and other flag (F)
    3. defender decides whether to surrender (s) or fight (f)
 
 Payoffs:
