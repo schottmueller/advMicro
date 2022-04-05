@@ -21,7 +21,7 @@ Please, watch the screencasts provided below before coming to the Tuesday sessio
 - [[https://web.tresorit.com/l/5sWSJ#n7VsMyNRyBLszIHnUrQzXA][link]] to screencasts for lecture material
 
 - [[https://github.com/schottmueller/advMicro/files/3255945/exam.pdf][old exam]] 
-- Exercises: [[./exercises.tex][tex]] [[https://github.com/schottmueller/advMicro/files/6849499/exercises.pdf][pdf]], [[https://web.tresorit.com/l#q1HQe8-nJBZSRORWTxSfbg][solutions]] for some exercises not covered in class
+- Exercises: [[./exercises.tex][tex]] [[https://web.tresorit.com/l/fHuQ1#QdeCbHMRepN8nScN6s4cUw][pdf]], [[https://web.tresorit.com/l#q1HQe8-nJBZSRORWTxSfbg][solutions]] for some exercises not covered in class
 - Slides:
   - [[https://github.com/schottmueller/advMicro/files/3028996/dominRatio.pdf][Dominance and rationalizability]]
   - [[https://github.com/schottmueller/advMicro/files/4419534/NashEq.pdf][Nash Theorem]]
@@ -48,10 +48,7 @@ Please, watch the screencasts provided below before coming to the Tuesday sessio
   - [[https://github.com/schottmueller/advMicro/files/2110550/envelopeMonoNonLinPric.pdf][envelope]] theorem and monotonicity constraint
 
 * Prerequisites
-I assume that you have some introductory knowledge of game theory on the level of cite:gibbons1992primer. In particular, you should know the material in chapters 1 and 2 in Gibbons' book (strategic form games, dominance, mixed strategies, mixed and pure Nash equilibrium, extensive form games, game trees, backwards induction, subgame perfect Nash equilibrium) and be able to apply it in simple games. From Advanced Microeconomics I, we build upon the part about /decision making under uncertainty/ (expected utility theorem). In terms of mathematics, it is helpful to master the material of the course /Advanced Mathematics for Economists/. Having said that, most of the used math tools will not be far beyond high school maths. At the minimum you have to know (partial) differentiation, integration and optimization of functions and basic statistics (discrete and continuous probability distributions, expected values as well as Bayes' rule and conditional probabilities). More importantly, you should also have some idea of what a mathematical proof is.
-
-# * Plan
-# The idea is to have  every third class as an exercise session dealing with the material of the two previous lectures. /You are expected to have tried to solve the exercises beforehand/ (and hopefully you succeeded with some of them), i.e. in the exercise classes we deal with your questions and problems and we are /not/ solving the exercises there from scratch. If you feel that making additional exercises would help you, you find more exercises in cite:mas1995microeconomic. (I am told that a solution manual exists and is not too hard to find.)
+I assume that you have some introductory knowledge of game theory on the level of cite:gibbons1992primer. In particular, you should know the material in chapters 1 and 2 in Gibbons' book (strategic form games, dominance, mixed strategies, mixed and pure Nash equilibrium, extensive form games, game trees, backwards induction, subgame perfect Nash equilibrium) and be able to apply it in simple games. From Advanced Microeconomics I, we build upon the part about /decision making under uncertainty/ (expected utility theorem). In terms of mathematics, it is helpful to master the material of the course /Advanced Mathematics for Economists/. Having said that, most of the used math tools will not be far beyond high school maths. At the minimum you have to know (partial) differentiation, integration and optimization of functions and basic statistics (discrete and continuous probability distributions, expected values as well as Bayes' rule and conditional probabilities). More importantly, you should also have some idea of what a mathematical proof is. There is a handout on maths covering some of the prerequisites and topics that people tend to forget about quickly. 
 
 * Books
 
