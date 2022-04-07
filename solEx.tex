@@ -24,6 +24,23 @@
 \begin{document}
 \maketitle
 
+
+\section{Rationalizability}
+\label{sec:rationalizability}
+
+\paragraph{Order of elimination does not matter for rationalizability:} If at some step of the elimination procedure several strategies (maybe even of different players) are never best responses, we would hope that the result of the elimination procedure is the same no matter in which order we eliminate. Here I show by contradiction that this indeed the case. To argue by contradiction, suppose there were two different orders of elimination, say A and B, leading to different results, i.e. the sets of strategies surviving iterative elimination of never best responses using order A differs from the one using order B. This is equivalent to saying that there is at least one strategy that survives the procedure in one order but not the other. Without loss of generality, say that some strategy survives according to order A but not according to B. More precisely, let $\sigma_i'$ be the \emph{first strategy} that is eliminated in order A but survives in B.  We proceed in a number of steps:
+
+First, as $\sigma_i'$ survives B it must be a best response (among the strategies of player $i$ surviving in order B) to some $\sigma_{-i}'$ where $\sigma_{-i}'$ also survives in order B.
+
+Second, at the step in which $\sigma_i'$ is eliminated in order A, $\sigma_{-i}'$ has not been eliminated yet because $\sigma_i'$ was defined as the \emph{first} strategy that is eliminated in A while surviving B.
+
+Third, at the time at which $\sigma_i'$ is eliminated in A, player $i$ must have a better response to $\sigma_{-i}'$ than $\sigma_i'$ (as otherwise $\sigma_i'$ could not be eliminated). This implies that player $i$'s best response to $\sigma_{-i}'$ when allowing for all strategies in $\Delta(S_i)$ is not $\sigma_i'$ but some other strategy which I am going to call $\sigma_i''$.
+
+Fourth, $\sigma_i''$ cannot be eliminated in order B: As $\sigma_{-i}'$ is not eliminated in B and as $\sigma_i''$ is a best response to $\sigma_{-i}'$, the strategy $\sigma_i''$ can at no point be a never best response.
+
+This contradicts that $\sigma_i'$ is a best response to $\sigma_{-i}'$ at the end of B as we have established that (i) $\sigma_i''$ is still available at the end of B, (ii) $\sigma_i''$ is a best response to $\sigma_{-i}'$ in $\Delta(S_i)$ while $\sigma_i'$ is not. As we have reached a contradiction, our initial supposition that different orders can lead to different outcomes must be false.
+
+
 \section{Nash theorem}
 \label{sec:nash-theorem}
 

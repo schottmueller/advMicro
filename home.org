@@ -15,13 +15,13 @@
  - Thursday, 14:00-15:30, Seminarraum S263 (118/03/3.06)
 
 * Setup
-Please, watch the screencasts provided below before coming to the Tuesday session. On Tuedays, you have the option to ask questions about the material in the screencasts (and I might ask you a few questions to see whether things are clear). We might then do an exercise together in class. On Thursdays, we will discuss more exercises. In terms of /preparation/, you have to watch the screencasts before the Tuesday session and read through the first 2 exercises on the respective topic. For the Thursday sessions, you should have spent a bit time on trying to solve the remaining exercises. (Don't be discouraged if you do not manage to solve them quickly. Some of them are a bit tricky.)  As an organizational remark: as we have only one projector, it is useful to bring a printout of the exercises with you to class. 
+Please, watch the screencasts provided below before coming to the Tuesday session. On Tuedays, you have the option to ask questions about the material in the screencasts (and I might ask you a few questions to see whether things are clear). We might then do an exercise together in class. On Thursdays, we will discuss more exercises. In terms of /preparation/, you have to watch the screencasts before the Tuesday session and read through the first 2 exercises on the respective topic. For the Thursday sessions, you should have spent a bit time on trying to solve the remaining exercises. (Don't be discouraged if you do not manage to solve them quickly. Some of them are a bit tricky.)  One organizational remark: as we have only one projector, it is useful to bring a printout of the exercises with you to class. 
  
 * Material
 - [[https://web.tresorit.com/l/5sWSJ#n7VsMyNRyBLszIHnUrQzXA][link]] to screencasts for lecture material
 
 - [[https://github.com/schottmueller/advMicro/files/3255945/exam.pdf][old exam]] 
-- Exercises: [[./exercises.tex][tex]] [[https://web.tresorit.com/l/fHuQ1#QdeCbHMRepN8nScN6s4cUw][pdf]], [[https://web.tresorit.com/l#q1HQe8-nJBZSRORWTxSfbg][solutions]] for some exercises not covered in class
+- Exercises: [[https://web.tresorit.com/l/fHuQ1#QdeCbHMRepN8nScN6s4cUw][pdf]], [[https://web.tresorit.com/l#q1HQe8-nJBZSRORWTxSfbg][solutions]] for some exercises not covered in class
 - Slides:
   - [[https://github.com/schottmueller/advMicro/files/3028996/dominRatio.pdf][Dominance and rationalizability]]
   - [[https://github.com/schottmueller/advMicro/files/4419534/NashEq.pdf][Nash Theorem]]

@@ -33,6 +33,8 @@
     \caption{P1 chooses row, P2 column, P3 table}
     \label{tab:domVsRatio}
   \end{table}
+  % U is a better response than M if the probability of P2 and P3 both playing R at the same time is less than 0.4 (as then u_1(U)>6). Similarly, D is a better response than M if the probability of both P2 and P3 playing L is less than 0.4. But note that at least one of the two has to be true as P2 and P3 are mixing independently (each of the two players has to put at least 0.4 on each action but this implies that the product is less than 0.4). Hence M is a never best response.
+ % A mix of U and D would be better than M against (L,L) if more than 0.6 probability was given on U. But then the mix does worse than M against (R,R). Hence, M is not strictly dominated. 
 \item Show in the game depicted in table \ref{tab:mixNotRatio} that some mixed strategies are not rationalizable although all pure strategies are, i.e. show that some mixed strategies are never best responses while all pure strategies are best responses to some belief.
     \begin{table}[h]
     \centering
@@ -46,12 +48,17 @@
 }
     \label{tab:mixNotRatio}
   \end{table}
-\item Suppose there are two players and let $S_i=[0,1]$. Assume that each player $i$ has a best response function, denoted by $b_i(s_j)$, which is (i) continuous, (ii) strictly increasing and (iii)  differentiable almost everywhere with derivative in $(0,\eta)$ for some $\eta<1$. Furthermore, assume that there is a unique pure strategy Nash equilibrium of the game.
+  % U is b.r. against L, D against R and M against a 0.5-0.5 mix; L is br against U and R against M. Hence all pure strategies are rationalizable. Uniform mixing between U and D, however, is strictly dominated by M.
+\item Suppose there are two players and let $S_i=[0,1]$. Assume that each player $i$ has a best response function, denoted by $b_i(s_j)$, which is (i) continuous, (ii) strictly increasing and (iii)  differentiable almost everywhere with derivative in $(0,\eta)$ for some $\eta<1$.
   \begin{enumerate}
-  \item Draw the best response functions in a graph and use the graph to show that the Nash equilibrium actions are the unique rationalizable actions of the players.
-    \item Can you find a set of conditions on the utility functions $u_i(s_i,s_j)$ such that each player has a best response function that satisfies (i)-(iii)?
-\end{enumerate}
-\item Show that the order of elimination does not matter for the outcome of iterative elimination of strictly dominated strategies. \\(Hint: Consider two orders, say A and B, and suppose they lead to different outcomes. Consider then the first action to be deleted in one procedure, say A, while surviving the other, i.e. B. Show that this action is strictly dominated at the end of procedure B which yields the desired contradiction.)
+  \item Draw the best response functions in a graph and use the graph to show that the unique Nash equilibrium actions are the unique rationalizable actions of the players.
+    \item Can you find a set of sufficient conditions on the utility functions $u_i(s_i,s_j)$ such that each player has a best response function that satisfies (i)-(iii)?
+    \end{enumerate}
+    % a: $s_1$ ($s_2$) on horizontal (vertical axis): $br_2$ connects left right borders of unit box with slope less than 1, $br_1$ connects bottom top borders with slope more than 1; iterate set of possible best responses and note that in each step the length of the interval is at most $\eta<1$ times the length previously
+   % b: best response function -> unique b.r.: $u_i$ strictly (quasi-)concave in $s_i$; continuous b.r.: $u_i$ continuous in $s_i$ and $s_{-i}$ ; strictly increasing: cross derivative of u_i strictly positive (use IFT); derivative <1: d u_i/ds_i reacts stronger on s_i than in s_{-i} (IFT)
+  \item Show that the order of elimination does not matter for the outcome of iterative elimination of never best responses. \\(Hint: Consider two orders, say A and B, and suppose they lead to different outcomes. Consider then the first action to be deleted in one procedure, say A, while surviving the other, i.e. B. Show that this action cannot be a best response at the end of procedure B which yields the desired contradiction.)
+    % let $s_i'$ be the first action eliminated in A that is not eliminated in B. As s' is not eliminated at the end of B, it is a br against some $s_{-i}'$ that survive B. As $s_i'$ is the first such action all actions of other players that survive elimination under B are still available at the point of time where $s'$ is eliminated in A and therefore some action $s_i''\neq s_i'$ must be the best response to $s_{-i}'$ (if all actions in $S_i$ are allowed). But as $s_{-i}'$ survives B, $s_i''$ cannot be eliminated at any step in B. But this contradicts that $s_i'$ is a best response to $s_{-i}'$ at the end of B.
+    
 \item (Numerical) Consider two players participating in a lab experiment. The monetary payoffs the two players get from the experimenter when choosing their strategies are given in table \ref{tab:monRatio}. (note: this time the numbers in the table are not utilities but amounts of money!) Assume that players are only interested in their own monetary payoffs and not in the monetary payoffs for the other players.
   \begin{table}[h]
     \centering
@@ -71,6 +78,9 @@
      \item Suppose players value money $u_i(x)=e^{r x}$ for any monetary amount $x$. Which actions are rationalizable if the parameter $r$ is very high?
      \end{enumerate}
      What is the interpretation in terms of risk preferences? (see \cite{weinstein2016effect} for more on this topic)
+     % a) M1 is strictly dominated by a uniform mixing of U and D. As M2 is a br to a uniform mixing between L and R all remaining actions are rationalizable.
+     % b) now M1 is rationalizable as it is a b.r. to uniform mixing of L and R
+     % c) now M" is no longer rationalizable as it is strictly dominated by a uniform mixing between U and D
 \end{enumerate}
 
 

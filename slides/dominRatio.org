@@ -48,7 +48,7 @@ we write $\Gamma=[I,\{S_i\},\{u_i\}]$
   - each player knows game 
   - rationality is common knowledge
   - actions are chosen simultaneously and independently
-  -  a player can base his expectation of other player's play only on primitives of the game  
+  -  a player can base his expectation of other players' play only on primitives of the game  
 2. repeated play without strategic link
   - game is played repeatedly but with different opponents
   -  no intertemporal strategic link between games
@@ -170,7 +170,7 @@ a rational player has
 
 if rationality is common knowledge, a rational player's belief can only put positive probability on actions that are themselve best response to a belief (of the other players) that puts only positive probability on best responses to a belief...
 
-*** Rationalizable actions                                     :B_definition:
+*** Rationalizable strategies                                  :B_definition:
     :PROPERTIES:
     :BEAMER_env: definition
     :END:
