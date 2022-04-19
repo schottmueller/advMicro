@@ -90,12 +90,16 @@
 \begin{enumerate}
 \item Show that a pure strategy Nash equilibrium exists in the following two player game: $I=\{P1,P2\}$, $S_1=S_2=[0,1]$, $u_i(s_i,s_{-i})$ is differentiable and strictly (quasi-)concave in $s_i$ and $\partial u_i/\partial s_i$ is continuous in both variables.\\
   (Hint: Show that the first order condition leads to a continuous best response function. Then, verify graphically that the two best response functions must intersect.)
+% best response exists by Weierstrass theorem and is unique by strict quasi-concavity in s_i; the best response is determined implicitly by the unique solution to $\partial u_i/\partial s_i=0$ and as the RHS is continuous in both variables the implicitly defined function is continuous; drawing the (s_1, s_2) box, b_1 connects top and bottom while b_2 connects left and right boundary; as both are continuous they must intersect.  
 \item Take the Cournot model from the slides but assume that $P(q_1+q_2)=1-q_1-q_2$ and let the two firms have different marginal costs. Namely assume that firm 1 has marginal costs of $1/4$ and firm 2 has marginal costs of $1/2$.
   \begin{enumerate}
   \item Determine a pure strategy Nash equilibrium.
   \item Why does the proof on the slides not work if firms do not have the same marginal costs?
     \item Could we prove that a pure strategy Nash equilibrium exists even if we did not assume that demand is linear (but only made the assumptions on the slides instead) and allowed firms to have different marginal costs?
-  \end{enumerate}
+    \end{enumerate}
+    % a)  foc: 1-2q_i-q_j-c_i=0  which gives the solution  q_1=1/3, q_2=1/12
+    % b) no symmetric NE as firms have different br functions; hence fixed point of one br function is not useful
+    % c) use exercise 1; note that this does not ensure uniqueness
 \item Take a two player game with $S_i=[0,1]$. Assume that each player has a best response function that is differentiable with derivative in $(0,\eta)$ for some $\eta<1$. Show that there can be at most one pure strategy equilibrium in this game.
   % suppose 2 NE: (s_1',s_2') and (s_1'',s_2''); then |s_i''-s_i'|=|b_i(s_j'')-b_i(s_j')|\leq \eta |s_j''-s_j'|<|s_j''-s_j'| but this cannot hold true both for i=1, j=2$ and for $i=2,j=1.
 \item Take a finite strategic form game $\Gamma=\langle I,\{S_i\},\{u_i\} \rangle$ and let $S_i$ be binary, i.e. $S_i=\{L,R\}$. Now suppose that each player is restricted to mixed strategies that place at least probability $\varepsilon >0$ on each of his two actions (e.g. the player ``trembles'' sometimes and even if he wants to choose $L$, he will choose $R$ with probability $\varepsilon $ and vice versa).
@@ -104,7 +108,10 @@
     choose in this game with ``trembles''?
   \item Adapt the proof of the Nash theorem to show that there is a Nash equilibrium in this game  with ``trembles''.
     \item One could conjecture that the set of equilibria in the game with trembles is the same as in $\Gamma$ in the limit if $\varepsilon \rightarrow 0$. Can you find a game where this is not true?
-\end{enumerate}
+    \end{enumerate}
+    % a) $[\varepsilon ,1-\varepsilon ]$
+    % b) adjust strategy set and min, max expression to ensure g and g map into $[\varepsilon ,1-\varepsilon ]$
+    % c) u_i(L,L)=1 and 0 otherwise; then (R,R) is NE in game without trembles but not in tremble game
 \end{enumerate}
 
 % \section{Correlated equilibrium}
@@ -132,7 +139,7 @@
   \begin{enumerate}
   \item If firm 1's equilibrium quantity is $q_1^*$, what is firm 2's best response?
   \item If type $j\in\{l,h\}$ of firm 2 produces quantity $q_2^j$, what is firm 1's best response quantity? (i.e. maximizing expected payoff)
-    \item What is the BNE of this game?
+    \item Determine the BNE of this game.
     \end{enumerate}
 \item There are two firms. Firm A produces coke at marginal cost $c_A$ while firm B produces chips at marginal cost $c_B$ (neither firm has fixed costs). The two firms simultaneously set prices $p_A\in\Re_+$ and $p_B\in\Re_+$. Consumers consume coke and chips together and therefore market demand for coke equals $\max\{0,1-p_A-p_B/2\}$ while market demand for chips equals $\max\{0,1-p_A/2-p_B\}$. Marginal costs are private information of each firm and firm $i$ believes that $c_j$ is 0 with probability $1/2$ and $0.5$ with probability $1/2$ (for $i,j\in\{A,B\}$ and $i\neq j$). Determine a symmetric pure strategy Bayesian Nash equilibrium of this game.     
 \item Purification: Consider the game in table \ref{tab:purify}. Let $\theta _i$ be private information and be distributed uniformly on $[0 ,\varepsilon ]$. Assuming $\varepsilon >0$ sufficiently small, derive a BNE in cutoff strategies; i.e. P1 (P2) plays U (L) if $\theta _1>\bar{\theta }_1$ ($\theta _2>\bar{\theta }_2$) and D (R) otherwise for some $\bar \theta_i\in(0,{\varepsilon })$. Compare the equilibrium in the limit as $\varepsilon \rightarrow 0$ to the mixed strategy equilibrium in the game without private information (i.e. the game where $\theta _i=0$ is commonly known). 
@@ -145,6 +152,22 @@ D  \> 4,4$+\theta _2$    \>1,5
 \end{game}  
 \caption{purification}
 \label{tab:purify}
+\end{table}
+\item Consider the game in table \ref{tab:global}. Assume that $x$ is an unknown state of nature that is distributed uniformly on $[-1,5]$. Each of the two players observes a private signal $\theta _i$. The signals are drawn by nature independently from a uniformly distribution on $[x-0.1 ,x+0.1 ]$). To summarize: Each player only observes his signal and knows neither the other player's signal nor the state $x$. However, the distributions that generate state and signals are common knowledge.  
+  \begin{enumerate}
+  \item Determine a player's belief about the state after receiving signal $\theta _i$.
+  \item Which action will a player take if he observes a signal above 4.1 (or below $-0.1)$?
+  \item Determine a Bayesian Nash equilibrium of the game.\footnote{This setup was introduced as ``global game'' in \cite{carlsson1993global} to analyze equilibrium selection in coordination games. A survey of the early literature on this topic that covers the main mechanics is \cite{morris2001global}.}\\ (\emph{Hints:} Treat the signals as types and a strategy as a mapping from signal to action. Players use a cutoff strategy in equilibrium.)
+  \end{enumerate}
+      \begin{table}[h]
+\centering
+ \begin{game}{2}{2}
+       \> H  \>S\\ %\hline
+H   \> $x,x$  \> $x,0$   \\
+S  \> $0,x$   \>$4,4$
+\end{game}  
+\caption{global game}
+\label{tab:global}
 \end{table}
 \end{enumerate}
 
