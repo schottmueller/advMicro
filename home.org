@@ -8,7 +8,9 @@
 # - On July ?, we use the class for question hour. If you want to have an answer for sure, please send me your questions before July ?. 
 # - Updated slides (lecture June 27): added an explanation at the end of the slides why ex ante budget balance is sufficient for ex post budget balance; changed almost efficient mechanism for many seller/buyer setting such that it is dominant strategy incentive compatible for finite $m$ and $n$
 # - resit date: October 7, 16:00-17:00 in SSC 4.210
- - exam date: July 19, 11:00-12:00 in 100/U1/HSVIIa 
+ - Unfortunately, I have to cancel the lecture on Tuesday April 26. We will continue with auctions on Thursday April 28.
+ - suggested exam date: July 14, 14:00-15:00 in the usual Thursday lecture room
+   # 100/U1/HSVIIa 
 
 * Time and place
  - Tuesday, 10:00-11:30, Seminarraum S37 (102/U1/-1.314)
