@@ -141,7 +141,8 @@
   \item If type $j\in\{l,h\}$ of firm 2 produces quantity $q_2^j$, what is firm 1's best response quantity? (i.e. maximizing expected payoff)
     \item Determine the BNE of this game.
     \end{enumerate}
-\item There are two firms. Firm A produces coke at marginal cost $c_A$ while firm B produces chips at marginal cost $c_B$ (neither firm has fixed costs). The two firms simultaneously set prices $p_A\in\Re_+$ and $p_B\in\Re_+$. Consumers consume coke and chips together and therefore market demand for coke equals $\max\{0,1-p_A-p_B/2\}$ while market demand for chips equals $\max\{0,1-p_A/2-p_B\}$. Marginal costs are private information of each firm and firm $i$ believes that $c_j$ is 0 with probability $1/2$ and $0.5$ with probability $1/2$ (for $i,j\in\{A,B\}$ and $i\neq j$). Determine a symmetric pure strategy Bayesian Nash equilibrium of this game.     
+  \item There are two firms. Firm A produces coke at marginal cost $c_A$ while firm B produces chips at marginal cost $c_B$ (neither firm has fixed costs). The two firms simultaneously set prices $p_A\in\Re_+$ and $p_B\in\Re_+$. Consumers consume coke and chips together and therefore market demand for coke equals $\max\{0,1-p_A-p_B/2\}$ while market demand for chips equals $\max\{0,1-p_A/2-p_B\}$. Marginal costs are private information of each firm and firm $i$ believes that $c_j$ is 0 with probability $1/2$ and $0.5$ with probability $1/2$ (for $i,j\in\{A,B\}$ and $i\neq j$). Determine a symmetric pure strategy Bayesian Nash equilibrium of this game.
+  % strategy is mapping from type to price; in symmetric BNE price $p^ĥ$ if high costs and $p^l$ if low costs; best response is $arg\max_{p} 0.5*(1-p-p^h/2)*(p-c)+0.5*(1-p-p^l/2)(p-c)$; the foc gives $1-2p-p^h/4-p^l/4+c=0$ and therefore $p^h$ and $p^l$ solve $1-2p^h-p^h/4-p^l/4+0.5=0$ and $1-2p^l-p^h/4-p^l/4=0$. The solution is $p^h=5/8$ and $p^l=3/8$  
 \item Purification: Consider the game in table \ref{tab:purify}. Let $\theta _i$ be private information and be distributed uniformly on $[0 ,\varepsilon ]$. Assuming $\varepsilon >0$ sufficiently small, derive a BNE in cutoff strategies; i.e. P1 (P2) plays U (L) if $\theta _1>\bar{\theta }_1$ ($\theta _2>\bar{\theta }_2$) and D (R) otherwise for some $\bar \theta_i\in(0,{\varepsilon })$. Compare the equilibrium in the limit as $\varepsilon \rightarrow 0$ to the mixed strategy equilibrium in the game without private information (i.e. the game where $\theta _i=0$ is commonly known). 
      \begin{table}[h]
 \centering
@@ -153,11 +154,15 @@ D  \> 4,4$+\theta _2$    \>1,5
 \caption{purification}
 \label{tab:purify}
 \end{table}
-\item Consider the game in table \ref{tab:global}. Assume that $x$ is an unknown state of nature that is distributed uniformly on $[-1,5]$. Each of the two players observes a private signal $\theta _i$. The signals are drawn by nature independently from a uniformly distribution on $[x-0.1 ,x+0.1 ]$). To summarize: Each player only observes his signal and knows neither the other player's signal nor the state $x$. However, the distributions that generate state and signals are common knowledge.  
+% P1's expected utility of playing U is $u^U_1=\theta _1+5*Prob[\theta _2>\bar\theta _2]$ while $u^D_1=1+3*Prob[\theta _2>\bar\theta _2]$. As $Prob[\theta _2>\bar\theta _2]=1-\bar{\theta}_2/\varepsilon $, the indifference condition that has to hold at the cutoff type $\bar{\theta }_1$ yields $\bar\theta _1=2\bar{\theta }_2/\varepsilon -1$. Similarly, $u_2^L=\theta _2+1+3Prob[\theta _1<\bar{\theta }_2]$ and $u_2^R=5Prob[\theta _1<\bar{\theta }_2]$. Using $Prob[\theta _1<\bar{\theta }_2]=\bar{\theta }_1/\varepsilon $, the indifference condition for $\bar{\theta }_2$ yields then $\bar{\theta }_2=2\bar{\theta }_1/\varepsilon -1$. Solving the two conditions for $\bar{\theta }_1$ and $\bar{\theta }_2$ gives the solution $\bar{\theta }_1=\bar{\theta }_2=\varepsilon /(2-\varepsilon )$. The probability of each action therefore converges to $1/2$ as $\varepsilon \rightarrow 0$. This is equivalent to the mixed strategy equilibrium of the game in which $\theta _1=\theta _2=0$ is common knowledge. 
+\item Consider the game in table \ref{tab:global}. Assume that $x$ is an unknown state of nature that is distributed uniformly on $[-1,5]$. Each of the two players observes a private signal $\theta _i$. The signals are drawn by nature independently from a uniform distribution on $[x-0.1 ,x+0.1 ]$). To summarize: Each player only observes his signal and knows neither the other player's signal nor the state $x$. However, the distributions that generate state and signals are common knowledge.  
   \begin{enumerate}
   \item Determine a player's belief about the state after receiving signal $\theta _i$.
+    % uniform on $[\theta _i-0.1,\theta _i+0.1]\cap[-1,5]$
   \item Which action will a player take if he observes a signal above 4.1 (or below $-0.1)$?
+    % as x is definitely above 4 (below 0), H (S) is dominant
   \item Determine a Bayesian Nash equilibrium of the game.\footnote{This setup was introduced as ``global game'' in \cite{carlsson1993global} to analyze equilibrium selection in coordination games. A survey of the early literature on this topic that covers the main mechanics is \cite{morris2001global}.}\\ (\emph{Hints:} Treat the signals as types and a strategy as a mapping from signal to action. Players use a cutoff strategy in equilibrium.)
+    % let equilibrium be symmetric; if one receives signal equal to cutoff, one has to be indifferent between actions and it is equally that other player gets signal above or below cutoff (i.e. belief for each of opponent's actions has to be 1/2); hence cutoff is 2. 
   \end{enumerate}
       \begin{table}[h]
 \centering
@@ -186,17 +191,17 @@ S  \> $0,x$   \>$4,4$
     % adding inequalities gives: $(v_i^h-v_i^l) (prob(win,s_i(v_i^h))-prob(win,s_i(v_i^l))\geq 0$ which is only true if $s_i(v_i^h)\geq s_i(v_i^l)$
   \end{enumerate}
   
-% \item Two people have to decide who gets an indivisible item. Their valuations of the item are private information and we regard the two $v_i$ as drawn independently from a uniform distribution on $[0,1]$. The two people have come up with the following auction mechanism: They simultaneously state a bid $b_i$ and the one stating the higher bid gets the item but has to pay half of his bid to the other player.
-%   \\
-%   Assume that there is a symmetric equilibrium of this game in which players bid according to a strictly increasing strategy $s(v)$. (If you find this hard, assume that $s(v)=\alpha v$ for some $\alpha>0$ and determine below the $\alpha$ for which this is an equilibrium.)
-%   \begin{enumerate}
-%   \item Write down the expected payoff of a player bidding $b$ (given that the other player bids according to $s$). (Hint: Do not forget that he might receive a payment from the other player!)
-%     % $\int_0^{t(b)}v_i-b/2 \,dv_j+\int_{t(b)}^1 s(v_j)/2\,dv_j$
-%   \item Derive the first order condition of an optimal bid.
-%     % $t'(b)(v_i-b/2)-t(b)/2-t'(b) b/2=0$
-%   \item What is the equilibrium bidding strategy? Why is it not optimal to bid your true valuation?
-%     % use $t(b)=v_i$, $b=s(v_i)$ and $t'(b)=1/s'(v_i)$ in foc to get $(v_i-s(v_i))/(s'(v_i))-v/2=0$ which is solved by $s(v_i)=v_i*2/3$
-%   \end{enumerate}
+\item Two people have to decide who gets an indivisible item. Their valuations of the item are private information and we regard the two $v_i$ as drawn independently from a uniform distribution on $[0,1]$. The two people have come up with the following auction mechanism: They simultaneously state a bid $b_i$ and the one stating the higher bid gets the item but has to pay half of his bid to the other player.
+  \\
+  Assume that there is a symmetric equilibrium of this game in which players bid according to a strictly increasing strategy $s(v)$. (If you find this hard, assume that $s(v)=\alpha v$ for some $\alpha>0$ and determine below the $\alpha$ for which this is an equilibrium.)
+  \begin{enumerate}
+  \item Write down the expected payoff of a player bidding $b$ (given that the other player bids according to $s$). (Hint: Do not forget that he might receive a payment from the other player!)
+    % $\int_0^{t(b)}v_i-b/2 \,dv_j+\int_{t(b)}^1 s(v_j)/2\,dv_j$
+  \item Derive the first order condition of an optimal bid.
+    % $t'(b)(v_i-b/2)-t(b)/2-t'(b) b/2=0$
+  \item What is the equilibrium bidding strategy? Why is it not optimal to bid your true valuation?
+    % use $t(b)=v_i$, $b=s(v_i)$ and $t'(b)=1/s'(v_i)$ in foc to get $(v_i-s(v_i))/(s'(v_i))-v/2=0$ which is solved by $s(v_i)=v_i*2/3$
+  \end{enumerate}
 \item A buyer's valuation is uniformly distributed on $[0,1]$ and the buyer's private information. A seller's cost is also uniformly distributed on $[0,1]$ and the seller's private information. The buyer states an ask price $b_b$ and the seller simultaneously states an offer price $b_s$. If $b_s<b_b$, trade takes place at price $(b_s+b_b)/2$ while otherwise trade does not take place.
   \begin{enumerate}
   \item Explain/show why $b_s(c)=c$ and $b_b(v)=v$ is not an equilibrium although it would maximize gains from trade. 
@@ -217,7 +222,7 @@ S  \> $0,x$   \>$4,4$
     (For more on such equilibria, see \cite{leininger1989equilibria}. )
     \item Suppose that players use linear strategies $b_b(v)=\alpha+\beta v$ and $b_s(c)=\gamma+\delta c$ with $\beta,\delta>0$. Taking the strategy of the other player derive the best response of a seller/buyer with valuation $v$ / cost $c$. For which values of $\alpha,\beta,\gamma,\delta$ form the linear strategies an equilibrium?
     \end{enumerate}
-  \item Two players participate in a contest: Each player chooses an effort level $e_i$. Effort is costly and reduces player $i$'s payoff by  $\theta _ie_i$. The player who choose the highest effort wins a prize of value 1. That is, the winner has payoff $1-\theta _i e_i$ while the loser has payoff $-\theta _i e_i$. The $\theta _i$ are private information and each player views the other player's type as being uniformly distributed on $[0.1,1.1]$. \\
+  \item Two players participate in a contest: Each player chooses an effort level $e_i$. Effort is costly and reduces player $i$'s payoff by  $\theta _ie_i$. The player who chooses the highest effort wins a prize of value 1. That is, the winner has payoff $1-\theta _i e_i$ while the loser has payoff $-\theta _i e_i$. The $\theta _i$ are private information and each player views the other player's type as being uniformly distributed on $[0.1,1.1]$. \\
     Write player $i$'s maximization problem given that the other player uses a strictly decreasing strategy $s$ (with inverse $t$). Derive the first order condition for optimal effort choice. Solve for a symmetric equilibrium in strictly decreasing strategies.
     % $\max_{e}(1.1-t(e))-\theta _i e$ where $t$ is the inverse of the other player's strategy $s$. Foc: $-t'(e)-\theta _i=0$, in equilibrium $t'(e(\theta _i))=1/s'(\theta _i)$ and we get $s'(\theta _i)=-1/\theta _i$. Using $s(1.1)=0$, we get $s(\theta _i)=\int_{\theta _i}^{1.1}1/x \,dx=log(1.1)-log(\theta _i)$
     (More on such contests can be found in \cite{moldovanu2001optimal}.)
