@@ -136,6 +136,19 @@ Here we use $u(x)=log(x)$ and $v'(x)=x^2$. Therefore, we get $u'(x)=1/x$ and $v(
 &=log(b)b^3/3-log(a)a^3/3-\left[\frac{x^3}{9}\right]_a^b=log(b)b^3/3-log(a)a^3/3-\frac{b^3}{9}+\frac{a^3}{9}.
 \end{align*}
 
+\textbf{Example: Using integration by parts to eliminate a double integral}
+
+Integration by parts can sometimes be used to transform double integrals to simple integrals:
+\begin{equation*}
+  \int_0^1\left(2x \int_a^x f(y)\;dy\right)\;dx
+\end{equation*}
+Here $f(y)$ is some measurable function. We choose $u(x)=\int_a^xf(y)\;dy$ and $v'(x)=2x$. This implies that $u'(x)=f(x)$ (this uses the Leibniz rule above!) and $v(x)=x^2$. Integration by parts gives now
+\begin{equation*}
+  \int_0^1\left(2x \int_a^x f(y)\;dy\right)\;dx= \left[x^2 \int_a^x f(y)\;dy\right]_0^1-\int_0^1f(x) x^2\;dx=\int_a^1f(y)\;dy-\int_0^1f(x)x^2\;dx.
+\end{equation*}
+
+If you check the last expression, you see that we simplified the complicated double intergral we started out with into two simpler ``normal'' integrals.
+
 
 \subsection{Why does integration by parts work? (optional and mathematically somewhat loose)}
 \label{sec:why-doe-sintegration}
@@ -160,14 +173,14 @@ Taking derivatives and integrating are inverse operations (``they cancel each ot
 
 
 
-\section{Leibniz rule}
+\section{Leibniz rule and Fundamental theorem of calculus}
 \label{sec:leibniz-rule}
 
 The Leibniz rule tells you how to take the derivative of a function that is an integral. We will only use one very special case of it. Therefore, I show you this special case and give the complete rule only for sake of completeness below.
 
 What we want to look at are functions like the following
 $$f(x)=\int_0^x g(y) \;dy.$$
-What is the derivative of $f$? The Leibniz rule says that\footnote{Strictly speaking, we should assume for this that $g$ is continuous at $x$. If you go through the next paragraph, you should understand why.} 
+What is the derivative of $f$? The Leibniz rule implies that\footnote{Strictly speaking, we should assume for this that $g$ is continuous at $x$ (and also makes ome technical assumptions on $g$ ensuring that the integral exists but such practically irrelevant technicalities are beyond the scope of this short primer). If you go through the next paragraph, you should understand why.}
 $$f'(x)=g(x).$$
 The way you should think about this is that the integral is the area below the curve. So, draw some (continuous) function $g$ now. Seriously, do it! The integral $\int_0^xg(y)\, dy$ is the area between the axis and the function $g$ from $0$ to some $x$ (take some $x>0$ and shade this area in the graph you just drew). The derivative of $f$ with respect to $x$ gives the answer to the following question: How does the size of the shaded area change if you make $x$ a bit bigger. From the graph, it should be clear that the area gets approximately $g(x)*dx$ bigger if you increase $x$ by $dx$. This means that $f'(x)=g(x)$ (one marginal unit increase in $x$ increases $f$ by $g(x)$).
 
@@ -188,18 +201,7 @@ and says (assuming that all the functions are nicely behaved, i.e. $a$, $b$ and 
   f'(x)=-a'(x) g(x,a(x))+b'(x)g(x,b(x))+\int_{a(x)}^{b(x)}\frac{\partial g}{\partial x}(x,y)\;dy.
 \end{equation*}
 
-\textbf{Example: Using integration by parts to eliminate a double integral}
-
-Integration by parts can sometimes be used to transform double integrals to simple integrals:
-\begin{equation*}
-  \int_0^1\left(2x \int_a^x f(y)\;dy\right)\;dx
-\end{equation*}
-Here $f(y)$ is some measurable function. We choose $u(x)=\int_a^xf(y)\;dy$ and $v'(x)=2x$. This implies that $u'(x)=f(x)$ (this uses the Leibniz rule above!) and $v(x)=x^2$. Integration by parts gives now
-\begin{equation*}
-  \int_0^1\left(2x \int_a^x f(y)\;dy\right)\;dx= \left[x^2 \int_a^x f(y)\;dy\right]_0^1-\int_0^1f(x) x^2\;dx=\int_a^1f(y)\;dy-\int_0^1f(x)x^2\;dx.
-\end{equation*}
-
-If you check the last expression, you see that we simplified the complicated double intergral we started out with into two simpler ``normal'' integrals.
+The result we started with in this section, i.e. $f'(x)=g(x)$, is normally called ``the first fundamental theorem of calculus''. The ``fundamental'' thing about it is that it links the two operations integration and differentiation. The second fundamental theorem of calculus states the following: If $F$ is an antiderivative of $f$ (and $f$ satisfies some technical condition ensuring that the integral $\int_a^b f(x)\,dx$ exists), then $F(b)-F(a)=\int_a^b f(x)\,dx$. Taking these two results together, one can view integration and differentiation as inverse operations. 
 
 
 \end{document}
