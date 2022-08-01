@@ -1,11 +1,20 @@
 \documentclass[a4paper,12pt]{article}
 
-\usepackage{amsmath,amsthm,amsfonts,dsfont,ae,aecompl}
+\usepackage{amsmath,amsthm,amsfonts,dsfont,ae,aecompl,url,hyperref}
 \usepackage[margin=2.5cm]{geometry}
 \usepackage{natbib}
 \usepackage{tikz,sgame}
 
+\newtheorem{prop}{Proposition}
 \newtheorem{theorem}{Theorem}
+\newtheorem{assumption}{Assumption}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{definition}{Definition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{ex}{Example}
+\theoremstyle{plain}
+
 
 \title{Math for Microeconomics}
 \author{Christoph Schottm\"uller}
@@ -71,6 +80,94 @@ In case of a uniform distribution and $[c,d]\subseteq[a,b]$, this expression bec
 $$\frac{\int_c^dxf(x)\,dx}{F(d)-F(c)}=\frac{(d^2/2-c^2/2)/(b-a)}{(d-c)/(b-a)}=\frac{1}{2}\frac{d^2-c^2}{d-c}=\frac{1}{2}\frac{(d+c)(d-c)}{d-c}=\frac{d+c}{2}.$$
 
 Again, this should not surprise too much: The expected value of a uniformly distributed variable under the condition that its value is in $[c,d]$ is the midpoint of this interval. 
+
+\section{Convergence of sequences}
+\label{sec:conv-sequ}
+
+We start by defining what we mean when we say a sequence \emph{converges} (if you have no idea what a ``sequence'' is, you might want to check the wikipedia entry \url{https://en.wikipedia.org/wiki/Sequence}; note that in this handout we are interested in ``infinite sequences'' only): A sequence $(a_n)_{n=1}^\infty$, where each $a_n\in \Re$, converges to $a\in \Re$ if for every $\varepsilon >0$ we can find an $N$ such that
+\begin{equation}
+  \label{eq:1}
+  |a_n-a|\leq\varepsilon \quad\text{ for all }\quad n\geq N.
+\end{equation}
+We then say that ``$a$ is the \emph{limit} of the sequence $(a_n)_{n=1}^\infty$''.
+
+\textbf{Example: }
+  The sequence $2,\frac{3}{2},\frac{4}{3},\frac{5}{4},\dots,\frac{n+1}{n},\dots$ converges to 1: For a given $\varepsilon >0$, $\left|\frac{n+1}{n}-1\right|$ is less than $\varepsilon $ for $n$ high enough. More precisely, $\left|\frac{n+1}{n}-1\right|=\left|\frac{1}{n}\right|=\frac{1}{n}<\varepsilon $ for $n>\frac{1}{\varepsilon }$. Hence, by choosing $N=\left[\frac{1}{\varepsilon }\right]+1$ (where $[\,]$ indicates rounding to the next integer) we know that $|a_n-1|\leq\varepsilon \;\text{ for all }\; n\geq N$ and therefore the limit of the sequence is 1. 
+
+However, the elements of a sequence do not have to be real numbers. We can also have sequences of vectors: A sequence $(a_n)_{n=1}^\infty$, where each $a_n\in \Re^m$, converges to a vector $a\in \Re^m$ if for every $\varepsilon >0$ we can find an $N$ such that 
+\begin{equation}
+  \label{eq:2}
+  ||a_n-a||\leq\varepsilon \quad\text{ for all }\quad n\geq N.
+\end{equation}
+In the last equation ``$||\cdot||$'' denotes a norm, e.g. for a vector $b=(b_1,\dots,b_m)$ the Euclidean norm is 
+\begin{equation}
+  \label{eq:3}
+  ||b||=\sqrt{b_1^2+\dots+b_m^2}.
+\end{equation}
+
+\textbf{Example: }
+  Let $a_n=\left(\begin{matrix}\frac{n+1}{n}\\ \frac{1}{n}\end{matrix}\right)$. So, the sequence starts $\left(\begin{matrix}\frac{2}{1}\\ \frac{1}{1}\end{matrix}\right),\,\left(\begin{matrix}\frac{3}{2}\\ \frac{1}{2}\end{matrix}\right),\,\left(\begin{matrix}\frac{4}{3}\\ \frac{1}{3}\end{matrix}\right)\dots$. I claim that this sequence converges to $\left(\begin{matrix} 1\\ 0\end{matrix}\right)$. Note that $||a_n-\left(\begin{matrix} 1\\ 0\end{matrix}\right)||=||\left(\begin{matrix} \frac{1}{n}\\ \frac{1}{n}\end{matrix}\right)||=\sqrt{\frac{1}{n^2}+\frac{1}{n^2}}=\frac{\sqrt{2}}{n}$ which is less or equal to $ \varepsilon>0 $ if $n\geq \frac{\sqrt{2}}{\varepsilon }$. Hence, choosing $N=\left[\frac{\sqrt{2}}{\varepsilon }\right]+1$ we have shown that $||a_n-\left(\begin{matrix} 1\\ 0\end{matrix}\right)||\leq\varepsilon \,\text{ for all }\, n\geq N$ and therefore $(a_n)_{n=1}^\infty$ converges indeed to $\left(\begin{matrix} 1\\ 0\end{matrix}\right)$.
+
+
+You might have realized something in the previous example: The sequence in the first component of $\left(\begin{matrix}\frac{n+1}{n}\\ \frac{1}{n}\end{matrix}\right)_{n=1}^\infty$ is $a_n^1=\left(\frac{n+1}{n}\right)_{n=1}^\infty$ which was the sequence we looked at in example 1. There we showed that this sequence converges to 1. The sequence in the second component of $a_n=\left(\begin{matrix}\frac{n+1}{n}\\ \frac{1}{n}\end{matrix}\right)$ is $a_n^2=\left(\frac{1}{n}\right)_{n=1}^\infty$ and it is not so hard to see that this sequence converges to 0. If you take these two together, it is hardly surprising that $\left(\begin{matrix}\frac{n+1}{n}\\ \frac{1}{n}\end{matrix}\right)_{n=1}^\infty$ converges to   $\left(\begin{matrix} 1\\ 0\end{matrix}\right)$. The question is: Is this accidental or is it \emph{always} the case that a vector sequence converges to the vector consisting of the limits of its component sequences? The following proposition says that this is always the case.
+
+\begin{proposition}
+  A sequence $(a_n)_{n=1}^\infty$ in $\Re^m$ converges to a vector
+  $a\in\Re^m$ if and only if all component sequences converge.
+\end{proposition}
+\textbf{Proof. }Let's write $a_n=(a_n^1,a_n^2,\dots,a_n^m)$. We denote the sequence in the $i-th$ component as $(a_n^i)_{n=1}^\infty$. First we show that $(a_n)_{n=1}^\infty$ converges if each component sequence $(a_n^i)_{n=1}^\infty$ for $i\in\{1,2,\dots,m\}$ converges:\\
+Denote the limit of the i-th component sequence as $a^i$ and let $a=(a^1,a^2,\dots,a^m)$. Take an $\varepsilon>0 $. \\
+Since $(a_n^i)_{n=1}^\infty$ converges, we can find $N^i$ such that $|a_n^i-a^i|\leq\frac{\varepsilon }{\sqrt{m}} $ for all $n\geq N^i$. Now take $N=\max\{N^1,\dots,N^m\}$. Then for all $n\geq N$, we have
+\begin{multline*}
+  ||a_n-a||=\sqrt{(a^1_n-a^1)^2+(a^2_n-a^2)^2+\dots+(a^m_n-a^m)^2}\\
+\leq
+  \sqrt{\left(\frac{\varepsilon
+  }{\sqrt{m}}\right)^2+\left(\frac{\varepsilon
+  }{\sqrt{m}}\right)^2+\dots+\left(\frac{\varepsilon
+  }{\sqrt{m}}\right)^2}
+  =\sqrt{m\frac{\varepsilon^2 }{m}}=\varepsilon.
+  \end{multline*}
+Therefore, $(a_n)_{n=1}^\infty$ converges to $a$.\par
+Second we have to show that all component sequences $(a_n^i)_{n=1}^\infty$ converge if $(a_n)_{n=1}^\infty$ converges. This follows from
+$$||a_n-a||=\sqrt{(a^1_n-a^1)^2+(a^2_n-a^2)^2+\dots+(a^m_n-a^m)^2}\geq \sqrt{(a_n^i-a^i)^2}=|a_n^i-a^i|.$$
+Since $(a_n)_{n=1}^\infty$ converges to $a$, $||a_n-a||\leq \varepsilon $ for all $n\geq N$. But then the last expression implies that also $|a_n^i-a^i|\leq\varepsilon $. Consequently, $(a_n^i)_{n=1}^\infty$ converges to $a^i$.
+\qed
+
+We can define closed sets in $\Re^m$ in terms of sequences:
+\begin{definition}
+  A set $S\in \Re^m$ is \textbf{closed} if and only if every converging
+  sequence in $S$ has its limit in $S$.
+\end{definition}
+Put differently, let $(s_n)_{n=1}^\infty$ be an arbitrary sequence in $S$, i.e. $s_n\in S$ for $n=1,2,\dots$, and let $(s_n)_{n=1}^\infty$ converge to $s$. Then $s\in S$ if $S$ closed. If $s\in S$ for every converging sequence that is entirely contained in $S$, then $S$ is closed.
+
+\textbf{Example: }
+  Let's look at the simple case where $m=1$, i.e. we have normal real sequences.  The interval $S=(1,2]$ (including 2 but not including 1) is \emph{not} closed: Our sequence from the first example  $2,\frac{3}{2},\frac{4}{3},\frac{5}{4},\dots,\frac{n+1}{n},\dots$ is in $S$, i.e. each $a_n$ is an element of $S$. But the limit of the sequence is 1 which is not in $S$.\par
+Now let's look at the set $S'=[1,2]$. This set is closed and we can show this by contradiction: Suppose, $S'$ was not closed. Then there would be a sequence $(a_n)_{n=1}^\infty$ such that (i) $a_n\in S'$ for all $n$, (ii) $(a_n)_{n=1}^\infty$ converges to \emph{a} and (iii) $a\not\in S'$. Hence, \emph{a} would be either strictly greater than 2 or strictly smaller than 1. Let's say \emph{a} was strictly greater than 2 (the other case is similar). Then define $\varepsilon = (a-2)/2$. As $(a_n)_{n=1}^\infty$ converges to \emph{a}, there would have to be some $a_n$ such that $|a_n-a|<\varepsilon $. But this would imply that $a_n>2$ and therefore $a_n\not\in S'$. But $a_n\not\in S'$ contradicts (i). Hence, $S'$ is closed.
+
+
+
+One important concept is a \emph{subsequence}. Intuitively, a subsequence is what is left over after you delete some terms of the original sequence. For example, take the sequence $(1/1,1/2,1/3,1/4,1/5,\dots)$. One subsequence of this sequence would be $(1/1,1/2,1/4,1/8,1/16\dots)$. Another subsequence would be $(1/2,1/4,1/10,1/28,\dots)$ (in case you wondered: the rule here is $1/(3^{n-1}+1)$). For a more formal definition of a subsequence, check your math books, e.g. Simon/Blume ch. 12 (p. 256).
+
+One theorem that is remarkably useful is the Bolzano-Weierstrass theorem.\footnote{Recall: A set $S$ in $\Re^m$ is called \emph{compact} if and only if it is closed and bounded. Boundedness means that there is a $K\in\Re^m$ such that $s<K$ and $s>-K$ for all $s\in S$, i.e. the elements of $S$ are not arbitrarily large (in absolute value).}
+\begin{theorem}
+  Let $S$ be a compact set in $\Re^m$ and let $(a_n)_{n=1}^\infty$ be a sequence that is entirely contained in $S$, i.e. $a_n\in S$ for all $n=1,2\dots$. Then $(a_n)_{n=1}^\infty$ has a convergent subsequence with limit in $S$.
+\end{theorem}
+
+Instead of a full-fledged proof we just look at the idea for the simple case where $m=1$, i.e. the sequence is a sequence of real numbers. A compact set $S$ is then a set that is closed and bounded and we will look at the simple case of a closed interval. For simplicity we let $S=[0,1]$. Now we construct a subsequence $(b_n)_{n=1}^\infty$ of $(a_n)_{n=1}^\infty$ such that $(b_n)_{n=1}^\infty$ converges:\\
+\begin{enumerate}
+\item Let's split $[0,1]$ in two subintervals $[0,1/2]$ and $[1/2,1]$. At least one of the two subintervals will contain an infinite number of elements of $(a_n)_{n=1}^\infty$. If $[0,1/2]$ contains an infinite number of elements of $(a_n)_{n=1}^\infty$, then we choose $b_1$ as an arbitrary $a_{n_1}$ in the subinterval $[0,1/2]$.  If $[0,1/2]$ does not contain an infinite number of $a_n$s, we let $b_1$ be some arbitrary $a_{n_1}$ in $[1/2,1]$.
+\item Now we split $[0,1]$ into four subintervals: $[0,1/4]$, $[1/4,1/2]$, $[1/2,3/4]$ and $[3/4,1]$. We  let $b_2$ be an arbitrary $a_{n_2}$ that satisfies 2 conditions: (i) $n_2>n_1$ and (ii) $a_{n_2}$ is in the lowest of the four subintervals that contains an infinite number of $a_n$s.
+\item Now we split $[0,1]$ into 16 equally long closed subintervals. We let $b_3$ be some $a_{n_3}$ such that: (i) $n_3>n_2$ and (ii) $a_{n_3}$ is in the lowest of the 16 subintervals that contains an infinite number of $a_n$s.
+\item \dots
+\end{enumerate}
+The sequence $(b_n)_{n=1}^\infty$ constructed in this way converges: By the construction, any two $b_n$ and $b_{n'}$ for $n>N$ and $n'>N$ are no more than $(1/2)^N$ apart. This means that the sequence $(b_n)_{n=1}^\infty$ is a so called ``Cauchy sequence'' and a fundamental property of the real numbers is that every Cauchy sequence converges.\footnote{In principle, this is something I should prove but I guess that this property is not super surprising and I leave it here.} As $[0,1]$ is closed (and all $b_n$ are in $[0,1]$, the limit of this sequence will be in $[0,1]$.
+
+% \par
+% For a more detailled exposition, you can check almost any ``Maths for economists'' book (there are a lot of them). One (of many) that is good to read is\par
+% Carl P. Simon and Lawrence Blume: \emph{``Mathematics for Economists'',} W.W. Norton \& Company Inc., 1994\\
+% where all these results (and many more) can be found in chapter 12 (and some more advanced results in chapter 29).\footnote{In case you are very muched intrigued by these sort of results and want to know more even after reading Simon/Blume, you can have a look at de la Fuente's ``Mathematical Methods and Models in Economics'' or Efe Ok's ``Real Analysis with Economic Applications''. }
+
+
 
 \section{Implicit function theorem}
 \label{sec:impl-funct-theor}
