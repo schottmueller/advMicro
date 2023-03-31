@@ -3,6 +3,7 @@
 #+Options: toc:nil
 #+Latex_Header: \usepackage{natbib}
 * News
+- Please watch screencasts 01-03 before the first lecture and have a look at the corresponding exercises.
 #  - Exam grades will be published soon. PhD students can pick up their certificates at the secretariat (SSC 4.302-4.304) but due to technical problems not before July 26 (maybe call in beforehand to make sure that someone is in).
     
 # - The second exam is planned for September 30, 14:00. Registration via KLIPS is open now. PhD students should register via mail to [c dot schottmueller at uni minus koeln dot de].
