@@ -3,25 +3,23 @@
 #+Options: toc:nil
 #+Latex_Header: \usepackage{natbib}
 * News
-  - Exam grades will be published soon. PhD students can pick up their certificates at the secretariat (SSC 4.302-4.304) but due to technical problems not before July 26 (maybe call in beforehand to make sure that someone is in).
+#  - Exam grades will be published soon. PhD students can pick up their certificates at the secretariat (SSC 4.302-4.304) but due to technical problems not before July 26 (maybe call in beforehand to make sure that someone is in).
     
 # - The second exam is planned for September 30, 14:00. Registration via KLIPS is open now. PhD students should register via mail to [c dot schottmueller at uni minus koeln dot de].
-# - The second exam attempt will be on October 2, 16:00-17:00 in SSC 3.206. Registration via Klips is open.
-# - On July ?, we use the class for question hour. If you want to have an answer for sure, please send me your questions before July ?. 
-# - Updated slides (lecture June 27): added an explanation at the end of the slides why ex ante budget balance is sufficient for ex post budget balance; changed almost efficient mechanism for many seller/buyer setting such that it is dominant strategy incentive compatible for finite $m$ and $n$
+# - On July ?, we use the class for question hour. If you want to have an answer for sure, please send me your questions before July ?.
 # - resit date: October 7, 16:00-17:00 in SSC 4.210
- - suggested exam date: July 14, 14:00-15:00 in the usual Thursday lecture room
+ - exam date: July 13, 14:00-15:00 in the usual lecture room
    # 100/U1/HSVIIa 
 
 * Time and place
- - Tuesday, 10:00-11:30, Seminarraum S37 (102/U1/-1.314)
- - Thursday, 14:00-15:30, Seminarraum S263 (118/03/3.06)
+ - Thursday, 14:00-17:30, Seminarraum S37 (102/U1/-1.314)
+
 
 * Setup
-Please, watch the screencasts provided below before coming to the Tuesday session. On Tuedays, you have the option to ask questions about the material in the screencasts (and I might ask you a few questions to see whether things are clear). We might then do an exercise together in class. On Thursdays, we will discuss more exercises. In terms of /preparation/, you have to watch the screencasts before the Tuesday session and read through the first 2 exercises on the respective topic. For the Thursday sessions, you should have spent a bit time on trying to solve the remaining exercises. (Don't be discouraged if you do not manage to solve them quickly. Some of them are a bit tricky.)  One organizational remark: as we have only one projector, it is useful to bring a printout of the exercises with you to class. 
+Please, watch the screencasts provided below before coming to class. You have the option to ask questions about the material in the screencasts (and I might ask you a few questions to see whether things are clear). We might then do an exercise together in class and cover remaining exercises from the topic of the previous week. In terms of /preparation/, you have to watch the screencasts and read through the first 2 exercises on the respective topic. Furthermore, you should have spent a bit of time on trying to solve the remaining exercises of previous week's topic. (Don't be discouraged if you do not manage to solve them quickly. Some of them are a bit tricky.)  One organizational remark: as we have only one projector, it is useful to bring a printout of the exercises with you to class. 
  
 * Material
-- [[https://web.tresorit.com/l/5sWSJ#n7VsMyNRyBLszIHnUrQzXA][link]] to screencasts for lecture material
+- [[https://uni-koeln.sciebo.de/s/gWDbix0LdA3BGM1][link]] to screencasts for lecture material
 
 - [[https://github.com/schottmueller/advMicro/files/3255945/exam.pdf][old exam]] 
 - Exercises: [[https://web.tresorit.com/l/fHuQ1#QdeCbHMRepN8nScN6s4cUw][pdf]], [[https://web.tresorit.com/l#q1HQe8-nJBZSRORWTxSfbg][solutions]] for some exercises not covered in class
@@ -153,9 +151,9 @@ The following plan is...well a plan...and as such it might be adapted to unforse
 - welfare maximizing mechanism in bilateral trade
 - limits when number of agents gets large in bilateral trade and public good setting
 - references: Börgers 3.4.3; Fudenberg and Tirole "Game Theory" ch. 7.4.5+7.4.6
-** Mechanism design VII: correlated information
- - belief extraction
- - Cremer-McLean mechanism (cite:cre88) or Börgers ch. 6.4
+# ** Mechanism design VII: correlated information
+# - belief extraction
+# - Cremer-McLean mechanism (cite:cre88) or Börgers ch. 6.4
 
 # ** Information design I: Bayesian persuasion
 # - Bayesian persuasion (cite:bergemann17_infor_desig)
