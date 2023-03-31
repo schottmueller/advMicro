@@ -16,7 +16,7 @@
 
 
 * Setup
-Please, watch the screencasts provided below before coming to class. You have the option to ask questions about the material in the screencasts (and I might ask you a few questions to see whether things are clear). We might then do an exercise together in class and cover remaining exercises from the topic of the previous week. In terms of /preparation/, you have to watch the screencasts and read through the first 2 exercises on the respective topic. Furthermore, you should have spent a bit of time on trying to solve the remaining exercises of previous week's topic. (Don't be discouraged if you do not manage to solve them quickly. Some of them are a bit tricky.)  One organizational remark: as we have only one projector, it is useful to bring a printout of the exercises with you to class. 
+Please, watch the screencasts provided below before coming to class. You have the option to ask questions about the material in the screencasts (and I might ask you a few questions to see whether things are clear). We will then do the exercises. In terms of /preparation/, you have to watch the screencasts and read through the exercises on the respective topic and think roughly 10 minutes about each of them. (Don't be discouraged if you do not manage to solve them quickly. Some of them are a bit tricky.)  One organizational remark: as we have only one projector, it is useful to bring a printout of the exercises with you to class. 
  
 * Material
 - [[https://uni-koeln.sciebo.de/s/gWDbix0LdA3BGM1][link]] to screencasts for lecture material
