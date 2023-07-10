@@ -23,7 +23,7 @@ Please, watch the screencasts provided below before coming to class. You have th
 - [[https://uni-koeln.sciebo.de/s/gWDbix0LdA3BGM1][link]] to screencasts for lecture material
 
 - [[https://github.com/schottmueller/advMicro/files/3255945/exam.pdf][old exam]] 
-- Exercises: [[https://web.tresorit.com/l/fHuQ1#QdeCbHMRepN8nScN6s4cUw][pdf]], [[https://web.tresorit.com/l#q1HQe8-nJBZSRORWTxSfbg][solutions]] for some exercises not covered in class
+- Exercises: [[https://web.tresorit.com/l/fHuQ1#QdeCbHMRepN8nScN6s4cUw][pdf]],  [[https://web.tresorit.com/l/qeT48#mMP9IaB3YTvSmJ1IKWeASw][solutions]] for some exercises not covered in class
 - Slides:
   - [[https://github.com/schottmueller/advMicro/files/3028996/dominRatio.pdf][Dominance and rationalizability]]
   - [[https://github.com/schottmueller/advMicro/files/4419534/NashEq.pdf][Nash Theorem]]
